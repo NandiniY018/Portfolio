@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Nandini Y. | Python Full Stack Developer Portfolio{% endblock %}
+{% block meta_description %}Nandini Y. — Python Full Stack Developer. Experienced in Django, React, MySQL, REST APIs, Data Science. Open to opportunities.{% endblock %}
+
+{% block content %}
+
+  {% include "partials/hero.html" %}
+
+  <div class="section-divider"></div>
+
+  {% include "partials/about.html" %}
+
+  <div class="section-divider"></div>
+
+  {% include "partials/skills.html" %}
+
+  <div class="section-divider"></div>
+
+  {% include "partials/experience.html" %}
+
+  <div class="section-divider"></div>
+
+  {% include "partials/projects.html" %}
+
+  <div class="section-divider"></div>
+
+  {% include "partials/education.html" %}
+
+  <div class="section-divider"></div>
+
+  {% include "partials/certificates.html" %}
+
+  <div class="section-divider"></div>
+
+  {% include "partials/contact.html" %}
+
+{% endblock %}

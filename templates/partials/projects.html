@@ -1,0 +1,206 @@
+{% load static %}
+<!-- ============================================================
+     PROJECTS SECTION
+     ============================================================ -->
+<section id="projects" class="section-py bg-section-dark" aria-label="My projects">
+  <div class="section-container">
+
+    <!-- Section Header -->
+    <div class="section-header reveal">
+      <span class="section-label"><i class="fas fa-folder-open"></i> Projects</span>
+      <h2 class="section-title">Featured <span class="gradient-text">Projects</span></h2>
+      <p class="section-subtitle">
+        A selection of my best work — real applications built with modern tech stacks and production-ready code.
+      </p>
+      <div class="accent-line"></div>
+    </div>
+
+    <!-- Projects Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 lg:gap-8">
+
+      <!-- Project 1: Multi Vendor E-Commerce -->
+      <article class="project-card reveal reveal-delay-1">
+        <div class="project-img-wrapper" style="position:relative; overflow:hidden;">
+          <img src="{% static 'images/project-ecommerce.png' %}"
+               alt="Multi Vendor E-Commerce Platform screenshot"
+               loading="lazy" width="600" height="300"
+               onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+          <div style="display:none; width:100%; height:100%; background:linear-gradient(135deg,rgba(99,102,241,0.3) 0%,rgba(139,92,246,0.2) 50%,rgba(6,182,212,0.25) 100%); align-items:center; justify-content:center; flex-direction:column; gap:0.75rem; position:absolute; inset:0;">
+            <i class="fas fa-shopping-cart" style="font-size:3rem; color:rgba(165,180,252,0.6);"></i>
+            <span style="font-family:Outfit,sans-serif; color:rgba(165,180,252,0.7); font-size:0.85rem;">E-Commerce Platform</span>
+          </div>
+        </div>
+        <div class="p-6">
+          <div class="flex items-start justify-between gap-3 mb-3">
+            <h3 class="font-outfit font-bold text-lg text-white leading-tight">
+              Multi Vendor E-Commerce Platform
+            </h3>
+            <div class="w-8 h-8 flex-shrink-0 rounded-lg flex items-center justify-content-center"
+                 style="background:linear-gradient(135deg,#6366f1,#8b5cf6); display:flex; align-items:center; justify-content:center;">
+              <i class="fas fa-shopping-cart text-white text-xs"></i>
+            </div>
+          </div>
+
+          <p class="text-slate-400 text-sm leading-relaxed mb-4">
+            A full-featured multi-vendor marketplace with separate seller dashboards, product management,
+            order processing, payment integration, and a modern buyer-facing storefront.
+          </p>
+
+          <!-- Features -->
+          <ul class="space-y-1.5 mb-4 text-slate-400 text-xs">
+            <li class="flex items-center gap-2"><i class="fas fa-check-circle text-emerald-400 flex-shrink-0"></i>Multi-vendor dashboard & product management</li>
+            <li class="flex items-center gap-2"><i class="fas fa-check-circle text-emerald-400 flex-shrink-0"></i>Order tracking & payment gateway integration</li>
+            <li class="flex items-center gap-2"><i class="fas fa-check-circle text-emerald-400 flex-shrink-0"></i>JWT authentication & role-based access</li>
+            <li class="flex items-center gap-2"><i class="fas fa-check-circle text-emerald-400 flex-shrink-0"></i>REST API backend with React frontend</li>
+          </ul>
+
+          <!-- Tech Tags -->
+          <div class="flex flex-wrap gap-1.5 mb-5">
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">Django</span>
+            <span class="tech-tag">React</span>
+            <span class="tech-tag">MySQL</span>
+            <span class="tech-tag">REST API</span>
+            <span class="tech-tag">JWT</span>
+          </div>
+
+          <!-- Buttons -->
+          <div class="flex gap-3">
+            <a href="https://github.com/NandiniY018/multi-vendor-ecommerce" target="_blank" rel="noopener noreferrer"
+               class="btn-primary ripple flex-1 text-sm py-2.5" aria-label="View project on GitHub">
+              <i class="fab fa-github"></i> GitHub
+            </a>
+            <a href="#" target="_blank" rel="noopener noreferrer"
+               class="btn-outline ripple flex-1 text-sm py-2.5" aria-label="View live demo">
+              <i class="fas fa-external-link-alt"></i> Demo
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Project 2: Crop Yield Prediction -->
+      <article class="project-card reveal reveal-delay-2">
+        <div class="project-img-wrapper" style="position:relative; overflow:hidden;">
+          <img src="{% static 'images/project-crop.png' %}"
+               alt="Crop Yield Prediction dashboard screenshot"
+               loading="lazy" width="600" height="300"
+               onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+          <div style="display:none; width:100%; height:100%; background:linear-gradient(135deg,rgba(16,185,129,0.3) 0%,rgba(99,102,241,0.2) 50%,rgba(6,182,212,0.25) 100%); align-items:center; justify-content:center; flex-direction:column; gap:0.75rem; position:absolute; inset:0;">
+            <i class="fas fa-seedling" style="font-size:3rem; color:rgba(110,231,183,0.6);"></i>
+            <span style="font-family:Outfit,sans-serif; color:rgba(110,231,183,0.7); font-size:0.85rem;">Crop Yield Prediction</span>
+          </div>
+        </div>
+        <div class="p-6">
+          <div class="flex items-start justify-between gap-3 mb-3">
+            <h3 class="font-outfit font-bold text-lg text-white leading-tight">
+              Crop Yield Prediction
+            </h3>
+            <div class="w-8 h-8 flex-shrink-0 rounded-lg flex items-center justify-content-center"
+                 style="background:linear-gradient(135deg,#10b981,#059669); display:flex; align-items:center; justify-content:center;">
+              <i class="fas fa-seedling text-white text-xs"></i>
+            </div>
+          </div>
+
+          <p class="text-slate-400 text-sm leading-relaxed mb-4">
+            A machine learning-powered web application that predicts crop yields based on soil parameters,
+            rainfall, temperature, and historical agricultural data using Python and scikit-learn.
+          </p>
+
+          <ul class="space-y-1.5 mb-4 text-slate-400 text-xs">
+            <li class="flex items-center gap-2"><i class="fas fa-check-circle text-emerald-400 flex-shrink-0"></i>ML model using Random Forest & Decision Tree</li>
+            <li class="flex items-center gap-2"><i class="fas fa-check-circle text-emerald-400 flex-shrink-0"></i>Interactive data visualization with Matplotlib</li>
+            <li class="flex items-center gap-2"><i class="fas fa-check-circle text-emerald-400 flex-shrink-0"></i>Django web interface for predictions</li>
+            <li class="flex items-center gap-2"><i class="fas fa-check-circle text-emerald-400 flex-shrink-0"></i>Historical dataset analysis with Pandas</li>
+          </ul>
+
+          <div class="flex flex-wrap gap-1.5 mb-5">
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">Django</span>
+            <span class="tech-tag">scikit-learn</span>
+            <span class="tech-tag">Pandas</span>
+            <span class="tech-tag">Matplotlib</span>
+            <span class="tech-tag">NumPy</span>
+          </div>
+
+          <div class="flex gap-3">
+            <a href="https://github.com/NandiniY018/Crop-yield-prediction" target="_blank" rel="noopener noreferrer"
+               class="btn-primary ripple flex-1 text-sm py-2.5" aria-label="View project on GitHub">
+              <i class="fab fa-github"></i> GitHub
+            </a>
+            <a href="#" target="_blank" rel="noopener noreferrer"
+               class="btn-outline ripple flex-1 text-sm py-2.5" aria-label="View live demo">
+              <i class="fas fa-external-link-alt"></i> Demo
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Project 3: Online Grocery Management -->
+      <article class="project-card reveal reveal-delay-3">
+        <div class="project-img-wrapper" style="position:relative; overflow:hidden;">
+          <img src="{% static 'images/project-grocery.png' %}"
+               alt="Online Grocery Management System screenshot"
+               loading="lazy" width="600" height="300"
+               onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+          <div style="display:none; width:100%; height:100%; background:linear-gradient(135deg,rgba(245,158,11,0.3) 0%,rgba(139,92,246,0.2) 50%,rgba(99,102,241,0.25) 100%); align-items:center; justify-content:center; flex-direction:column; gap:0.75rem; position:absolute; inset:0;">
+            <i class="fas fa-shopping-basket" style="font-size:3rem; color:rgba(253,230,138,0.6);"></i>
+            <span style="font-family:Outfit,sans-serif; color:rgba(253,230,138,0.7); font-size:0.85rem;">Grocery Management</span>
+          </div>
+        </div>
+        <div class="p-6">
+          <div class="flex items-start justify-between gap-3 mb-3">
+            <h3 class="font-outfit font-bold text-lg text-white leading-tight">
+              Online Grocery Management System
+            </h3>
+            <div class="w-8 h-8 flex-shrink-0 rounded-lg flex items-center justify-content-center"
+                 style="background:linear-gradient(135deg,#f59e0b,#d97706); display:flex; align-items:center; justify-content:center;">
+              <i class="fas fa-shopping-basket text-white text-xs"></i>
+            </div>
+          </div>
+
+          <p class="text-slate-400 text-sm leading-relaxed mb-4">
+            A complete grocery store management platform featuring real-time inventory tracking,
+            category-based browsing, order management, and admin controls — built with Django and MySQL.
+          </p>
+
+          <ul class="space-y-1.5 mb-4 text-slate-400 text-xs">
+            <li class="flex items-center gap-2"><i class="fas fa-check-circle text-emerald-400 flex-shrink-0"></i>Real-time inventory & stock management</li>
+            <li class="flex items-center gap-2"><i class="fas fa-check-circle text-emerald-400 flex-shrink-0"></i>Category-based product browsing & search</li>
+            <li class="flex items-center gap-2"><i class="fas fa-check-circle text-emerald-400 flex-shrink-0"></i>Order management & invoice generation</li>
+            <li class="flex items-center gap-2"><i class="fas fa-check-circle text-emerald-400 flex-shrink-0"></i>Admin dashboard with reporting charts</li>
+          </ul>
+
+          <div class="flex flex-wrap gap-1.5 mb-5">
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">Django</span>
+            <span class="tech-tag">MySQL</span>
+            <span class="tech-tag">HTML5</span>
+            <span class="tech-tag">Tailwind CSS</span>
+            <span class="tech-tag">JavaScript</span>
+          </div>
+
+          <div class="flex gap-3">
+            <a href="https://github.com/NandiniY018/grocery-management" target="_blank" rel="noopener noreferrer"
+               class="btn-primary ripple flex-1 text-sm py-2.5" aria-label="View project on GitHub">
+              <i class="fab fa-github"></i> GitHub
+            </a>
+            <a href="#" target="_blank" rel="noopener noreferrer"
+               class="btn-outline ripple flex-1 text-sm py-2.5" aria-label="View live demo">
+              <i class="fas fa-external-link-alt"></i> Demo
+            </a>
+          </div>
+        </div>
+      </article>
+
+    </div>
+
+    <!-- View More on GitHub CTA -->
+    <div class="text-center mt-12 reveal">
+      <a href="https://github.com/NandiniY018" target="_blank" rel="noopener noreferrer"
+         class="btn-outline ripple inline-flex items-center gap-2" aria-label="View all projects on GitHub">
+        <i class="fab fa-github"></i> View All on GitHub
+      </a>
+    </div>
+
+  </div>
+</section>

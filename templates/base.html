@@ -1,0 +1,97 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+  <!-- SEO Meta Tags -->
+  <title>{% block title %}Nandini Y. | Python Full Stack Developer{% endblock %}</title>
+  <meta name="description" content="{% block meta_description %}Nandini Y. — Python Full Stack Developer specializing in Django, React, MySQL, and REST APIs. View my projects and get in touch.{% endblock %}" />
+  <meta name="keywords" content="Python developer, Full Stack Developer, Django, React, MySQL, portfolio, Nandini" />
+  <meta name="author" content="Nandini Y." />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Open Graph -->
+  <meta property="og:type"        content="website" />
+  <meta property="og:title"       content="Nandini Y. | Python Full Stack Developer" />
+  <meta property="og:description" content="Python Full Stack Developer specializing in Django, React, MySQL, and REST APIs." />
+  <meta property="og:url"         content="/" />
+  <meta property="og:image"       content="{% static 'images/profile.png' %}" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>👩‍💻</text></svg>" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" />
+
+  <!-- Tailwind CSS (Play CDN with custom config) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary:   { 50:'#eef2ff', 100:'#e0e7ff', 200:'#c7d2fe', 300:'#a5b4fc', 400:'#818cf8', 500:'#6366f1', 600:'#4f46e5', 700:'#4338ca', 800:'#3730a3', 900:'#312e81' },
+            violet:    { 300:'#c4b5fd', 400:'#a78bfa', 500:'#8b5cf6', 600:'#7c3aed', 700:'#6d28d9' },
+            cyan:      { 300:'#67e8f9', 400:'#22d3ee', 500:'#06b6d4', 600:'#0891b2' },
+            dark:      { 900:'#06060f', 800:'#0c0c1a', 700:'#11111f', 600:'#16162a' },
+            slate:     { 850:'#1e293b' },
+          },
+          fontFamily: {
+            outfit: ['Outfit', 'sans-serif'],
+            inter:  ['Inter',  'sans-serif'],
+          },
+          animation: {
+            'float':        'float 6s ease-in-out infinite',
+            'float-d2':     'floatReverse 7s ease-in-out 2s infinite',
+            'pulse-glow':   'pulseGlow 3s ease-in-out infinite',
+            'spin-slow':    'spin 8s linear infinite',
+            'bounce-slow':  'bounce-slow 3s ease-in-out infinite',
+          },
+          screens: {
+            'xs': '375px',
+          },
+        },
+      },
+    }
+  </script>
+
+  <!-- Global CSS -->
+  <link rel="stylesheet" href="{% static 'css/global.css' %}" />
+
+  {% block extra_head %}{% endblock %}
+</head>
+<body class="font-inter text-slate-300 bg-dark-900 antialiased overflow-x-hidden">
+
+  <!-- Toast Notification Container -->
+  <div id="toast-container" aria-live="polite"></div>
+
+  <!-- Sticky Navbar -->
+  {% include "partials/navbar.html" %}
+
+  <!-- Page Content -->
+  <main id="main-content">
+    {% block content %}{% endblock %}
+  </main>
+
+  <!-- Footer -->
+  {% include "partials/footer.html" %}
+
+  <!-- Back to Top Button -->
+  <button id="back-to-top" aria-label="Back to top" title="Back to top">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <!-- Main JavaScript -->
+  <script src="{% static 'js/main.js' %}"></script>
+  {% block extra_scripts %}{% endblock %}
+
+</body>
+</html>

@@ -1,0 +1,73 @@
+{% load static %}
+<!-- ============================================================
+     NAVBAR PARTIAL
+     ============================================================ -->
+<nav id="navbar" class="glass-nav" role="navigation" aria-label="Main navigation">
+  <div class="section-container">
+    <div class="flex items-center justify-between h-16 md:h-20">
+
+      <!-- Logo / Brand -->
+      <a href="#hero" class="flex items-center gap-2.5 group" aria-label="Nandini Yamagar - Home">
+        <div class="w-9 h-9 rounded-xl flex items-center justify-content-center"
+             style="background: linear-gradient(135deg,#6366f1,#8b5cf6); display:flex; align-items:center; justify-content:center;">
+          <span class="text-white font-outfit font-black text-base leading-none">NY</span>
+        </div>
+        <span class="font-outfit font-bold text-lg text-white group-hover:text-primary-300 transition-colors duration-200">
+          Nandini <span class="gradient-text">Yamagar</span>
+        </span>
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <div class="hidden lg:flex items-center gap-7" role="menubar">
+        <a href="#about"        class="nav-link" data-section="about"        role="menuitem">About</a>
+        <a href="#skills"       class="nav-link" data-section="skills"       role="menuitem">Skills</a>
+        <a href="#experience"   class="nav-link" data-section="experience"   role="menuitem">Experience</a>
+        <a href="#projects"     class="nav-link" data-section="projects"     role="menuitem">Projects</a>
+        <a href="#education"    class="nav-link" data-section="education"    role="menuitem">Education</a>
+        <a href="#certificates" class="nav-link" data-section="certificates" role="menuitem">Certificates</a>
+        <a href="#contact"      class="nav-link" data-section="contact"      role="menuitem">Contact</a>
+      </div>
+
+      <!-- Resume Button + Hamburger -->
+      <div class="flex items-center gap-3">
+        <a href="{% static 'resume.pdf' %}"
+           download="Nandini Yamagar.pdf"
+           class="btn-primary ripple hidden md:inline-flex text-sm py-2 px-4 gap-2"
+           aria-label="Download Resume">
+          <i class="fas fa-download text-xs"></i>
+          <span>Resume</span>
+        </a>
+
+        <!-- Hamburger Button (mobile) -->
+        <button id="hamburger"
+                class="hamburger lg:hidden"
+                aria-controls="mobile-menu"
+                aria-expanded="false"
+                aria-label="Toggle navigation menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" role="menu" aria-label="Mobile navigation">
+    <div class="section-container py-3 flex flex-col gap-1">
+      <a href="#about"        class="nav-link block py-3 px-2 border-b border-white/5" data-section="about"        role="menuitem">About</a>
+      <a href="#skills"       class="nav-link block py-3 px-2 border-b border-white/5" data-section="skills"       role="menuitem">Skills</a>
+      <a href="#experience"   class="nav-link block py-3 px-2 border-b border-white/5" data-section="experience"   role="menuitem">Experience</a>
+      <a href="#projects"     class="nav-link block py-3 px-2 border-b border-white/5" data-section="projects"     role="menuitem">Projects</a>
+      <a href="#education"    class="nav-link block py-3 px-2 border-b border-white/5" data-section="education"    role="menuitem">Education</a>
+      <a href="#certificates" class="nav-link block py-3 px-2 border-b border-white/5" data-section="certificates" role="menuitem">Certificates</a>
+      <a href="#contact"      class="nav-link block py-3 px-2 border-b border-white/5" data-section="contact"      role="menuitem">Contact</a>
+      <div class="pt-3 pb-1">
+        <a href="{% static 'resume.pdf' %}" download="Nandini Yamagar.pdf"
+           class="btn-primary ripple w-full justify-center text-sm" role="menuitem">
+          <i class="fas fa-download text-xs"></i> Download Resume
+        </a>
+      </div>
+    </div>
+  </div>
+</nav>

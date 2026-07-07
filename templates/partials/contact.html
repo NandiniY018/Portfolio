@@ -1,0 +1,176 @@
+{% load static %}
+<!-- ============================================================
+     CONTACT SECTION
+     ============================================================ -->
+<section id="contact" class="section-py bg-section-alt" aria-label="Contact me">
+  <div class="section-container">
+
+    <!-- Section Header -->
+    <div class="section-header reveal">
+      <span class="section-label"><i class="fas fa-envelope-open-text"></i> Contact</span>
+      <h2 class="section-title">Let's <span class="gradient-text">Connect</span></h2>
+      <p class="section-subtitle">
+        Have a project in mind or want to discuss opportunities? I'd love to hear from you.
+      </p>
+      <div class="accent-line"></div>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-5 gap-10 lg:gap-14">
+
+      <!-- Left: Contact Info (2 columns wide on lg) -->
+      <div class="lg:col-span-2 reveal-left">
+        <h3 class="font-outfit font-bold text-xl text-white mb-2">Get In Touch</h3>
+        <p class="text-slate-400 text-sm leading-relaxed mb-7">
+          Whether you're looking for a dedicated developer, want to collaborate on an exciting project,
+          or just want to say hello — feel free to reach out!
+        </p>
+
+        <!-- Contact Info Items -->
+        <div class="space-y-3 mb-8">
+          <div class="contact-info-item">
+            <div class="contact-icon-wrapper"><i class="fas fa-envelope"></i></div>
+            <div>
+              <div class="text-xs text-slate-500 uppercase tracking-wider mb-0.5">Email</div>
+              <a href="mailto:nandiniyamagar5@gmail.com"
+                class="text-sm text-slate-200 hover:text-primary-300 transition-colors break-all">
+                nandiniyamagar5@gmail.com
+              </a>
+            </div>
+          </div>
+
+          <div class="contact-info-item">
+            <div class="contact-icon-wrapper"><i class="fas fa-phone"></i></div>
+            <div>
+              <div class="text-xs text-slate-500 uppercase tracking-wider mb-0.5">Phone</div>
+              <a href="tel:+918073835526" class="text-sm text-slate-200 hover:text-primary-300 transition-colors break-all">
+                +91 8073835526
+              </a>
+            </div>
+          </div>
+
+          <div class="contact-info-item">
+            <div class="contact-icon-wrapper"><i class="fas fa-map-marker-alt"></i></div>
+            <div>
+              <div class="text-xs text-slate-500 uppercase tracking-wider mb-0.5">Location</div>
+              <span class="text-sm text-slate-200 break-words">Karnataka, India 🇮🇳</span>
+            </div>
+          </div>
+
+          <div class="contact-info-item">
+            <div class="contact-icon-wrapper"><i class="fab fa-github"></i></div>
+            <div>
+              <div class="text-xs text-slate-500 uppercase tracking-wider mb-0.5">GitHub</div>
+              <a href="https://github.com/NandiniY018" target="_blank" rel="noopener noreferrer"
+                class="text-sm text-slate-200 hover:text-primary-300 transition-colors break-all">
+                github.com/NandiniY018
+              </a>
+            </div>
+          </div>
+
+          <div class="contact-info-item">
+            <div class="contact-icon-wrapper"><i class="fab fa-linkedin-in"></i></div>
+            <div>
+              <div class="text-xs text-slate-500 uppercase tracking-wider mb-0.5">LinkedIn</div>
+              <a href="https://www.linkedin.com/in/nandini-yamagar-1b8a26333" target="_blank" rel="noopener noreferrer"
+                class="text-sm text-slate-200 hover:text-primary-300 transition-colors break-all">
+                linkedin.com/in/nandini-yamagar-1b8a26333
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Social Links -->
+        <div>
+          <p class="text-xs text-slate-500 uppercase tracking-widest font-inter mb-3">Follow Me</p>
+          <div class="flex gap-3">
+            <a href="https://github.com/NandiniY018" target="_blank" rel="noopener noreferrer" class="social-icon"
+              aria-label="GitHub">
+              <i class="fab fa-github"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/nandini-yamagar-1b8a26333" target="_blank" rel="noopener noreferrer"
+              class="social-icon" aria-label="LinkedIn">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+
+            <a href="mailto:nandiniyamagar5@gmail.com" class="social-icon" aria-label="Email">
+              <i class="fas fa-envelope"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Contact Form (3 columns wide on lg) -->
+      <div class="lg:col-span-3 reveal-right">
+        <div class="glass-card p-6 md:p-8">
+          <h3 class="font-outfit font-bold text-lg text-white mb-1">Send a Message</h3>
+          <p class="text-slate-500 text-sm mb-6">I'll respond within 24 hours.</p>
+
+          <form id="contact-form" novalidate aria-label="Contact form">
+            {% csrf_token %}
+
+            <!-- Name + Email row -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-0">
+              <div class="form-group">
+                <label for="field-name" class="block text-xs text-slate-400 uppercase tracking-wider mb-2 font-inter">
+                  Full Name <span class="text-red-400">*</span>
+                </label>
+                <input type="text" id="field-name" name="name" data-field="name" class="form-input"
+                  placeholder="Nandini Yamagar" autocomplete="name" maxlength="150" required />
+                <p class="form-error-msg" data-error="name">
+                  <i class="fas fa-exclamation-circle"></i>
+                  <span></span>
+                </p>
+              </div>
+
+              <div class="form-group">
+                <label for="field-email" class="block text-xs text-slate-400 uppercase tracking-wider mb-2 font-inter">
+                  Email Address <span class="text-red-400">*</span>
+                </label>
+                <input type="email" id="field-email" name="email" data-field="email" class="form-input"
+                  placeholder="you@example.com" autocomplete="email" required />
+                <p class="form-error-msg" data-error="email">
+                  <i class="fas fa-exclamation-circle"></i>
+                  <span></span>
+                </p>
+              </div>
+            </div>
+
+            <!-- Subject -->
+            <div class="form-group">
+              <label for="field-subject" class="block text-xs text-slate-400 uppercase tracking-wider mb-2 font-inter">
+                Subject <span class="text-red-400">*</span>
+              </label>
+              <input type="text" id="field-subject" name="subject" data-field="subject" class="form-input"
+                placeholder="Job Opportunity / Project Collaboration / ..." maxlength="250" required />
+              <p class="form-error-msg" data-error="subject">
+                <i class="fas fa-exclamation-circle"></i>
+                <span></span>
+              </p>
+            </div>
+
+            <!-- Message -->
+            <div class="form-group">
+              <label for="field-message" class="block text-xs text-slate-400 uppercase tracking-wider mb-2 font-inter">
+                Message <span class="text-red-400">*</span>
+              </label>
+              <textarea id="field-message" name="message" data-field="message" class="form-input"
+                placeholder="Tell me about your project, opportunity, or how I can help you..." rows="5"
+                required></textarea>
+              <p class="form-error-msg" data-error="message">
+                <i class="fas fa-exclamation-circle"></i>
+                <span></span>
+              </p>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" id="contact-submit" class="btn-primary ripple w-full justify-center py-3.5 text-base"
+              aria-label="Send message">
+              <i class="fas fa-paper-plane btn-icon"></i>
+              <span class="btn-text">Send Message</span>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
