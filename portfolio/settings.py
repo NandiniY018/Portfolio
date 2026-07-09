@@ -25,13 +25,12 @@ environ.Env.read_env(BASE_DIR / '.env')
 SECRET_KEY = env('SECRET_KEY', default="django-insecure-local-development-key")
 DEBUG = env.bool('DEBUG', default=False)
 ALLOWED_HOSTS = [
-    "nandiniyamagar.onrender.com",
+    "portfolio-0mse.onrender.com",
     "localhost",
-    "127.0.0.1"
+    "127.0.0.1",
 ]
-
 CSRF_TRUSTED_ORIGINS = [
-    "https://nandiniyamagar.onrender.com",
+    "https://portfolio-0mse.onrender.com",
 ]
 
 
