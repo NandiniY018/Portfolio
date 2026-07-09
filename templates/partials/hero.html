@@ -28,8 +28,7 @@
 
         <!-- Greeting -->
         <div class="hero-animate mb-4">
-          <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-sm font-inter font-medium text-primary-300"
-                style="background:rgba(99,102,241,0.1); border:1px solid rgba(99,102,241,0.25);">
+          <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-sm font-inter font-medium text-primary-300 bg-[rgba(99,102,241,0.1)] border border-[rgba(99,102,241,0.25)]">
             <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
             👋 Hello, I'm
           </span>
@@ -37,8 +36,7 @@
 
         <!-- Name -->
         <div class="hero-animate">
-          <h1 class="font-outfit font-black text-5xl md:text-6xl xl:text-7xl leading-none mb-3"
-              style="letter-spacing:-0.03em;">
+          <h1 class="font-outfit font-black text-5xl md:text-6xl xl:text-7xl leading-none mb-3 tracking-[-0.03em]">
             <span class="text-white">Nandini</span>
             <span class="gradient-text"> Y.</span>
           </h1>
@@ -70,11 +68,13 @@
             <i class="fas fa-envelope"></i>
             <span>Let's Talk</span>
           </a>
-          <a href="{% static 'resume.pdf' %}" download="Nandini Yamagar.pdf"
+          {% if active_resume %}
+          <a href="{{ active_resume.file.url }}" target="_blank" rel="noopener noreferrer"
              class="btn-outline ripple" aria-label="Download resume">
             <i class="fas fa-download"></i>
             <span>Resume</span>
           </a>
+          {% endif %}
         </div>
 
         <!-- Social Icons -->
@@ -87,8 +87,8 @@
              class="social-icon" aria-label="LinkedIn Profile">
             <i class="fab fa-linkedin-in"></i>
           </a>
-          <a href="mailto:nandiniyamagar5@gmail.com"
-             class="social-icon" aria-label="Send Email">
+          <a href="#contact"
+             class="social-icon" aria-label="Contact Me">
             <i class="fas fa-envelope"></i>
           </a>
 
@@ -136,16 +136,13 @@
           </div>
 
           <!-- Floating tech badges -->
-          <div class="absolute -top-4 -right-4 glass-card px-3 py-2 text-xs font-outfit font-semibold text-white flex items-center gap-2 shadow-lg"
-               style="border-radius:12px; animation: float 5s ease-in-out infinite;" aria-hidden="true">
+          <div class="absolute -top-4 -right-4 glass-card px-3 py-2 text-xs font-outfit font-semibold text-white flex items-center gap-2 shadow-lg rounded-xl animate-float-5s" aria-hidden="true">
             <i class="fab fa-python text-yellow-400"></i> Python 3.11
           </div>
-          <div class="absolute -bottom-2 -left-6 glass-card px-3 py-2 text-xs font-outfit font-semibold text-white flex items-center gap-2 shadow-lg"
-               style="border-radius:12px; animation: floatReverse 6s ease-in-out 1s infinite;" aria-hidden="true">
+          <div class="absolute -bottom-2 -left-6 glass-card px-3 py-2 text-xs font-outfit font-semibold text-white flex items-center gap-2 shadow-lg rounded-xl animate-float-reverse-6s-delay" aria-hidden="true">
             <i class="fab fa-react text-cyan-400"></i> React.js
           </div>
-          <div class="absolute bottom-12 -right-8 glass-card px-3 py-2 text-xs font-outfit font-semibold text-white flex items-center gap-2 shadow-lg"
-               style="border-radius:12px; animation: float 7s ease-in-out 2s infinite;" aria-hidden="true">
+          <div class="absolute bottom-12 -right-8 glass-card px-3 py-2 text-xs font-outfit font-semibold text-white flex items-center gap-2 shadow-lg rounded-xl animate-float-7s-delay" aria-hidden="true">
             <i class="fas fa-database text-primary-400"></i> MySQL
           </div>
         </div>

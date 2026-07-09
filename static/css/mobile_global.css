@@ -1,0 +1,23 @@
+/* mobile_global.css - Extracted inline animations and mobile-specific utility classes */
+
+/* Animation Utilities for Hero Section */
+.animate-float-5s {
+  animation: float 5s ease-in-out infinite;
+}
+
+.animate-float-reverse-6s-delay {
+  animation: floatReverse 6s ease-in-out 1s infinite;
+}
+
+.animate-float-7s-delay {
+  animation: float 7s ease-in-out 2s infinite;
+}
+
+/* Mobile Responsive Adjustments (Add generic mobile fixes here if needed) */
+@media (max-width: 768px) {
+  /* Ensure proper spacing on mobile devices */
+  .section-container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}

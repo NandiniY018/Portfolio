@@ -7,12 +7,22 @@ from django.shortcuts import render
 from django.http import JsonResponse
 from django.views.decorators.http import require_http_methods
 from django.views.decorators.csrf import csrf_exempt
-from .models import ContactMessage
+from django.core.mail import send_mail
+from django.conf import settings
+from .models import ContactMessage, Project, Skill, Experience, Education, Article, Certificate
 
 
 def home_view(request):
     """Render the single-page portfolio home."""
-    return render(request, 'home.html')
+    context = {
+        'projects': Project.objects.all(),
+        'skills': Skill.objects.all(),
+        'experiences': Experience.objects.all(),
+        'education': Education.objects.all(),
+        'articles': Article.objects.all(),
+        'certificates': Certificate.objects.all(),
+    }
+    return render(request, 'home.html', context)
 
 
 @csrf_exempt
@@ -20,8 +30,7 @@ def home_view(request):
 def contact_view(request):
     """
     Handle contact form submission via AJAX (JSON body).
-    Validates input and saves the message to the database.
-    Returns a JSON response with success/error status.
+    Validates input, saves the message, and sends an email alert.
     """
     try:
         data = json.loads(request.body)
@@ -48,14 +57,31 @@ def contact_view(request):
         return JsonResponse({'success': False, 'errors': errors}, status=422)
 
     try:
+        # Save to DB
         ContactMessage.objects.create(
             name=name,
             email=email,
             subject=subject,
             message=message,
         )
+        
+        # Send Email Alert
+        mail_subject = f"New Portfolio Contact: {subject}"
+        mail_message = f"Name: {name}\nEmail: {email}\n\nMessage:\n{message}"
+        
+        # We wrap send_mail in a try-except to not crash if email fails (e.g. no credentials yet)
+        try:
+            send_mail(
+                mail_subject,
+                mail_message,
+                settings.DEFAULT_FROM_EMAIL,
+                [settings.DEFAULT_FROM_EMAIL],
+                fail_silently=True,
+            )
+        except Exception as e:
+            print(f"[ContactForm] Email failed to send: {e}")
+
     except Exception as db_error:
-        # Log the error but return a graceful response
         print(f"[ContactForm] DB error: {db_error}")
         return JsonResponse(
             {'success': False, 'error': 'Could not save message. Please try again later.'},

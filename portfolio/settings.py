@@ -3,7 +3,13 @@ portfolio/settings.py
 Full Django settings for the Portfolio project.
 """
 import os
+import environ
 from pathlib import Path
+
+# Initialize environ
+env = environ.Env(
+    DEBUG=(bool, False)
+)
 
 # ---------------------------------------------------------------------------
 # Base directory
@@ -13,15 +19,19 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # ---------------------------------------------------------------------------
 # Security
 # ---------------------------------------------------------------------------
-SECRET_KEY = os.environ.get(
-    "SECRET_KEY",
-    "django-insecure-local-development-key"
-)
-os.environ.get("DEBUG", "False") == "True"
+# Read .env file if it exists
+environ.Env.read_env(BASE_DIR / '.env')
+
+SECRET_KEY = env('SECRET_KEY', default="django-insecure-local-development-key")
+DEBUG = env.bool('DEBUG', default=False)
 ALLOWED_HOSTS = [
-    "portfolio-0mse.onrender.com",
+    "nandiniyamagar.onrender.com",
     "localhost",
     "127.0.0.1"
+]
+
+CSRF_TRUSTED_ORIGINS = [
+    "https://nandiniyamagar.onrender.com",
 ]
 
 
@@ -63,6 +73,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'website.context_processors.site_settings',
             ],
         },
     },
@@ -118,3 +129,14 @@ MEDIA_ROOT = BASE_DIR / 'media'
 # Default primary key field type
 # ---------------------------------------------------------------------------
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# ---------------------------------------------------------------------------
+# Email Backend Configuration
+# ---------------------------------------------------------------------------
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = env('EMAIL_HOST_USER', default='')
+EMAIL_HOST_PASSWORD = env('EMAIL_HOST_PASSWORD', default='')
+DEFAULT_FROM_EMAIL = env('DEFAULT_FROM_EMAIL', default=EMAIL_HOST_USER)

@@ -18,179 +18,138 @@
     <!-- Projects Grid -->
     <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 lg:gap-8">
 
-      <!-- Project 1: Multi Vendor E-Commerce -->
-      <article class="project-card reveal reveal-delay-1">
-        <div class="project-img-wrapper" style="position:relative; overflow:hidden;">
-          <img src="{% static 'images/project-ecommerce.png' %}"
-               alt="Multi Vendor E-Commerce Platform screenshot"
-               loading="lazy" width="600" height="300"
-               onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
-          <div style="display:none; width:100%; height:100%; background:linear-gradient(135deg,rgba(99,102,241,0.3) 0%,rgba(139,92,246,0.2) 50%,rgba(6,182,212,0.25) 100%); align-items:center; justify-content:center; flex-direction:column; gap:0.75rem; position:absolute; inset:0;">
-            <i class="fas fa-shopping-cart" style="font-size:3rem; color:rgba(165,180,252,0.6);"></i>
-            <span style="font-family:Outfit,sans-serif; color:rgba(165,180,252,0.7); font-size:0.85rem;">E-Commerce Platform</span>
+      {% for project in projects %}
+      <!-- Project Card -->
+      <article class="project-card reveal reveal-delay-{{ forloop.counter }}">
+        <!-- Image Area -->
+        <div class="project-img-wrapper relative overflow-hidden">
+          {% with first_img=project.gallery_images.first %}
+          {% if first_img %}
+            <img src="{{ first_img.image.url }}"
+                 alt="{{ project.title }} screenshot"
+                 loading="lazy" width="600" height="300"
+                 class="w-full h-full object-cover"
+                 onerror="this.classList.add('hidden'); this.nextElementSibling.classList.remove('hidden'); this.nextElementSibling.classList.add('flex');" />
+          {% elif project.image %}
+            <img src="{{ project.image.url }}"
+                 alt="{{ project.title }} screenshot"
+                 loading="lazy" width="600" height="300"
+                 class="w-full h-full object-cover"
+                 onerror="this.classList.add('hidden'); this.nextElementSibling.classList.remove('hidden'); this.nextElementSibling.classList.add('flex');" />
+          {% endif %}
+          {% endwith %}
+
+          <!-- Fallback placeholder -->
+          <div class="{% if project.gallery_images.first or project.image %}hidden{% else %}flex{% endif %} absolute inset-0 w-full h-full flex-col items-center justify-center gap-3 bg-gradient-to-br from-indigo-500/30 via-violet-500/20 to-cyan-500/25">
+            <i class="{{ project.icon_class }} text-5xl text-indigo-300/60"></i>
+            <span class="font-outfit text-sm text-indigo-300/70">{{ project.title }}</span>
           </div>
+
+          <!-- Gallery "+" button — only if more than 1 gallery image -->
+          {% if project.gallery_images.count > 1 %}
+          <button class="absolute bottom-3 right-3 flex items-center gap-1.5 px-3 py-1.5 bg-black/60 backdrop-blur-md border border-white/15 rounded-full text-white text-xs font-semibold cursor-pointer transition-all duration-200 hover:bg-indigo-500/70 hover:scale-105 z-10"
+                  onclick="openGallery('gallery-{{ project.id }}')"
+                  aria-label="View all {{ project.gallery_images.count }} photos"
+                  title="View all photos">
+            <i class="fas fa-plus"></i>
+            <span>{{ project.gallery_images.count }}</span>
+          </button>
+          {% endif %}
         </div>
+
         <div class="p-6">
           <div class="flex items-start justify-between gap-3 mb-3">
             <h3 class="font-outfit font-bold text-lg text-white leading-tight">
-              Multi Vendor E-Commerce Platform
+              {{ project.title }}
             </h3>
-            <div class="w-8 h-8 flex-shrink-0 rounded-lg flex items-center justify-content-center"
-                 style="background:linear-gradient(135deg,#6366f1,#8b5cf6); display:flex; align-items:center; justify-content:center;">
-              <i class="fas fa-shopping-cart text-white text-xs"></i>
+            <div class="w-12 h-12 rounded-xl flex items-center justify-center text-white text-xl shadow-lg bg-gradient-to-br from-[{{ project.icon_color|default:'#6366f1' }}] to-[#8b5cf6]">
+              <i class="{{ project.icon_class }} text-white text-xs"></i>
             </div>
           </div>
 
-          <p class="text-slate-400 text-sm leading-relaxed mb-4">
-            A full-featured multi-vendor marketplace with separate seller dashboards, product management,
-            order processing, payment integration, and a modern buyer-facing storefront.
+          <p class="text-slate-400 text-sm leading-relaxed mb-4 break-words">
+            {{ project.description }}
           </p>
 
           <!-- Features -->
-          <ul class="space-y-1.5 mb-4 text-slate-400 text-xs">
-            <li class="flex items-center gap-2"><i class="fas fa-check-circle text-emerald-400 flex-shrink-0"></i>Multi-vendor dashboard & product management</li>
-            <li class="flex items-center gap-2"><i class="fas fa-check-circle text-emerald-400 flex-shrink-0"></i>Order tracking & payment gateway integration</li>
-            <li class="flex items-center gap-2"><i class="fas fa-check-circle text-emerald-400 flex-shrink-0"></i>JWT authentication & role-based access</li>
-            <li class="flex items-center gap-2"><i class="fas fa-check-circle text-emerald-400 flex-shrink-0"></i>REST API backend with React frontend</li>
+          <ul class="space-y-2 mb-4 text-slate-400 text-xs break-words">
+            {% for feature in project.get_features_list %}
+            <li class="flex items-start gap-2">
+              <i class="fas fa-check-circle text-emerald-400 flex-shrink-0 mt-[3px]"></i>
+              <span class="leading-relaxed">{{ feature }}</span>
+            </li>
+            {% endfor %}
           </ul>
 
           <!-- Tech Tags -->
           <div class="flex flex-wrap gap-1.5 mb-5">
-            <span class="tech-tag">Python</span>
-            <span class="tech-tag">Django</span>
-            <span class="tech-tag">React</span>
-            <span class="tech-tag">MySQL</span>
-            <span class="tech-tag">REST API</span>
-            <span class="tech-tag">JWT</span>
+            {% for tech in project.get_tech_stack_list %}
+            <span class="tech-tag">{{ tech }}</span>
+            {% endfor %}
           </div>
 
           <!-- Buttons -->
           <div class="flex gap-3">
-            <a href="https://github.com/NandiniY018/multi-vendor-ecommerce" target="_blank" rel="noopener noreferrer"
+            {% if project.github_link %}
+            <a href="{{ project.github_link }}" target="_blank" rel="noopener noreferrer"
                class="btn-primary ripple flex-1 text-sm py-2.5" aria-label="View project on GitHub">
               <i class="fab fa-github"></i> GitHub
             </a>
-            <a href="#" target="_blank" rel="noopener noreferrer"
-               class="btn-outline ripple flex-1 text-sm py-2.5" aria-label="View live demo">
-              <i class="fas fa-external-link-alt"></i> Demo
-            </a>
+            {% endif %}
+            {% if project.gallery_images.count > 0 %}
+            <button onclick="openGallery('gallery-{{ project.id }}')"
+                    class="btn-outline ripple flex-1 text-sm py-2.5" aria-label="View project photos">
+              <i class="fas fa-images"></i> Photos
+            </button>
+            {% endif %}
           </div>
         </div>
       </article>
 
-      <!-- Project 2: Crop Yield Prediction -->
-      <article class="project-card reveal reveal-delay-2">
-        <div class="project-img-wrapper" style="position:relative; overflow:hidden;">
-          <img src="{% static 'images/project-crop.png' %}"
-               alt="Crop Yield Prediction dashboard screenshot"
-               loading="lazy" width="600" height="300"
-               onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
-          <div style="display:none; width:100%; height:100%; background:linear-gradient(135deg,rgba(16,185,129,0.3) 0%,rgba(99,102,241,0.2) 50%,rgba(6,182,212,0.25) 100%); align-items:center; justify-content:center; flex-direction:column; gap:0.75rem; position:absolute; inset:0;">
-            <i class="fas fa-seedling" style="font-size:3rem; color:rgba(110,231,183,0.6);"></i>
-            <span style="font-family:Outfit,sans-serif; color:rgba(110,231,183,0.7); font-size:0.85rem;">Crop Yield Prediction</span>
+      <!-- Lightbox Gallery for this project -->
+      {% if project.gallery_images.count > 0 %}
+      <div id="gallery-{{ project.id }}" class="fixed inset-0 z-[9999] flex items-center justify-center p-4 hidden" role="dialog" aria-modal="true" aria-label="{{ project.title }} gallery">
+        <div class="absolute inset-0 bg-black/85 backdrop-blur-sm" onclick="closeGallery('gallery-{{ project.id }}')"></div>
+        <div class="relative z-10 bg-[#0f0f1a] border border-white/10 rounded-2xl w-full max-w-4xl max-h-[90vh] flex flex-col overflow-hidden shadow-[0_40px_100px_rgba(0,0,0,0.8)]">
+          <div class="flex items-center justify-between px-6 py-4 border-b border-white/10 shrink-0">
+            <h3 class="font-outfit font-bold text-white text-lg">{{ project.title }} — Photos</h3>
+            <button class="w-8 h-8 rounded-full bg-white/10 text-slate-400 flex items-center justify-center transition-colors hover:bg-red-500/20 hover:text-red-400" onclick="closeGallery('gallery-{{ project.id }}')" aria-label="Close gallery">
+              <i class="fas fa-times"></i>
+            </button>
           </div>
-        </div>
-        <div class="p-6">
-          <div class="flex items-start justify-between gap-3 mb-3">
-            <h3 class="font-outfit font-bold text-lg text-white leading-tight">
-              Crop Yield Prediction
-            </h3>
-            <div class="w-8 h-8 flex-shrink-0 rounded-lg flex items-center justify-content-center"
-                 style="background:linear-gradient(135deg,#10b981,#059669); display:flex; align-items:center; justify-content:center;">
-              <i class="fas fa-seedling text-white text-xs"></i>
+          <div class="flex flex-col flex-1 overflow-hidden">
+            <!-- Main viewer -->
+            <div class="relative flex-1 flex items-center justify-center bg-[#070710] min-h-[300px] overflow-hidden">
+              <img id="lightbox-img-{{ project.id }}" src="{{ project.gallery_images.first.image.url }}" alt="" class="max-w-full max-h-[55vh] object-contain rounded-lg transition-opacity duration-200" />
+              <p id="lightbox-caption-{{ project.id }}" class="absolute bottom-3 left-1/2 -translate-x-1/2 bg-black/60 text-slate-300 text-xs px-3 py-1 rounded-full whitespace-nowrap">{{ project.gallery_images.first.caption }}</p>
+              <!-- Prev / Next -->
+              {% if project.gallery_images.count > 1 %}
+              <button class="absolute left-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/50 border border-white/10 text-white flex items-center justify-center transition-colors hover:bg-indigo-500/60 z-10" onclick="navigateGallery('{{ project.id }}', -1)" aria-label="Previous"><i class="fas fa-chevron-left"></i></button>
+              <button class="absolute right-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/50 border border-white/10 text-white flex items-center justify-center transition-colors hover:bg-indigo-500/60 z-10" onclick="navigateGallery('{{ project.id }}', 1)" aria-label="Next"><i class="fas fa-chevron-right"></i></button>
+              {% endif %}
+            </div>
+            <!-- Thumbnail Strip -->
+            <div class="flex gap-2 py-3 px-4 overflow-x-auto shrink-0 border-t border-white/10 [scrollbar-width:thin] [scrollbar-color:rgba(99,102,241,0.4)_transparent]">
+              {% for img in project.gallery_images.all %}
+              <img src="{{ img.image.url }}"
+                   alt="{{ img.caption|default:project.title }}"
+                   class="w-[72px] h-[52px] object-cover rounded-md cursor-pointer opacity-50 border-2 border-transparent transition-all hover:opacity-85 hover:scale-105 shrink-0 [&.active]:opacity-100 [&.active]:border-indigo-500 {% if forloop.first %}active{% endif %}"
+                   data-index="{{ forloop.counter0 }}"
+                   data-src="{{ img.image.url }}"
+                   data-caption="{{ img.caption }}"
+                   data-project="{{ project.id }}"
+                   onclick="selectThumb(this)"
+                   loading="lazy" />
+              {% endfor %}
             </div>
           </div>
-
-          <p class="text-slate-400 text-sm leading-relaxed mb-4">
-            A machine learning-powered web application that predicts crop yields based on soil parameters,
-            rainfall, temperature, and historical agricultural data using Python and scikit-learn.
-          </p>
-
-          <ul class="space-y-1.5 mb-4 text-slate-400 text-xs">
-            <li class="flex items-center gap-2"><i class="fas fa-check-circle text-emerald-400 flex-shrink-0"></i>ML model using Random Forest & Decision Tree</li>
-            <li class="flex items-center gap-2"><i class="fas fa-check-circle text-emerald-400 flex-shrink-0"></i>Interactive data visualization with Matplotlib</li>
-            <li class="flex items-center gap-2"><i class="fas fa-check-circle text-emerald-400 flex-shrink-0"></i>Django web interface for predictions</li>
-            <li class="flex items-center gap-2"><i class="fas fa-check-circle text-emerald-400 flex-shrink-0"></i>Historical dataset analysis with Pandas</li>
-          </ul>
-
-          <div class="flex flex-wrap gap-1.5 mb-5">
-            <span class="tech-tag">Python</span>
-            <span class="tech-tag">Django</span>
-            <span class="tech-tag">scikit-learn</span>
-            <span class="tech-tag">Pandas</span>
-            <span class="tech-tag">Matplotlib</span>
-            <span class="tech-tag">NumPy</span>
-          </div>
-
-          <div class="flex gap-3">
-            <a href="https://github.com/NandiniY018/Crop-yield-prediction" target="_blank" rel="noopener noreferrer"
-               class="btn-primary ripple flex-1 text-sm py-2.5" aria-label="View project on GitHub">
-              <i class="fab fa-github"></i> GitHub
-            </a>
-            <a href="#" target="_blank" rel="noopener noreferrer"
-               class="btn-outline ripple flex-1 text-sm py-2.5" aria-label="View live demo">
-              <i class="fas fa-external-link-alt"></i> Demo
-            </a>
-          </div>
         </div>
-      </article>
+      </div>
+      {% endif %}
 
-      <!-- Project 3: Online Grocery Management -->
-      <article class="project-card reveal reveal-delay-3">
-        <div class="project-img-wrapper" style="position:relative; overflow:hidden;">
-          <img src="{% static 'images/project-grocery.png' %}"
-               alt="Online Grocery Management System screenshot"
-               loading="lazy" width="600" height="300"
-               onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
-          <div style="display:none; width:100%; height:100%; background:linear-gradient(135deg,rgba(245,158,11,0.3) 0%,rgba(139,92,246,0.2) 50%,rgba(99,102,241,0.25) 100%); align-items:center; justify-content:center; flex-direction:column; gap:0.75rem; position:absolute; inset:0;">
-            <i class="fas fa-shopping-basket" style="font-size:3rem; color:rgba(253,230,138,0.6);"></i>
-            <span style="font-family:Outfit,sans-serif; color:rgba(253,230,138,0.7); font-size:0.85rem;">Grocery Management</span>
-          </div>
-        </div>
-        <div class="p-6">
-          <div class="flex items-start justify-between gap-3 mb-3">
-            <h3 class="font-outfit font-bold text-lg text-white leading-tight">
-              Online Grocery Management System
-            </h3>
-            <div class="w-8 h-8 flex-shrink-0 rounded-lg flex items-center justify-content-center"
-                 style="background:linear-gradient(135deg,#f59e0b,#d97706); display:flex; align-items:center; justify-content:center;">
-              <i class="fas fa-shopping-basket text-white text-xs"></i>
-            </div>
-          </div>
-
-          <p class="text-slate-400 text-sm leading-relaxed mb-4">
-            A complete grocery store management platform featuring real-time inventory tracking,
-            category-based browsing, order management, and admin controls — built with Django and MySQL.
-          </p>
-
-          <ul class="space-y-1.5 mb-4 text-slate-400 text-xs">
-            <li class="flex items-center gap-2"><i class="fas fa-check-circle text-emerald-400 flex-shrink-0"></i>Real-time inventory & stock management</li>
-            <li class="flex items-center gap-2"><i class="fas fa-check-circle text-emerald-400 flex-shrink-0"></i>Category-based product browsing & search</li>
-            <li class="flex items-center gap-2"><i class="fas fa-check-circle text-emerald-400 flex-shrink-0"></i>Order management & invoice generation</li>
-            <li class="flex items-center gap-2"><i class="fas fa-check-circle text-emerald-400 flex-shrink-0"></i>Admin dashboard with reporting charts</li>
-          </ul>
-
-          <div class="flex flex-wrap gap-1.5 mb-5">
-            <span class="tech-tag">Python</span>
-            <span class="tech-tag">Django</span>
-            <span class="tech-tag">MySQL</span>
-            <span class="tech-tag">HTML5</span>
-            <span class="tech-tag">Tailwind CSS</span>
-            <span class="tech-tag">JavaScript</span>
-          </div>
-
-          <div class="flex gap-3">
-            <a href="https://github.com/NandiniY018/grocery-management" target="_blank" rel="noopener noreferrer"
-               class="btn-primary ripple flex-1 text-sm py-2.5" aria-label="View project on GitHub">
-              <i class="fab fa-github"></i> GitHub
-            </a>
-            <a href="#" target="_blank" rel="noopener noreferrer"
-               class="btn-outline ripple flex-1 text-sm py-2.5" aria-label="View live demo">
-              <i class="fas fa-external-link-alt"></i> Demo
-            </a>
-          </div>
-        </div>
-      </article>
+      {% empty %}
+      <p class="text-slate-400 text-center col-span-full py-8">Check back soon for new projects!</p>
+      {% endfor %}
 
     </div>
 
@@ -204,3 +163,55 @@
 
   </div>
 </section>
+
+<script>
+// Gallery data store for navigation
+const galleryData = {};
+
+function openGallery(id) {
+  const el = document.getElementById(id);
+  if (!el) return;
+  el.classList.remove('hidden');
+  document.body.classList.add('overflow-hidden');
+  // Build index from thumbnails
+  const projectId = id.replace('gallery-', '');
+  const thumbs = el.querySelectorAll('.lightbox-thumb');
+  galleryData[projectId] = { thumbs: Array.from(thumbs), current: 0 };
+}
+
+function closeGallery(id) {
+  const el = document.getElementById(id);
+  if (!el) return;
+  el.classList.add('hidden');
+  document.body.classList.remove('overflow-hidden');
+}
+
+function selectThumb(thumb) {
+  const projectId = thumb.dataset.project;
+  const index = parseInt(thumb.dataset.index);
+  const data = galleryData[projectId];
+  if (!data) return;
+  data.current = index;
+  data.thumbs.forEach(t => t.classList.remove('active'));
+  thumb.classList.add('active');
+  document.getElementById('lightbox-img-' + projectId).src = thumb.dataset.src;
+  document.getElementById('lightbox-caption-' + projectId).textContent = thumb.dataset.caption || '';
+}
+
+function navigateGallery(projectId, direction) {
+  const data = galleryData[projectId];
+  if (!data) return;
+  data.current = (data.current + direction + data.thumbs.length) % data.thumbs.length;
+  selectThumb(data.thumbs[data.current]);
+}
+
+// Keyboard navigation
+document.addEventListener('keydown', function(e) {
+  const open = document.querySelector('div[id^="gallery-"]:not(.hidden)');
+  if (!open) return;
+  const projectId = open.id.replace('gallery-', '');
+  if (e.key === 'Escape') closeGallery(open.id);
+  if (e.key === 'ArrowRight') navigateGallery(projectId, 1);
+  if (e.key === 'ArrowLeft') navigateGallery(projectId, -1);
+});
+</script>

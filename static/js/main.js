@@ -17,11 +17,11 @@ const $$ = (selector, ctx = document) => [...ctx.querySelectorAll(selector)];
    1. NAVBAR — Sticky + Scroll Highlight + Mobile Menu
    ============================================================ */
 (function initNavbar() {
-  const navbar       = $('#navbar');
-  const navLinks     = $$('.nav-link[data-section]');
-  const hamburger    = $('#hamburger');
-  const mobileMenu   = $('#mobile-menu');
-  const mobileLinks  = $$('#mobile-menu .nav-link');
+  const navbar = $('#navbar');
+  const navLinks = $$('.nav-link[data-section]');
+  const hamburger = $('#hamburger');
+  const mobileMenu = $('#mobile-menu');
+  const mobileLinks = $$('#mobile-menu .nav-link');
 
   // Solid glass on scroll
   let lastScroll = 0;
@@ -39,7 +39,7 @@ const $$ = (selector, ctx = document) => [...ctx.querySelectorAll(selector)];
     let currentSection = '';
 
     sections.forEach(section => {
-      const sectionTop    = section.offsetTop - 100;
+      const sectionTop = section.offsetTop - 100;
       const sectionHeight = section.offsetHeight;
       if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
         currentSection = section.getAttribute('id');
@@ -89,13 +89,13 @@ const $$ = (selector, ctx = document) => [...ctx.querySelectorAll(selector)];
   ];
 
   let phraseIndex = 0;
-  let charIndex   = 0;
-  let isDeleting  = false;
-  let isPaused    = false;
+  let charIndex = 0;
+  let isDeleting = false;
+  let isPaused = false;
 
-  const TYPE_SPEED   = 80;
+  const TYPE_SPEED = 80;
   const DELETE_SPEED = 45;
-  const PAUSE_AFTER  = 1800;
+  const PAUSE_AFTER = 1800;
   const PAUSE_BEFORE = 300;
 
   function type() {
@@ -112,7 +112,7 @@ const $$ = (selector, ctx = document) => [...ctx.querySelectorAll(selector)];
     } else if (isDeleting && charIndex >= 0) {
       el.textContent = current.substring(0, charIndex--);
       if (charIndex < 0) {
-        isDeleting  = false;
+        isDeleting = false;
         phraseIndex = (phraseIndex + 1) % phrases.length;
         setTimeout(type, PAUSE_BEFORE);
         return;
@@ -177,15 +177,15 @@ const $$ = (selector, ctx = document) => [...ctx.querySelectorAll(selector)];
   const easeOut = (t) => 1 - Math.pow(1 - t, 3);
 
   function animateCounter(el) {
-    const target   = parseInt(el.dataset.counter, 10);
-    const suffix   = el.dataset.suffix || '';
+    const target = parseInt(el.dataset.counter, 10);
+    const suffix = el.dataset.suffix || '';
     const duration = 1800;
-    const start    = performance.now();
+    const start = performance.now();
 
     function frame(now) {
-      const elapsed  = now - start;
+      const elapsed = now - start;
       const progress = Math.min(elapsed / duration, 1);
-      const value    = Math.floor(easeOut(progress) * target);
+      const value = Math.floor(easeOut(progress) * target);
       el.textContent = value + suffix;
       if (progress < 1) requestAnimationFrame(frame);
     }
@@ -208,11 +208,11 @@ const $$ = (selector, ctx = document) => [...ctx.querySelectorAll(selector)];
    6. CONTACT FORM — Validation + AJAX Submit
    ============================================================ */
 (function initContactForm() {
-  const form    = $('#contact-form');
+  const form = $('#contact-form');
   if (!form) return;
 
-  const inputs  = form.querySelectorAll('[data-field]');
-  const btn     = $('#contact-submit');
+  const inputs = form.querySelectorAll('[data-field]');
+  const btn = $('#contact-submit');
   const btnText = btn ? btn.querySelector('.btn-text') : null;
   const btnIcon = btn ? btn.querySelector('.btn-icon') : null;
 
@@ -227,7 +227,7 @@ const $$ = (selector, ctx = document) => [...ctx.querySelectorAll(selector)];
   function validateField(input) {
     const field = input.dataset.field;
     const value = input.value.trim();
-    let error   = '';
+    let error = '';
 
     switch (field) {
       case 'name':
@@ -391,7 +391,7 @@ function showToast(type, title, message, duration = 5000) {
   let animId;
 
   function resize() {
-    canvas.width  = canvas.offsetWidth;
+    canvas.width = canvas.offsetWidth;
     canvas.height = canvas.offsetHeight;
   }
 
@@ -399,20 +399,20 @@ function showToast(type, title, message, duration = 5000) {
     constructor() { this.reset(); }
 
     reset() {
-      this.x     = Math.random() * canvas.width;
-      this.y     = canvas.height + 10;
-      this.size  = Math.random() * 2.5 + 0.5;
+      this.x = Math.random() * canvas.width;
+      this.y = canvas.height + 10;
+      this.size = Math.random() * 2.5 + 0.5;
       this.speedY = -(Math.random() * 0.8 + 0.3);
       this.speedX = (Math.random() - 0.5) * 0.5;
-      this.life  = 0;
+      this.life = 0;
       this.maxLife = Math.random() * 200 + 100;
       const hues = [240, 260, 190]; // indigo, violet, cyan
-      this.hue   = hues[Math.floor(Math.random() * hues.length)];
+      this.hue = hues[Math.floor(Math.random() * hues.length)];
     }
 
     update() {
-      this.x   += this.speedX;
-      this.y   += this.speedY;
+      this.x += this.speedX;
+      this.y += this.speedY;
       this.life++;
       if (this.y < -10 || this.life > this.maxLife) this.reset();
     }
@@ -482,9 +482,9 @@ function showToast(type, title, message, duration = 5000) {
   document.addEventListener('click', (e) => {
     const btn = e.target.closest('.ripple');
     if (!btn) return;
-    const rect   = btn.getBoundingClientRect();
-    const x      = e.clientX - rect.left;
-    const y      = e.clientY - rect.top;
+    const rect = btn.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
     const circle = document.createElement('span');
     circle.style.cssText = `
       position:absolute;
@@ -509,3 +509,49 @@ function showToast(type, title, message, duration = 5000) {
     circle.addEventListener('animationend', () => circle.remove());
   });
 })();
+
+/* ============================================================
+   13. THEME TOGGLE (Dark/Light Mode)
+   ============================================================ */
+(function initThemeToggle() {
+  const themeToggleBtn = document.getElementById('theme-toggle');
+  const themeIcon = document.getElementById('theme-toggle-icon');
+
+  // Check for saved theme preference in localStorage or system preference
+  const savedTheme = localStorage.getItem('theme');
+  const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+  if (savedTheme === 'dark' || (!savedTheme && systemPrefersDark)) {
+    document.documentElement.classList.add('dark');
+    if (themeIcon) {
+      themeIcon.classList.remove('fa-moon');
+      themeIcon.classList.add('fa-sun');
+    }
+  } else {
+    document.documentElement.classList.remove('dark');
+    if (themeIcon) {
+      themeIcon.classList.remove('fa-sun');
+      themeIcon.classList.add('fa-moon');
+    }
+  }
+
+  if (themeToggleBtn) {
+    themeToggleBtn.addEventListener('click', () => {
+      document.documentElement.classList.toggle('dark');
+
+      const isDark = document.documentElement.classList.contains('dark');
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+
+      if (themeIcon) {
+        if (isDark) {
+          themeIcon.classList.remove('fa-moon');
+          themeIcon.classList.add('fa-sun');
+        } else {
+          themeIcon.classList.remove('fa-sun');
+          themeIcon.classList.add('fa-moon');
+        }
+      }
+    });
+  }
+})();
+

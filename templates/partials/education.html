@@ -18,114 +18,40 @@
     <div class="max-w-3xl mx-auto">
       <div class="timeline-container">
 
-        <!-- BE -->
-        <div class="timeline-item glass-card p-6 md:p-8 reveal reveal-delay-1">
+        {% for edu in education %}
+        <div class="timeline-item glass-card p-6 md:p-8 reveal reveal-delay-{{ forloop.counter }}">
           <div class="timeline-dot" aria-hidden="true"></div>
 
           <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-4">
             <div class="flex items-center gap-4">
-              <div class="w-12 h-12 rounded-xl flex items-center justify-content-center flex-shrink-0"
-                   style="background:linear-gradient(135deg,#6366f1,#8b5cf6); display:flex; align-items:center; justify-content:center;">
-                <i class="fas fa-university text-white text-lg"></i>
+              <div class="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 bg-gradient-to-br from-indigo-500 to-violet-500">
+                <i class="{{ edu.icon_class|default:'fas fa-graduation-cap' }} text-white text-lg"></i>
               </div>
               <div>
-                <span class="role-badge mb-1 inline-block">Bachelor of Engineering (BE)</span>
-                <h3 class="font-outfit font-bold text-base text-white">Computer Science &amp; Engineering</h3>
-                <p class="text-slate-400 text-sm mt-0.5">Your University Name, Karnataka</p>
+                <span class="role-badge mb-1 inline-block">{{ edu.degree }}</span>
+                <h3 class="font-outfit font-bold text-base text-white">{{ edu.field_of_study }}</h3>
+                <p class="text-slate-400 text-sm mt-0.5">{{ edu.institution }}</p>
               </div>
             </div>
-            <div class="flex-shrink-0 text-right">
-              <span class="duration-badge block mb-1.5">
-                <i class="fas fa-calendar-alt"></i> 2021 – 2025
+            <div class="flex-shrink-0 flex flex-col items-start sm:items-center mt-3 sm:mt-0">
+              <span class="duration-badge">
+                <i class="fas fa-calendar-alt"></i> {{ edu.start_year }} – {{ edu.end_year }}
               </span>
-              <div class="text-xs text-slate-400">
-                <span class="text-emerald-400 font-semibold">CGPA: 8.4 / 10</span>
+              {% if edu.grade %}
+              <div class="grade-text">
+                {% if edu.grade_type %}{{ edu.grade_type }}: {% endif %}{{ edu.grade }}
               </div>
+              {% endif %}
             </div>
           </div>
 
-          <p class="text-slate-400 text-sm leading-relaxed mb-3">
-            Pursuing a comprehensive engineering degree with a focus on software development,
-            data structures, algorithms, database management, and web technologies.
-          </p>
-
-          <div class="flex flex-wrap gap-2">
-            <span class="tech-tag">Data Structures</span>
-            <span class="tech-tag">DBMS</span>
-            <span class="tech-tag">Operating Systems</span>
-            <span class="tech-tag">Software Engineering</span>
-            <span class="tech-tag">Computer Networks</span>
-          </div>
-        </div>
-
-        <!-- PUC -->
-        <div class="timeline-item glass-card p-6 md:p-8 reveal reveal-delay-2">
-          <div class="timeline-dot" aria-hidden="true"></div>
-
-          <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-4">
-            <div class="flex items-center gap-4">
-              <div class="w-12 h-12 rounded-xl flex items-center justify-content-center flex-shrink-0"
-                   style="background:linear-gradient(135deg,#06b6d4,#6366f1); display:flex; align-items:center; justify-content:center;">
-                <i class="fas fa-school text-white text-lg"></i>
-              </div>
-              <div>
-                <span class="duration-badge mb-1 inline-block text-cyan-400"
-                      style="border-color:rgba(6,182,212,0.3); background:rgba(6,182,212,0.1);">
-                  Pre-University Course (PUC)
-                </span>
-                <h3 class="font-outfit font-bold text-base text-white">Science Stream — PCMB</h3>
-                <p class="text-slate-400 text-sm mt-0.5">Your PUC College Name, Karnataka</p>
-              </div>
-            </div>
-            <div class="flex-shrink-0 text-right">
-              <span class="duration-badge block mb-1.5">
-                <i class="fas fa-calendar-alt"></i> 2019 – 2021
-              </span>
-              <div class="text-xs">
-                <span class="text-emerald-400 font-semibold">Percentage: 77%</span>
-              </div>
-            </div>
-          </div>
-
-          <p class="text-slate-400 text-sm leading-relaxed">
-            Completed the Science stream with Physics, Chemistry, Mathematics, and Biology.
-            Developed a strong analytical foundation and interest in technology.
+          <p class="text-slate-400 text-sm leading-relaxed mb-3 break-words">
+            {{ edu.description }}
           </p>
         </div>
-
-        <!-- SSLC -->
-        <div class="timeline-item glass-card p-6 md:p-8 reveal reveal-delay-3">
-          <div class="timeline-dot" aria-hidden="true"></div>
-
-          <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-4">
-            <div class="flex items-center gap-4">
-              <div class="w-12 h-12 rounded-xl flex items-center justify-content-center flex-shrink-0"
-                   style="background:linear-gradient(135deg,#8b5cf6,#ec4899); display:flex; align-items:center; justify-content:center;">
-                <i class="fas fa-book-reader text-white text-lg"></i>
-              </div>
-              <div>
-                <span class="duration-badge mb-1 inline-block text-violet-400"
-                      style="border-color:rgba(139,92,246,0.3); background:rgba(139,92,246,0.1);">
-                  Secondary School Leaving Certificate (SSLC)
-                </span>
-                <h3 class="font-outfit font-bold text-base text-white">10th Standard</h3>
-                <p class="text-slate-400 text-sm mt-0.5">Your High School Name, Karnataka</p>
-              </div>
-            </div>
-            <div class="flex-shrink-0 text-right">
-              <span class="duration-badge block mb-1.5">
-                <i class="fas fa-calendar-alt"></i> 2018 – 2019
-              </span>
-              <div class="text-xs">
-                <span class="text-emerald-400 font-semibold">Percentage: 84%</span>
-              </div>
-            </div>
-          </div>
-
-          <p class="text-slate-400 text-sm leading-relaxed">
-            Completed 10th grade with distinction, laying the academic groundwork for a career in technology.
-          </p>
-        </div>
+        {% empty %}
+          <p class="text-slate-400 text-center py-8">Add your education from the Admin panel!</p>
+        {% endfor %}
 
       </div>
     </div>
