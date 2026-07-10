@@ -28,7 +28,8 @@
 
         <!-- Greeting -->
         <div class="hero-animate mb-4">
-          <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-sm font-inter font-medium text-primary-300 bg-[rgba(99,102,241,0.1)] border border-[rgba(99,102,241,0.25)]">
+          <span
+            class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-sm font-inter font-medium text-primary-300 bg-[rgba(99,102,241,0.1)] border border-[rgba(99,102,241,0.25)]">
             <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
             👋 Hello, I'm
           </span>
@@ -54,7 +55,9 @@
         <!-- Short Bio -->
         <div class="hero-animate mb-8">
           <p class="font-inter text-slate-400 text-base md:text-lg leading-relaxed max-w-lg mx-auto lg:mx-0">
-            Passionate about building innovative digital experiences through clean code, scalable architecture, and thoughtful design. With hands-on experience in real-world projects, I create reliable, high-performance applications that solve meaningful problems and deliver exceptional user experiences.
+            Passionate about building innovative digital experiences through clean code, scalable architecture, and
+            thoughtful design. With hands-on experience in real-world projects, I create reliable, high-performance
+            applications that solve meaningful problems and deliver exceptional user experiences.
           </p>
         </div>
 
@@ -69,8 +72,8 @@
             <span>Let's Talk</span>
           </a>
           {% if active_resume %}
-          <a href="{{ active_resume.file.url }}" target="_blank" rel="noopener noreferrer"
-             class="btn-outline ripple" aria-label="Download resume">
+          <a href="{{ active_resume.file.url }}" target="_blank" rel="noopener noreferrer" class="btn-outline ripple"
+            aria-label="Download resume">
             <i class="fas fa-download"></i>
             <span>Resume</span>
           </a>
@@ -79,16 +82,15 @@
 
         <!-- Social Icons -->
         <div class="hero-animate flex items-center gap-3 justify-center lg:justify-start">
-          <a href="https://github.com/NandiniY018" target="_blank" rel="noopener noreferrer"
-             class="social-icon" aria-label="GitHub Profile">
+          <a href="https://github.com/NandiniY018" target="_blank" rel="noopener noreferrer" class="social-icon"
+            aria-label="GitHub Profile">
             <i class="fab fa-github"></i>
           </a>
           <a href="https://www.linkedin.com/in/nandini-yamagar-1b8a26333" target="_blank" rel="noopener noreferrer"
-             class="social-icon" aria-label="LinkedIn Profile">
+            class="social-icon" aria-label="LinkedIn Profile">
             <i class="fab fa-linkedin-in"></i>
           </a>
-          <a href="#contact"
-             class="social-icon" aria-label="Contact Me">
+          <a href="#contact" class="social-icon" aria-label="Contact Me">
             <i class="fas fa-envelope"></i>
           </a>
 
@@ -114,35 +116,44 @@
       <div class="flex-shrink-0 flex justify-center lg:justify-end hero-animate">
         <div class="relative">
           <!-- Pulse rings -->
-          <div class="hero-pulse-ring"   aria-hidden="true"></div>
+          <div class="hero-pulse-ring" aria-hidden="true"></div>
           <div class="hero-pulse-ring hero-pulse-ring-2" aria-hidden="true"></div>
 
           <!-- Glow -->
-          <div class="hero-image-glow"   aria-hidden="true"></div>
+          <div class="hero-image-glow" aria-hidden="true"></div>
 
           <!-- Spinning gradient ring -->
-          <div class="hero-image-ring"   aria-hidden="true">
+          <div class="hero-image-ring" aria-hidden="true">
             <div class="hero-image-ring-inner"></div>
           </div>
 
           <!-- Profile Picture -->
           <div class="relative z-10">
-            <img src="{% static 'images/profile.png' %}"
-                 alt="Nandini Yamagar — Python Full Stack Developer"
-                 class="w-56 h-56 md:w-72 md:h-72 rounded-full object-cover object-top"
-                 loading="eager"
-                 width="288" height="288"
-                 onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 288 288%22><rect width=%22288%22 height=%22288%22 fill=%22%23110d2a%22/><text x=%22144%22 y=%22160%22 font-size=%22100%22 text-anchor=%22middle%22 font-family=%22Arial%22>👩‍💻</text></svg>'" />
+            {% if site_settings.profile_image %}
+            <img src="{{ site_settings.profile_image.url }}" alt="Nandini Yamagar — Python Full Stack Developer"
+              class="w-56 h-56 md:w-72 md:h-72 rounded-full object-cover object-top" loading="eager" width="288"
+              height="288">
+            {% else %}
+            <img src="{% static 'images/profile.png' %}" alt="Nandini Yamagar — Python Full Stack Developer"
+              class="w-56 h-56 md:w-72 md:h-72 rounded-full object-cover object-top" loading="eager" width="288"
+              height="288">
+            {% endif %}
           </div>
 
           <!-- Floating tech badges -->
-          <div class="absolute -top-4 -right-4 glass-card px-3 py-2 text-xs font-outfit font-semibold text-white flex items-center gap-2 shadow-lg rounded-xl animate-float-5s" aria-hidden="true">
+          <div
+            class="absolute -top-4 -right-4 glass-card px-3 py-2 text-xs font-outfit font-semibold text-white flex items-center gap-2 shadow-lg rounded-xl animate-float-5s"
+            aria-hidden="true">
             <i class="fab fa-python text-yellow-400"></i> Python 3.11
           </div>
-          <div class="absolute -bottom-2 -left-6 glass-card px-3 py-2 text-xs font-outfit font-semibold text-white flex items-center gap-2 shadow-lg rounded-xl animate-float-reverse-6s-delay" aria-hidden="true">
+          <div
+            class="absolute -bottom-2 -left-6 glass-card px-3 py-2 text-xs font-outfit font-semibold text-white flex items-center gap-2 shadow-lg rounded-xl animate-float-reverse-6s-delay"
+            aria-hidden="true">
             <i class="fab fa-react text-cyan-400"></i> React.js
           </div>
-          <div class="absolute bottom-12 -right-8 glass-card px-3 py-2 text-xs font-outfit font-semibold text-white flex items-center gap-2 shadow-lg rounded-xl animate-float-7s-delay" aria-hidden="true">
+          <div
+            class="absolute bottom-12 -right-8 glass-card px-3 py-2 text-xs font-outfit font-semibold text-white flex items-center gap-2 shadow-lg rounded-xl animate-float-7s-delay"
+            aria-hidden="true">
             <i class="fas fa-database text-primary-400"></i> MySQL
           </div>
         </div>
