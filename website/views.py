@@ -69,17 +69,23 @@ def contact_view(request):
         mail_subject = f"New Portfolio Contact: {subject}"
         mail_message = f"Name: {name}\nEmail: {email}\n\nMessage:\n{message}"
         
-        # We wrap send_mail in a try-except to not crash if email fails (e.g. no credentials yet)
         try:
-            send_mail(
+            result = send_mail(
                 mail_subject,
                 mail_message,
                 settings.DEFAULT_FROM_EMAIL,
                 [settings.DEFAULT_FROM_EMAIL],
-                fail_silently=True,
+                fail_silently=False,
             )
+            print(f"[ContactForm] Email sent successfully! Result: {result}")
         except Exception as e:
+            import traceback
             print(f"[ContactForm] Email failed to send: {e}")
+            traceback.print_exc()
+            return JsonResponse({
+                'success': False, 
+                'error': f'Database saved, but email failed to send. Error: {str(e)}'
+            }, status=500)
 
     except Exception as db_error:
         print(f"[ContactForm] DB error: {db_error}")

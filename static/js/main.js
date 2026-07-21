@@ -305,6 +305,7 @@ const $$ = (selector, ctx = document) => [...ctx.querySelectorAll(selector)];
         showToast('error', 'Error', data.error || 'Something went wrong. Please try again.');
       }
     } catch (networkError) {
+      console.error("Fetch error or JSON parsing error:", networkError);
       showToast('error', 'Network Error', 'Could not reach the server. Please try again later.');
     } finally {
       setLoading(false);
