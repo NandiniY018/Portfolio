@@ -135,7 +135,7 @@ Replace these files in `static/images/`:
 
 ---
 
-## 📬 Contact Form
+##  Contact Form
 
 The contact form uses Django's AJAX endpoint to save messages to MySQL.
 View submissions in the Django admin at `/admin/website/contactmessage/`.
