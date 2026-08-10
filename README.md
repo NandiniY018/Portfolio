@@ -1,24 +1,24 @@
-# 🚀 Nandini Y. — Premium Portfolio Website
+#  Nandini Y. — Premium Portfolio Website
 
 A modern, production-ready Full Stack Developer portfolio built with **Django**, **Tailwind CSS**, **Vanilla JavaScript**, and **MySQL**.
 
 ---
 
-## ✨ Features
+##  Features
 
-- 🎨 **Premium dark UI** with glassmorphism, gradients, and smooth animations
-- 📱 **Fully responsive** (320px → 1920px)
-- ⚡ **Typing animation** in the Hero section
-- 🌟 **Scroll reveal animations** using IntersectionObserver
-- 📊 **Animated skill bars** and counter statistics
-- 📬 **AJAX contact form** with MySQL storage and real-time validation
-- 🎯 **Active section highlighting** in the sticky navbar
-- 🔝 **Back-to-top** floating button
-- 🌐 **SEO optimized** with proper meta tags and semantic HTML
+-  **Premium dark UI** with glassmorphism, gradients, and smooth animations
+-  **Fully responsive** (320px → 1920px)
+-  **Typing animation** in the Hero section
+-  **Scroll reveal animations** using IntersectionObserver
+-  **Animated skill bars** and counter statistics
+-  **AJAX contact form** with MySQL storage and real-time validation
+-  **Active section highlighting** in the sticky navbar
+-  **Back-to-top** floating button
+-  **SEO optimized** with proper meta tags and semantic HTML
 
 ---
 
-## 🛠️ Tech Stack
+##  Tech Stack
 
 | Layer      | Technology                         |
 |------------|------------------------------------|
@@ -32,7 +32,7 @@ A modern, production-ready Full Stack Developer portfolio built with **Django**,
 
 ---
 
-## 📁 Project Structure
+##  Project Structure
 
 ```
 Portfolio/
@@ -54,7 +54,7 @@ Portfolio/
 
 ---
 
-## ⚙️ Setup & Installation
+##  Setup & Installation
 
 ### 1. Clone the repository
 ```bash
@@ -113,7 +113,7 @@ Admin panel: **http://127.0.0.1:8000/admin**
 
 ---
 
-## 🎨 Customization
+##  Customization
 
 ### Update Your Info
 Edit these template partials in `templates/partials/`:
@@ -142,7 +142,7 @@ View submissions in the Django admin at `/admin/website/contactmessage/`.
 
 ---
 
-## 🚀 Production Deployment
+##  Production Deployment
 
 For production, set in `settings.py`:
 ```python
@@ -158,7 +158,7 @@ python manage.py collectstatic
 
 ---
 
-## 📄 License
+##  License
 
 This project is licensed under the MIT License.
 
