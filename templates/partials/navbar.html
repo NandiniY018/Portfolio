@@ -3,7 +3,7 @@
      NAVBAR PARTIAL
      ============================================================ -->
 <nav id="navbar" class="glass-nav" role="navigation" aria-label="Main navigation">
-  <div class="section-container">
+  <div class="max-w-[1200px] mx-auto px-4 sm:px-5 md:px-6 lg:px-8">
     <div class="flex items-center justify-between h-16 md:h-20">
 
       <!-- Logo / Brand -->
@@ -29,7 +29,10 @@
       </div>
 
       <!-- Theme Toggle, Resume Button + Hamburger -->
-      <div class="flex items-center gap-3">
+      <div class="flex items-center gap-4">
+
+        <!-- React Widget Container -->
+        <div id="react-visitor-widget" class="hidden md:flex"></div>
 
 
         {% if active_resume %}
@@ -53,7 +56,7 @@
 
   <!-- Mobile Menu -->
   <div id="mobile-menu" role="menu" aria-label="Mobile navigation">
-    <div class="section-container py-3 flex flex-col gap-1">
+    <div class="max-w-[1200px] mx-auto px-4 sm:px-5 md:px-6 lg:px-8 py-3 flex flex-col gap-1">
       <a href="#about" class="nav-link block py-3 px-2 border-b border-white/5" data-section="about"
         role="menuitem">About</a>
       <a href="#skills" class="nav-link block py-3 px-2 border-b border-white/5" data-section="skills"

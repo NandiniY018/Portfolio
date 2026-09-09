@@ -49,6 +49,7 @@ ALLOWED_HOSTS = [
     "nandiniyamagar.pythonanywhere.com",
     "127.0.0.1",
     "localhost",
+    "192.168.1.105",
 ]
 
 CSRF_TRUSTED_ORIGINS = [
@@ -204,7 +205,7 @@ USE_TZ = True
 # Static files
 # ---------------------------------------------------------------------------
 
-STATIC_URL = "/static/"
+STATIC_URL = "static/"
 
 STATICFILES_DIRS = [
     BASE_DIR / "static",
@@ -260,3 +261,45 @@ DEFAULT_FROM_EMAIL = env(
     "DEFAULT_FROM_EMAIL",
     default=EMAIL_HOST_USER
 )
+
+# ---------------------------------------------------------------------------
+# Celery & Redis Configuration
+# ---------------------------------------------------------------------------
+CELERY_BROKER_URL = env("CELERY_BROKER_URL", default="redis://127.0.0.1:6379/0")
+CELERY_RESULT_BACKEND = env("CELERY_RESULT_BACKEND", default="redis://127.0.0.1:6379/0")
+CELERY_ACCEPT_CONTENT = ['json']
+CELERY_TASK_SERIALIZER = 'json'
+CELERY_RESULT_SERIALIZER = 'json'
+CELERY_TIMEZONE = TIME_ZONE
+
+# Django Caching with Redis
+CACHES = {
+    "default": {
+        "BACKEND": "django.core.cache.backends.redis.RedisCache",
+        "LOCATION": env("REDIS_URL", default="redis://127.0.0.1:6379/1"),
+    }
+}
+
+# ---------------------------------------------------------------------------
+# Django REST Framework Configuration
+# ---------------------------------------------------------------------------
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.AllowAny',
+    ],
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
+    'PAGE_SIZE': 10,
+}
+
+# ---------------------------------------------------------------------------
+# Django Channels Configuration
+# ---------------------------------------------------------------------------
+ASGI_APPLICATION = "portfolio.asgi.application"
+CHANNEL_LAYERS = {
+    "default": {
+        "BACKEND": "channels_redis.core.RedisChannelLayer",
+        "CONFIG": {
+            "hosts": [env("REDIS_URL", default="redis://127.0.0.1:6379/2")],
+        },
+    },
+}

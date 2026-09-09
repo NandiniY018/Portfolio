@@ -45,6 +45,9 @@ module.exports = {
       },
       animation: {
         'float':       'float 6s ease-in-out infinite',
+        'float-5s':    'float 5s ease-in-out infinite',
+        'float-reverse-6s-delay': 'floatReverse 6s ease-in-out 1s infinite',
+        'float-7s-delay': 'float 7s ease-in-out 2s infinite',
         'pulse-glow':  'pulseGlow 3s ease-in-out infinite',
         'spin-slow':   'spin 8s linear infinite',
         'bounce-slow': 'bounce-slow 3s ease-in-out infinite',

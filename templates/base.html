@@ -56,7 +56,12 @@
   <!-- Devicon for Original Tech Colors -->
   <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
 
-  <!-- Tailwind CSS (Play CDN with custom config) -->
+  <!-- React & Babel for Hybrid Approach -->
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+  <!-- Tailwind CSS (CDN) -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -75,6 +80,9 @@
           },
           animation: {
             'float': 'float 6s ease-in-out infinite',
+            'float-5s': 'float 5s ease-in-out infinite',
+            'float-reverse-6s-delay': 'floatReverse 6s ease-in-out 1s infinite',
+            'float-7s-delay': 'float 7s ease-in-out 2s infinite',
             'float-d2': 'floatReverse 7s ease-in-out 2s infinite',
             'pulse-glow': 'pulseGlow 3s ease-in-out infinite',
             'spin-slow': 'spin 8s linear infinite',
@@ -90,7 +98,6 @@
 
   <!-- Global CSS -->
   <link rel="stylesheet" href="{% static 'css/global.css' %}" />
-  <link rel="stylesheet" href="{% static 'css/mobile_global.css' %}" />
 
   {% block extra_head %}{% endblock %}
 </head>
@@ -129,6 +136,55 @@
   <script src="{% static 'js/main.js' %}"></script>
   {% block extra_scripts %}{% endblock %}
 
+  <!-- React WebSockets Widget -->
+  <script type="text/babel">
+    const { useState, useEffect } = React;
+
+    function LiveVisitorWidget() {
+      const [visitors, setVisitors] = useState(1);
+
+      useEffect(() => {
+        const protocol = window.location.protocol === 'https:' ? 'wss://' : 'ws://';
+        const wsUrl = protocol + window.location.host + '/ws/visitors/';
+        const chatSocket = new WebSocket(wsUrl);
+
+        chatSocket.onmessage = function(e) {
+          const data = JSON.parse(e.data);
+          // In a real app, the server would send the absolute count.
+          // Since our consumer is simple, we just increment/decrement
+          if (data.action === 'join') {
+            setVisitors(prev => prev + 1);
+          } else if (data.action === 'leave') {
+            setVisitors(prev => Math.max(1, prev - 1));
+          }
+        };
+
+        chatSocket.onclose = function(e) {
+          console.error('Visitor socket closed unexpectedly');
+        };
+
+        return () => chatSocket.close();
+      }, []);
+
+      return (
+        <div className="flex items-center gap-2 bg-white/5 border border-white/10 rounded-full px-3 py-1.5 shadow-sm">
+          <span className="relative flex h-2.5 w-2.5">
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+            <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
+          </span>
+          <span className="text-xs font-medium text-emerald-400 font-inter tracking-wide">
+            {visitors} Live Visitor{visitors !== 1 ? 's' : ''}
+          </span>
+        </div>
+      );
+    }
+
+    const container = document.getElementById('react-visitor-widget');
+    if (container) {
+      const root = ReactDOM.createRoot(container);
+      root.render(<LiveVisitorWidget />);
+    }
+  </script>
 </body>
 
 </html>

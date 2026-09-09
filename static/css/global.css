@@ -266,17 +266,6 @@ h6 {
 /* ============================================================
    SECTION LAYOUT
    ============================================================ */
-.section-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 var(--container-px);
-}
-
-.section-py {
-  padding-top: var(--section-py);
-  padding-bottom: var(--section-py);
-}
-
 .section-header {
   text-align: center;
   margin-bottom: 4rem;
@@ -1436,17 +1425,8 @@ h6 {
 /* ============================================================
    RESPONSIVE BREAKPOINTS
    ============================================================ */
-@media (max-width: 1024px) {
-  :root {
-    --section-py: 5rem;
-  }
-}
 
 @media (max-width: 768px) {
-  :root {
-    --section-py: 4rem;
-    --container-px: 1.25rem;
-  }
 
   .section-title {
     font-size: 1.85rem;
@@ -1473,10 +1453,6 @@ h6 {
 }
 
 @media (max-width: 480px) {
-  :root {
-    --section-py: 3.5rem;
-    --container-px: 1rem;
-  }
 
   .section-title {
     font-size: 1.6rem;
