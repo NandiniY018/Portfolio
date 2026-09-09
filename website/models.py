@@ -150,6 +150,7 @@ class SiteSettings(models.Model):
     seo_description = models.TextField(default="Python Full Stack Developer specializing in Django, React, MySQL, and REST APIs.")
     seo_keywords = models.TextField(default="Python developer, Full Stack Developer, Django, React, MySQL, portfolio, Nandini")
     seo_image = models.ImageField(upload_to='seo/', blank=True, null=True)
+    profile_image = models.ImageField(upload_to='profile/', blank=True, null=True, help_text="Your main profile image (for the hero section)")
     google_analytics_id = models.CharField(max_length=50, blank=True, help_text="e.g. G-XXXXXXXXXX")
     
     class Meta:
