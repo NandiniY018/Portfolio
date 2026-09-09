@@ -1,9 +1,8 @@
 """
 portfolio/settings.py
-Full Django settings for the Portfolio project.
+Django settings for the Portfolio project.
 """
 
-import os
 from pathlib import Path
 
 import environ
@@ -45,23 +44,13 @@ SECRET_KEY = env(
 DEBUG = env.bool("DEBUG", default=False)
 
 
-# Allowed hosts
+# PythonAnywhere domain
 ALLOWED_HOSTS = [
-    "localhost",
-    "127.0.0.1",
-    "nandiniyamagar.onrender.com",
+    "nandiniyamagar.pythonanywhere.com",
 ]
 
-# Render automatically provides this environment variable
-RENDER_EXTERNAL_HOSTNAME = os.environ.get("RENDER_EXTERNAL_HOSTNAME")
-
-if RENDER_EXTERNAL_HOSTNAME:
-    ALLOWED_HOSTS.append(RENDER_EXTERNAL_HOSTNAME)
-
-
-# CSRF trusted origins
 CSRF_TRUSTED_ORIGINS = [
-    "https://nandiniyamagar.onrender.com",
+    "https://nandiniyamagar.pythonanywhere.com",
 ]
 
 
@@ -77,7 +66,7 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
 
-    # Portfolio app
+    # Portfolio application
     "website",
 ]
 
@@ -88,6 +77,8 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
+
+    # WhiteNoise serves static files
     "whitenoise.middleware.WhiteNoiseMiddleware",
 
     "django.contrib.sessions.middleware.SessionMiddleware",
@@ -113,8 +104,13 @@ ROOT_URLCONF = "portfolio.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [BASE_DIR / "templates"],
+
+        "DIRS": [
+            BASE_DIR / "templates",
+        ],
+
         "APP_DIRS": True,
+
         "OPTIONS": {
             "context_processors": [
                 "django.template.context_processors.debug",
@@ -141,8 +137,8 @@ WSGI_APPLICATION = "portfolio.wsgi.application"
 # Database
 # ---------------------------------------------------------------------------
 
-# Render PostgreSQL is used when DATABASE_URL exists.
-# SQLite is used locally when DATABASE_URL is not available.
+# Use DATABASE_URL if it is provided.
+# Otherwise, use SQLite.
 
 if env("DATABASE_URL", default=None):
     DATABASES = {
@@ -214,6 +210,7 @@ STATICFILES_DIRS = [
 
 STATIC_ROOT = BASE_DIR / "staticfiles"
 
+# WhiteNoise storage
 STATICFILES_STORAGE = (
     "whitenoise.storage.CompressedManifestStaticFilesStorage"
 )
