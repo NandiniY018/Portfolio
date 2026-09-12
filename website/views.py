@@ -10,7 +10,6 @@ from django.views.decorators.csrf import csrf_exempt
 from django.core.mail import send_mail
 from django.conf import settings
 from .models import ContactMessage, Project, Skill, Experience, Education, Article, Certificate
-from .tasks import send_contact_email_task
 
 
 def home_view(request):
@@ -66,24 +65,18 @@ def contact_view(request):
             message=message,
         )
         
-        try:
-            # Try to send Email Alert via Celery Task
-            send_contact_email_task.delay(name, email, subject, message)
-            print("[ContactForm] Email queued in Celery")
-        except Exception as celery_err:
-            print(f"[ContactForm] Celery failed, falling back to sync. Error: {celery_err}")
-            from django.core.mail import send_mail
-            from django.conf import settings
-            mail_subject = f"New Portfolio Contact: {subject}"
-            mail_message = f"Name: {name}\nEmail: {email}\n\nMessage:\n{message}"
-            send_mail(
-                mail_subject,
-                mail_message,
-                settings.DEFAULT_FROM_EMAIL,
-                [settings.DEFAULT_FROM_EMAIL],
-                fail_silently=False,
-            )
-            print("[ContactForm] Email sent synchronously as fallback")
+        from django.core.mail import send_mail
+        from django.conf import settings
+        mail_subject = f"New Portfolio Contact: {subject}"
+        mail_message = f"Name: {name}\nEmail: {email}\n\nMessage:\n{message}"
+        send_mail(
+            mail_subject,
+            mail_message,
+            settings.DEFAULT_FROM_EMAIL,
+            [settings.DEFAULT_FROM_EMAIL],
+            fail_silently=False,
+        )
+        print("[ContactForm] Email sent successfully")
 
     except Exception as db_error:
         print(f"[ContactForm] DB error: {db_error}")

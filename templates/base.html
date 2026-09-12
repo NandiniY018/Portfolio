@@ -121,7 +121,8 @@
   <!-- Floating Resume Button -->
   {% if active_resume %}
   <a href="{{ active_resume.file.url }}" target="_blank" rel="noopener noreferrer" id="floating-resume"
-    class="btn-primary ripple flex items-center gap-2 shadow-xl fixed bottom-8 right-4 md:right-20 z-[999] rounded-full py-3 px-5" aria-label="Download Resume" title="Download Resume">
+    class="btn-primary ripple flex items-center gap-2 shadow-xl fixed bottom-8 right-4 md:right-20 z-[999] rounded-full py-3 px-5"
+    aria-label="Download Resume" title="Download Resume">
     <i class="fas fa-download"></i>
     <span class="hidden md:inline">Resume</span>
   </a>
@@ -148,7 +149,7 @@
         const wsUrl = protocol + window.location.host + '/ws/visitors/';
         const chatSocket = new WebSocket(wsUrl);
 
-        chatSocket.onmessage = function(e) {
+        chatSocket.onmessage = function (e) {
           const data = JSON.parse(e.data);
           // In a real app, the server would send the absolute count.
           // Since our consumer is simple, we just increment/decrement
@@ -159,7 +160,7 @@
           }
         };
 
-        chatSocket.onclose = function(e) {
+        chatSocket.onclose = function (e) {
           console.error('Visitor socket closed unexpectedly');
         };
 

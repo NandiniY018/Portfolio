@@ -1,42 +1,39 @@
-#  Nandini Y. — Premium Portfolio Website
+# Nandini Y. — Premium Portfolio Website
 
-A modern, production-ready Full Stack Developer portfolio built with **Django**, **Tailwind CSS**, **Vanilla JavaScript**, and **MySQL**.
-
----
-
-##  Features
-
--  **Premium dark UI** with glassmorphism, gradients, and smooth animations
--  **Fully responsive** (320px → 1920px)
--  **Typing animation** in the Hero section
--  **Scroll reveal animations** using IntersectionObserver
--  **Animated skill bars** and counter statistics
--  **AJAX contact form** with MySQL storage and real-time validation
--  **Active section highlighting** in the sticky navbar
--  **Back-to-top** floating button
--  **SEO optimized** with proper meta tags and semantic HTML
+A modern, production-ready Full Stack Developer portfolio built with **Django**, **Tailwind CSS**, **Vanilla JavaScript**, and **MySQL/PostgreSQL**.
 
 ---
 
-##  Tech Stack
+## Features
 
-| Layer      | Technology                         |
-|------------|------------------------------------|
-| Backend    | Python 3.11, Django 4.2            |
-| Frontend   | HTML5, Tailwind CSS 3.4, Vanilla JS|
-| Database   | MySQL 8.x                          |
-| Connector  | pymysql                            |
-| Static     | WhiteNoise                         |
-| Icons      | Font Awesome 6.5                   |
-| Fonts      | Google Fonts (Outfit + Inter)      |
+- **Premium dark UI** with glassmorphism, gradients, and smooth animations
+- **Fully responsive** (320px → 1920px)
+- **Typing animation** in the Hero section
+- **Scroll reveal animations** using IntersectionObserver
+- **Dynamic Site Settings & Resume Management** configurable directly from the Django Admin
+- **AJAX contact form** with database storage and real-time validation
+- **SEO optimized** with proper meta tags and semantic HTML
 
 ---
 
-##  Project Structure
+## Tech Stack
 
-```
+| Layer      | Technology                                    |
+|------------|-----------------------------------------------|
+| Backend    | Python 3.11, Django 6.0                       |
+| Frontend   | HTML5, Tailwind CSS 3.4, Vanilla JS           |
+| Database   | PostgreSQL/MySQL (via `DATABASE_URL`), SQLite3|
+| Static     | WhiteNoise                                    |
+| Icons      | Font Awesome 6.5                              |
+| Fonts      | Google Fonts (Outfit + Inter)                 |
+
+---
+
+## Project Structure
+
+```text
 Portfolio/
-├── portfolio/          # Django core (settings, urls, wsgi)
+├── portfolio/          # Django core (settings, urls, wsgi/asgi)
 ├── website/            # Portfolio app (models, views, urls)
 ├── templates/          # All HTML templates
 │   ├── base.html       # Base layout (Tailwind, Fonts, CSS, JS)
@@ -47,6 +44,7 @@ Portfolio/
 │   ├── js/main.js      # All interactive behavior
 │   └── images/         # Profile photo & project screenshots
 ├── media/              # Uploaded files (resume PDF etc.)
+├── docker-compose.yml  # Docker environment setup
 ├── manage.py
 ├── requirements.txt
 └── README.md
@@ -54,7 +52,7 @@ Portfolio/
 
 ---
 
-##  Setup & Installation
+## Setup & Installation
 
 ### 1. Clone the repository
 ```bash
@@ -64,101 +62,69 @@ cd portfolio
 
 ### 2. Install Python dependencies
 ```bash
+# Recommended to use a virtual environment
+python -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
-### 3. Set up MySQL Database
-Open MySQL Workbench or your terminal and run:
-```sql
-CREATE DATABASE portfolio_db CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+### 3. Environment Variables
+Create a `.env` file in the root directory alongside `manage.py` and configure the following variables (or let them fallback to defaults):
+```env
+DEBUG=True
+SECRET_KEY=your-secure-secret-key
+DATABASE_URL=mysql://root:your_pass@localhost:3306/portfolio_db # Optional (defaults to sqlite3)
+EMAIL_HOST_USER=your_email@gmail.com
+EMAIL_HOST_PASSWORD=your_app_password
 ```
 
-### 4. Configure Database Credentials
-Edit `portfolio/settings.py` and update:
-```python
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'portfolio_db',
-        'USER': 'root',           # Your MySQL username
-        'PASSWORD': 'your_pass',  # Your MySQL password
-        'HOST': 'localhost',
-        'PORT': '3306',
-    }
-}
-```
-
-### 5. Run Migrations
+### 4. Run Migrations & Setup Database
 ```bash
 python manage.py makemigrations
 python manage.py migrate
-```
-
-### 6. Create Superuser (for Admin)
-```bash
 python manage.py createsuperuser
 ```
 
-### 7. Add Resume PDF
-Place your resume PDF at `static/resume.pdf`
-
-### 8. Run the Development Server
+### 5. Run the Application
 ```bash
 python manage.py runserver
 ```
 
 Visit: **http://127.0.0.1:8000**
 
-Admin panel: **http://127.0.0.1:8000/admin**
+---
+
+## Admin Panel & Content Management
+
+Visit the Admin panel at **http://127.0.0.1:8000/admin** to:
+1. Update your global settings and SEO tags under **Site Settings**.
+2. Manage and activate your CV/Resume under **Resumes**.
+3. Add or edit your Projects, Skills, Experiences, Education, and Certificates.
+4. View all incoming messages submitted through the Contact Form.
 
 ---
 
-##  Customization
+## Production Deployment
 
-### Update Your Info
-Edit these template partials in `templates/partials/`:
-- **`hero.html`** — Name, title, social links
-- **`about.html`** — Bio, personal info, stats
-- **`experience.html`** — Job titles, companies, responsibilities
-- **`projects.html`** — Project details, links
-- **`education.html`** — Institution names, grades
-- **`certificates.html`** — Certificate links
-- **`contact.html`** — Email, phone, social links
-- **`footer.html`** — Copyright, links
-
-### Update Project Images
-Replace these files in `static/images/`:
-- `profile.png` — Your profile photo (square, min 300×300px)
-- `project-ecommerce.png` — E-Commerce project screenshot
-- `project-crop.png` — Crop Yield project screenshot
-- `project-grocery.png` — Grocery project screenshot
-
----
-
-##  Contact Form
-
-The contact form uses Django's AJAX endpoint to save messages to MySQL.
-View submissions in the Django admin at `/admin/website/contactmessage/`.
-
----
-
-##  Production Deployment
-
-For production, set in `settings.py`:
-```python
-DEBUG = False
-ALLOWED_HOSTS = ['yourdomain.com']
-SECRET_KEY = 'your-secure-secret-key'
+For production, ensure your `.env` contains:
+```env
+DEBUG=False
+ALLOWED_HOSTS=yourdomain.com
+DATABASE_URL=postgres://user:pass@db-host:5432/dbname
 ```
-
 Then collect static files:
 ```bash
 python manage.py collectstatic
 ```
 
+You can use Docker Compose to spin up the entire stack in a production-like environment:
+```bash
+docker-compose up -d --build
+```
+
 ---
 
-##  License
+## License
 
 This project is licensed under the MIT License.
 

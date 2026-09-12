@@ -16,6 +16,6 @@ COPY requirements.txt /app/
 # Convert UTF-16 requirements.txt if needed (sometimes powershell saves it that way)
 RUN iconv -f UTF-16LE -t UTF-8 requirements.txt > requirements_utf8.txt || cp requirements.txt requirements_utf8.txt
 RUN pip install --no-cache-dir -r requirements_utf8.txt
-RUN pip install redis celery
+
 
 COPY . /app/
