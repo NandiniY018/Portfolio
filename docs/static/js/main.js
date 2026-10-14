@@ -420,7 +420,10 @@ function showToast(type, title, message, duration = 5000) {
       const alpha = Math.min(this.life / 30, 1) * (1 - this.life / this.maxLife);
       ctx.beginPath();
       ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-      ctx.fillStyle = `rgba(0, 0, 0, ${alpha * 0.12})`;
+      const isDark = document.documentElement.classList.contains('dark');
+      ctx.fillStyle = isDark
+        ? `rgba(255, 255, 255, ${alpha * 0.2})`
+        : `rgba(0, 0, 0, ${alpha * 0.12})`;
       ctx.fill();
     }
   }
@@ -513,44 +516,32 @@ function showToast(type, title, message, duration = 5000) {
    13. THEME TOGGLE (Dark/Light Mode)
    ============================================================ */
 (function initThemeToggle() {
-  const themeToggleBtn = document.getElementById('theme-toggle');
-  const themeIcon = document.getElementById('theme-toggle-icon');
+  const toggleBtns = document.querySelectorAll('#theme-toggle, #theme-toggle-mobile');
 
-  // Check for saved theme preference in localStorage or system preference
+  function updateThemeUI(isDark) {
+    if (isDark) {
+      document.documentElement.classList.add('dark');
+      document.documentElement.setAttribute('data-theme', 'dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+      document.documentElement.setAttribute('data-theme', 'light');
+    }
+  }
+
+  // Initial check: default to 'light' (white background) unless 'dark' was chosen
   const savedTheme = localStorage.getItem('theme');
-  const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const isDark = savedTheme === 'dark';
+  updateThemeUI(isDark);
 
-  if (savedTheme === 'dark' || (!savedTheme && systemPrefersDark)) {
-    document.documentElement.classList.add('dark');
-    if (themeIcon) {
-      themeIcon.classList.remove('fa-moon');
-      themeIcon.classList.add('fa-sun');
-    }
-  } else {
-    document.documentElement.classList.remove('dark');
-    if (themeIcon) {
-      themeIcon.classList.remove('fa-sun');
-      themeIcon.classList.add('fa-moon');
-    }
-  }
-
-  if (themeToggleBtn) {
-    themeToggleBtn.addEventListener('click', () => {
-      document.documentElement.classList.toggle('dark');
-
-      const isDark = document.documentElement.classList.contains('dark');
-      localStorage.setItem('theme', isDark ? 'dark' : 'light');
-
-      if (themeIcon) {
-        if (isDark) {
-          themeIcon.classList.remove('fa-moon');
-          themeIcon.classList.add('fa-sun');
-        } else {
-          themeIcon.classList.remove('fa-sun');
-          themeIcon.classList.add('fa-moon');
-        }
-      }
+  toggleBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const currentlyDark = document.documentElement.classList.contains('dark');
+      const newDark = !currentlyDark;
+      updateThemeUI(newDark);
+      try {
+        localStorage.setItem('theme', newDark ? 'dark' : 'light');
+      } catch (e) {}
     });
-  }
+  });
 })();
 

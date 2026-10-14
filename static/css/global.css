@@ -58,6 +58,39 @@
   --container-px: 1.5rem;
 }
 
+/* --- Dark Theme Tokens --- */
+html.dark,
+[data-theme="dark"] {
+  /* Core dark & charcoal palette */
+  --color-bg-primary: #09090b;
+  --color-bg-secondary: #121215;
+  --color-bg-card: #141418;
+  --color-bg-card-hover: #1c1c21;
+
+  /* Accents */
+  --color-accent-primary: #ffffff;
+  --color-accent-secondary: #e4e4e7;
+  --color-accent-tertiary: #a1a1aa;
+  --color-accent-pink: #71717a;
+
+  /* Gradients */
+  --gradient-primary: linear-gradient(135deg, #ffffff 0%, #d4d4d8 100%);
+  --gradient-hero: linear-gradient(180deg, #09090b 0%, #0e0e12 50%, #121215 100%);
+  --gradient-card: linear-gradient(135deg, #18181c 0%, #121215 100%);
+  --gradient-text: linear-gradient(135deg, #ffffff 0%, #e4e4e7 50%, #a1a1aa 100%);
+  --gradient-glow: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.08) 0%, transparent 70%);
+
+  /* Glass morphism */
+  --glass-bg: rgba(9, 9, 11, 0.88);
+  --glass-border: rgba(255, 255, 255, 0.12);
+  --glass-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+
+  /* Shadows */
+  --shadow-glow: 0 0 30px rgba(255, 255, 255, 0.12);
+  --shadow-card: 0 10px 40px rgba(0, 0, 0, 0.6);
+  --shadow-soft: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
 /* --- Base Reset & Typography --- */
 *,
 *::before,
@@ -82,6 +115,7 @@ body {
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  transition: background-color 0.35s ease, color 0.35s ease;
 }
 
 h1,
@@ -1547,4 +1581,428 @@ h6 {
   height: 1px;
   background: linear-gradient(90deg, transparent, rgba(0, 0, 0, 0.08), transparent);
   margin: 0;
+}
+
+/* ============================================================
+   THEME TOGGLE BUTTON
+   ============================================================ */
+.theme-toggle-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: #f4f4f5;
+  border: 1px solid #e4e4e7;
+  color: #18181b;
+  cursor: pointer;
+  position: relative;
+  transition: var(--transition-smooth);
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.theme-toggle-btn:hover {
+  background: #e4e4e7;
+  border-color: #d4d4d8;
+  color: #000000;
+  transform: scale(1.08);
+}
+
+.theme-toggle-btn .theme-icon-moon,
+.theme-toggle-btn .theme-icon-sun {
+  position: absolute;
+  font-size: 0.95rem;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.4s ease;
+}
+
+/* Light mode default */
+.theme-toggle-btn .theme-icon-moon {
+  opacity: 1;
+  transform: rotate(0deg) scale(1);
+}
+
+.theme-toggle-btn .theme-icon-sun {
+  opacity: 0;
+  transform: rotate(90deg) scale(0.3);
+}
+
+/* Dark mode active */
+html.dark .theme-toggle-btn {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.16);
+  color: #ffffff;
+}
+
+html.dark .theme-toggle-btn:hover {
+  background: rgba(255, 255, 255, 0.16);
+  border-color: rgba(255, 255, 255, 0.3);
+  color: #ffffff;
+}
+
+html.dark .theme-toggle-btn .theme-icon-moon {
+  opacity: 0;
+  transform: rotate(-90deg) scale(0.3);
+}
+
+html.dark .theme-toggle-btn .theme-icon-sun {
+  opacity: 1;
+  transform: rotate(0deg) scale(1);
+}
+
+/* ============================================================
+   DARK MODE COMPONENT OVERRIDES
+   ============================================================ */
+html.dark body {
+  background-color: var(--color-bg-primary);
+  color: #d4d4d8;
+}
+
+html.dark h1,
+html.dark h2,
+html.dark h3,
+html.dark h4,
+html.dark h5,
+html.dark h6 {
+  color: #ffffff;
+}
+
+/* Sections */
+html.dark .bg-section-alt {
+  background: #0f0f13;
+}
+
+html.dark .bg-section-dark {
+  background: #09090b;
+}
+
+/* Headings & Labels */
+html.dark .section-label {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.12);
+  color: #e4e4e7;
+}
+
+html.dark .section-title {
+  color: #ffffff;
+}
+
+html.dark .section-subtitle {
+  color: #a1a1aa;
+}
+
+html.dark .accent-line {
+  background: linear-gradient(90deg, #ffffff, #52525b);
+}
+
+/* Glass & Cards */
+html.dark .glass-card {
+  background: #141418;
+  border-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.5);
+}
+
+html.dark .glass-card:hover {
+  background: #18181d;
+  border-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.7);
+}
+
+html.dark .glass-nav {
+  background: rgba(9, 9, 11, 0.88);
+  border-bottom-color: rgba(255, 255, 255, 0.1);
+}
+
+html.dark .glass-nav.scrolled {
+  background: rgba(9, 9, 11, 0.98);
+  border-bottom-color: rgba(255, 255, 255, 0.16);
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.6);
+}
+
+html.dark .nav-link {
+  color: #a1a1aa;
+}
+
+html.dark .nav-link:hover,
+html.dark .nav-link.active {
+  color: #ffffff;
+}
+
+html.dark .nav-link::after {
+  background: #ffffff;
+}
+
+html.dark #mobile-menu {
+  background: rgba(9, 9, 11, 0.98);
+  border-top-color: rgba(255, 255, 255, 0.1);
+}
+
+html.dark .hamburger span {
+  background: #ffffff;
+}
+
+/* Buttons */
+html.dark .btn-primary {
+  background: #ffffff;
+  color: #09090b;
+  border-color: #ffffff;
+}
+
+html.dark .btn-primary::before {
+  background: linear-gradient(135deg, #e4e4e7, #ffffff);
+}
+
+html.dark .btn-primary:hover {
+  background: #e4e4e7;
+  color: #000000;
+  box-shadow: 0 10px 25px rgba(255, 255, 255, 0.2);
+}
+
+html.dark .btn-outline {
+  background: rgba(255, 255, 255, 0.05);
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+html.dark .btn-outline:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: #ffffff;
+  color: #ffffff;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* Projects */
+html.dark .project-card {
+  background: #141418;
+  border-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+html.dark .project-card:hover {
+  border-color: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.7);
+}
+
+html.dark .project-img-wrapper {
+  background: #0d0d11;
+}
+
+html.dark .tech-tag {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.12);
+  color: #e4e4e7;
+}
+
+html.dark .tech-tag:hover {
+  background: rgba(255, 255, 255, 0.14);
+  border-color: rgba(255, 255, 255, 0.25);
+  color: #ffffff;
+}
+
+/* Skills */
+html.dark .skill-card {
+  background: #141418;
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+html.dark .skill-card:hover {
+  border-color: rgba(255, 255, 255, 0.22);
+}
+
+html.dark .skill-category-title {
+  color: #ffffff;
+  border-bottom-color: rgba(255, 255, 255, 0.12);
+}
+
+html.dark .skill-bar-bg {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+html.dark .skill-bar-fill {
+  background: #ffffff;
+}
+
+/* Certifications */
+html.dark .cert-card {
+  background: #141418;
+  border-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+html.dark .cert-card:hover {
+  border-color: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6);
+}
+
+/* Timeline */
+html.dark .timeline-container::before {
+  background: linear-gradient(180deg, #ffffff, #71717a, rgba(255, 255, 255, 0.1), transparent);
+}
+
+html.dark .timeline-dot {
+  background: #ffffff;
+  border-color: #09090b;
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.35);
+}
+
+html.dark .duration-badge {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.12);
+  color: #e4e4e7;
+}
+
+html.dark .role-badge {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+}
+
+html.dark .grade-text {
+  color: #ffffff;
+}
+
+/* Contact */
+html.dark .contact-info-item {
+  background: #141418;
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+html.dark .contact-info-item:hover {
+  background: #18181d;
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+html.dark .contact-icon-wrapper {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+}
+
+html.dark .form-input {
+  background: #0d0d11;
+  border-color: rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+}
+
+html.dark .form-input:focus {
+  background: #121216;
+  border-color: #ffffff;
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.1);
+}
+
+html.dark .form-input::placeholder {
+  color: #71717a;
+}
+
+/* Social Icons & Back-to-top */
+html.dark .social-icon {
+  background: #141418;
+  border-color: rgba(255, 255, 255, 0.12);
+  color: #a1a1aa;
+}
+
+html.dark .social-icon:hover {
+  background: #ffffff;
+  border-color: #ffffff;
+  color: #09090b;
+}
+
+html.dark #back-to-top {
+  background: #ffffff;
+  color: #09090b;
+}
+
+html.dark #back-to-top:hover {
+  background: #e4e4e7;
+}
+
+/* Footer */
+html.dark #footer {
+  background: #0d0d11;
+  border-top-color: rgba(255, 255, 255, 0.1);
+}
+
+/* General utility overrides in dark mode */
+html.dark .text-zinc-900 {
+  color: #ffffff !important;
+}
+
+html.dark .text-zinc-800 {
+  color: #f4f4f5 !important;
+}
+
+html.dark .text-zinc-700 {
+  color: #e4e4e7 !important;
+}
+
+html.dark .text-zinc-600 {
+  color: #a1a1aa !important;
+}
+
+html.dark .bg-white {
+  background-color: #141418 !important;
+}
+
+html.dark .bg-zinc-50 {
+  background-color: #101014 !important;
+}
+
+html.dark .bg-zinc-100 {
+  background-color: #191920 !important;
+}
+
+html.dark .border-zinc-200 {
+  border-color: rgba(255, 255, 255, 0.12) !important;
+}
+
+html.dark .border-zinc-300 {
+  border-color: rgba(255, 255, 255, 0.2) !important;
+}
+
+html.dark .hero-image-ring {
+  background: linear-gradient(135deg, #ffffff, #71717a, #27272a);
+}
+
+html.dark .hero-orb-1,
+html.dark .hero-orb-2,
+html.dark .hero-orb-3 {
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.03) 0%, transparent 70%);
+}
+
+html.dark .floating-shape-1,
+html.dark .floating-shape-3,
+html.dark .floating-shape-5 {
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+html.dark .floating-shape-2,
+html.dark .floating-shape-4 {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+html.dark .typing-cursor {
+  background: #ffffff;
+}
+
+html.dark .scroll-mouse {
+  border-color: rgba(255, 255, 255, 0.35);
+}
+
+html.dark .scroll-wheel {
+  background: rgba(255, 255, 255, 0.7);
+}
+
+html.dark ::-webkit-scrollbar-track {
+  background: #09090b;
+}
+
+html.dark ::-webkit-scrollbar-thumb {
+  background: #3f3f46;
+}
+
+html.dark ::-webkit-scrollbar-thumb:hover {
+  background: #71717a;
 }

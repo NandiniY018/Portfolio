@@ -29,11 +29,16 @@
       </div>
 
       <!-- Theme Toggle, Resume Button + Hamburger -->
-      <div class="flex items-center gap-4">
+      <div class="flex items-center gap-3 sm:gap-4">
+
+        <!-- Theme Toggle Button (Desktop) -->
+        <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle dark or light theme" title="Toggle dark / light theme">
+          <i class="fas fa-moon theme-icon-moon" id="theme-toggle-icon"></i>
+          <i class="fas fa-sun theme-icon-sun"></i>
+        </button>
 
         <!-- React Widget Container -->
         <div id="react-visitor-widget" class="hidden md:flex"></div>
-
 
         {% if active_resume %}
         <a href="{{ active_resume.file.url }}" target="_blank" rel="noopener noreferrer"
@@ -71,6 +76,16 @@
         role="menuitem">Certificates</a>
       <a href="#contact" class="nav-link block py-3 px-2 border-b border-zinc-200" data-section="contact"
         role="menuitem">Contact</a>
+
+      <!-- Theme Switcher in Mobile Menu -->
+      <div class="flex items-center justify-between py-3 px-2 border-b border-zinc-200">
+        <span class="text-sm font-medium text-zinc-700">Theme</span>
+        <button id="theme-toggle-mobile" class="theme-toggle-btn" aria-label="Toggle dark or light theme" title="Toggle dark / light theme">
+          <i class="fas fa-moon theme-icon-moon"></i>
+          <i class="fas fa-sun theme-icon-sun"></i>
+        </button>
+      </div>
+
       {% if active_resume %}
       <div class="pt-3 pb-1">
         <a href="{{ active_resume.file.url }}" target="_blank" rel="noopener noreferrer"

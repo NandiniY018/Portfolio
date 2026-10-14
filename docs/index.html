@@ -56,6 +56,7 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
+      darkMode: 'class',
       theme: {
         extend: {
           colors: {
@@ -88,13 +89,29 @@
     }
   </script>
 
+  <!-- Theme Initialization (avoids FOUC) -->
+  <script>
+    (function () {
+      try {
+        var saved = localStorage.getItem('theme');
+        if (saved === 'dark') {
+          document.documentElement.classList.add('dark');
+          document.documentElement.setAttribute('data-theme', 'dark');
+        } else {
+          document.documentElement.classList.remove('dark');
+          document.documentElement.setAttribute('data-theme', 'light');
+        }
+      } catch (e) {}
+    })();
+  </script>
+
   <!-- Global CSS -->
-  <link rel="stylesheet" href="./static/css/global.css?v=white2" />
+  <link rel="stylesheet" href="./static/css/global.css?v=theme1" />
 
   
 </head>
 
-<body class="font-inter text-zinc-800 bg-[#ffffff] antialiased overflow-x-hidden">
+<body class="font-inter text-zinc-800 dark:text-zinc-200 antialiased overflow-x-hidden">
 
   <!-- Toast Notification Container -->
   <div id="toast-container" aria-live="polite"></div>
@@ -131,11 +148,16 @@
       </div>
 
       <!-- Theme Toggle, Resume Button + Hamburger -->
-      <div class="flex items-center gap-4">
+      <div class="flex items-center gap-3 sm:gap-4">
+
+        <!-- Theme Toggle Button (Desktop) -->
+        <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle dark or light theme" title="Toggle dark / light theme">
+          <i class="fas fa-moon theme-icon-moon" id="theme-toggle-icon"></i>
+          <i class="fas fa-sun theme-icon-sun"></i>
+        </button>
 
         <!-- React Widget Container -->
         <div id="react-visitor-widget" class="hidden md:flex"></div>
-
 
         
         <a href="./media/resume/Nandini_Yamagar.pdf" target="_blank" rel="noopener noreferrer"
@@ -173,6 +195,16 @@
         role="menuitem">Certificates</a>
       <a href="#contact" class="nav-link block py-3 px-2 border-b border-zinc-200" data-section="contact"
         role="menuitem">Contact</a>
+
+      <!-- Theme Switcher in Mobile Menu -->
+      <div class="flex items-center justify-between py-3 px-2 border-b border-zinc-200">
+        <span class="text-sm font-medium text-zinc-700">Theme</span>
+        <button id="theme-toggle-mobile" class="theme-toggle-btn" aria-label="Toggle dark or light theme" title="Toggle dark / light theme">
+          <i class="fas fa-moon theme-icon-moon"></i>
+          <i class="fas fa-sun theme-icon-sun"></i>
+        </button>
+      </div>
+
       
       <div class="pt-3 pb-1">
         <a href="./media/resume/Nandini_Yamagar.pdf" target="_blank" rel="noopener noreferrer"
@@ -354,7 +386,7 @@
   <div class="section-divider"></div>
 
   
-<section id="about" class="py-14 sm:py-16 md:py-20 lg:py-24 bg-[#ffffff]" aria-label="About me">
+<section id="about" class="py-14 sm:py-16 md:py-20 lg:py-24 bg-section-alt" aria-label="About me">
   <div class="max-w-[1200px] mx-auto px-4 sm:px-5 md:px-6 lg:px-8">
 
     <!-- Section Header -->
@@ -2141,7 +2173,7 @@ document.addEventListener('keydown', function(e) {
           <p class="text-zinc-500 text-sm mb-6">I'll respond within 24 hours.</p>
 
           <form id="contact-form" novalidate aria-label="Contact form">
-            <input type="hidden" name="csrfmiddlewaretoken" value="6JqzWfhNc8AUDBJLrnlGulMhQiT9xquin1NpqSIDJuTkcCd2FgFVSVptwPaYtARS">
+            <input type="hidden" name="csrfmiddlewaretoken" value="hdQFyg5HxZpPqfbQ4NAbIxAWZLMdJK3QlWvW7gwt0KsRMseXqn9IITDOaohpuaMm">
 
             <!-- Name + Email row -->
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-0">
@@ -2346,7 +2378,7 @@ document.addEventListener('keydown', function(e) {
   </button>
 
   <!-- Main JavaScript -->
-  <script src="./static/js/main.js?v=white2"></script>
+  <script src="./static/js/main.js?v=theme1"></script>
   
 
   <!-- React WebSockets Widget -->

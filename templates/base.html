@@ -65,6 +65,7 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
+      darkMode: 'class',
       theme: {
         extend: {
           colors: {
@@ -97,13 +98,29 @@
     }
   </script>
 
+  <!-- Theme Initialization (avoids FOUC) -->
+  <script>
+    (function () {
+      try {
+        var saved = localStorage.getItem('theme');
+        if (saved === 'dark') {
+          document.documentElement.classList.add('dark');
+          document.documentElement.setAttribute('data-theme', 'dark');
+        } else {
+          document.documentElement.classList.remove('dark');
+          document.documentElement.setAttribute('data-theme', 'light');
+        }
+      } catch (e) {}
+    })();
+  </script>
+
   <!-- Global CSS -->
-  <link rel="stylesheet" href="{% static 'css/global.css' %}?v=white2" />
+  <link rel="stylesheet" href="{% static 'css/global.css' %}?v=theme1" />
 
   {% block extra_head %}{% endblock %}
 </head>
 
-<body class="font-inter text-zinc-800 bg-[#ffffff] antialiased overflow-x-hidden">
+<body class="font-inter text-zinc-800 dark:text-zinc-200 antialiased overflow-x-hidden">
 
   <!-- Toast Notification Container -->
   <div id="toast-container" aria-live="polite"></div>
@@ -135,7 +152,7 @@
   </button>
 
   <!-- Main JavaScript -->
-  <script src="{% static 'js/main.js' %}?v=white2"></script>
+  <script src="{% static 'js/main.js' %}?v=theme1"></script>
   {% block extra_scripts %}{% endblock %}
 
   <!-- React WebSockets Widget -->
