@@ -6,6 +6,7 @@ venv/
 db.sqlite3
 .env
 
-db.sqlite3
-
-media/
+# Ignore root media folder, but allow docs/media for GitHub Pages
+/media/
+!docs/media/
+!docs/media/**
