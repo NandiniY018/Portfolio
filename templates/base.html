@@ -68,11 +68,12 @@
       theme: {
         extend: {
           colors: {
-            primary: { 50: '#eef2ff', 100: '#e0e7ff', 200: '#c7d2fe', 300: '#a5b4fc', 400: '#818cf8', 500: '#6366f1', 600: '#4f46e5', 700: '#4338ca', 800: '#3730a3', 900: '#312e81' },
-            violet: { 300: '#c4b5fd', 400: '#a78bfa', 500: '#8b5cf6', 600: '#7c3aed', 700: '#6d28d9' },
-            cyan: { 300: '#67e8f9', 400: '#22d3ee', 500: '#06b6d4', 600: '#0891b2' },
-            dark: { 900: '#06060f', 800: '#0c0c1a', 700: '#11111f', 600: '#16162a' },
-            slate: { 850: '#1e293b' },
+            primary: { 50: '#fafafa', 100: '#f4f4f5', 200: '#e4e4e7', 300: '#d4d4d8', 400: '#a1a1aa', 500: '#71717a', 600: '#52525b', 700: '#3f3f46', 800: '#27272a', 900: '#18181b' },
+            zinc: { 50: '#fafafa', 100: '#f4f4f5', 200: '#e4e4e7', 300: '#d4d4d8', 400: '#a1a1aa', 500: '#71717a', 600: '#52525b', 700: '#3f3f46', 800: '#27272a', 900: '#18181b', 950: '#09090b' },
+            violet: { 300: '#d4d4d8', 400: '#a1a1aa', 500: '#71717a', 600: '#52525b', 700: '#3f3f46' },
+            cyan: { 300: '#e4e4e7', 400: '#d4d4d8', 500: '#a1a1aa', 600: '#71717a' },
+            dark: { 950: '#000000', 900: '#09090b', 800: '#121215', 700: '#18181b', 600: '#27272a' },
+            slate: { 850: '#18181b' },
           },
           fontFamily: {
             outfit: ['Outfit', 'sans-serif'],
@@ -97,12 +98,12 @@
   </script>
 
   <!-- Global CSS -->
-  <link rel="stylesheet" href="{% static 'css/global.css' %}" />
+  <link rel="stylesheet" href="{% static 'css/global.css' %}?v=mono1" />
 
   {% block extra_head %}{% endblock %}
 </head>
 
-<body class="font-inter text-slate-300 bg-dark-900 antialiased overflow-x-hidden">
+<body class="font-inter text-zinc-300 bg-[#09090b] antialiased overflow-x-hidden">
 
   <!-- Toast Notification Container -->
   <div id="toast-container" aria-live="polite"></div>
@@ -134,7 +135,7 @@
   </button>
 
   <!-- Main JavaScript -->
-  <script src="{% static 'js/main.js' %}"></script>
+  <script src="{% static 'js/main.js' %}?v=mono1"></script>
   {% block extra_scripts %}{% endblock %}
 
   <!-- React WebSockets Widget -->
@@ -175,11 +176,11 @@
 
       return (
         <div className="flex items-center gap-2 bg-white/5 border border-white/10 rounded-full px-3 py-1.5 shadow-sm">
-          <span className="relative flex h-2.5 w-2.5">
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-            <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
+          <span className="relative flex h-2 w-2">
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
+            <span className="relative inline-flex rounded-full h-2 w-2 bg-white"></span>
           </span>
-          <span className="text-xs font-medium text-emerald-400 font-inter tracking-wide">
+          <span className="text-xs font-medium text-zinc-200 font-inter tracking-wide">
             {visitors} Live Visitor{visitors !== 1 ? 's' : ''}
           </span>
         </div>

@@ -25,12 +25,12 @@
           <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3 mb-4">
             <div>
               <div class="flex items-center gap-3 mb-2">
-                <div class="w-10 h-10 rounded-xl flex items-center justify-center border border-indigo-500/30 bg-gradient-to-br from-indigo-500/30 to-violet-500/20">
-                  <i class="{{ exp.icon_class|default:'fas fa-laptop-code' }} text-primary-300 text-sm"></i>
+                <div class="w-10 h-10 rounded-xl flex items-center justify-center border border-white/10 bg-white/5 shadow-sm">
+                  <i class="{{ exp.icon_class|default:'fas fa-laptop-code' }} text-zinc-300 text-sm"></i>
                 </div>
                 <div>
                   <h3 class="font-outfit font-bold text-lg text-white">{{ exp.role }}</h3>
-                  <p class="text-primary-300 font-semibold text-sm">{{ exp.company }}</p>
+                  <p class="text-zinc-400 font-semibold text-sm">{{ exp.company }}</p>
                 </div>
               </div>
             </div>
@@ -42,10 +42,10 @@
             </div>
           </div>
 
-          <ul class="space-y-2 mb-5 text-slate-400 text-sm mt-4 break-words">
+          <ul class="space-y-2 mb-5 text-zinc-400 text-sm mt-4 break-words">
             {% for desc in exp.get_description_list %}
             <li class="flex items-start gap-2.5">
-              <i class="fas fa-circle-check text-emerald-400 text-xs mt-1 flex-shrink-0"></i>
+              <i class="fas fa-circle-check text-zinc-300 text-xs mt-1 flex-shrink-0"></i>
               {{ desc }}
             </li>
             {% endfor %}

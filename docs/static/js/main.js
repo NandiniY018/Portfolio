@@ -402,13 +402,11 @@ function showToast(type, title, message, duration = 5000) {
     reset() {
       this.x = Math.random() * canvas.width;
       this.y = canvas.height + 10;
-      this.size = Math.random() * 2.5 + 0.5;
-      this.speedY = -(Math.random() * 0.8 + 0.3);
-      this.speedX = (Math.random() - 0.5) * 0.5;
+      this.size = Math.random() * 2 + 0.5;
+      this.speedY = -(Math.random() * 0.7 + 0.2);
+      this.speedX = (Math.random() - 0.5) * 0.4;
       this.life = 0;
       this.maxLife = Math.random() * 200 + 100;
-      const hues = [240, 260, 190]; // indigo, violet, cyan
-      this.hue = hues[Math.floor(Math.random() * hues.length)];
     }
 
     update() {
@@ -422,7 +420,7 @@ function showToast(type, title, message, duration = 5000) {
       const alpha = Math.min(this.life / 30, 1) * (1 - this.life / this.maxLife);
       ctx.beginPath();
       ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-      ctx.fillStyle = `hsla(${this.hue}, 80%, 70%, ${alpha * 0.7})`;
+      ctx.fillStyle = `rgba(255, 255, 255, ${alpha * 0.45})`;
       ctx.fill();
     }
   }

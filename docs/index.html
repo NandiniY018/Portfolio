@@ -59,11 +59,12 @@
       theme: {
         extend: {
           colors: {
-            primary: { 50: '#eef2ff', 100: '#e0e7ff', 200: '#c7d2fe', 300: '#a5b4fc', 400: '#818cf8', 500: '#6366f1', 600: '#4f46e5', 700: '#4338ca', 800: '#3730a3', 900: '#312e81' },
-            violet: { 300: '#c4b5fd', 400: '#a78bfa', 500: '#8b5cf6', 600: '#7c3aed', 700: '#6d28d9' },
-            cyan: { 300: '#67e8f9', 400: '#22d3ee', 500: '#06b6d4', 600: '#0891b2' },
-            dark: { 900: '#06060f', 800: '#0c0c1a', 700: '#11111f', 600: '#16162a' },
-            slate: { 850: '#1e293b' },
+            primary: { 50: '#fafafa', 100: '#f4f4f5', 200: '#e4e4e7', 300: '#d4d4d8', 400: '#a1a1aa', 500: '#71717a', 600: '#52525b', 700: '#3f3f46', 800: '#27272a', 900: '#18181b' },
+            zinc: { 50: '#fafafa', 100: '#f4f4f5', 200: '#e4e4e7', 300: '#d4d4d8', 400: '#a1a1aa', 500: '#71717a', 600: '#52525b', 700: '#3f3f46', 800: '#27272a', 900: '#18181b', 950: '#09090b' },
+            violet: { 300: '#d4d4d8', 400: '#a1a1aa', 500: '#71717a', 600: '#52525b', 700: '#3f3f46' },
+            cyan: { 300: '#e4e4e7', 400: '#d4d4d8', 500: '#a1a1aa', 600: '#71717a' },
+            dark: { 950: '#000000', 900: '#09090b', 800: '#121215', 700: '#18181b', 600: '#27272a' },
+            slate: { 850: '#18181b' },
           },
           fontFamily: {
             outfit: ['Outfit', 'sans-serif'],
@@ -88,12 +89,12 @@
   </script>
 
   <!-- Global CSS -->
-  <link rel="stylesheet" href="./static/css/global.css" />
+  <link rel="stylesheet" href="./static/css/global.css?v=mono1" />
 
   
 </head>
 
-<body class="font-inter text-slate-300 bg-dark-900 antialiased overflow-x-hidden">
+<body class="font-inter text-zinc-300 bg-[#09090b] antialiased overflow-x-hidden">
 
   <!-- Toast Notification Container -->
   <div id="toast-container" aria-live="polite"></div>
@@ -109,11 +110,11 @@
 
       <!-- Logo / Brand -->
       <a href="#hero" class="flex items-center gap-2.5 group" aria-label="Nandini Yamagar - Home">
-        <div class="w-9 h-9 rounded-xl flex items-center justify-center bg-gradient-to-br from-[#6366f1] to-[#8b5cf6]">
-          <span class="text-white font-outfit font-black text-base leading-none">NY</span>
+        <div class="w-9 h-9 rounded-xl flex items-center justify-center bg-gradient-to-br from-white via-zinc-200 to-zinc-400 text-black shadow-md border border-white/20 transition-transform duration-200 group-hover:scale-105">
+          <span class="text-black font-outfit font-black text-base leading-none">NY</span>
         </div>
         <span
-          class="font-outfit font-bold text-lg text-white group-hover:text-primary-300 transition-colors duration-200">
+          class="font-outfit font-bold text-lg text-white group-hover:text-zinc-200 transition-colors duration-200">
           Nandini <span class="gradient-text">Yamagar</span>
         </span>
       </a>
@@ -219,8 +220,8 @@
         <!-- Greeting -->
         <div class="hero-animate mb-4">
           <span
-            class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-sm font-inter font-medium text-primary-300 bg-[rgba(99,102,241,0.1)] border border-[rgba(99,102,241,0.25)]">
-            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+            class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-sm font-inter font-medium text-zinc-200 bg-white/5 border border-white/10 shadow-sm backdrop-blur-md">
+            <span class="w-2 h-2 rounded-full bg-white animate-pulse"></span>
             👋 Hello, I'm
           </span>
         </div>
@@ -235,7 +236,7 @@
 
         <!-- Animated Role Title -->
         <div class="hero-animate mb-6">
-          <p class="font-outfit font-semibold text-xl md:text-2xl xl:text-3xl text-slate-300">
+          <p class="font-outfit font-semibold text-xl md:text-2xl xl:text-3xl text-zinc-300">
             I'm a&nbsp;
             <span class="gradient-text" id="typing-text" aria-live="polite">Python Full Stack Developer</span>
             <span class="typing-cursor" aria-hidden="true"></span>
@@ -244,7 +245,7 @@
 
         <!-- Short Bio -->
         <div class="hero-animate mb-8">
-          <p class="font-inter text-slate-400 text-base md:text-lg leading-relaxed max-w-lg mx-auto lg:mx-0">
+          <p class="font-inter text-zinc-400 text-base md:text-lg leading-relaxed max-w-lg mx-auto lg:mx-0">
             Passionate about building innovative digital experiences through clean code, scalable architecture, and
             thoughtful design. With hands-on experience in real-world projects, I create reliable, high-performance
             applications that solve meaningful problems and deliver exceptional user experiences.
@@ -289,13 +290,13 @@
           <span class="w-px h-6 bg-white/10 mx-1"></span>
 
           <!-- Quick Stats inline -->
-          <div class="flex items-center gap-4 text-sm text-slate-400">
+          <div class="flex items-center gap-4 text-sm text-zinc-400">
             <span class="flex items-center gap-1.5">
-              <i class="fas fa-briefcase text-primary-400 text-xs"></i>
+              <i class="fas fa-briefcase text-zinc-300 text-xs"></i>
               <span>2 Internships</span>
             </span>
             <span class="flex items-center gap-1.5">
-              <i class="fas fa-code text-cyan-400 text-xs"></i>
+              <i class="fas fa-code text-zinc-300 text-xs"></i>
               <span>3+ Projects</span>
             </span>
           </div>
@@ -328,19 +329,19 @@
 
           <!-- Floating tech badges -->
           <div
-            class="absolute -top-4 -right-4 glass-card px-3 py-2 text-xs font-outfit font-semibold text-white flex items-center gap-2 shadow-lg rounded-xl animate-float-5s"
+            class="absolute -top-4 -right-4 glass-card px-3 py-2 text-xs font-outfit font-semibold text-white flex items-center gap-2 shadow-lg rounded-xl animate-float-5s border border-white/10"
             aria-hidden="true">
-            <i class="fab fa-python text-yellow-400"></i> Python 3.11
+            <i class="fab fa-python text-zinc-300"></i> Python 3.11
           </div>
           <div
-            class="absolute -bottom-2 -left-6 glass-card px-3 py-2 text-xs font-outfit font-semibold text-white flex items-center gap-2 shadow-lg rounded-xl animate-float-reverse-6s-delay"
+            class="absolute -bottom-2 -left-6 glass-card px-3 py-2 text-xs font-outfit font-semibold text-white flex items-center gap-2 shadow-lg rounded-xl animate-float-reverse-6s-delay border border-white/10"
             aria-hidden="true">
-            <i class="fab fa-react text-cyan-400"></i> React.js
+            <i class="fab fa-react text-zinc-300"></i> React.js
           </div>
           <div
-            class="absolute bottom-12 -right-8 glass-card px-3 py-2 text-xs font-outfit font-semibold text-white flex items-center gap-2 shadow-lg rounded-xl animate-float-7s-delay"
+            class="absolute bottom-12 -right-8 glass-card px-3 py-2 text-xs font-outfit font-semibold text-white flex items-center gap-2 shadow-lg rounded-xl animate-float-7s-delay border border-white/10"
             aria-hidden="true">
-            <i class="fas fa-database text-primary-400"></i> MySQL
+            <i class="fas fa-database text-zinc-300"></i> MySQL
           </div>
         </div>
       </div>
@@ -353,22 +354,22 @@
   <div class="section-divider"></div>
 
   
-<section id="about" class="py-14 sm:py-16 md:py-20 lg:py-24 bg-[#0b0c10]" aria-label="About me">
+<section id="about" class="py-14 sm:py-16 md:py-20 lg:py-24 bg-[#09090b]" aria-label="About me">
   <div class="max-w-[1200px] mx-auto px-4 sm:px-5 md:px-6 lg:px-8">
 
     <!-- Section Header -->
     <div class="text-center mb-16 reveal flex flex-col items-center">
-      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 text-xs font-semibold tracking-wider mb-6">
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 text-zinc-300 text-xs font-semibold tracking-wider mb-6 shadow-sm">
         <i class="fas fa-user-circle"></i> ABOUT ME
       </div>
-      <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">
-        About <span class="text-indigo-500">Me</span>
+      <h2 class="text-4xl md:text-5xl font-bold text-white mb-4 tracking-[-0.02em]">
+        About <span class="gradient-text">Me</span>
       </h2>
-      <p class="text-slate-400 max-w-3xl mx-auto text-lg">
+      <p class="text-zinc-400 max-w-3xl mx-auto text-lg leading-relaxed">
         A results-driven full stack developer who builds scalable, user-focused web applications
         and turns ideas into real-world impact.
       </p>
-      <div class="w-12 h-1 bg-gradient-to-r from-indigo-500 to-purple-500 mx-auto mt-6 rounded-full"></div>
+      <div class="w-12 h-1 bg-gradient-to-r from-white via-zinc-400 to-zinc-600 mx-auto mt-6 rounded-full"></div>
     </div>
 
     <!-- Two-Column Layout -->
@@ -376,46 +377,46 @@
         
       <!-- Left: Card with 4 list items -->
       <div class="lg:col-span-5 reveal-left">
-        <div class="bg-[#11131f] border border-indigo-500/20 rounded-2xl p-8 md:p-10 h-full shadow-lg">
+        <div class="bg-[#121215] border border-white/10 rounded-2xl p-8 md:p-10 h-full shadow-xl transition-all duration-300 hover:border-white/20">
             <ul class="space-y-8">
                 <!-- Item 1 -->
                 <li class="flex items-start gap-5">
-                    <div class="w-12 h-12 rounded-full bg-indigo-500/10 flex items-center justify-center flex-shrink-0 text-indigo-400 border border-indigo-500/20">
+                    <div class="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center flex-shrink-0 text-white border border-white/10 shadow-sm">
                         <i class="fas fa-briefcase text-lg"></i>
                     </div>
                     <div>
                         <h4 class="text-white font-semibold text-lg mb-1">Experience</h4>
-                        <p class="text-slate-400 text-sm leading-relaxed">Hands-on in full stack development<br>and real-world projects</p>
+                        <p class="text-zinc-400 text-sm leading-relaxed">Hands-on in full stack development<br>and real-world projects</p>
                     </div>
                 </li>
                 <!-- Item 2 -->
                 <li class="flex items-start gap-5">
-                    <div class="w-12 h-12 rounded-full bg-indigo-500/10 flex items-center justify-center flex-shrink-0 text-indigo-400 border border-indigo-500/20">
+                    <div class="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center flex-shrink-0 text-white border border-white/10 shadow-sm">
                         <i class="fas fa-code text-lg"></i>
                     </div>
                     <div>
                         <h4 class="text-white font-semibold text-lg mb-1">Focus</h4>
-                        <p class="text-slate-400 text-sm leading-relaxed">Building clean, scalable, and<br>maintainable web solutions</p>
+                        <p class="text-zinc-400 text-sm leading-relaxed">Building clean, scalable, and<br>maintainable web solutions</p>
                     </div>
                 </li>
                 <!-- Item 3 -->
                 <li class="flex items-start gap-5">
-                    <div class="w-12 h-12 rounded-full bg-indigo-500/10 flex items-center justify-center flex-shrink-0 text-indigo-400 border border-indigo-500/20">
+                    <div class="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center flex-shrink-0 text-white border border-white/10 shadow-sm">
                         <i class="fas fa-rocket text-lg"></i>
                     </div>
                     <div>
                         <h4 class="text-white font-semibold text-lg mb-1">Strength</h4>
-                        <p class="text-slate-400 text-sm leading-relaxed">Problem solving, performance<br>optimization, and collaboration</p>
+                        <p class="text-zinc-400 text-sm leading-relaxed">Problem solving, performance<br>optimization, and collaboration</p>
                     </div>
                 </li>
                 <!-- Item 4 -->
                 <li class="flex items-start gap-5">
-                    <div class="w-12 h-12 rounded-full bg-indigo-500/10 flex items-center justify-center flex-shrink-0 text-indigo-400 border border-indigo-500/20">
+                    <div class="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center flex-shrink-0 text-white border border-white/10 shadow-sm">
                         <i class="fas fa-graduation-cap text-lg"></i>
                     </div>
                     <div>
                         <h4 class="text-white font-semibold text-lg mb-1">Education</h4>
-                        <p class="text-slate-400 text-sm leading-relaxed">B.E. Computer Science<br>8.3 CGPA (2021 &ndash; 2025)</p>
+                        <p class="text-zinc-400 text-sm leading-relaxed">B.E. Computer Science<br>8.3 CGPA (2021 &ndash; 2025)</p>
                     </div>
                 </li>
             </ul>
@@ -424,11 +425,11 @@
 
       <!-- Right: About Text & badges -->
       <div class="lg:col-span-7 reveal-right pt-2 lg:pt-4">
-        <h3 class="text-3xl md:text-4xl font-bold text-white mb-6 border-b border-slate-800 pb-6 inline-block w-full">
-          Full Stack <span class="text-indigo-500">Developer</span> & Problem Solver
+        <h3 class="text-3xl md:text-4xl font-bold text-white mb-6 border-b border-white/10 pb-6 inline-block w-full">
+          Full Stack <span class="gradient-text">Developer</span> & Problem Solver
         </h3>
         
-        <div class="space-y-6 text-slate-300 text-base md:text-lg leading-relaxed mb-12">
+        <div class="space-y-6 text-zinc-300 text-base md:text-lg leading-relaxed mb-12">
             <p>
               I'm a Full Stack Developer with strong expertise in Python, Django, React, and MySQL. 
               I design and build robust, secure, and scalable web applications that deliver 
@@ -445,32 +446,32 @@
         <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-2">
             <!-- Badge 1 -->
             <div class="flex items-center gap-4">
-                <div class="w-10 h-10 rounded-full bg-indigo-500/10 flex items-center justify-center text-indigo-400 flex-shrink-0">
+                <div class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white border border-white/10 flex-shrink-0">
                     <i class="fas fa-check-circle"></i>
                 </div>
                 <div>
                     <div class="text-white font-semibold text-sm">Projects</div>
-                    <div class="text-indigo-400 text-sm font-medium mt-0.5">5+</div>
+                    <div class="text-zinc-400 text-sm font-medium mt-0.5">5+</div>
                 </div>
             </div>
             <!-- Badge 2 -->
-            <div class="flex items-center gap-4 sm:border-l sm:border-slate-800 sm:pl-6">
-                <div class="w-10 h-10 rounded-full bg-indigo-500/10 flex items-center justify-center text-indigo-400 flex-shrink-0">
+            <div class="flex items-center gap-4 sm:border-l sm:border-white/10 sm:pl-6">
+                <div class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white border border-white/10 flex-shrink-0">
                     <i class="fas fa-users"></i>
                 </div>
                 <div>
                     <div class="text-white font-semibold text-sm">Collaboration</div>
-                    <div class="text-indigo-400 text-sm font-medium mt-0.5">Team Player</div>
+                    <div class="text-zinc-400 text-sm font-medium mt-0.5">Team Player</div>
                 </div>
             </div>
             <!-- Badge 3 -->
-            <div class="flex items-center gap-4 sm:border-l sm:border-slate-800 sm:pl-6">
-                <div class="w-10 h-10 rounded-full bg-indigo-500/10 flex items-center justify-center text-indigo-400 flex-shrink-0">
+            <div class="flex items-center gap-4 sm:border-l sm:border-white/10 sm:pl-6">
+                <div class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white border border-white/10 flex-shrink-0">
                     <i class="fas fa-bullseye"></i>
                 </div>
                 <div>
                     <div class="text-white font-semibold text-sm">Goal</div>
-                    <div class="text-indigo-400 text-sm font-medium mt-0.5">Impact Through Code</div>
+                    <div class="text-zinc-400 text-sm font-medium mt-0.5">Impact Through Code</div>
                 </div>
             </div>
         </div>
@@ -517,10 +518,10 @@
           <div class="skill-card">
             <div class="flex items-center justify-between mb-2">
               <div class="flex items-center gap-2">
-                <i class="devicon-python-plain colored text-lg "></i>
-                <span class="font-outfit font-semibold text-slate-200 text-sm">Python</span>
+                <i class="devicon-python-plain colored text-lg text-zinc-300"></i>
+                <span class="font-outfit font-semibold text-zinc-200 text-sm">Python</span>
               </div>
-              <span class="text-xs text-primary-300 font-semibold">90%</span>
+              <span class="text-xs text-zinc-400 font-semibold">90%</span>
             </div>
             <div class="skill-bar-bg">
               <div class="skill-bar-fill" data-skill-width="90%"></div>
@@ -530,10 +531,10 @@
           <div class="skill-card">
             <div class="flex items-center justify-between mb-2">
               <div class="flex items-center gap-2">
-                <i class="devicon-c-plain colored text-lg "></i>
-                <span class="font-outfit font-semibold text-slate-200 text-sm">C</span>
+                <i class="devicon-c-plain colored text-lg text-zinc-300"></i>
+                <span class="font-outfit font-semibold text-zinc-200 text-sm">C</span>
               </div>
-              <span class="text-xs text-primary-300 font-semibold">80%</span>
+              <span class="text-xs text-zinc-400 font-semibold">80%</span>
             </div>
             <div class="skill-bar-bg">
               <div class="skill-bar-fill" data-skill-width="80%"></div>
@@ -556,10 +557,10 @@
           <div class="skill-card">
             <div class="flex items-center justify-between mb-2">
               <div class="flex items-center gap-2">
-                <i class="devicon-html5-plain colored text-lg "></i>
-                <span class="font-outfit font-semibold text-slate-200 text-sm">HTML5</span>
+                <i class="devicon-html5-plain colored text-lg text-zinc-300"></i>
+                <span class="font-outfit font-semibold text-zinc-200 text-sm">HTML5</span>
               </div>
-              <span class="text-xs text-primary-300 font-semibold">100%</span>
+              <span class="text-xs text-zinc-400 font-semibold">100%</span>
             </div>
             <div class="skill-bar-bg">
               <div class="skill-bar-fill" data-skill-width="100%"></div>
@@ -569,10 +570,10 @@
           <div class="skill-card">
             <div class="flex items-center justify-between mb-2">
               <div class="flex items-center gap-2">
-                <i class="devicon-css3-plain colored text-lg "></i>
-                <span class="font-outfit font-semibold text-slate-200 text-sm">CSS3 + Tailwind</span>
+                <i class="devicon-css3-plain colored text-lg text-zinc-300"></i>
+                <span class="font-outfit font-semibold text-zinc-200 text-sm">CSS3 + Tailwind</span>
               </div>
-              <span class="text-xs text-primary-300 font-semibold">100%</span>
+              <span class="text-xs text-zinc-400 font-semibold">100%</span>
             </div>
             <div class="skill-bar-bg">
               <div class="skill-bar-fill" data-skill-width="100%"></div>
@@ -582,10 +583,10 @@
           <div class="skill-card">
             <div class="flex items-center justify-between mb-2">
               <div class="flex items-center gap-2">
-                <i class="devicon-javascript-plain colored text-lg "></i>
-                <span class="font-outfit font-semibold text-slate-200 text-sm">JavaScript</span>
+                <i class="devicon-javascript-plain colored text-lg text-zinc-300"></i>
+                <span class="font-outfit font-semibold text-zinc-200 text-sm">JavaScript</span>
               </div>
-              <span class="text-xs text-primary-300 font-semibold">85%</span>
+              <span class="text-xs text-zinc-400 font-semibold">85%</span>
             </div>
             <div class="skill-bar-bg">
               <div class="skill-bar-fill" data-skill-width="85%"></div>
@@ -595,10 +596,10 @@
           <div class="skill-card">
             <div class="flex items-center justify-between mb-2">
               <div class="flex items-center gap-2">
-                <i class="devicon-react-plain colored text-lg "></i>
-                <span class="font-outfit font-semibold text-slate-200 text-sm">React</span>
+                <i class="devicon-react-plain colored text-lg text-zinc-300"></i>
+                <span class="font-outfit font-semibold text-zinc-200 text-sm">React</span>
               </div>
-              <span class="text-xs text-primary-300 font-semibold">95%</span>
+              <span class="text-xs text-zinc-400 font-semibold">95%</span>
             </div>
             <div class="skill-bar-bg">
               <div class="skill-bar-fill" data-skill-width="95%"></div>
@@ -621,10 +622,10 @@
           <div class="skill-card">
             <div class="flex items-center justify-between mb-2">
               <div class="flex items-center gap-2">
-                <i class="devicon-django-plain colored text-lg "></i>
-                <span class="font-outfit font-semibold text-slate-200 text-sm">Django</span>
+                <i class="devicon-django-plain colored text-lg text-zinc-300"></i>
+                <span class="font-outfit font-semibold text-zinc-200 text-sm">Django</span>
               </div>
-              <span class="text-xs text-primary-300 font-semibold">85%</span>
+              <span class="text-xs text-zinc-400 font-semibold">85%</span>
             </div>
             <div class="skill-bar-bg">
               <div class="skill-bar-fill" data-skill-width="85%"></div>
@@ -634,10 +635,10 @@
           <div class="skill-card">
             <div class="flex items-center justify-between mb-2">
               <div class="flex items-center gap-2">
-                <i class="devicon-fastapi-plain colored text-lg "></i>
-                <span class="font-outfit font-semibold text-slate-200 text-sm">Fast API</span>
+                <i class="devicon-fastapi-plain colored text-lg text-zinc-300"></i>
+                <span class="font-outfit font-semibold text-zinc-200 text-sm">Fast API</span>
               </div>
-              <span class="text-xs text-primary-300 font-semibold">90%</span>
+              <span class="text-xs text-zinc-400 font-semibold">90%</span>
             </div>
             <div class="skill-bar-bg">
               <div class="skill-bar-fill" data-skill-width="90%"></div>
@@ -647,10 +648,10 @@
           <div class="skill-card">
             <div class="flex items-center justify-between mb-2">
               <div class="flex items-center gap-2">
-                <i class="devicon-nextjs-plain colored text-lg "></i>
-                <span class="font-outfit font-semibold text-slate-200 text-sm">Next.js</span>
+                <i class="devicon-nextjs-plain colored text-lg text-zinc-300"></i>
+                <span class="font-outfit font-semibold text-zinc-200 text-sm">Next.js</span>
               </div>
-              <span class="text-xs text-primary-300 font-semibold">80%</span>
+              <span class="text-xs text-zinc-400 font-semibold">80%</span>
             </div>
             <div class="skill-bar-bg">
               <div class="skill-bar-fill" data-skill-width="80%"></div>
@@ -673,10 +674,10 @@
           <div class="skill-card">
             <div class="flex items-center justify-between mb-2">
               <div class="flex items-center gap-2">
-                <i class="devicon-mysql-plain colored text-lg "></i>
-                <span class="font-outfit font-semibold text-slate-200 text-sm">MYSQL</span>
+                <i class="devicon-mysql-plain colored text-lg text-zinc-300"></i>
+                <span class="font-outfit font-semibold text-zinc-200 text-sm">MYSQL</span>
               </div>
-              <span class="text-xs text-primary-300 font-semibold">95%</span>
+              <span class="text-xs text-zinc-400 font-semibold">95%</span>
             </div>
             <div class="skill-bar-bg">
               <div class="skill-bar-fill" data-skill-width="95%"></div>
@@ -686,10 +687,10 @@
           <div class="skill-card">
             <div class="flex items-center justify-between mb-2">
               <div class="flex items-center gap-2">
-                <i class="devicon-mongodb-plain colored text-lg "></i>
-                <span class="font-outfit font-semibold text-slate-200 text-sm">MongoDB</span>
+                <i class="devicon-mongodb-plain colored text-lg text-zinc-300"></i>
+                <span class="font-outfit font-semibold text-zinc-200 text-sm">MongoDB</span>
               </div>
-              <span class="text-xs text-primary-300 font-semibold">92%</span>
+              <span class="text-xs text-zinc-400 font-semibold">92%</span>
             </div>
             <div class="skill-bar-bg">
               <div class="skill-bar-fill" data-skill-width="92%"></div>
@@ -709,54 +710,54 @@
         
         <div class="grid grid-cols-2 gap-3">
           
-          <div class="flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-300 hover:-translate-y-1 bg-[rgba(255,255,255,0.04)] border border-[rgba(255,255,255,0.08)]">
-            <i class="devicon-git-plain colored text-xl "></i>
-            <span class="font-outfit font-semibold text-slate-200 text-sm">Git</span>
+          <div class="flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-300 hover:-translate-y-1 bg-white/5 border border-white/10 hover:border-white/20">
+            <i class="devicon-git-plain colored text-xl text-zinc-300"></i>
+            <span class="font-outfit font-semibold text-zinc-200 text-sm">Git</span>
           </div>
           
-          <div class="flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-300 hover:-translate-y-1 bg-[rgba(255,255,255,0.04)] border border-[rgba(255,255,255,0.08)]">
-            <i class="devicon-github-original colored text-xl "></i>
-            <span class="font-outfit font-semibold text-slate-200 text-sm">GitHub</span>
+          <div class="flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-300 hover:-translate-y-1 bg-white/5 border border-white/10 hover:border-white/20">
+            <i class="devicon-github-original colored text-xl text-zinc-300"></i>
+            <span class="font-outfit font-semibold text-zinc-200 text-sm">GitHub</span>
           </div>
           
-          <div class="flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-300 hover:-translate-y-1 bg-[rgba(255,255,255,0.04)] border border-[rgba(255,255,255,0.08)]">
-            <i class="devicon-vscode-plain colored text-xl "></i>
-            <span class="font-outfit font-semibold text-slate-200 text-sm">VS Code</span>
+          <div class="flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-300 hover:-translate-y-1 bg-white/5 border border-white/10 hover:border-white/20">
+            <i class="devicon-vscode-plain colored text-xl text-zinc-300"></i>
+            <span class="font-outfit font-semibold text-zinc-200 text-sm">VS Code</span>
           </div>
           
-          <div class="flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-300 hover:-translate-y-1 bg-[rgba(255,255,255,0.04)] border border-[rgba(255,255,255,0.08)]">
-            <i class="devicon-pycharm-plain colored text-xl "></i>
-            <span class="font-outfit font-semibold text-slate-200 text-sm">PyCharm</span>
+          <div class="flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-300 hover:-translate-y-1 bg-white/5 border border-white/10 hover:border-white/20">
+            <i class="devicon-pycharm-plain colored text-xl text-zinc-300"></i>
+            <span class="font-outfit font-semibold text-zinc-200 text-sm">PyCharm</span>
           </div>
           
-          <div class="flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-300 hover:-translate-y-1 bg-[rgba(255,255,255,0.04)] border border-[rgba(255,255,255,0.08)]">
-            <i class="fas fa-code text-xl text-[#06b6d4]"></i>
-            <span class="font-outfit font-semibold text-slate-200 text-sm">Stitch</span>
+          <div class="flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-300 hover:-translate-y-1 bg-white/5 border border-white/10 hover:border-white/20">
+            <i class="fas fa-code text-xl text-zinc-300"></i>
+            <span class="font-outfit font-semibold text-zinc-200 text-sm">Stitch</span>
           </div>
           
-          <div class="flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-300 hover:-translate-y-1 bg-[rgba(255,255,255,0.04)] border border-[rgba(255,255,255,0.08)]">
-            <i class="fas fa-file-excel text-xl text-[#06b6d4]"></i>
-            <span class="font-outfit font-semibold text-slate-200 text-sm">Excel</span>
+          <div class="flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-300 hover:-translate-y-1 bg-white/5 border border-white/10 hover:border-white/20">
+            <i class="fas fa-file-excel text-xl text-zinc-300"></i>
+            <span class="font-outfit font-semibold text-zinc-200 text-sm">Excel</span>
           </div>
           
-          <div class="flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-300 hover:-translate-y-1 bg-[rgba(255,255,255,0.04)] border border-[rgba(255,255,255,0.08)]">
-            <i class="devicon-tailwindcss-plain colored text-xl "></i>
-            <span class="font-outfit font-semibold text-slate-200 text-sm">Tailwind</span>
+          <div class="flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-300 hover:-translate-y-1 bg-white/5 border border-white/10 hover:border-white/20">
+            <i class="devicon-tailwindcss-plain colored text-xl text-zinc-300"></i>
+            <span class="font-outfit font-semibold text-zinc-200 text-sm">Tailwind</span>
           </div>
           
-          <div class="flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-300 hover:-translate-y-1 bg-[rgba(255,255,255,0.04)] border border-[rgba(255,255,255,0.08)]">
-            <i class="fas fa-rocket text-xl text-[#06b6d4]"></i>
-            <span class="font-outfit font-semibold text-slate-200 text-sm">Antigravity</span>
+          <div class="flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-300 hover:-translate-y-1 bg-white/5 border border-white/10 hover:border-white/20">
+            <i class="fas fa-rocket text-xl text-zinc-300"></i>
+            <span class="font-outfit font-semibold text-zinc-200 text-sm">Antigravity</span>
           </div>
           
-          <div class="flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-300 hover:-translate-y-1 bg-[rgba(255,255,255,0.04)] border border-[rgba(255,255,255,0.08)]">
-            <i class="fas fa-mouse-pointer text-xl text-[#06b6d4]"></i>
-            <span class="font-outfit font-semibold text-slate-200 text-sm">Cursor</span>
+          <div class="flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-300 hover:-translate-y-1 bg-white/5 border border-white/10 hover:border-white/20">
+            <i class="fas fa-mouse-pointer text-xl text-zinc-300"></i>
+            <span class="font-outfit font-semibold text-zinc-200 text-sm">Cursor</span>
           </div>
           
-          <div class="flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-300 hover:-translate-y-1 bg-[rgba(255,255,255,0.04)] border border-[rgba(255,255,255,0.08)]">
-            <i class="fas fa-chart-bar text-xl text-[#06b6d4]"></i>
-            <span class="font-outfit font-semibold text-slate-200 text-sm">Power BI</span>
+          <div class="flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-300 hover:-translate-y-1 bg-white/5 border border-white/10 hover:border-white/20">
+            <i class="fas fa-chart-bar text-xl text-zinc-300"></i>
+            <span class="font-outfit font-semibold text-zinc-200 text-sm">Power BI</span>
           </div>
           
         </div>
@@ -775,10 +776,10 @@
           <div class="skill-card">
             <div class="flex items-center justify-between mb-2">
               <div class="flex items-center gap-2">
-                <i class="devicon-numpy-plain colored text-lg "></i>
-                <span class="font-outfit font-semibold text-slate-200 text-sm">Numpy</span>
+                <i class="devicon-numpy-plain colored text-lg text-zinc-300"></i>
+                <span class="font-outfit font-semibold text-zinc-200 text-sm">Numpy</span>
               </div>
-              <span class="text-xs text-primary-300 font-semibold">100%</span>
+              <span class="text-xs text-zinc-400 font-semibold">100%</span>
             </div>
             <div class="skill-bar-bg">
               <div class="skill-bar-fill" data-skill-width="100%"></div>
@@ -788,10 +789,10 @@
           <div class="skill-card">
             <div class="flex items-center justify-between mb-2">
               <div class="flex items-center gap-2">
-                <i class="devicon-pandas-plain colored text-lg "></i>
-                <span class="font-outfit font-semibold text-slate-200 text-sm">Pandas</span>
+                <i class="devicon-pandas-plain colored text-lg text-zinc-300"></i>
+                <span class="font-outfit font-semibold text-zinc-200 text-sm">Pandas</span>
               </div>
-              <span class="text-xs text-primary-300 font-semibold">98%</span>
+              <span class="text-xs text-zinc-400 font-semibold">98%</span>
             </div>
             <div class="skill-bar-bg">
               <div class="skill-bar-fill" data-skill-width="98%"></div>
@@ -801,10 +802,10 @@
           <div class="skill-card">
             <div class="flex items-center justify-between mb-2">
               <div class="flex items-center gap-2">
-                <i class="devicon-matplotlib-plain colored text-lg "></i>
-                <span class="font-outfit font-semibold text-slate-200 text-sm">MatPlotlib</span>
+                <i class="devicon-matplotlib-plain colored text-lg text-zinc-300"></i>
+                <span class="font-outfit font-semibold text-zinc-200 text-sm">MatPlotlib</span>
               </div>
-              <span class="text-xs text-primary-300 font-semibold">96%</span>
+              <span class="text-xs text-zinc-400 font-semibold">96%</span>
             </div>
             <div class="skill-bar-bg">
               <div class="skill-bar-fill" data-skill-width="96%"></div>
@@ -849,12 +850,12 @@
           <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3 mb-4">
             <div>
               <div class="flex items-center gap-3 mb-2">
-                <div class="w-10 h-10 rounded-xl flex items-center justify-center border border-indigo-500/30 bg-gradient-to-br from-indigo-500/30 to-violet-500/20">
-                  <i class="fas fa-laptop-code text-primary-300 text-sm"></i>
+                <div class="w-10 h-10 rounded-xl flex items-center justify-center border border-white/10 bg-white/5 shadow-sm">
+                  <i class="fas fa-laptop-code text-zinc-300 text-sm"></i>
                 </div>
                 <div>
                   <h3 class="font-outfit font-bold text-lg text-white">Software Developer Intern</h3>
-                  <p class="text-primary-300 font-semibold text-sm">eDeal India, Chikodi, India</p>
+                  <p class="text-zinc-400 font-semibold text-sm">eDeal India, Chikodi, India</p>
                 </div>
               </div>
             </div>
@@ -866,25 +867,25 @@
             </div>
           </div>
 
-          <ul class="space-y-2 mb-5 text-slate-400 text-sm mt-4 break-words">
+          <ul class="space-y-2 mb-5 text-zinc-400 text-sm mt-4 break-words">
             
             <li class="flex items-start gap-2.5">
-              <i class="fas fa-circle-check text-emerald-400 text-xs mt-1 flex-shrink-0"></i>
+              <i class="fas fa-circle-check text-zinc-300 text-xs mt-1 flex-shrink-0"></i>
               Developed responsive and reusable UI components for the customer-facing web application using React.js, Next.js, HTML5, CSS3, and Tailwind CSS.
             </li>
             
             <li class="flex items-start gap-2.5">
-              <i class="fas fa-circle-check text-emerald-400 text-xs mt-1 flex-shrink-0"></i>
+              <i class="fas fa-circle-check text-zinc-300 text-xs mt-1 flex-shrink-0"></i>
               Integrated frontend interfaces with REST APIs for product, category, cart, wishlist, checkout, profile, and order-related functionalities.
             </li>
             
             <li class="flex items-start gap-2.5">
-              <i class="fas fa-circle-check text-emerald-400 text-xs mt-1 flex-shrink-0"></i>
+              <i class="fas fa-circle-check text-zinc-300 text-xs mt-1 flex-shrink-0"></i>
               Implemented and enhanced key user-facing features including product listing and details, search and filters, wishlist, shopping cart, checkout, order tracking, and user profile/dashboard.
             </li>
             
             <li class="flex items-start gap-2.5">
-              <i class="fas fa-circle-check text-emerald-400 text-xs mt-1 flex-shrink-0"></i>
+              <i class="fas fa-circle-check text-zinc-300 text-xs mt-1 flex-shrink-0"></i>
               Identified and resolved UI and integration issues through debugging, testing, and Git/GitHub-based version control while collaborating with the development team.
             </li>
             
@@ -897,12 +898,12 @@
           <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3 mb-4">
             <div>
               <div class="flex items-center gap-3 mb-2">
-                <div class="w-10 h-10 rounded-xl flex items-center justify-center border border-indigo-500/30 bg-gradient-to-br from-indigo-500/30 to-violet-500/20">
-                  <i class="fas fa-paint-brush text-primary-300 text-sm"></i>
+                <div class="w-10 h-10 rounded-xl flex items-center justify-center border border-white/10 bg-white/5 shadow-sm">
+                  <i class="fas fa-paint-brush text-zinc-300 text-sm"></i>
                 </div>
                 <div>
                   <h3 class="font-outfit font-bold text-lg text-white">Frontend Developer</h3>
-                  <p class="text-primary-300 font-semibold text-sm">Travel With Pravah</p>
+                  <p class="text-zinc-400 font-semibold text-sm">Travel With Pravah</p>
                 </div>
               </div>
             </div>
@@ -914,30 +915,30 @@
             </div>
           </div>
 
-          <ul class="space-y-2 mb-5 text-slate-400 text-sm mt-4 break-words">
+          <ul class="space-y-2 mb-5 text-zinc-400 text-sm mt-4 break-words">
             
             <li class="flex items-start gap-2.5">
-              <i class="fas fa-circle-check text-emerald-400 text-xs mt-1 flex-shrink-0"></i>
+              <i class="fas fa-circle-check text-zinc-300 text-xs mt-1 flex-shrink-0"></i>
               Designed and developed a responsive luxury travel website using HTML, CSS, JavaScript, Bootstrap, and React.js.
             </li>
             
             <li class="flex items-start gap-2.5">
-              <i class="fas fa-circle-check text-emerald-400 text-xs mt-1 flex-shrink-0"></i>
+              <i class="fas fa-circle-check text-zinc-300 text-xs mt-1 flex-shrink-0"></i>
               Crafted modern and visually appealing web pages to deliver an engaging user experience.
             </li>
             
             <li class="flex items-start gap-2.5">
-              <i class="fas fa-circle-check text-emerald-400 text-xs mt-1 flex-shrink-0"></i>
+              <i class="fas fa-circle-check text-zinc-300 text-xs mt-1 flex-shrink-0"></i>
               Implemented responsive layouts and interactive UI components for seamless performance across desktop, tablet, and mobile devices.
             </li>
             
             <li class="flex items-start gap-2.5">
-              <i class="fas fa-circle-check text-emerald-400 text-xs mt-1 flex-shrink-0"></i>
+              <i class="fas fa-circle-check text-zinc-300 text-xs mt-1 flex-shrink-0"></i>
               Optimized website performance, accessibility, and cross-browser compatibility using modern frontend development practices.
             </li>
             
             <li class="flex items-start gap-2.5">
-              <i class="fas fa-circle-check text-emerald-400 text-xs mt-1 flex-shrink-0"></i>
+              <i class="fas fa-circle-check text-zinc-300 text-xs mt-1 flex-shrink-0"></i>
               Collaborated with the development team to enhance UI design, resolve frontend issues, and improve overall website quality.
             </li>
             
@@ -989,14 +990,14 @@
           
 
           <!-- Fallback placeholder -->
-          <div class="hidden absolute inset-0 w-full h-full flex-col items-center justify-center gap-3 bg-gradient-to-br from-indigo-500/30 via-violet-500/20 to-cyan-500/25">
-            <i class="fas fa-code text-5xl text-indigo-300/60"></i>
-            <span class="font-outfit text-sm text-indigo-300/70">Grocery Management System</span>
+          <div class="hidden absolute inset-0 w-full h-full flex-col items-center justify-center gap-3 bg-gradient-to-br from-zinc-800 via-zinc-900 to-black">
+            <i class="fas fa-code text-5xl text-zinc-500"></i>
+            <span class="font-outfit text-sm text-zinc-400">Grocery Management System</span>
           </div>
 
           <!-- Gallery "+" button — only if more than 1 gallery image -->
           
-          <button class="absolute bottom-3 right-3 flex items-center gap-1.5 px-3 py-1.5 bg-black/60 backdrop-blur-md border border-white/15 rounded-full text-white text-xs font-semibold cursor-pointer transition-all duration-200 hover:bg-indigo-500/70 hover:scale-105 z-10"
+          <button class="absolute bottom-3 right-3 flex items-center gap-1.5 px-3 py-1.5 bg-black/70 backdrop-blur-md border border-white/20 rounded-full text-white text-xs font-semibold cursor-pointer transition-all duration-200 hover:bg-white hover:text-black hover:scale-105 z-10"
                   onclick="openGallery('gallery-5')"
                   aria-label="View all 4 photos"
                   title="View all photos">
@@ -1011,45 +1012,45 @@
             <h3 class="font-outfit font-bold text-lg text-white leading-tight">
               Grocery Management System
             </h3>
-            <div class="w-12 h-12 rounded-xl flex items-center justify-center text-white text-xl shadow-lg bg-gradient-to-br from-[#6366f1] to-[#8b5cf6]">
-              <i class="fas fa-code text-white text-xs"></i>
+            <div class="w-10 h-10 rounded-xl flex items-center justify-center text-white text-sm shadow-md bg-white/5 border border-white/10 flex-shrink-0">
+              <i class="fas fa-code text-zinc-300"></i>
             </div>
           </div>
 
-          <p class="text-slate-400 text-sm leading-relaxed mb-4 break-words">
+          <p class="text-zinc-400 text-sm leading-relaxed mb-4 break-words">
             A complete web-based grocery store management platform designed to simplify online shopping and store operations. It enables customers to browse products, manage their cart, and place orders, while providing administrators with efficient inventory, product, and order management.
           </p>
 
           <!-- Features -->
-          <ul class="space-y-2 mb-4 text-slate-400 text-xs break-words">
+          <ul class="space-y-2 mb-4 text-zinc-400 text-xs break-words">
             
             <li class="flex items-start gap-2">
-              <i class="fas fa-check-circle text-emerald-400 flex-shrink-0 mt-[3px]"></i>
+              <i class="fas fa-check-circle text-zinc-400 flex-shrink-0 mt-[3px]"></i>
               <span class="leading-relaxed">Real-time inventory &amp; stock management</span>
             </li>
             
             <li class="flex items-start gap-2">
-              <i class="fas fa-check-circle text-emerald-400 flex-shrink-0 mt-[3px]"></i>
+              <i class="fas fa-check-circle text-zinc-400 flex-shrink-0 mt-[3px]"></i>
               <span class="leading-relaxed">Category-based product browsing &amp; search</span>
             </li>
             
             <li class="flex items-start gap-2">
-              <i class="fas fa-check-circle text-emerald-400 flex-shrink-0 mt-[3px]"></i>
+              <i class="fas fa-check-circle text-zinc-400 flex-shrink-0 mt-[3px]"></i>
               <span class="leading-relaxed">Shopping cart &amp; order management</span>
             </li>
             
             <li class="flex items-start gap-2">
-              <i class="fas fa-check-circle text-emerald-400 flex-shrink-0 mt-[3px]"></i>
+              <i class="fas fa-check-circle text-zinc-400 flex-shrink-0 mt-[3px]"></i>
               <span class="leading-relaxed">Admin dashboard for products, categories &amp; customers</span>
             </li>
             
             <li class="flex items-start gap-2">
-              <i class="fas fa-check-circle text-emerald-400 flex-shrink-0 mt-[3px]"></i>
+              <i class="fas fa-check-circle text-zinc-400 flex-shrink-0 mt-[3px]"></i>
               <span class="leading-relaxed">Responsive and user-friendly interface</span>
             </li>
             
             <li class="flex items-start gap-2">
-              <i class="fas fa-check-circle text-emerald-400 flex-shrink-0 mt-[3px]"></i>
+              <i class="fas fa-check-circle text-zinc-400 flex-shrink-0 mt-[3px]"></i>
               <span class="leading-relaxed">Optimized database management for efficient performance</span>
             </li>
             
@@ -1099,31 +1100,31 @@
       <!-- Lightbox Gallery for this project -->
       
       <div id="gallery-5" class="fixed inset-0 z-[9999] flex items-center justify-center p-4 hidden" role="dialog" aria-modal="true" aria-label="Grocery Management System gallery">
-        <div class="absolute inset-0 bg-black/85 backdrop-blur-sm" onclick="closeGallery('gallery-5')"></div>
-        <div class="relative z-10 bg-[#0f0f1a] border border-white/10 rounded-2xl w-full max-w-4xl max-h-[90vh] flex flex-col overflow-hidden shadow-[0_40px_100px_rgba(0,0,0,0.8)]">
+        <div class="absolute inset-0 bg-black/90 backdrop-blur-md" onclick="closeGallery('gallery-5')"></div>
+        <div class="relative z-10 bg-[#121215] border border-white/15 rounded-2xl w-full max-w-4xl max-h-[90vh] flex flex-col overflow-hidden shadow-[0_40px_100px_rgba(0,0,0,0.9)]">
           <div class="flex items-center justify-between px-6 py-4 border-b border-white/10 shrink-0">
             <h3 class="font-outfit font-bold text-white text-lg">Grocery Management System — Photos</h3>
-            <button class="w-8 h-8 rounded-full bg-white/10 text-slate-400 flex items-center justify-center transition-colors hover:bg-red-500/20 hover:text-red-400" onclick="closeGallery('gallery-5')" aria-label="Close gallery">
+            <button class="w-8 h-8 rounded-full bg-white/10 text-zinc-400 flex items-center justify-center transition-colors hover:bg-white hover:text-black" onclick="closeGallery('gallery-5')" aria-label="Close gallery">
               <i class="fas fa-times"></i>
             </button>
           </div>
           <div class="flex flex-col flex-1 overflow-hidden">
             <!-- Main viewer -->
-            <div class="relative flex-1 flex items-center justify-center bg-[#070710] min-h-[300px] overflow-hidden">
+            <div class="relative flex-1 flex items-center justify-center bg-[#09090b] min-h-[300px] overflow-hidden">
               <img id="lightbox-img-5" src="./media/projects/gallery/ChatGPT_Image_Jul_9_2026_04_48_22_PM.png" alt="" class="max-w-full max-h-[55vh] object-contain rounded-lg transition-opacity duration-200" />
-              <p id="lightbox-caption-5" class="absolute bottom-3 left-1/2 -translate-x-1/2 bg-black/60 text-slate-300 text-xs px-3 py-1 rounded-full whitespace-nowrap"></p>
+              <p id="lightbox-caption-5" class="absolute bottom-3 left-1/2 -translate-x-1/2 bg-black/75 border border-white/10 text-zinc-300 text-xs px-3 py-1 rounded-full whitespace-nowrap"></p>
               <!-- Prev / Next -->
               
-              <button class="absolute left-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/50 border border-white/10 text-white flex items-center justify-center transition-colors hover:bg-indigo-500/60 z-10" onclick="navigateGallery('5', -1)" aria-label="Previous"><i class="fas fa-chevron-left"></i></button>
-              <button class="absolute right-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/50 border border-white/10 text-white flex items-center justify-center transition-colors hover:bg-indigo-500/60 z-10" onclick="navigateGallery('5', 1)" aria-label="Next"><i class="fas fa-chevron-right"></i></button>
+              <button class="absolute left-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/70 border border-white/15 text-white flex items-center justify-center transition-colors hover:bg-white hover:text-black z-10" onclick="navigateGallery('5', -1)" aria-label="Previous"><i class="fas fa-chevron-left"></i></button>
+              <button class="absolute right-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/70 border border-white/15 text-white flex items-center justify-center transition-colors hover:bg-white hover:text-black z-10" onclick="navigateGallery('5', 1)" aria-label="Next"><i class="fas fa-chevron-right"></i></button>
               
             </div>
             <!-- Thumbnail Strip -->
-            <div class="flex gap-2 py-3 px-4 overflow-x-auto shrink-0 border-t border-white/10 [scrollbar-width:thin] [scrollbar-color:rgba(99,102,241,0.4)_transparent]">
+            <div class="flex gap-2 py-3 px-4 overflow-x-auto shrink-0 border-t border-white/10 [scrollbar-width:thin] [scrollbar-color:rgba(255,255,255,0.2)_transparent]">
               
               <img src="./media/projects/gallery/ChatGPT_Image_Jul_9_2026_04_48_22_PM.png"
                    alt="Grocery Management System"
-                   class="lightbox-thumb w-[72px] h-[52px] object-cover rounded-md cursor-pointer opacity-50 border-2 border-transparent transition-all hover:opacity-85 hover:scale-105 shrink-0 [&.active]:opacity-100 [&.active]:border-indigo-500 active"
+                   class="lightbox-thumb w-[72px] h-[52px] object-cover rounded-md cursor-pointer opacity-50 border-2 border-transparent transition-all hover:opacity-90 hover:scale-105 shrink-0 [&.active]:opacity-100 [&.active]:border-white active"
                    data-index="0"
                    data-src="./media/projects/gallery/ChatGPT_Image_Jul_9_2026_04_48_22_PM.png"
                    data-caption=""
@@ -1133,7 +1134,7 @@
               
               <img src="./media/projects/gallery/Screenshot_2026-07-09_172847_zRhV72d.png"
                    alt="Grocery Management System"
-                   class="lightbox-thumb w-[72px] h-[52px] object-cover rounded-md cursor-pointer opacity-50 border-2 border-transparent transition-all hover:opacity-85 hover:scale-105 shrink-0 [&.active]:opacity-100 [&.active]:border-indigo-500 "
+                   class="lightbox-thumb w-[72px] h-[52px] object-cover rounded-md cursor-pointer opacity-50 border-2 border-transparent transition-all hover:opacity-90 hover:scale-105 shrink-0 [&.active]:opacity-100 [&.active]:border-white "
                    data-index="1"
                    data-src="./media/projects/gallery/Screenshot_2026-07-09_172847_zRhV72d.png"
                    data-caption=""
@@ -1143,7 +1144,7 @@
               
               <img src="./media/projects/gallery/Screenshot_2026-07-09_172959_XJO8sM3.png"
                    alt="Grocery Management System"
-                   class="lightbox-thumb w-[72px] h-[52px] object-cover rounded-md cursor-pointer opacity-50 border-2 border-transparent transition-all hover:opacity-85 hover:scale-105 shrink-0 [&.active]:opacity-100 [&.active]:border-indigo-500 "
+                   class="lightbox-thumb w-[72px] h-[52px] object-cover rounded-md cursor-pointer opacity-50 border-2 border-transparent transition-all hover:opacity-90 hover:scale-105 shrink-0 [&.active]:opacity-100 [&.active]:border-white "
                    data-index="2"
                    data-src="./media/projects/gallery/Screenshot_2026-07-09_172959_XJO8sM3.png"
                    data-caption=""
@@ -1153,7 +1154,7 @@
               
               <img src="./media/projects/gallery/Screenshot_2026-07-09_172934_MOUd0s0.png"
                    alt="Grocery Management System"
-                   class="lightbox-thumb w-[72px] h-[52px] object-cover rounded-md cursor-pointer opacity-50 border-2 border-transparent transition-all hover:opacity-85 hover:scale-105 shrink-0 [&.active]:opacity-100 [&.active]:border-indigo-500 "
+                   class="lightbox-thumb w-[72px] h-[52px] object-cover rounded-md cursor-pointer opacity-50 border-2 border-transparent transition-all hover:opacity-90 hover:scale-105 shrink-0 [&.active]:opacity-100 [&.active]:border-white "
                    data-index="3"
                    data-src="./media/projects/gallery/Screenshot_2026-07-09_172934_MOUd0s0.png"
                    data-caption=""
@@ -1183,14 +1184,14 @@
           
 
           <!-- Fallback placeholder -->
-          <div class="hidden absolute inset-0 w-full h-full flex-col items-center justify-center gap-3 bg-gradient-to-br from-indigo-500/30 via-violet-500/20 to-cyan-500/25">
-            <i class="fas fa-code text-5xl text-indigo-300/60"></i>
-            <span class="font-outfit text-sm text-indigo-300/70">Crop Yield Prediction</span>
+          <div class="hidden absolute inset-0 w-full h-full flex-col items-center justify-center gap-3 bg-gradient-to-br from-zinc-800 via-zinc-900 to-black">
+            <i class="fas fa-code text-5xl text-zinc-500"></i>
+            <span class="font-outfit text-sm text-zinc-400">Crop Yield Prediction</span>
           </div>
 
           <!-- Gallery "+" button — only if more than 1 gallery image -->
           
-          <button class="absolute bottom-3 right-3 flex items-center gap-1.5 px-3 py-1.5 bg-black/60 backdrop-blur-md border border-white/15 rounded-full text-white text-xs font-semibold cursor-pointer transition-all duration-200 hover:bg-indigo-500/70 hover:scale-105 z-10"
+          <button class="absolute bottom-3 right-3 flex items-center gap-1.5 px-3 py-1.5 bg-black/70 backdrop-blur-md border border-white/20 rounded-full text-white text-xs font-semibold cursor-pointer transition-all duration-200 hover:bg-white hover:text-black hover:scale-105 z-10"
                   onclick="openGallery('gallery-2')"
                   aria-label="View all 3 photos"
                   title="View all photos">
@@ -1205,35 +1206,35 @@
             <h3 class="font-outfit font-bold text-lg text-white leading-tight">
               Crop Yield Prediction
             </h3>
-            <div class="w-12 h-12 rounded-xl flex items-center justify-center text-white text-xl shadow-lg bg-gradient-to-br from-[#6366f1] to-[#8b5cf6]">
-              <i class="fas fa-code text-white text-xs"></i>
+            <div class="w-10 h-10 rounded-xl flex items-center justify-center text-white text-sm shadow-md bg-white/5 border border-white/10 flex-shrink-0">
+              <i class="fas fa-code text-zinc-300"></i>
             </div>
           </div>
 
-          <p class="text-slate-400 text-sm leading-relaxed mb-4 break-words">
+          <p class="text-zinc-400 text-sm leading-relaxed mb-4 break-words">
             An intelligent predictive analytics application that leverages machine learning to estimate crop yield based on historical agricultural data and environmental conditions. The solution enables data-driven decision-making by analyzing key factors that influence agricultural productivity.
           </p>
 
           <!-- Features -->
-          <ul class="space-y-2 mb-4 text-slate-400 text-xs break-words">
+          <ul class="space-y-2 mb-4 text-zinc-400 text-xs break-words">
             
             <li class="flex items-start gap-2">
-              <i class="fas fa-check-circle text-emerald-400 flex-shrink-0 mt-[3px]"></i>
+              <i class="fas fa-check-circle text-zinc-400 flex-shrink-0 mt-[3px]"></i>
               <span class="leading-relaxed">Machine learning-powered crop yield forecasting.</span>
             </li>
             
             <li class="flex items-start gap-2">
-              <i class="fas fa-check-circle text-emerald-400 flex-shrink-0 mt-[3px]"></i>
+              <i class="fas fa-check-circle text-zinc-400 flex-shrink-0 mt-[3px]"></i>
               <span class="leading-relaxed">Historical agricultural data analysis and preprocessing.</span>
             </li>
             
             <li class="flex items-start gap-2">
-              <i class="fas fa-check-circle text-emerald-400 flex-shrink-0 mt-[3px]"></i>
+              <i class="fas fa-check-circle text-zinc-400 flex-shrink-0 mt-[3px]"></i>
               <span class="leading-relaxed">Predictive modeling with Random Forest, Decision Tree, Linear Regression &amp; XGBoost.</span>
             </li>
             
             <li class="flex items-start gap-2">
-              <i class="fas fa-check-circle text-emerald-400 flex-shrink-0 mt-[3px]"></i>
+              <i class="fas fa-check-circle text-zinc-400 flex-shrink-0 mt-[3px]"></i>
               <span class="leading-relaxed">Interactive visualization and model performance evaluation.</span>
             </li>
             
@@ -1295,31 +1296,31 @@
       <!-- Lightbox Gallery for this project -->
       
       <div id="gallery-2" class="fixed inset-0 z-[9999] flex items-center justify-center p-4 hidden" role="dialog" aria-modal="true" aria-label="Crop Yield Prediction gallery">
-        <div class="absolute inset-0 bg-black/85 backdrop-blur-sm" onclick="closeGallery('gallery-2')"></div>
-        <div class="relative z-10 bg-[#0f0f1a] border border-white/10 rounded-2xl w-full max-w-4xl max-h-[90vh] flex flex-col overflow-hidden shadow-[0_40px_100px_rgba(0,0,0,0.8)]">
+        <div class="absolute inset-0 bg-black/90 backdrop-blur-md" onclick="closeGallery('gallery-2')"></div>
+        <div class="relative z-10 bg-[#121215] border border-white/15 rounded-2xl w-full max-w-4xl max-h-[90vh] flex flex-col overflow-hidden shadow-[0_40px_100px_rgba(0,0,0,0.9)]">
           <div class="flex items-center justify-between px-6 py-4 border-b border-white/10 shrink-0">
             <h3 class="font-outfit font-bold text-white text-lg">Crop Yield Prediction — Photos</h3>
-            <button class="w-8 h-8 rounded-full bg-white/10 text-slate-400 flex items-center justify-center transition-colors hover:bg-red-500/20 hover:text-red-400" onclick="closeGallery('gallery-2')" aria-label="Close gallery">
+            <button class="w-8 h-8 rounded-full bg-white/10 text-zinc-400 flex items-center justify-center transition-colors hover:bg-white hover:text-black" onclick="closeGallery('gallery-2')" aria-label="Close gallery">
               <i class="fas fa-times"></i>
             </button>
           </div>
           <div class="flex flex-col flex-1 overflow-hidden">
             <!-- Main viewer -->
-            <div class="relative flex-1 flex items-center justify-center bg-[#070710] min-h-[300px] overflow-hidden">
+            <div class="relative flex-1 flex items-center justify-center bg-[#09090b] min-h-[300px] overflow-hidden">
               <img id="lightbox-img-2" src="./media/projects/gallery/ChatGPT_Image_Jul_9_2026_04_36_36_PM_JtXOWKo.png" alt="" class="max-w-full max-h-[55vh] object-contain rounded-lg transition-opacity duration-200" />
-              <p id="lightbox-caption-2" class="absolute bottom-3 left-1/2 -translate-x-1/2 bg-black/60 text-slate-300 text-xs px-3 py-1 rounded-full whitespace-nowrap"></p>
+              <p id="lightbox-caption-2" class="absolute bottom-3 left-1/2 -translate-x-1/2 bg-black/75 border border-white/10 text-zinc-300 text-xs px-3 py-1 rounded-full whitespace-nowrap"></p>
               <!-- Prev / Next -->
               
-              <button class="absolute left-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/50 border border-white/10 text-white flex items-center justify-center transition-colors hover:bg-indigo-500/60 z-10" onclick="navigateGallery('2', -1)" aria-label="Previous"><i class="fas fa-chevron-left"></i></button>
-              <button class="absolute right-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/50 border border-white/10 text-white flex items-center justify-center transition-colors hover:bg-indigo-500/60 z-10" onclick="navigateGallery('2', 1)" aria-label="Next"><i class="fas fa-chevron-right"></i></button>
+              <button class="absolute left-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/70 border border-white/15 text-white flex items-center justify-center transition-colors hover:bg-white hover:text-black z-10" onclick="navigateGallery('2', -1)" aria-label="Previous"><i class="fas fa-chevron-left"></i></button>
+              <button class="absolute right-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/70 border border-white/15 text-white flex items-center justify-center transition-colors hover:bg-white hover:text-black z-10" onclick="navigateGallery('2', 1)" aria-label="Next"><i class="fas fa-chevron-right"></i></button>
               
             </div>
             <!-- Thumbnail Strip -->
-            <div class="flex gap-2 py-3 px-4 overflow-x-auto shrink-0 border-t border-white/10 [scrollbar-width:thin] [scrollbar-color:rgba(99,102,241,0.4)_transparent]">
+            <div class="flex gap-2 py-3 px-4 overflow-x-auto shrink-0 border-t border-white/10 [scrollbar-width:thin] [scrollbar-color:rgba(255,255,255,0.2)_transparent]">
               
               <img src="./media/projects/gallery/ChatGPT_Image_Jul_9_2026_04_36_36_PM_JtXOWKo.png"
                    alt="Crop Yield Prediction"
-                   class="lightbox-thumb w-[72px] h-[52px] object-cover rounded-md cursor-pointer opacity-50 border-2 border-transparent transition-all hover:opacity-85 hover:scale-105 shrink-0 [&.active]:opacity-100 [&.active]:border-indigo-500 active"
+                   class="lightbox-thumb w-[72px] h-[52px] object-cover rounded-md cursor-pointer opacity-50 border-2 border-transparent transition-all hover:opacity-90 hover:scale-105 shrink-0 [&.active]:opacity-100 [&.active]:border-white active"
                    data-index="0"
                    data-src="./media/projects/gallery/ChatGPT_Image_Jul_9_2026_04_36_36_PM_JtXOWKo.png"
                    data-caption=""
@@ -1329,7 +1330,7 @@
               
               <img src="./media/projects/gallery/ggg.jpeg"
                    alt="Crop Yield Prediction"
-                   class="lightbox-thumb w-[72px] h-[52px] object-cover rounded-md cursor-pointer opacity-50 border-2 border-transparent transition-all hover:opacity-85 hover:scale-105 shrink-0 [&.active]:opacity-100 [&.active]:border-indigo-500 "
+                   class="lightbox-thumb w-[72px] h-[52px] object-cover rounded-md cursor-pointer opacity-50 border-2 border-transparent transition-all hover:opacity-90 hover:scale-105 shrink-0 [&.active]:opacity-100 [&.active]:border-white "
                    data-index="1"
                    data-src="./media/projects/gallery/ggg.jpeg"
                    data-caption=""
@@ -1339,7 +1340,7 @@
               
               <img src="./media/projects/gallery/WhatsApp_Image_2026-07-09_at_5.45.27_PM.jpeg"
                    alt="Crop Yield Prediction"
-                   class="lightbox-thumb w-[72px] h-[52px] object-cover rounded-md cursor-pointer opacity-50 border-2 border-transparent transition-all hover:opacity-85 hover:scale-105 shrink-0 [&.active]:opacity-100 [&.active]:border-indigo-500 "
+                   class="lightbox-thumb w-[72px] h-[52px] object-cover rounded-md cursor-pointer opacity-50 border-2 border-transparent transition-all hover:opacity-90 hover:scale-105 shrink-0 [&.active]:opacity-100 [&.active]:border-white "
                    data-index="2"
                    data-src="./media/projects/gallery/WhatsApp_Image_2026-07-09_at_5.45.27_PM.jpeg"
                    data-caption=""
@@ -1369,14 +1370,14 @@
           
 
           <!-- Fallback placeholder -->
-          <div class="hidden absolute inset-0 w-full h-full flex-col items-center justify-center gap-3 bg-gradient-to-br from-indigo-500/30 via-violet-500/20 to-cyan-500/25">
-            <i class="fas fa-code text-5xl text-indigo-300/60"></i>
-            <span class="font-outfit text-sm text-indigo-300/70">Multi-Vendor E-Commerce Platform</span>
+          <div class="hidden absolute inset-0 w-full h-full flex-col items-center justify-center gap-3 bg-gradient-to-br from-zinc-800 via-zinc-900 to-black">
+            <i class="fas fa-code text-5xl text-zinc-500"></i>
+            <span class="font-outfit text-sm text-zinc-400">Multi-Vendor E-Commerce Platform</span>
           </div>
 
           <!-- Gallery "+" button — only if more than 1 gallery image -->
           
-          <button class="absolute bottom-3 right-3 flex items-center gap-1.5 px-3 py-1.5 bg-black/60 backdrop-blur-md border border-white/15 rounded-full text-white text-xs font-semibold cursor-pointer transition-all duration-200 hover:bg-indigo-500/70 hover:scale-105 z-10"
+          <button class="absolute bottom-3 right-3 flex items-center gap-1.5 px-3 py-1.5 bg-black/70 backdrop-blur-md border border-white/20 rounded-full text-white text-xs font-semibold cursor-pointer transition-all duration-200 hover:bg-white hover:text-black hover:scale-105 z-10"
                   onclick="openGallery('gallery-4')"
                   aria-label="View all 4 photos"
                   title="View all photos">
@@ -1391,40 +1392,40 @@
             <h3 class="font-outfit font-bold text-lg text-white leading-tight">
               Multi-Vendor E-Commerce Platform
             </h3>
-            <div class="w-12 h-12 rounded-xl flex items-center justify-center text-white text-xl shadow-lg bg-gradient-to-br from-[#6366f1] to-[#8b5cf6]">
-              <i class="fas fa-code text-white text-xs"></i>
+            <div class="w-10 h-10 rounded-xl flex items-center justify-center text-white text-sm shadow-md bg-white/5 border border-white/10 flex-shrink-0">
+              <i class="fas fa-code text-zinc-300"></i>
             </div>
           </div>
 
-          <p class="text-slate-400 text-sm leading-relaxed mb-4 break-words">
+          <p class="text-zinc-400 text-sm leading-relaxed mb-4 break-words">
             A modern, feature-rich multi-vendor e-commerce platform designed to deliver an engaging shopping experience through premium jewellery collections, exclusive contest products, secure payments, and customer reward programs. The platform streamlines vendor operations with dedicated management dashboards while ensuring a fast, intuitive, and scalable user experience.
           </p>
 
           <!-- Features -->
-          <ul class="space-y-2 mb-4 text-slate-400 text-xs break-words">
+          <ul class="space-y-2 mb-4 text-zinc-400 text-xs break-words">
             
             <li class="flex items-start gap-2">
-              <i class="fas fa-check-circle text-emerald-400 flex-shrink-0 mt-[3px]"></i>
+              <i class="fas fa-check-circle text-zinc-400 flex-shrink-0 mt-[3px]"></i>
               <span class="leading-relaxed">Premium jewellery collections &amp; contest products</span>
             </li>
             
             <li class="flex items-start gap-2">
-              <i class="fas fa-check-circle text-emerald-400 flex-shrink-0 mt-[3px]"></i>
+              <i class="fas fa-check-circle text-zinc-400 flex-shrink-0 mt-[3px]"></i>
               <span class="leading-relaxed">Dedicated Admin &amp; Vendor dashboards</span>
             </li>
             
             <li class="flex items-start gap-2">
-              <i class="fas fa-check-circle text-emerald-400 flex-shrink-0 mt-[3px]"></i>
+              <i class="fas fa-check-circle text-zinc-400 flex-shrink-0 mt-[3px]"></i>
               <span class="leading-relaxed">Secure checkout, order processing &amp; payment gateway integration</span>
             </li>
             
             <li class="flex items-start gap-2">
-              <i class="fas fa-check-circle text-emerald-400 flex-shrink-0 mt-[3px]"></i>
+              <i class="fas fa-check-circle text-zinc-400 flex-shrink-0 mt-[3px]"></i>
               <span class="leading-relaxed">Token-based lucky draws &amp; membership savings plans</span>
             </li>
             
             <li class="flex items-start gap-2">
-              <i class="fas fa-check-circle text-emerald-400 flex-shrink-0 mt-[3px]"></i>
+              <i class="fas fa-check-circle text-zinc-400 flex-shrink-0 mt-[3px]"></i>
               <span class="leading-relaxed">Responsive design with intelligent product search &amp; category navigation</span>
             </li>
             
@@ -1472,31 +1473,31 @@
       <!-- Lightbox Gallery for this project -->
       
       <div id="gallery-4" class="fixed inset-0 z-[9999] flex items-center justify-center p-4 hidden" role="dialog" aria-modal="true" aria-label="Multi-Vendor E-Commerce Platform gallery">
-        <div class="absolute inset-0 bg-black/85 backdrop-blur-sm" onclick="closeGallery('gallery-4')"></div>
-        <div class="relative z-10 bg-[#0f0f1a] border border-white/10 rounded-2xl w-full max-w-4xl max-h-[90vh] flex flex-col overflow-hidden shadow-[0_40px_100px_rgba(0,0,0,0.8)]">
+        <div class="absolute inset-0 bg-black/90 backdrop-blur-md" onclick="closeGallery('gallery-4')"></div>
+        <div class="relative z-10 bg-[#121215] border border-white/15 rounded-2xl w-full max-w-4xl max-h-[90vh] flex flex-col overflow-hidden shadow-[0_40px_100px_rgba(0,0,0,0.9)]">
           <div class="flex items-center justify-between px-6 py-4 border-b border-white/10 shrink-0">
             <h3 class="font-outfit font-bold text-white text-lg">Multi-Vendor E-Commerce Platform — Photos</h3>
-            <button class="w-8 h-8 rounded-full bg-white/10 text-slate-400 flex items-center justify-center transition-colors hover:bg-red-500/20 hover:text-red-400" onclick="closeGallery('gallery-4')" aria-label="Close gallery">
+            <button class="w-8 h-8 rounded-full bg-white/10 text-zinc-400 flex items-center justify-center transition-colors hover:bg-white hover:text-black" onclick="closeGallery('gallery-4')" aria-label="Close gallery">
               <i class="fas fa-times"></i>
             </button>
           </div>
           <div class="flex flex-col flex-1 overflow-hidden">
             <!-- Main viewer -->
-            <div class="relative flex-1 flex items-center justify-center bg-[#070710] min-h-[300px] overflow-hidden">
+            <div class="relative flex-1 flex items-center justify-center bg-[#09090b] min-h-[300px] overflow-hidden">
               <img id="lightbox-img-4" src="./media/projects/gallery/Screenshot_2026-07-09_165310.png" alt="" class="max-w-full max-h-[55vh] object-contain rounded-lg transition-opacity duration-200" />
-              <p id="lightbox-caption-4" class="absolute bottom-3 left-1/2 -translate-x-1/2 bg-black/60 text-slate-300 text-xs px-3 py-1 rounded-full whitespace-nowrap"></p>
+              <p id="lightbox-caption-4" class="absolute bottom-3 left-1/2 -translate-x-1/2 bg-black/75 border border-white/10 text-zinc-300 text-xs px-3 py-1 rounded-full whitespace-nowrap"></p>
               <!-- Prev / Next -->
               
-              <button class="absolute left-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/50 border border-white/10 text-white flex items-center justify-center transition-colors hover:bg-indigo-500/60 z-10" onclick="navigateGallery('4', -1)" aria-label="Previous"><i class="fas fa-chevron-left"></i></button>
-              <button class="absolute right-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/50 border border-white/10 text-white flex items-center justify-center transition-colors hover:bg-indigo-500/60 z-10" onclick="navigateGallery('4', 1)" aria-label="Next"><i class="fas fa-chevron-right"></i></button>
+              <button class="absolute left-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/70 border border-white/15 text-white flex items-center justify-center transition-colors hover:bg-white hover:text-black z-10" onclick="navigateGallery('4', -1)" aria-label="Previous"><i class="fas fa-chevron-left"></i></button>
+              <button class="absolute right-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/70 border border-white/15 text-white flex items-center justify-center transition-colors hover:bg-white hover:text-black z-10" onclick="navigateGallery('4', 1)" aria-label="Next"><i class="fas fa-chevron-right"></i></button>
               
             </div>
             <!-- Thumbnail Strip -->
-            <div class="flex gap-2 py-3 px-4 overflow-x-auto shrink-0 border-t border-white/10 [scrollbar-width:thin] [scrollbar-color:rgba(99,102,241,0.4)_transparent]">
+            <div class="flex gap-2 py-3 px-4 overflow-x-auto shrink-0 border-t border-white/10 [scrollbar-width:thin] [scrollbar-color:rgba(255,255,255,0.2)_transparent]">
               
               <img src="./media/projects/gallery/Screenshot_2026-07-09_165310.png"
                    alt="Multi-Vendor E-Commerce Platform"
-                   class="lightbox-thumb w-[72px] h-[52px] object-cover rounded-md cursor-pointer opacity-50 border-2 border-transparent transition-all hover:opacity-85 hover:scale-105 shrink-0 [&.active]:opacity-100 [&.active]:border-indigo-500 active"
+                   class="lightbox-thumb w-[72px] h-[52px] object-cover rounded-md cursor-pointer opacity-50 border-2 border-transparent transition-all hover:opacity-90 hover:scale-105 shrink-0 [&.active]:opacity-100 [&.active]:border-white active"
                    data-index="0"
                    data-src="./media/projects/gallery/Screenshot_2026-07-09_165310.png"
                    data-caption=""
@@ -1506,7 +1507,7 @@
               
               <img src="./media/projects/gallery/Screenshot_2026-07-09_170618.png"
                    alt="Multi-Vendor E-Commerce Platform"
-                   class="lightbox-thumb w-[72px] h-[52px] object-cover rounded-md cursor-pointer opacity-50 border-2 border-transparent transition-all hover:opacity-85 hover:scale-105 shrink-0 [&.active]:opacity-100 [&.active]:border-indigo-500 "
+                   class="lightbox-thumb w-[72px] h-[52px] object-cover rounded-md cursor-pointer opacity-50 border-2 border-transparent transition-all hover:opacity-90 hover:scale-105 shrink-0 [&.active]:opacity-100 [&.active]:border-white "
                    data-index="1"
                    data-src="./media/projects/gallery/Screenshot_2026-07-09_170618.png"
                    data-caption=""
@@ -1516,7 +1517,7 @@
               
               <img src="./media/projects/gallery/Screenshot_2026-07-09_170745.png"
                    alt="Multi-Vendor E-Commerce Platform"
-                   class="lightbox-thumb w-[72px] h-[52px] object-cover rounded-md cursor-pointer opacity-50 border-2 border-transparent transition-all hover:opacity-85 hover:scale-105 shrink-0 [&.active]:opacity-100 [&.active]:border-indigo-500 "
+                   class="lightbox-thumb w-[72px] h-[52px] object-cover rounded-md cursor-pointer opacity-50 border-2 border-transparent transition-all hover:opacity-90 hover:scale-105 shrink-0 [&.active]:opacity-100 [&.active]:border-white "
                    data-index="2"
                    data-src="./media/projects/gallery/Screenshot_2026-07-09_170745.png"
                    data-caption=""
@@ -1526,7 +1527,7 @@
               
               <img src="./media/projects/gallery/Screenshot_2026-07-09_170805.png"
                    alt="Multi-Vendor E-Commerce Platform"
-                   class="lightbox-thumb w-[72px] h-[52px] object-cover rounded-md cursor-pointer opacity-50 border-2 border-transparent transition-all hover:opacity-85 hover:scale-105 shrink-0 [&.active]:opacity-100 [&.active]:border-indigo-500 "
+                   class="lightbox-thumb w-[72px] h-[52px] object-cover rounded-md cursor-pointer opacity-50 border-2 border-transparent transition-all hover:opacity-90 hover:scale-105 shrink-0 [&.active]:opacity-100 [&.active]:border-white "
                    data-index="3"
                    data-src="./media/projects/gallery/Screenshot_2026-07-09_170805.png"
                    data-caption=""
@@ -1639,13 +1640,13 @@ document.addEventListener('keydown', function(e) {
 
           <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-4">
             <div class="flex items-center gap-4">
-              <div class="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 bg-gradient-to-br from-indigo-500 to-violet-500">
+              <div class="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 bg-white/5 border border-white/10 shadow-sm">
                 <i class="fas fa-user-graduate text-white text-lg"></i>
               </div>
               <div>
                 <span class="role-badge mb-1 inline-block">B.E. Computer Science &amp; Engineering</span>
                 <h3 class="font-outfit font-bold text-base text-white">Computer Science &amp; Engineering</h3>
-                <p class="text-slate-400 text-sm mt-0.5">Hira Sugar Institute of Technology, Belagavi</p>
+                <p class="text-zinc-400 text-sm mt-0.5">Hira Sugar Institute of Technology, Belagavi</p>
               </div>
             </div>
             <div class="flex-shrink-0 flex flex-col items-start sm:items-center mt-3 sm:mt-0">
@@ -1660,7 +1661,7 @@ document.addEventListener('keydown', function(e) {
             </div>
           </div>
 
-          <p class="text-slate-400 text-sm leading-relaxed mb-3 break-words">
+          <p class="text-zinc-400 text-sm leading-relaxed mb-3 break-words">
             Developed a comprehensive understanding of computer science principles and modern technologies while applying engineering concepts to design and implement practical solutions. Enhanced technical expertise, analytical thinking, innovation, teamwork, and problem-solving skills through academic coursework, laboratory sessions, and project-based learning.
           </p>
         </div>
@@ -1670,13 +1671,13 @@ document.addEventListener('keydown', function(e) {
 
           <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-4">
             <div class="flex items-center gap-4">
-              <div class="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 bg-gradient-to-br from-indigo-500 to-violet-500">
+              <div class="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 bg-white/5 border border-white/10 shadow-sm">
                 <i class="fas fa-university text-white text-lg"></i>
               </div>
               <div>
                 <span class="role-badge mb-1 inline-block">Pre-University Course (PUC)</span>
                 <h3 class="font-outfit font-bold text-base text-white">Science (PCMB)</h3>
-                <p class="text-slate-400 text-sm mt-0.5">C.L.E PU College, Chikodi</p>
+                <p class="text-zinc-400 text-sm mt-0.5">C.L.E PU College, Chikodi</p>
               </div>
             </div>
             <div class="flex-shrink-0 flex flex-col items-start sm:items-center mt-3 sm:mt-0">
@@ -1691,7 +1692,7 @@ document.addEventListener('keydown', function(e) {
             </div>
           </div>
 
-          <p class="text-slate-400 text-sm leading-relaxed mb-3 break-words">
+          <p class="text-zinc-400 text-sm leading-relaxed mb-3 break-words">
             Specialized in the PCMB stream, gaining a strong foundation in Physics, Chemistry, Mathematics, and Biology through theoretical coursework and practical laboratory sessions. Developed analytical thinking, scientific reasoning, quantitative aptitude, problem-solving abilities, and attention to detail while applying scientific concepts in academic projects and experiments.
           </p>
         </div>
@@ -1701,13 +1702,13 @@ document.addEventListener('keydown', function(e) {
 
           <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-4">
             <div class="flex items-center gap-4">
-              <div class="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 bg-gradient-to-br from-indigo-500 to-violet-500">
+              <div class="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 bg-white/5 border border-white/10 shadow-sm">
                 <i class="fas fa-building text-white text-lg"></i>
               </div>
               <div>
                 <span class="role-badge mb-1 inline-block">SSLC (10th)</span>
                 <h3 class="font-outfit font-bold text-base text-white">SSLC</h3>
-                <p class="text-slate-400 text-sm mt-0.5">C.K. High School, Examba</p>
+                <p class="text-zinc-400 text-sm mt-0.5">C.K. High School, Examba</p>
               </div>
             </div>
             <div class="flex-shrink-0 flex flex-col items-start sm:items-center mt-3 sm:mt-0">
@@ -1722,7 +1723,7 @@ document.addEventListener('keydown', function(e) {
             </div>
           </div>
 
-          <p class="text-slate-400 text-sm leading-relaxed mb-3 break-words">
+          <p class="text-zinc-400 text-sm leading-relaxed mb-3 break-words">
             Enhanced communication skills through language studies, developed logical and numerical reasoning through Mathematics, gained scientific knowledge and an understanding of the natural world through Science, and acquired knowledge of history, geography, civics, and economics through Social Science.
           </p>
         </div>
@@ -1776,20 +1777,20 @@ document.addEventListener('keydown', function(e) {
           
 
           <div class="mb-2">
-            <span class="text-xs uppercase tracking-widest text-primary-400 font-semibold font-inter">Certification</span>
+            <span class="text-xs uppercase tracking-widest text-zinc-400 font-semibold font-inter">Certification</span>
           </div>
           <h3 class="font-outfit font-bold text-lg text-white mb-2 leading-tight">
             Python Full Stack Web Development
           </h3>
-          <p class="text-slate-400 text-sm mb-1">
-            <i class="fas fa-building text-primary-400 mr-1.5"></i>
-            <span class="font-medium text-slate-300">SkyllX Software Training Institute, Bangalore</span>
+          <p class="text-zinc-400 text-sm mb-1">
+            <i class="fas fa-building text-zinc-400 mr-1.5"></i>
+            <span class="font-medium text-zinc-300">SkyllX Software Training Institute, Bangalore</span>
           </p>
-          <p class="text-slate-500 text-xs mb-4">
-            <i class="fas fa-clock text-slate-500 mr-1.5"></i> Jun 2025 – Dec 2025
+          <p class="text-zinc-500 text-xs mb-4">
+            <i class="fas fa-clock text-zinc-500 mr-1.5"></i> Jun 2025 – Dec 2025
           </p>
 
-          <p class="text-slate-400 text-sm leading-relaxed mb-5">
+          <p class="text-zinc-400 text-sm leading-relaxed mb-5">
             Comprehensive certification covering Python, Django, REST APIs, MySQL, HTML5, CSS3, JavaScript (ES6+), and React.js with real-world full stack project development.
           </p>
 
@@ -1817,7 +1818,7 @@ document.addEventListener('keydown', function(e) {
         <div>
           
           <a href="./media/certificates/Pyton_Full_stack.jpeg" target="_blank" rel="noopener noreferrer"
-             class="btn-primary ripple w-full justify-center text-sm py-2.5 !bg-[linear-gradient(135deg,#6366f1,#8b5cf6)]"
+             class="btn-primary ripple w-full justify-center text-sm py-2.5"
              aria-label="View Python Full Stack Web Development Certificate">
             <i class="fas fa-external-link-alt"></i> View Certificate
           </a>
@@ -1844,20 +1845,20 @@ document.addEventListener('keydown', function(e) {
           
 
           <div class="mb-2">
-            <span class="text-xs uppercase tracking-widest text-primary-400 font-semibold font-inter">Internship Certification</span>
+            <span class="text-xs uppercase tracking-widest text-zinc-400 font-semibold font-inter">Internship Certification</span>
           </div>
           <h3 class="font-outfit font-bold text-lg text-white mb-2 leading-tight">
             AI &amp; ML Internship, Certified
           </h3>
-          <p class="text-slate-400 text-sm mb-1">
-            <i class="fas fa-building text-primary-400 mr-1.5"></i>
-            <span class="font-medium text-slate-300">Rooman Technology &amp; IBM</span>
+          <p class="text-zinc-400 text-sm mb-1">
+            <i class="fas fa-building text-zinc-400 mr-1.5"></i>
+            <span class="font-medium text-zinc-300">Rooman Technology &amp; IBM</span>
           </p>
-          <p class="text-slate-500 text-xs mb-4">
-            <i class="fas fa-clock text-slate-500 mr-1.5"></i> Jun 2024 – Nov 2024
+          <p class="text-zinc-500 text-xs mb-4">
+            <i class="fas fa-clock text-zinc-500 mr-1.5"></i> Jun 2024 – Nov 2024
           </p>
 
-          <p class="text-slate-400 text-sm leading-relaxed mb-5">
+          <p class="text-zinc-400 text-sm leading-relaxed mb-5">
             Certified training and hands-on internship in Artificial Intelligence and Machine Learning fundamentals, covering regression models, data preprocessing with Pandas &amp; NumPy, model evaluation, and EDA.
           </p>
 
@@ -1881,7 +1882,7 @@ document.addEventListener('keydown', function(e) {
         <div>
           
           <a href="./media/certificates/Screenshot_2026-07-09_184920.png" target="_blank" rel="noopener noreferrer"
-             class="btn-primary ripple w-full justify-center text-sm py-2.5 !bg-[linear-gradient(135deg,#6366f1,#8b5cf6)]"
+             class="btn-primary ripple w-full justify-center text-sm py-2.5"
              aria-label="View AI &amp; ML Internship, Certified Certificate">
             <i class="fas fa-external-link-alt"></i> View Certificate
           </a>
@@ -1895,26 +1896,26 @@ document.addEventListener('keydown', function(e) {
           <!-- Certificate Image Preview (if uploaded) -->
           
           <!-- Icon fallback when no certificate image is uploaded -->
-          <div class="w-16 h-16 mx-auto mb-5 rounded-2xl flex items-center justify-center bg-gradient-to-br from-[#06b6d4] to-[#3b82f6] shadow-[0_8px_30px_#06b6d466]">
+          <div class="w-16 h-16 mx-auto mb-5 rounded-2xl flex items-center justify-center bg-white/5 border border-white/10 shadow-sm">
             <i class="fas fa-chart-line text-white text-2xl"></i>
           </div>
           
 
           <div class="mb-2">
-            <span class="text-xs uppercase tracking-widest text-cyan-400 font-semibold font-inter">Certification</span>
+            <span class="text-xs uppercase tracking-widest text-zinc-400 font-semibold font-inter">Certification</span>
           </div>
           <h3 class="font-outfit font-bold text-lg text-white mb-2 leading-tight">
             IBM SPSS Statistics
           </h3>
-          <p class="text-slate-400 text-sm mb-1">
-            <i class="fas fa-building text-cyan-400 mr-1.5"></i>
-            <span class="font-medium text-slate-300">Imra Tech Academy</span>
+          <p class="text-zinc-400 text-sm mb-1">
+            <i class="fas fa-building text-zinc-400 mr-1.5"></i>
+            <span class="font-medium text-zinc-300">Imra Tech Academy</span>
           </p>
-          <p class="text-slate-500 text-xs mb-4">
-            <i class="fas fa-clock text-slate-500 mr-1.5"></i> Aug 2026
+          <p class="text-zinc-500 text-xs mb-4">
+            <i class="fas fa-clock text-zinc-500 mr-1.5"></i> Aug 2026
           </p>
 
-          <p class="text-slate-400 text-sm leading-relaxed mb-5">
+          <p class="text-zinc-400 text-sm leading-relaxed mb-5">
             Statistical data analysis, hypothesis testing, predictive modeling, and data interpretation using IBM SPSS Statistics.
           </p>
 
@@ -1933,8 +1934,8 @@ document.addEventListener('keydown', function(e) {
 
         <div>
           
-          <div class="w-full text-center py-2 px-3 rounded-lg bg-white/5 border border-white/10 text-xs text-slate-400 font-medium flex items-center justify-center gap-1.5">
-            <i class="fas fa-check-circle text-emerald-400"></i> Verified Credential
+          <div class="w-full text-center py-2 px-3 rounded-lg bg-white/5 border border-white/10 text-xs text-zinc-400 font-medium flex items-center justify-center gap-1.5">
+            <i class="fas fa-check-circle text-zinc-300"></i> Verified Credential
           </div>
           
         </div>
@@ -1946,26 +1947,26 @@ document.addEventListener('keydown', function(e) {
           <!-- Certificate Image Preview (if uploaded) -->
           
           <!-- Icon fallback when no certificate image is uploaded -->
-          <div class="w-16 h-16 mx-auto mb-5 rounded-2xl flex items-center justify-center bg-gradient-to-br from-[#f59e0b] to-[#ea580c] shadow-[0_8px_30px_#f59e0b66]">
+          <div class="w-16 h-16 mx-auto mb-5 rounded-2xl flex items-center justify-center bg-white/5 border border-white/10 shadow-sm">
             <i class="fas fa-chart-bar text-white text-2xl"></i>
           </div>
           
 
           <div class="mb-2">
-            <span class="text-xs uppercase tracking-widest text-amber-400 font-semibold font-inter">Certification</span>
+            <span class="text-xs uppercase tracking-widest text-zinc-400 font-semibold font-inter">Certification</span>
           </div>
           <h3 class="font-outfit font-bold text-lg text-white mb-2 leading-tight">
             Power BI for Beginners
           </h3>
-          <p class="text-slate-400 text-sm mb-1">
-            <i class="fas fa-building text-amber-400 mr-1.5"></i>
-            <span class="font-medium text-slate-300">Simplilearn</span>
+          <p class="text-zinc-400 text-sm mb-1">
+            <i class="fas fa-building text-zinc-400 mr-1.5"></i>
+            <span class="font-medium text-zinc-300">Simplilearn</span>
           </p>
-          <p class="text-slate-500 text-xs mb-4">
-            <i class="fas fa-clock text-slate-500 mr-1.5"></i> Sep 2026
+          <p class="text-zinc-500 text-xs mb-4">
+            <i class="fas fa-clock text-zinc-500 mr-1.5"></i> Sep 2026
           </p>
 
-          <p class="text-slate-400 text-sm leading-relaxed mb-5">
+          <p class="text-zinc-400 text-sm leading-relaxed mb-5">
             Business intelligence, interactive dashboard creation, Power Query, DAX functions, data modeling, and business reporting.
           </p>
 
@@ -1986,8 +1987,8 @@ document.addEventListener('keydown', function(e) {
 
         <div>
           
-          <div class="w-full text-center py-2 px-3 rounded-lg bg-white/5 border border-white/10 text-xs text-slate-400 font-medium flex items-center justify-center gap-1.5">
-            <i class="fas fa-check-circle text-emerald-400"></i> Verified Credential
+          <div class="w-full text-center py-2 px-3 rounded-lg bg-white/5 border border-white/10 text-xs text-zinc-400 font-medium flex items-center justify-center gap-1.5">
+            <i class="fas fa-check-circle text-zinc-300"></i> Verified Credential
           </div>
           
         </div>
@@ -1999,26 +2000,26 @@ document.addEventListener('keydown', function(e) {
           <!-- Certificate Image Preview (if uploaded) -->
           
           <!-- Icon fallback when no certificate image is uploaded -->
-          <div class="w-16 h-16 mx-auto mb-5 rounded-2xl flex items-center justify-center bg-gradient-to-br from-[#6366f1] to-[#8b5cf6] shadow-[0_8px_30px_#6366f166]">
+          <div class="w-16 h-16 mx-auto mb-5 rounded-2xl flex items-center justify-center bg-white/5 border border-white/10 shadow-sm">
             <i class="fas fa-paint-brush text-white text-2xl"></i>
           </div>
           
 
           <div class="mb-2">
-            <span class="text-xs uppercase tracking-widest text-primary-400 font-semibold font-inter">Internship</span>
+            <span class="text-xs uppercase tracking-widest text-zinc-400 font-semibold font-inter">Internship</span>
           </div>
           <h3 class="font-outfit font-bold text-lg text-white mb-2 leading-tight">
             Frontend Developer Internship
           </h3>
-          <p class="text-slate-400 text-sm mb-1">
-            <i class="fas fa-building text-primary-400 mr-1.5"></i>
-            <span class="font-medium text-slate-300">Travel With Pravah</span>
+          <p class="text-zinc-400 text-sm mb-1">
+            <i class="fas fa-building text-zinc-400 mr-1.5"></i>
+            <span class="font-medium text-zinc-300">Travel With Pravah</span>
           </p>
-          <p class="text-slate-500 text-xs mb-4">
-            <i class="fas fa-clock text-slate-500 mr-1.5"></i> 1 Month 2026
+          <p class="text-zinc-500 text-xs mb-4">
+            <i class="fas fa-clock text-zinc-500 mr-1.5"></i> 1 Month 2026
           </p>
 
-          <p class="text-slate-400 text-sm leading-relaxed mb-5">
+          <p class="text-zinc-400 text-sm leading-relaxed mb-5">
             Successfully completed a frontend development internship, building responsive UIs, implementing animations, and improving the overall web experience for the travel platform.
           </p>
 
@@ -2037,8 +2038,8 @@ document.addEventListener('keydown', function(e) {
 
         <div>
           
-          <div class="w-full text-center py-2 px-3 rounded-lg bg-white/5 border border-white/10 text-xs text-slate-400 font-medium flex items-center justify-center gap-1.5">
-            <i class="fas fa-check-circle text-emerald-400"></i> Verified Credential
+          <div class="w-full text-center py-2 px-3 rounded-lg bg-white/5 border border-white/10 text-xs text-zinc-400 font-medium flex items-center justify-center gap-1.5">
+            <i class="fas fa-check-circle text-zinc-300"></i> Verified Credential
           </div>
           
         </div>
@@ -2074,7 +2075,7 @@ document.addEventListener('keydown', function(e) {
       <!-- Left: Contact Info (2 columns wide on lg) -->
       <div class="lg:col-span-2 reveal-left">
         <h3 class="font-outfit font-bold text-xl text-white mb-2">Get In Touch</h3>
-        <p class="text-slate-400 text-sm leading-relaxed mb-7">
+        <p class="text-zinc-400 text-sm leading-relaxed mb-7">
           Whether you're looking for a dedicated developer, want to collaborate on an exciting project,
           or just want to say hello — feel free to reach out!
         </p>
@@ -2084,17 +2085,17 @@ document.addEventListener('keydown', function(e) {
           <a href="mailto:nandiniyamagar5@gmail.com" class="contact-info-item no-underline" aria-label="Send email">
             <div class="contact-icon-wrapper"><i class="fas fa-envelope"></i></div>
             <div>
-              <div class="text-xs text-slate-500 uppercase tracking-wider mb-0.5">Email</div>
-              <span class="text-sm text-slate-200 break-all">nandiniyamagar5@gmail.com</span>
+              <div class="text-xs text-zinc-500 uppercase tracking-wider mb-0.5">Email</div>
+              <span class="text-sm text-zinc-200 break-all">nandiniyamagar5@gmail.com</span>
             </div>
           </a>
 
           <div class="contact-info-item">
             <div class="contact-icon-wrapper"><i class="fas fa-phone"></i></div>
             <div>
-              <div class="text-xs text-slate-500 uppercase tracking-wider mb-0.5">Phone</div>
+              <div class="text-xs text-zinc-500 uppercase tracking-wider mb-0.5">Phone</div>
               <a href="tel:+918073835526"
-                class="text-sm text-slate-200 hover:text-primary-300 transition-colors break-all">
+                class="text-sm text-zinc-200 hover:text-white transition-colors break-all">
                 +91 8073835526
               </a>
             </div>
@@ -2103,17 +2104,17 @@ document.addEventListener('keydown', function(e) {
           <div class="contact-info-item">
             <div class="contact-icon-wrapper"><i class="fas fa-map-marker-alt"></i></div>
             <div>
-              <div class="text-xs text-slate-500 uppercase tracking-wider mb-0.5">Location</div>
-              <span class="text-sm text-slate-200 break-words">Karnataka, India 🇮🇳</span>
+              <div class="text-xs text-zinc-500 uppercase tracking-wider mb-0.5">Location</div>
+              <span class="text-sm text-zinc-200 break-words">Karnataka, India 🇮🇳</span>
             </div>
           </div>
 
           <div class="contact-info-item">
             <div class="contact-icon-wrapper"><i class="fab fa-github"></i></div>
             <div>
-              <div class="text-xs text-slate-500 uppercase tracking-wider mb-0.5">GitHub</div>
+              <div class="text-xs text-zinc-500 uppercase tracking-wider mb-0.5">GitHub</div>
               <a href="https://github.com/NandiniY018" target="_blank" rel="noopener noreferrer"
-                class="text-sm text-slate-200 hover:text-primary-300 transition-colors break-all">
+                class="text-sm text-zinc-200 hover:text-white transition-colors break-all">
                 github.com/NandiniY018
               </a>
             </div>
@@ -2122,9 +2123,9 @@ document.addEventListener('keydown', function(e) {
           <div class="contact-info-item">
             <div class="contact-icon-wrapper"><i class="fab fa-linkedin-in"></i></div>
             <div>
-              <div class="text-xs text-slate-500 uppercase tracking-wider mb-0.5">LinkedIn</div>
+              <div class="text-xs text-zinc-500 uppercase tracking-wider mb-0.5">LinkedIn</div>
               <a href="https://www.linkedin.com/in/nandini-yamagar-1b8a26333" target="_blank" rel="noopener noreferrer"
-                class="text-sm text-slate-200 hover:text-primary-300 transition-colors break-all">
+                class="text-sm text-zinc-200 hover:text-white transition-colors break-all">
                 linkedin.com/in/nandini-yamagar-1b8a26333
               </a>
             </div>
@@ -2140,7 +2141,7 @@ document.addEventListener('keydown', function(e) {
           <p class="text-slate-500 text-sm mb-6">I'll respond within 24 hours.</p>
 
           <form id="contact-form" novalidate aria-label="Contact form">
-            <input type="hidden" name="csrfmiddlewaretoken" value="NFt9pA9wpxBYLCimbJcNoAs8SeiMLP3g0FPFje3UTKymzrtHs4qiZHcjVFzjYVEB">
+            <input type="hidden" name="csrfmiddlewaretoken" value="fc3Cg0d00M6MR7bRyM8LhrYikWorJJSYNvtWTx49GZjmb6TCgJJFyPJen5LtqhNL">
 
             <!-- Name + Email row -->
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-0">
@@ -2225,14 +2226,14 @@ document.addEventListener('keydown', function(e) {
       <!-- Brand Column -->
       <div>
         <a href="#hero" class="flex items-center gap-2.5 mb-4 group" aria-label="Back to top">
-          <div class="w-10 h-10 rounded-xl flex items-center justify-center bg-gradient-to-br from-[#6366f1] to-[#8b5cf6]">
-            <span class="text-white font-outfit font-black text-base leading-none">NY</span>
+          <div class="w-10 h-10 rounded-xl flex items-center justify-center bg-gradient-to-br from-white via-zinc-200 to-zinc-400 text-black shadow-md border border-white/20 transition-transform duration-200 group-hover:scale-105">
+            <span class="text-black font-outfit font-black text-base leading-none">NY</span>
           </div>
           <span class="font-outfit font-bold text-lg text-white">
             Nandini <span class="gradient-text">Yamagar</span>
           </span>
         </a>
-        <p class="text-slate-500 text-sm leading-relaxed mb-5 max-w-xs">
+        <p class="text-zinc-400 text-sm leading-relaxed mb-5 max-w-xs">
           Python Full Stack Developer · 2 Internships · 5+ Projects.<br>
           Building real-world web apps with Django, React & MySQL.
         </p>
@@ -2260,28 +2261,28 @@ document.addEventListener('keydown', function(e) {
         </h4>
         <ul class="space-y-2.5 text-sm" role="list">
           <li>
-            <a href="#about"        class="text-slate-500 hover:text-primary-300 transition-colors flex items-center gap-2">
-              <i class="fas fa-chevron-right text-xs text-primary-500"></i> About
+            <a href="#about"        class="text-zinc-400 hover:text-white transition-colors flex items-center gap-2">
+              <i class="fas fa-chevron-right text-xs text-zinc-500"></i> About
             </a>
           </li>
           <li>
-            <a href="#experience"   class="text-slate-500 hover:text-primary-300 transition-colors flex items-center gap-2">
-              <i class="fas fa-chevron-right text-xs text-primary-500"></i> Experience
+            <a href="#experience"   class="text-zinc-400 hover:text-white transition-colors flex items-center gap-2">
+              <i class="fas fa-chevron-right text-xs text-zinc-500"></i> Experience
             </a>
           </li>
           <li>
-            <a href="#projects"     class="text-slate-500 hover:text-primary-300 transition-colors flex items-center gap-2">
-              <i class="fas fa-chevron-right text-xs text-primary-500"></i> Projects
+            <a href="#projects"     class="text-zinc-400 hover:text-white transition-colors flex items-center gap-2">
+              <i class="fas fa-chevron-right text-xs text-zinc-500"></i> Projects
             </a>
           </li>
           <li>
-            <a href="#certificates" class="text-slate-500 hover:text-primary-300 transition-colors flex items-center gap-2">
-              <i class="fas fa-chevron-right text-xs text-primary-500"></i> Certificates
+            <a href="#certificates" class="text-zinc-400 hover:text-white transition-colors flex items-center gap-2">
+              <i class="fas fa-chevron-right text-xs text-zinc-500"></i> Certificates
             </a>
           </li>
           <li>
-            <a href="#contact"      class="text-slate-500 hover:text-primary-300 transition-colors flex items-center gap-2">
-              <i class="fas fa-chevron-right text-xs text-primary-500"></i> Contact
+            <a href="#contact"      class="text-zinc-400 hover:text-white transition-colors flex items-center gap-2">
+              <i class="fas fa-chevron-right text-xs text-zinc-500"></i> Contact
             </a>
           </li>
         </ul>
@@ -2294,21 +2295,21 @@ document.addEventListener('keydown', function(e) {
         </h4>
 
         <!-- Open to Work -->
-        <div class="flex items-center gap-2.5 p-3 rounded-lg mb-4 bg-[rgba(34,197,94,0.07)] border border-[rgba(34,197,94,0.15)]">
-          <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse flex-shrink-0"></span>
-          <span class="text-xs text-slate-300">Open to full-time & freelance roles</span>
+        <div class="flex items-center gap-2.5 p-3 rounded-lg mb-4 bg-white/5 border border-white/10">
+          <span class="w-2.5 h-2.5 rounded-full bg-white animate-pulse flex-shrink-0"></span>
+          <span class="text-xs text-zinc-300">Open to full-time & freelance roles</span>
         </div>
 
         <!-- Location -->
-        <div class="flex items-center gap-2.5 p-3 rounded-lg mb-4 bg-[rgba(99,102,241,0.07)] border border-[rgba(99,102,241,0.15)]">
-          <i class="fas fa-map-marker-alt text-primary-400 text-xs flex-shrink-0"></i>
-          <span class="text-xs text-slate-300">India &nbsp;·&nbsp; Remote friendly</span>
+        <div class="flex items-center gap-2.5 p-3 rounded-lg mb-4 bg-white/5 border border-white/10">
+          <i class="fas fa-map-marker-alt text-zinc-400 text-xs flex-shrink-0"></i>
+          <span class="text-xs text-zinc-300">India &nbsp;·&nbsp; Remote friendly</span>
         </div>
 
         <!-- Response Time -->
-        <div class="flex items-center gap-2.5 p-3 rounded-lg bg-[rgba(6,182,212,0.07)] border border-[rgba(6,182,212,0.15)]">
-          <i class="fas fa-clock text-cyan-400 text-xs flex-shrink-0"></i>
-          <span class="text-xs text-slate-300">Responds within 24 hours</span>
+        <div class="flex items-center gap-2.5 p-3 rounded-lg bg-white/5 border border-white/10">
+          <i class="fas fa-clock text-zinc-400 text-xs flex-shrink-0"></i>
+          <span class="text-xs text-zinc-300">Responds within 24 hours</span>
         </div>
       </div>
 
@@ -2316,12 +2317,12 @@ document.addEventListener('keydown', function(e) {
 
     <!-- Bottom Bar -->
     <div class="border-t border-white/10 pt-7 flex flex-col md:flex-row items-center justify-between gap-4">
-      <div class="text-slate-500 text-sm font-inter text-center md:text-left">
-        &copy; 2026 <span class="text-slate-300 font-medium">Nandini Yamagar</span>. All rights reserved.
+      <div class="text-zinc-400 text-sm font-inter text-center md:text-left">
+        &copy; 2026 <span class="text-zinc-200 font-medium">Nandini Yamagar</span>. All rights reserved.
       </div>
-      <div class="flex items-center gap-2 text-xs text-slate-600">
-        <i class="fas fa-code text-primary-500"></i>
-        <span>Built with <span class="text-slate-400">Python · Django</span></span>
+      <div class="flex items-center gap-2 text-xs text-zinc-500">
+        <i class="fas fa-code text-zinc-400"></i>
+        <span>Built with <span class="text-zinc-300">Python · Django</span></span>
       </div>
     </div>
 
@@ -2345,7 +2346,7 @@ document.addEventListener('keydown', function(e) {
   </button>
 
   <!-- Main JavaScript -->
-  <script src="./static/js/main.js"></script>
+  <script src="./static/js/main.js?v=mono1"></script>
   
 
   <!-- React WebSockets Widget -->
@@ -2386,11 +2387,11 @@ document.addEventListener('keydown', function(e) {
 
       return (
         <div className="flex items-center gap-2 bg-white/5 border border-white/10 rounded-full px-3 py-1.5 shadow-sm">
-          <span className="relative flex h-2.5 w-2.5">
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-            <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
+          <span className="relative flex h-2 w-2">
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
+            <span className="relative inline-flex rounded-full h-2 w-2 bg-white"></span>
           </span>
-          <span className="text-xs font-medium text-emerald-400 font-inter tracking-wide">
+          <span className="text-xs font-medium text-zinc-200 font-inter tracking-wide">
             {visitors} Live Visitor{visitors !== 1 ? 's' : ''}
           </span>
         </div>
