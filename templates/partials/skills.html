@@ -29,9 +29,9 @@
         {% if group.list|length > 4 %}
         <div class="grid grid-cols-2 gap-3">
           {% for skill in group.list %}
-          <div class="flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-300 hover:-translate-y-1 bg-white/5 border border-white/10 hover:border-white/20">
-            <i class="{{ skill.icon_class }} text-xl text-zinc-300"></i>
-            <span class="font-outfit font-semibold text-zinc-200 text-sm">{{ skill.name }}</span>
+          <div class="flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-300 hover:-translate-y-1 bg-zinc-50 border border-zinc-200 hover:border-zinc-400 hover:bg-zinc-100 shadow-xs">
+            <i class="{{ skill.icon_class }} text-xl text-zinc-800"></i>
+            <span class="font-outfit font-semibold text-zinc-900 text-sm">{{ skill.name }}</span>
           </div>
           {% endfor %}
         </div>
@@ -41,10 +41,10 @@
           <div class="skill-card">
             <div class="flex items-center justify-between mb-2">
               <div class="flex items-center gap-2">
-                <i class="{{ skill.icon_class }} text-lg text-zinc-300"></i>
-                <span class="font-outfit font-semibold text-zinc-200 text-sm">{{ skill.name }}</span>
+                <i class="{{ skill.icon_class }} text-lg text-zinc-800"></i>
+                <span class="font-outfit font-semibold text-zinc-900 text-sm">{{ skill.name }}</span>
               </div>
-              <span class="text-xs text-zinc-400 font-semibold">{{ skill.percentage }}%</span>
+              <span class="text-xs text-zinc-600 font-semibold">{{ skill.percentage }}%</span>
             </div>
             <div class="skill-bar-bg">
               <div class="skill-bar-fill" data-skill-width="{{ skill.percentage }}%"></div>
@@ -55,7 +55,7 @@
         {% endif %}
       </div>
       {% empty %}
-      <p class="text-slate-400 text-center col-span-full py-8">Add your skills from the Admin panel!</p>
+      <p class="text-zinc-500 text-center col-span-full py-8">Add your skills from the Admin panel!</p>
       {% endfor %}
 
     </div>

@@ -40,14 +40,14 @@
           {% endwith %}
 
           <!-- Fallback placeholder -->
-          <div class="{% if project.gallery_images.first or project.image %}hidden{% else %}flex{% endif %} absolute inset-0 w-full h-full flex-col items-center justify-center gap-3 bg-gradient-to-br from-zinc-800 via-zinc-900 to-black">
+          <div class="{% if project.gallery_images.first or project.image %}hidden{% else %}flex{% endif %} absolute inset-0 w-full h-full flex-col items-center justify-center gap-3 bg-gradient-to-br from-zinc-100 via-zinc-200 to-zinc-300">
             <i class="{{ project.icon_class }} text-5xl text-zinc-500"></i>
-            <span class="font-outfit text-sm text-zinc-400">{{ project.title }}</span>
+            <span class="font-outfit text-sm text-zinc-700">{{ project.title }}</span>
           </div>
 
           <!-- Gallery "+" button — only if more than 1 gallery image -->
           {% if project.gallery_images.count > 1 %}
-          <button class="absolute bottom-3 right-3 flex items-center gap-1.5 px-3 py-1.5 bg-black/70 backdrop-blur-md border border-white/20 rounded-full text-white text-xs font-semibold cursor-pointer transition-all duration-200 hover:bg-white hover:text-black hover:scale-105 z-10"
+          <button class="absolute bottom-3 right-3 flex items-center gap-1.5 px-3 py-1.5 bg-black/75 backdrop-blur-md border border-white/20 rounded-full text-white text-xs font-semibold cursor-pointer transition-all duration-200 hover:bg-white hover:text-black hover:scale-105 z-10"
                   onclick="openGallery('gallery-{{ project.id }}')"
                   aria-label="View all {{ project.gallery_images.count }} photos"
                   title="View all photos">
@@ -59,23 +59,23 @@
 
         <div class="p-6">
           <div class="flex items-start justify-between gap-3 mb-3">
-            <h3 class="font-outfit font-bold text-lg text-white leading-tight">
+            <h3 class="font-outfit font-bold text-lg text-zinc-900 leading-tight">
               {{ project.title }}
             </h3>
-            <div class="w-10 h-10 rounded-xl flex items-center justify-center text-white text-sm shadow-md bg-white/5 border border-white/10 flex-shrink-0">
-              <i class="{{ project.icon_class }} text-zinc-300"></i>
+            <div class="w-10 h-10 rounded-xl flex items-center justify-center text-zinc-800 text-sm shadow-xs bg-zinc-100 border border-zinc-200 flex-shrink-0">
+              <i class="{{ project.icon_class }} text-zinc-800"></i>
             </div>
           </div>
 
-          <p class="text-zinc-400 text-sm leading-relaxed mb-4 break-words">
+          <p class="text-zinc-600 text-sm leading-relaxed mb-4 break-words">
             {{ project.description }}
           </p>
 
           <!-- Features -->
-          <ul class="space-y-2 mb-4 text-zinc-400 text-xs break-words">
+          <ul class="space-y-2 mb-4 text-zinc-600 text-xs break-words">
             {% for feature in project.get_features_list %}
             <li class="flex items-start gap-2">
-              <i class="fas fa-check-circle text-zinc-400 flex-shrink-0 mt-[3px]"></i>
+              <i class="fas fa-check-circle text-zinc-700 flex-shrink-0 mt-[3px]"></i>
               <span class="leading-relaxed">{{ feature }}</span>
             </li>
             {% endfor %}
@@ -109,19 +109,19 @@
       <!-- Lightbox Gallery for this project -->
       {% if project.gallery_images.count > 0 %}
       <div id="gallery-{{ project.id }}" class="fixed inset-0 z-[9999] flex items-center justify-center p-4 hidden" role="dialog" aria-modal="true" aria-label="{{ project.title }} gallery">
-        <div class="absolute inset-0 bg-black/90 backdrop-blur-md" onclick="closeGallery('gallery-{{ project.id }}')"></div>
-        <div class="relative z-10 bg-[#121215] border border-white/15 rounded-2xl w-full max-w-4xl max-h-[90vh] flex flex-col overflow-hidden shadow-[0_40px_100px_rgba(0,0,0,0.9)]">
-          <div class="flex items-center justify-between px-6 py-4 border-b border-white/10 shrink-0">
-            <h3 class="font-outfit font-bold text-white text-lg">{{ project.title }} — Photos</h3>
-            <button class="w-8 h-8 rounded-full bg-white/10 text-zinc-400 flex items-center justify-center transition-colors hover:bg-white hover:text-black" onclick="closeGallery('gallery-{{ project.id }}')" aria-label="Close gallery">
+        <div class="absolute inset-0 bg-black/80 backdrop-blur-md" onclick="closeGallery('gallery-{{ project.id }}')"></div>
+        <div class="relative z-10 bg-white border border-zinc-200 rounded-2xl w-full max-w-4xl max-h-[90vh] flex flex-col overflow-hidden shadow-[0_25px_70px_rgba(0,0,0,0.25)]">
+          <div class="flex items-center justify-between px-6 py-4 border-b border-zinc-200 shrink-0 bg-white">
+            <h3 class="font-outfit font-bold text-zinc-900 text-lg">{{ project.title }} — Photos</h3>
+            <button class="w-8 h-8 rounded-full bg-zinc-100 text-zinc-600 flex items-center justify-center transition-colors hover:bg-black hover:text-white" onclick="closeGallery('gallery-{{ project.id }}')" aria-label="Close gallery">
               <i class="fas fa-times"></i>
             </button>
           </div>
           <div class="flex flex-col flex-1 overflow-hidden">
             <!-- Main viewer -->
-            <div class="relative flex-1 flex items-center justify-center bg-[#09090b] min-h-[300px] overflow-hidden">
+            <div class="relative flex-1 flex items-center justify-center bg-zinc-950 min-h-[300px] overflow-hidden">
               <img id="lightbox-img-{{ project.id }}" src="{{ project.gallery_images.first.image.url }}" alt="" class="max-w-full max-h-[55vh] object-contain rounded-lg transition-opacity duration-200" />
-              <p id="lightbox-caption-{{ project.id }}" class="absolute bottom-3 left-1/2 -translate-x-1/2 bg-black/75 border border-white/10 text-zinc-300 text-xs px-3 py-1 rounded-full whitespace-nowrap">{{ project.gallery_images.first.caption }}</p>
+              <p id="lightbox-caption-{{ project.id }}" class="absolute bottom-3 left-1/2 -translate-x-1/2 bg-black/75 border border-white/10 text-white text-xs px-3 py-1 rounded-full whitespace-nowrap">{{ project.gallery_images.first.caption }}</p>
               <!-- Prev / Next -->
               {% if project.gallery_images.count > 1 %}
               <button class="absolute left-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/70 border border-white/15 text-white flex items-center justify-center transition-colors hover:bg-white hover:text-black z-10" onclick="navigateGallery('{{ project.id }}', -1)" aria-label="Previous"><i class="fas fa-chevron-left"></i></button>
@@ -129,11 +129,11 @@
               {% endif %}
             </div>
             <!-- Thumbnail Strip -->
-            <div class="flex gap-2 py-3 px-4 overflow-x-auto shrink-0 border-t border-white/10 [scrollbar-width:thin] [scrollbar-color:rgba(255,255,255,0.2)_transparent]">
+            <div class="flex gap-2 py-3 px-4 overflow-x-auto shrink-0 bg-zinc-50 border-t border-zinc-200 [scrollbar-width:thin]">
               {% for img in project.gallery_images.all %}
               <img src="{{ img.image.url }}"
                    alt="{{ img.caption|default:project.title }}"
-                   class="lightbox-thumb w-[72px] h-[52px] object-cover rounded-md cursor-pointer opacity-50 border-2 border-transparent transition-all hover:opacity-90 hover:scale-105 shrink-0 [&.active]:opacity-100 [&.active]:border-white {% if forloop.first %}active{% endif %}"
+                   class="lightbox-thumb w-[72px] h-[52px] object-cover rounded-md cursor-pointer opacity-50 border-2 border-transparent transition-all hover:opacity-90 hover:scale-105 shrink-0 [&.active]:opacity-100 [&.active]:border-black {% if forloop.first %}active{% endif %}"
                    data-index="{{ forloop.counter0 }}"
                    data-src="{{ img.image.url }}"
                    data-caption="{{ img.caption }}"
@@ -148,7 +148,7 @@
       {% endif %}
 
       {% empty %}
-      <p class="text-slate-400 text-center col-span-full py-8">Check back soon for new projects!</p>
+      <p class="text-zinc-500 text-center col-span-full py-8">Check back soon for new projects!</p>
       {% endfor %}
 
     </div>

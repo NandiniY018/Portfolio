@@ -19,8 +19,8 @@
 
       <!-- Left: Contact Info (2 columns wide on lg) -->
       <div class="lg:col-span-2 reveal-left">
-        <h3 class="font-outfit font-bold text-xl text-white mb-2">Get In Touch</h3>
-        <p class="text-zinc-400 text-sm leading-relaxed mb-7">
+        <h3 class="font-outfit font-bold text-xl text-zinc-900 mb-2">Get In Touch</h3>
+        <p class="text-zinc-600 text-sm leading-relaxed mb-7">
           Whether you're looking for a dedicated developer, want to collaborate on an exciting project,
           or just want to say hello — feel free to reach out!
         </p>
@@ -31,7 +31,7 @@
             <div class="contact-icon-wrapper"><i class="fas fa-envelope"></i></div>
             <div>
               <div class="text-xs text-zinc-500 uppercase tracking-wider mb-0.5">Email</div>
-              <span class="text-sm text-zinc-200 break-all">nandiniyamagar5@gmail.com</span>
+              <span class="text-sm text-zinc-800 break-all">nandiniyamagar5@gmail.com</span>
             </div>
           </a>
 
@@ -40,7 +40,7 @@
             <div>
               <div class="text-xs text-zinc-500 uppercase tracking-wider mb-0.5">Phone</div>
               <a href="tel:+918073835526"
-                class="text-sm text-zinc-200 hover:text-white transition-colors break-all">
+                class="text-sm text-zinc-800 hover:text-black transition-colors break-all">
                 +91 8073835526
               </a>
             </div>
@@ -50,7 +50,7 @@
             <div class="contact-icon-wrapper"><i class="fas fa-map-marker-alt"></i></div>
             <div>
               <div class="text-xs text-zinc-500 uppercase tracking-wider mb-0.5">Location</div>
-              <span class="text-sm text-zinc-200 break-words">Karnataka, India 🇮🇳</span>
+              <span class="text-sm text-zinc-800 break-words">Karnataka, India 🇮🇳</span>
             </div>
           </div>
 
@@ -59,7 +59,7 @@
             <div>
               <div class="text-xs text-zinc-500 uppercase tracking-wider mb-0.5">GitHub</div>
               <a href="https://github.com/NandiniY018" target="_blank" rel="noopener noreferrer"
-                class="text-sm text-zinc-200 hover:text-white transition-colors break-all">
+                class="text-sm text-zinc-800 hover:text-black transition-colors break-all">
                 github.com/NandiniY018
               </a>
             </div>
@@ -70,7 +70,7 @@
             <div>
               <div class="text-xs text-zinc-500 uppercase tracking-wider mb-0.5">LinkedIn</div>
               <a href="https://www.linkedin.com/in/nandini-yamagar-1b8a26333" target="_blank" rel="noopener noreferrer"
-                class="text-sm text-zinc-200 hover:text-white transition-colors break-all">
+                class="text-sm text-zinc-800 hover:text-black transition-colors break-all">
                 linkedin.com/in/nandini-yamagar-1b8a26333
               </a>
             </div>
@@ -82,8 +82,8 @@
       <!-- Right: Contact Form (3 columns wide on lg) -->
       <div class="lg:col-span-3 reveal-right">
         <div class="glass-card p-6 md:p-8">
-          <h3 class="font-outfit font-bold text-lg text-white mb-1">Send a Message</h3>
-          <p class="text-slate-500 text-sm mb-6">I'll respond within 24 hours.</p>
+          <h3 class="font-outfit font-bold text-lg text-zinc-900 mb-1">Send a Message</h3>
+          <p class="text-zinc-500 text-sm mb-6">I'll respond within 24 hours.</p>
 
           <form id="contact-form" novalidate aria-label="Contact form">
             {% csrf_token %}
@@ -91,8 +91,8 @@
             <!-- Name + Email row -->
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-0">
               <div class="form-group">
-                <label for="field-name" class="block text-xs text-slate-400 uppercase tracking-wider mb-2 font-inter">
-                  Full Name <span class="text-red-400">*</span>
+                <label for="field-name" class="block text-xs text-zinc-700 font-semibold uppercase tracking-wider mb-2 font-inter">
+                  Full Name <span class="text-red-500">*</span>
                 </label>
                 <input type="text" id="field-name" name="name" data-field="name" class="form-input"
                   placeholder="Nandini Yamagar" autocomplete="name" maxlength="150" required />
@@ -103,8 +103,8 @@
               </div>
 
               <div class="form-group">
-                <label for="field-email" class="block text-xs text-slate-400 uppercase tracking-wider mb-2 font-inter">
-                  Email Address <span class="text-red-400">*</span>
+                <label for="field-email" class="block text-xs text-zinc-700 font-semibold uppercase tracking-wider mb-2 font-inter">
+                  Email Address <span class="text-red-500">*</span>
                 </label>
                 <input type="email" id="field-email" name="email" data-field="email" class="form-input"
                   placeholder="you@example.com" autocomplete="email" required />
@@ -117,8 +117,8 @@
 
             <!-- Subject -->
             <div class="form-group">
-              <label for="field-subject" class="block text-xs text-slate-400 uppercase tracking-wider mb-2 font-inter">
-                Subject <span class="text-red-400">*</span>
+              <label for="field-subject" class="block text-xs text-zinc-700 font-semibold uppercase tracking-wider mb-2 font-inter">
+                Subject <span class="text-red-500">*</span>
               </label>
               <input type="text" id="field-subject" name="subject" data-field="subject" class="form-input"
                 placeholder="Job Opportunity / Project Collaboration / ..." maxlength="250" required />
@@ -130,8 +130,8 @@
 
             <!-- Message -->
             <div class="form-group">
-              <label for="field-message" class="block text-xs text-slate-400 uppercase tracking-wider mb-2 font-inter">
-                Message <span class="text-red-400">*</span>
+              <label for="field-message" class="block text-xs text-zinc-700 font-semibold uppercase tracking-wider mb-2 font-inter">
+                Message <span class="text-red-500">*</span>
               </label>
               <textarea id="field-message" name="message" data-field="message" class="form-input"
                 placeholder="Tell me about your project, opportunity, or how I can help you..." rows="5"

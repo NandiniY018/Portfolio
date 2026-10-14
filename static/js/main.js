@@ -420,7 +420,7 @@ function showToast(type, title, message, duration = 5000) {
       const alpha = Math.min(this.life / 30, 1) * (1 - this.life / this.maxLife);
       ctx.beginPath();
       ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-      ctx.fillStyle = `rgba(255, 255, 255, ${alpha * 0.45})`;
+      ctx.fillStyle = `rgba(0, 0, 0, ${alpha * 0.12})`;
       ctx.fill();
     }
   }

@@ -24,7 +24,7 @@
         <div>
           <!-- Certificate Image Preview (if uploaded) -->
           {% if cert.image %}
-          <div class="relative overflow-hidden rounded-xl mb-5 aspect-[16/10] bg-[#0c0d14] border border-white/10 group cursor-pointer">
+          <div class="relative overflow-hidden rounded-xl mb-5 aspect-[16/10] bg-zinc-100 border border-zinc-200 group cursor-pointer">
             <img src="{{ cert.image.url }}"
                  alt="{{ cert.title }} Certificate"
                  class="w-full h-full object-cover object-top transition-transform duration-300 group-hover:scale-105"
@@ -37,26 +37,26 @@
           </div>
           {% else %}
           <!-- Icon fallback when no certificate image is uploaded -->
-          <div class="w-16 h-16 mx-auto mb-5 rounded-2xl flex items-center justify-center bg-white/5 border border-white/10 shadow-sm">
-            <i class="{{ cert.icon_class|default:'fas fa-certificate' }} text-white text-2xl"></i>
+          <div class="w-16 h-16 mx-auto mb-5 rounded-2xl flex items-center justify-center bg-zinc-100 border border-zinc-200 shadow-sm">
+            <i class="{{ cert.icon_class|default:'fas fa-certificate' }} text-zinc-800 text-2xl"></i>
           </div>
           {% endif %}
 
           <div class="mb-2">
-            <span class="text-xs uppercase tracking-widest text-zinc-400 font-semibold font-inter">{{ cert.category }}</span>
+            <span class="text-xs uppercase tracking-widest text-zinc-600 font-semibold font-inter">{{ cert.category }}</span>
           </div>
-          <h3 class="font-outfit font-bold text-lg text-white mb-2 leading-tight">
+          <h3 class="font-outfit font-bold text-lg text-zinc-900 mb-2 leading-tight">
             {{ cert.title }}
           </h3>
-          <p class="text-zinc-400 text-sm mb-1">
-            <i class="fas fa-building text-zinc-400 mr-1.5"></i>
-            <span class="font-medium text-zinc-300">{{ cert.institution }}</span>
+          <p class="text-zinc-600 text-sm mb-1">
+            <i class="fas fa-building text-zinc-500 mr-1.5"></i>
+            <span class="font-medium text-zinc-800">{{ cert.institution }}</span>
           </p>
           <p class="text-zinc-500 text-xs mb-4">
             <i class="fas fa-clock text-zinc-500 mr-1.5"></i> {{ cert.duration }}
           </p>
 
-          <p class="text-zinc-400 text-sm leading-relaxed mb-5">
+          <p class="text-zinc-600 text-sm leading-relaxed mb-5">
             {{ cert.description }}
           </p>
 
@@ -75,14 +75,14 @@
             <i class="fas fa-external-link-alt"></i> View Certificate
           </a>
           {% else %}
-          <div class="w-full text-center py-2 px-3 rounded-lg bg-white/5 border border-white/10 text-xs text-zinc-400 font-medium flex items-center justify-center gap-1.5">
-            <i class="fas fa-check-circle text-zinc-300"></i> Verified Credential
+          <div class="w-full text-center py-2 px-3 rounded-lg bg-zinc-100 border border-zinc-200 text-xs text-zinc-700 font-medium flex items-center justify-center gap-1.5">
+            <i class="fas fa-check-circle text-zinc-800"></i> Verified Credential
           </div>
           {% endif %}
         </div>
       </div>
       {% empty %}
-      <p class="text-slate-400 text-center col-span-full py-8">Add your certifications from the Admin panel!</p>
+      <p class="text-zinc-500 text-center col-span-full py-8">Add your certifications from the Admin panel!</p>
       {% endfor %}
 
     </div>

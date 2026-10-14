@@ -24,13 +24,13 @@
 
           <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-4">
             <div class="flex items-center gap-4">
-              <div class="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 bg-white/5 border border-white/10 shadow-sm">
-                <i class="{{ edu.icon_class|default:'fas fa-graduation-cap' }} text-white text-lg"></i>
+              <div class="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 bg-zinc-100 border border-zinc-200 shadow-sm">
+                <i class="{{ edu.icon_class|default:'fas fa-graduation-cap' }} text-zinc-800 text-lg"></i>
               </div>
               <div>
                 <span class="role-badge mb-1 inline-block">{{ edu.degree }}</span>
-                <h3 class="font-outfit font-bold text-base text-white">{{ edu.field_of_study }}</h3>
-                <p class="text-zinc-400 text-sm mt-0.5">{{ edu.institution }}</p>
+                <h3 class="font-outfit font-bold text-base text-zinc-900">{{ edu.field_of_study }}</h3>
+                <p class="text-zinc-600 text-sm mt-0.5">{{ edu.institution }}</p>
               </div>
             </div>
             <div class="flex-shrink-0 flex flex-col items-start sm:items-center mt-3 sm:mt-0">
@@ -45,12 +45,12 @@
             </div>
           </div>
 
-          <p class="text-zinc-400 text-sm leading-relaxed mb-3 break-words">
+          <p class="text-zinc-600 text-sm leading-relaxed mb-3 break-words">
             {{ edu.description }}
           </p>
         </div>
         {% empty %}
-          <p class="text-slate-400 text-center py-8">Add your education from the Admin panel!</p>
+          <p class="text-zinc-500 text-center py-8">Add your education from the Admin panel!</p>
         {% endfor %}
 
       </div>
