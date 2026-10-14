@@ -106,7 +106,7 @@
   </script>
 
   <!-- Global CSS -->
-  <link rel="stylesheet" href="./static/css/global.css?v=theme1" />
+  <link rel="stylesheet" href="./static/css/global.css?v=v3" />
 
   
 </head>
@@ -325,11 +325,11 @@
           <div class="flex items-center gap-4 text-sm text-zinc-600">
             <span class="flex items-center gap-1.5">
               <i class="fas fa-briefcase text-zinc-900 text-xs"></i>
-              <span>2 Internships</span>
+              <span data-counter="2" data-suffix=" Internships">2 Internships</span>
             </span>
             <span class="flex items-center gap-1.5">
               <i class="fas fa-code text-zinc-900 text-xs"></i>
-              <span>3+ Projects</span>
+              <span data-counter="5" data-suffix="+ Projects">5+ Projects</span>
             </span>
           </div>
         </div>
@@ -409,7 +409,7 @@
         
       <!-- Left: Card with 4 list items -->
       <div class="lg:col-span-5 reveal-left">
-        <div class="bg-white border border-zinc-200 rounded-2xl p-8 md:p-10 h-full shadow-md transition-all duration-300 hover:border-zinc-300 hover:shadow-lg">
+        <div class="spotlight-card bg-white border border-zinc-200 rounded-2xl p-8 md:p-10 h-full shadow-md transition-all duration-300 hover:border-zinc-300 hover:shadow-lg">
             <ul class="space-y-8">
                 <!-- Item 1 -->
                 <li class="flex items-start gap-5">
@@ -483,17 +483,17 @@
                 </div>
                 <div>
                     <div class="text-zinc-900 font-semibold text-sm">Projects</div>
-                    <div class="text-zinc-600 text-sm font-medium mt-0.5">5+</div>
+                    <div class="text-zinc-600 text-sm font-medium mt-0.5"><span data-counter="5" data-suffix="+">5+</span> Production</div>
                 </div>
             </div>
             <!-- Badge 2 -->
             <div class="flex items-center gap-4 sm:border-l sm:border-zinc-200 sm:pl-6">
                 <div class="w-10 h-10 rounded-full bg-zinc-100 flex items-center justify-center text-zinc-800 border border-zinc-200 flex-shrink-0">
-                    <i class="fas fa-users"></i>
+                    <i class="fas fa-briefcase"></i>
                 </div>
                 <div>
-                    <div class="text-zinc-900 font-semibold text-sm">Collaboration</div>
-                    <div class="text-zinc-600 text-sm font-medium mt-0.5">Team Player</div>
+                    <div class="text-zinc-900 font-semibold text-sm">Experience</div>
+                    <div class="text-zinc-600 text-sm font-medium mt-0.5"><span data-counter="2" data-suffix=" Internships">2 Internships</span></div>
                 </div>
             </div>
             <!-- Badge 3 -->
@@ -503,7 +503,7 @@
                 </div>
                 <div>
                     <div class="text-zinc-900 font-semibold text-sm">Goal</div>
-                    <div class="text-zinc-600 text-sm font-medium mt-0.5">Impact Through Code</div>
+                    <div class="text-zinc-600 text-sm font-medium mt-0.5"><span data-counter="100" data-suffix="%">100%</span> Impact</div>
                 </div>
             </div>
         </div>
@@ -538,7 +538,7 @@
 
       
       
-      <div class="glass-card p-6 reveal reveal-delay-1">
+      <div class="glass-card spotlight-card p-6 reveal reveal-delay-1">
         <h3 class="skill-category-title">
           <i class="fas fa-layer-group mr-2"></i>
           PROGRAMMING LANGUAGES
@@ -577,7 +577,7 @@
         
       </div>
       
-      <div class="glass-card p-6 reveal reveal-delay-2">
+      <div class="glass-card spotlight-card p-6 reveal reveal-delay-2">
         <h3 class="skill-category-title">
           <i class="fas fa-layer-group mr-2"></i>
           FRONTEND DEVELOPMENT
@@ -642,7 +642,7 @@
         
       </div>
       
-      <div class="glass-card p-6 reveal reveal-delay-3">
+      <div class="glass-card spotlight-card p-6 reveal reveal-delay-3">
         <h3 class="skill-category-title">
           <i class="fas fa-layer-group mr-2"></i>
           BACKEND &amp; APIS
@@ -694,7 +694,7 @@
         
       </div>
       
-      <div class="glass-card p-6 reveal reveal-delay-4">
+      <div class="glass-card spotlight-card p-6 reveal reveal-delay-4">
         <h3 class="skill-category-title">
           <i class="fas fa-layer-group mr-2"></i>
           DATABASES
@@ -733,7 +733,7 @@
         
       </div>
       
-      <div class="glass-card p-6 reveal reveal-delay-5">
+      <div class="glass-card spotlight-card p-6 reveal reveal-delay-5">
         <h3 class="skill-category-title">
           <i class="fas fa-layer-group mr-2"></i>
           DEV TOOLS
@@ -796,7 +796,7 @@
         
       </div>
       
-      <div class="glass-card p-6 reveal reveal-delay-6">
+      <div class="glass-card spotlight-card p-6 reveal reveal-delay-6">
         <h3 class="skill-category-title">
           <i class="fas fa-layer-group mr-2"></i>
           PYTHON LIBRARIES
@@ -876,7 +876,7 @@
       <div class="timeline-container">
 
         
-        <div class="timeline-item glass-card p-6 md:p-8 reveal reveal-delay-1">
+        <div class="timeline-item glass-card spotlight-card p-6 md:p-8 reveal reveal-delay-1">
           <div class="timeline-dot" aria-hidden="true"></div>
 
           <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3 mb-4">
@@ -924,7 +924,7 @@
           </ul>
         </div>
         
-        <div class="timeline-item glass-card p-6 md:p-8 reveal reveal-delay-2">
+        <div class="timeline-item glass-card spotlight-card p-6 md:p-8 reveal reveal-delay-2">
           <div class="timeline-dot" aria-hidden="true"></div>
 
           <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3 mb-4">
@@ -994,7 +994,7 @@
   <div class="max-w-[1200px] mx-auto px-4 sm:px-5 md:px-6 lg:px-8">
 
     <!-- Section Header -->
-    <div class="section-header reveal">
+    <div class="section-header reveal mb-8">
       <span class="section-label"><i class="fas fa-folder-open"></i> Projects</span>
       <h2 class="section-title">Featured <span class="gradient-text">Projects</span></h2>
       <p class="section-subtitle">
@@ -1003,12 +1003,28 @@
       <div class="accent-line"></div>
     </div>
 
+    <!-- Interactive Project Filter Tabs -->
+    <div class="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-10 reveal" id="project-filters" role="tablist" aria-label="Project categories">
+      <button class="project-filter-btn active" data-filter="all" role="tab" aria-selected="true">
+        <i class="fas fa-layer-group text-xs"></i> All Projects
+      </button>
+      <button class="project-filter-btn" data-filter="django" role="tab" aria-selected="false">
+        <i class="fab fa-python text-xs"></i> Python & Django
+      </button>
+      <button class="project-filter-btn" data-filter="ai-ml" role="tab" aria-selected="false">
+        <i class="fas fa-brain text-xs"></i> AI & Machine Learning
+      </button>
+      <button class="project-filter-btn" data-filter="fullstack" role="tab" aria-selected="false">
+        <i class="fas fa-code text-xs"></i> Full Stack & React
+      </button>
+    </div>
+
     <!-- Projects Grid -->
-    <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 lg:gap-8">
+    <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 lg:gap-8" id="projects-grid">
 
       
       <!-- Project Card -->
-      <article class="project-card reveal reveal-delay-1">
+      <article class="project-card spotlight-card reveal reveal-delay-1" data-tech="html5, css3, javascript, mysql, php, bootstrap, apache, xamppa, phpmyadmin grocery management system a complete web-based grocery store management platform designed to simplify online shopping and store operations. it enables customers to browse products, manage their cart, and place orders, while providing administrators with efficient inventory, product, and order management.">
         <!-- Image Area -->
         <div class="project-img-wrapper relative overflow-hidden">
           
@@ -1202,7 +1218,7 @@
 
       
       <!-- Project Card -->
-      <article class="project-card reveal reveal-delay-2">
+      <article class="project-card spotlight-card reveal reveal-delay-2" data-tech="python, html3, css3, javascript, flask, bootstrap, scikit-learn, xgboost, pandas, numpy, matplotlib, seaborn, sqlite, git, gitlab crop yield prediction an intelligent predictive analytics application that leverages machine learning to estimate crop yield based on historical agricultural data and environmental conditions. the solution enables data-driven decision-making by analyzing key factors that influence agricultural productivity.">
         <!-- Image Area -->
         <div class="project-img-wrapper relative overflow-hidden">
           
@@ -1388,7 +1404,7 @@
 
       
       <!-- Project Card -->
-      <article class="project-card reveal reveal-delay-3">
+      <article class="project-card spotlight-card reveal reveal-delay-3" data-tech="html5, css3, javascript, react.js, next.js, mongodb, rest apis, github multi-vendor e-commerce platform a modern, feature-rich multi-vendor e-commerce platform designed to deliver an engaging shopping experience through premium jewellery collections, exclusive contest products, secure payments, and customer reward programs. the platform streamlines vendor operations with dedicated management dashboards while ensuring a fast, intuitive, and scalable user experience.">
         <!-- Image Area -->
         <div class="project-img-wrapper relative overflow-hidden">
           
@@ -1667,7 +1683,7 @@ document.addEventListener('keydown', function(e) {
       <div class="timeline-container">
 
         
-        <div class="timeline-item glass-card p-6 md:p-8 reveal reveal-delay-1">
+        <div class="timeline-item glass-card spotlight-card p-6 md:p-8 reveal reveal-delay-1">
           <div class="timeline-dot" aria-hidden="true"></div>
 
           <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-4">
@@ -1698,7 +1714,7 @@ document.addEventListener('keydown', function(e) {
           </p>
         </div>
         
-        <div class="timeline-item glass-card p-6 md:p-8 reveal reveal-delay-2">
+        <div class="timeline-item glass-card spotlight-card p-6 md:p-8 reveal reveal-delay-2">
           <div class="timeline-dot" aria-hidden="true"></div>
 
           <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-4">
@@ -1729,7 +1745,7 @@ document.addEventListener('keydown', function(e) {
           </p>
         </div>
         
-        <div class="timeline-item glass-card p-6 md:p-8 reveal reveal-delay-3">
+        <div class="timeline-item glass-card spotlight-card p-6 md:p-8 reveal reveal-delay-3">
           <div class="timeline-dot" aria-hidden="true"></div>
 
           <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-4">
@@ -1791,7 +1807,7 @@ document.addEventListener('keydown', function(e) {
 
       
       <!-- Certificate Card -->
-      <div class="cert-card reveal reveal-delay-1 flex flex-col justify-between overflow-hidden">
+      <div class="cert-card spotlight-card reveal reveal-delay-1 flex flex-col justify-between overflow-hidden">
         <div>
           <!-- Certificate Image Preview (if uploaded) -->
           
@@ -1859,7 +1875,7 @@ document.addEventListener('keydown', function(e) {
       </div>
       
       <!-- Certificate Card -->
-      <div class="cert-card reveal reveal-delay-2 flex flex-col justify-between overflow-hidden">
+      <div class="cert-card spotlight-card reveal reveal-delay-2 flex flex-col justify-between overflow-hidden">
         <div>
           <!-- Certificate Image Preview (if uploaded) -->
           
@@ -1923,7 +1939,7 @@ document.addEventListener('keydown', function(e) {
       </div>
       
       <!-- Certificate Card -->
-      <div class="cert-card reveal reveal-delay-3 flex flex-col justify-between overflow-hidden">
+      <div class="cert-card spotlight-card reveal reveal-delay-3 flex flex-col justify-between overflow-hidden">
         <div>
           <!-- Certificate Image Preview (if uploaded) -->
           
@@ -1974,7 +1990,7 @@ document.addEventListener('keydown', function(e) {
       </div>
       
       <!-- Certificate Card -->
-      <div class="cert-card reveal reveal-delay-4 flex flex-col justify-between overflow-hidden">
+      <div class="cert-card spotlight-card reveal reveal-delay-4 flex flex-col justify-between overflow-hidden">
         <div>
           <!-- Certificate Image Preview (if uploaded) -->
           
@@ -2027,7 +2043,7 @@ document.addEventListener('keydown', function(e) {
       </div>
       
       <!-- Certificate Card -->
-      <div class="cert-card reveal reveal-delay-5 flex flex-col justify-between overflow-hidden">
+      <div class="cert-card spotlight-card reveal reveal-delay-5 flex flex-col justify-between overflow-hidden">
         <div>
           <!-- Certificate Image Preview (if uploaded) -->
           
@@ -2173,7 +2189,7 @@ document.addEventListener('keydown', function(e) {
           <p class="text-zinc-500 text-sm mb-6">I'll respond within 24 hours.</p>
 
           <form id="contact-form" novalidate aria-label="Contact form">
-            <input type="hidden" name="csrfmiddlewaretoken" value="hdQFyg5HxZpPqfbQ4NAbIxAWZLMdJK3QlWvW7gwt0KsRMseXqn9IITDOaohpuaMm">
+            <input type="hidden" name="csrfmiddlewaretoken" value="u6hEuUUZvN8ezJPVNYSbzmLXYwbDTjPDhHL9uMo2UGhKU2C94JvK6iRR7ugs5e9o">
 
             <!-- Name + Email row -->
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-0">
@@ -2378,7 +2394,7 @@ document.addEventListener('keydown', function(e) {
   </button>
 
   <!-- Main JavaScript -->
-  <script src="./static/js/main.js?v=theme1"></script>
+  <script src="./static/js/main.js?v=v3"></script>
   
 
   <!-- React WebSockets Widget -->

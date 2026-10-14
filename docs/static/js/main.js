@@ -545,3 +545,72 @@ function showToast(type, title, message, duration = 5000) {
   });
 })();
 
+/* ============================================================
+   14. CARD SPOTLIGHT EFFECT (Linear / Vercel style)
+   ============================================================ */
+(function initSpotlight() {
+  const cards = document.querySelectorAll('.spotlight-card');
+  cards.forEach(card => {
+    card.addEventListener('mousemove', (e) => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      card.style.setProperty('--mouse-x', `${x}px`);
+      card.style.setProperty('--mouse-y', `${y}px`);
+    }, { passive: true });
+  });
+})();
+
+/* ============================================================
+   15. PROJECT FILTER TABS
+   ============================================================ */
+(function initProjectFilters() {
+  const filterBtns = document.querySelectorAll('.project-filter-btn');
+  const projectCards = document.querySelectorAll('.project-card');
+  if (!filterBtns.length || !projectCards.length) return;
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(b => {
+        b.classList.remove('active');
+        b.setAttribute('aria-selected', 'false');
+      });
+      btn.classList.add('active');
+      btn.setAttribute('aria-selected', 'true');
+
+      const filter = btn.dataset.filter;
+
+      projectCards.forEach(card => {
+        const text = (card.dataset.tech || '').toLowerCase();
+        let match = false;
+
+        if (filter === 'all') {
+          match = true;
+        } else if (filter === 'django') {
+          match = text.includes('python') || text.includes('django') || text.includes('flask');
+        } else if (filter === 'ai-ml') {
+          match = text.includes('machine learning') || text.includes('scikit') || text.includes('xgboost') || text.includes('pandas') || text.includes('numpy') || text.includes('yield') || text.includes('crop') || text.includes('prediction') || text.includes('ai');
+        } else if (filter === 'fullstack') {
+          match = text.includes('react') || text.includes('next') || text.includes('full') || text.includes('jewell') || text.includes('fresh') || text.includes('bootstrap') || text.includes('html') || text.includes('css') || text.includes('php');
+        }
+
+        if (match) {
+          card.style.display = 'block';
+          requestAnimationFrame(() => {
+            card.style.opacity = '1';
+            card.style.transform = 'translateY(0) scale(1)';
+          });
+        } else {
+          card.style.opacity = '0';
+          card.style.transform = 'scale(0.95)';
+          setTimeout(() => {
+            if (card.style.opacity === '0') {
+              card.style.display = 'none';
+            }
+          }, 300);
+        }
+      });
+    });
+  });
+})();
+

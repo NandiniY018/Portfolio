@@ -996,6 +996,94 @@ h6 {
 }
 
 /* ============================================================
+   PROJECT FILTER BUTTONS
+   ============================================================ */
+.project-filter-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.5rem 1.25rem;
+  font-family: var(--font-heading);
+  font-size: 0.85rem;
+  font-weight: 600;
+  border-radius: var(--radius-full);
+  background: #f4f4f5;
+  color: #52525b;
+  border: 1px solid #e4e4e7;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  letter-spacing: 0.01em;
+}
+
+.project-filter-btn:hover {
+  background: #e4e4e7;
+  color: #09090b;
+  transform: translateY(-2px);
+}
+
+.project-filter-btn.active {
+  background: #09090b;
+  color: #ffffff;
+  border-color: #09090b;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+html.dark .project-filter-btn {
+  background: rgba(255, 255, 255, 0.06);
+  color: #a1a1aa;
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+html.dark .project-filter-btn:hover {
+  background: rgba(255, 255, 255, 0.14);
+  color: #ffffff;
+}
+
+html.dark .project-filter-btn.active {
+  background: #ffffff;
+  color: #09090b;
+  border-color: #ffffff;
+  box-shadow: 0 4px 20px rgba(255, 255, 255, 0.25);
+}
+
+/* ============================================================
+   CARD SPOTLIGHT EFFECT (Linear / Vercel style)
+   ============================================================ */
+.spotlight-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.spotlight-card::after {
+  content: '';
+  position: absolute;
+  top: var(--mouse-y, -1000px);
+  left: var(--mouse-x, -1000px);
+  width: 450px;
+  height: 450px;
+  background: radial-gradient(circle, rgba(0, 0, 0, 0.04) 0%, transparent 65%);
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 1;
+  border-radius: 50%;
+}
+
+html.dark .spotlight-card::after {
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 65%);
+}
+
+.spotlight-card:hover::after {
+  opacity: 1;
+}
+
+.spotlight-card > * {
+  position: relative;
+  z-index: 2;
+}
+
+/* ============================================================
    PROJECT CARDS
    ============================================================ */
 .project-card {
@@ -1003,7 +1091,7 @@ h6 {
   border: 1px solid #e4e4e7;
   border-radius: var(--radius-xl);
   overflow: hidden;
-  transition: var(--transition-smooth);
+  transition: opacity 0.35s cubic-bezier(0.4, 0, 0.2, 1), transform 0.35s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.35s ease, border-color 0.35s ease;
   position: relative;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
 }

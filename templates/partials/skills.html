@@ -20,7 +20,7 @@
 
       {% regroup skills by category as grouped_skills %}
       {% for group in grouped_skills %}
-      <div class="glass-card p-6 reveal reveal-delay-{{ forloop.counter }}">
+      <div class="glass-card spotlight-card p-6 reveal reveal-delay-{{ forloop.counter }}">
         <h3 class="skill-category-title">
           <i class="{{ group.list.0.category_icon_class|default:'fas fa-layer-group' }} mr-2"></i>
           {{ group.grouper|upper }}

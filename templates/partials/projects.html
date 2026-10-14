@@ -6,7 +6,7 @@
   <div class="max-w-[1200px] mx-auto px-4 sm:px-5 md:px-6 lg:px-8">
 
     <!-- Section Header -->
-    <div class="section-header reveal">
+    <div class="section-header reveal mb-8">
       <span class="section-label"><i class="fas fa-folder-open"></i> Projects</span>
       <h2 class="section-title">Featured <span class="gradient-text">Projects</span></h2>
       <p class="section-subtitle">
@@ -15,12 +15,28 @@
       <div class="accent-line"></div>
     </div>
 
+    <!-- Interactive Project Filter Tabs -->
+    <div class="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-10 reveal" id="project-filters" role="tablist" aria-label="Project categories">
+      <button class="project-filter-btn active" data-filter="all" role="tab" aria-selected="true">
+        <i class="fas fa-layer-group text-xs"></i> All Projects
+      </button>
+      <button class="project-filter-btn" data-filter="django" role="tab" aria-selected="false">
+        <i class="fab fa-python text-xs"></i> Python & Django
+      </button>
+      <button class="project-filter-btn" data-filter="ai-ml" role="tab" aria-selected="false">
+        <i class="fas fa-brain text-xs"></i> AI & Machine Learning
+      </button>
+      <button class="project-filter-btn" data-filter="fullstack" role="tab" aria-selected="false">
+        <i class="fas fa-code text-xs"></i> Full Stack & React
+      </button>
+    </div>
+
     <!-- Projects Grid -->
-    <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 lg:gap-8">
+    <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 lg:gap-8" id="projects-grid">
 
       {% for project in projects %}
       <!-- Project Card -->
-      <article class="project-card reveal reveal-delay-{{ forloop.counter }}">
+      <article class="project-card spotlight-card reveal reveal-delay-{{ forloop.counter }}" data-tech="{{ project.tech_stack|lower }} {{ project.title|lower }} {{ project.description|lower }}">
         <!-- Image Area -->
         <div class="project-img-wrapper relative overflow-hidden">
           {% with first_img=project.gallery_images.first %}
