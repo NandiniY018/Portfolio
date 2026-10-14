@@ -145,26 +145,32 @@
       const [visitors, setVisitors] = useState(1);
 
       useEffect(() => {
-        const protocol = window.location.protocol === 'https:' ? 'wss://' : 'ws://';
-        const wsUrl = protocol + window.location.host + '/ws/visitors/';
-        const chatSocket = new WebSocket(wsUrl);
+        let chatSocket = null;
+        try {
+          const protocol = window.location.protocol === 'https:' ? 'wss://' : 'ws://';
+          const wsUrl = protocol + window.location.host + '/ws/visitors/';
+          chatSocket = new WebSocket(wsUrl);
 
-        chatSocket.onmessage = function (e) {
-          const data = JSON.parse(e.data);
-          // In a real app, the server would send the absolute count.
-          // Since our consumer is simple, we just increment/decrement
-          if (data.action === 'join') {
-            setVisitors(prev => prev + 1);
-          } else if (data.action === 'leave') {
-            setVisitors(prev => Math.max(1, prev - 1));
+          chatSocket.onmessage = function (e) {
+            try {
+              const data = JSON.parse(e.data);
+              if (data.action === 'join') {
+                setVisitors(prev => prev + 1);
+              } else if (data.action === 'leave') {
+                setVisitors(prev => Math.max(1, prev - 1));
+              }
+            } catch (_) {}
+          };
+
+          chatSocket.onerror = function () {};
+          chatSocket.onclose = function () {};
+        } catch (_) {}
+
+        return () => {
+          if (chatSocket && chatSocket.readyState === WebSocket.OPEN) {
+            try { chatSocket.close(); } catch (_) {}
           }
         };
-
-        chatSocket.onclose = function (e) {
-          console.error('Visitor socket closed unexpectedly');
-        };
-
-        return () => chatSocket.close();
       }, []);
 
       return (

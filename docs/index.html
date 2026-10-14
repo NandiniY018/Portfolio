@@ -1,97 +1,2273 @@
-﻿<!DOCTYPE html>
-<html lang="en">
+
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nandini Y. | Python Full Stack Developer</title>
-  <meta name="description" content="Nandini Y. â€” Python Full Stack Developer specializing in Django, React, MySQL and REST APIs.">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-  <link rel="stylesheet" href="./static/css/global.css">
+  <!-- SEO Meta Tags -->
+  <title>Nandini Y. | Python Full Stack Developer Portfolio</title>
+  <meta name="description"
+    content="Nandini Y. — Python Full Stack Developer. Experienced in Django, React, MySQL, REST APIs, Data Science. Open to opportunities." />
+  <meta name="keywords"
+    content="Python developer, Full Stack Developer, Django, React, MySQL, portfolio, Nandini" />
+  <meta name="author" content="Nandini Y." />
+  <meta name="robots" content="index, follow" />
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title"
+    content="Nandini Y. | Python Full Stack Developer" />
+  <meta property="og:description"
+    content="Python Full Stack Developer specializing in Django, React, MySQL, and REST APIs." />
+  <meta property="og:url" content="/" />
+  <meta property="og:image"
+    content="./static/images/profile.png" />
 
+  <!-- Google Analytics -->
+  
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>👩‍💻</text></svg>" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet" />
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    crossorigin="anonymous" />
+
+  <!-- Devicon for Original Tech Colors -->
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+
+  <!-- React & Babel for Hybrid Approach -->
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+  <!-- Tailwind CSS (CDN) -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
       theme: {
         extend: {
           colors: {
-            primary: {
-              300: '#a5b4fc',
-              400: '#818cf8',
-              500: '#6366f1'
-            }
+            primary: { 50: '#eef2ff', 100: '#e0e7ff', 200: '#c7d2fe', 300: '#a5b4fc', 400: '#818cf8', 500: '#6366f1', 600: '#4f46e5', 700: '#4338ca', 800: '#3730a3', 900: '#312e81' },
+            violet: { 300: '#c4b5fd', 400: '#a78bfa', 500: '#8b5cf6', 600: '#7c3aed', 700: '#6d28d9' },
+            cyan: { 300: '#67e8f9', 400: '#22d3ee', 500: '#06b6d4', 600: '#0891b2' },
+            dark: { 900: '#06060f', 800: '#0c0c1a', 700: '#11111f', 600: '#16162a' },
+            slate: { 850: '#1e293b' },
           },
           fontFamily: {
+            outfit: ['Outfit', 'sans-serif'],
             inter: ['Inter', 'sans-serif'],
-            outfit: ['Outfit', 'sans-serif']
-          }
-        }
-      }
-    };
+          },
+          animation: {
+            'float': 'float 6s ease-in-out infinite',
+            'float-5s': 'float 5s ease-in-out infinite',
+            'float-reverse-6s-delay': 'floatReverse 6s ease-in-out 1s infinite',
+            'float-7s-delay': 'float 7s ease-in-out 2s infinite',
+            'float-d2': 'floatReverse 7s ease-in-out 2s infinite',
+            'pulse-glow': 'pulseGlow 3s ease-in-out infinite',
+            'spin-slow': 'spin 8s linear infinite',
+            'bounce-slow': 'bounce-slow 3s ease-in-out infinite',
+          },
+          screens: {
+            'xs': '375px',
+          },
+        },
+      },
+    }
   </script>
+
+  <!-- Global CSS -->
+  <link rel="stylesheet" href="./static/css/global.css" />
+
+  
 </head>
-<body class="bg-[#0b0c10] text-white">
 
-  <header class="p-6 text-center">
-    <h1 class="text-4xl font-bold">Nandini Yamagar</h1>
-    <p class="mt-3 text-indigo-400">Python Full Stack Developer</p>
-  </header>
+<body class="font-inter text-slate-300 bg-dark-900 antialiased overflow-x-hidden">
 
-  <main class="max-w-5xl mx-auto px-5 py-10">
-    <section id="hero" class="text-center py-12">
-      <img
-        src="./static/images/profile.png"
-        alt="Nandini Yamagar"
-        class="w-40 h-40 rounded-full object-cover mx-auto mb-6"
-      >
-      <h2 class="text-3xl font-bold mb-4">Hello, I'm Nandini!</h2>
-      <p class="text-slate-300 mb-6">
-        I build web applications using Python, Django, React and MySQL.
+  <!-- Toast Notification Container -->
+  <div id="toast-container" aria-live="polite"></div>
+
+  <!-- Sticky Navbar -->
+  
+<!-- ============================================================
+     NAVBAR PARTIAL
+     ============================================================ -->
+<nav id="navbar" class="glass-nav" role="navigation" aria-label="Main navigation">
+  <div class="max-w-[1200px] mx-auto px-4 sm:px-5 md:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16 md:h-20">
+
+      <!-- Logo / Brand -->
+      <a href="#hero" class="flex items-center gap-2.5 group" aria-label="Nandini Yamagar - Home">
+        <div class="w-9 h-9 rounded-xl flex items-center justify-center bg-gradient-to-br from-[#6366f1] to-[#8b5cf6]">
+          <span class="text-white font-outfit font-black text-base leading-none">NY</span>
+        </div>
+        <span
+          class="font-outfit font-bold text-lg text-white group-hover:text-primary-300 transition-colors duration-200">
+          Nandini <span class="gradient-text">Yamagar</span>
+        </span>
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <div class="hidden lg:flex items-center gap-7" role="menubar">
+        <a href="#about" class="nav-link" data-section="about" role="menuitem">About</a>
+        <a href="#skills" class="nav-link" data-section="skills" role="menuitem">Skills</a>
+        <a href="#experience" class="nav-link" data-section="experience" role="menuitem">Experience</a>
+        <a href="#projects" class="nav-link" data-section="projects" role="menuitem">Projects</a>
+        <a href="#education" class="nav-link" data-section="education" role="menuitem">Education</a>
+        <a href="#certificates" class="nav-link" data-section="certificates" role="menuitem">Certificates</a>
+        <a href="#contact" class="nav-link" data-section="contact" role="menuitem">Contact</a>
+      </div>
+
+      <!-- Theme Toggle, Resume Button + Hamburger -->
+      <div class="flex items-center gap-4">
+
+        <!-- React Widget Container -->
+        <div id="react-visitor-widget" class="hidden md:flex"></div>
+
+
+        
+        <a href="./media/resume/Nandini_Yamagar.pdf" target="_blank" rel="noopener noreferrer"
+          class="btn-primary ripple hidden md:inline-flex text-sm py-2 px-4 gap-2" aria-label="Download Resume">
+          <i class="fas fa-download text-xs"></i>
+          <span>Resume</span>
+        </a>
+        
+
+        <!-- Hamburger Button (mobile) -->
+        <button id="hamburger" class="hamburger lg:hidden" aria-controls="mobile-menu" aria-expanded="false"
+          aria-label="Toggle navigation menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" role="menu" aria-label="Mobile navigation">
+    <div class="max-w-[1200px] mx-auto px-4 sm:px-5 md:px-6 lg:px-8 py-3 flex flex-col gap-1">
+      <a href="#about" class="nav-link block py-3 px-2 border-b border-white/5" data-section="about"
+        role="menuitem">About</a>
+      <a href="#skills" class="nav-link block py-3 px-2 border-b border-white/5" data-section="skills"
+        role="menuitem">Skills</a>
+      <a href="#experience" class="nav-link block py-3 px-2 border-b border-white/5" data-section="experience"
+        role="menuitem">Experience</a>
+      <a href="#projects" class="nav-link block py-3 px-2 border-b border-white/5" data-section="projects"
+        role="menuitem">Projects</a>
+      <a href="#education" class="nav-link block py-3 px-2 border-b border-white/5" data-section="education"
+        role="menuitem">Education</a>
+      <a href="#certificates" class="nav-link block py-3 px-2 border-b border-white/5" data-section="certificates"
+        role="menuitem">Certificates</a>
+      <a href="#contact" class="nav-link block py-3 px-2 border-b border-white/5" data-section="contact"
+        role="menuitem">Contact</a>
+      
+      <div class="pt-3 pb-1">
+        <a href="./media/resume/Nandini_Yamagar.pdf" target="_blank" rel="noopener noreferrer"
+          class="btn-primary ripple w-full justify-center text-sm" role="menuitem">
+          <i class="fas fa-download text-xs"></i> Download Resume
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</nav>
+
+  <!-- Page Content -->
+  <main id="main-content">
+    
+
+  
+<!-- ============================================================
+     HERO SECTION
+     ============================================================ -->
+<section id="hero" aria-label="Hero section">
+
+  <!-- Background Orbs -->
+  <div class="hero-orb hero-orb-1" aria-hidden="true"></div>
+  <div class="hero-orb hero-orb-2" aria-hidden="true"></div>
+  <div class="hero-orb hero-orb-3" aria-hidden="true"></div>
+
+  <!-- Floating Geometric Shapes -->
+  <div class="floating-shape floating-shape-1" aria-hidden="true"></div>
+  <div class="floating-shape floating-shape-2" aria-hidden="true"></div>
+  <div class="floating-shape floating-shape-3" aria-hidden="true"></div>
+  <div class="floating-shape floating-shape-4" aria-hidden="true"></div>
+  <div class="floating-shape floating-shape-5" aria-hidden="true"></div>
+
+  <!-- Particles Canvas -->
+  <canvas id="particles-canvas" aria-hidden="true"></canvas>
+
+  <!-- Hero Content -->
+  <div class="max-w-[1200px] mx-auto px-4 sm:px-5 md:px-6 lg:px-8 relative z-10 w-full pt-24 pb-16 md:pt-32 md:pb-20">
+    <div class="flex flex-col-reverse lg:flex-row items-center justify-between gap-12 lg:gap-16">
+
+      <!-- Left: Text Content -->
+      <div class="flex-1 text-center lg:text-left max-w-2xl lg:max-w-none">
+
+        <!-- Greeting -->
+        <div class="hero-animate mb-4">
+          <span
+            class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-sm font-inter font-medium text-primary-300 bg-[rgba(99,102,241,0.1)] border border-[rgba(99,102,241,0.25)]">
+            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+            👋 Hello, I'm
+          </span>
+        </div>
+
+        <!-- Name -->
+        <div class="hero-animate">
+          <h1 class="font-outfit font-black text-5xl md:text-6xl xl:text-7xl leading-none mb-3 tracking-[-0.03em]">
+            <span class="text-white">Nandini</span>
+            <span class="gradient-text"> Y.</span>
+          </h1>
+        </div>
+
+        <!-- Animated Role Title -->
+        <div class="hero-animate mb-6">
+          <p class="font-outfit font-semibold text-xl md:text-2xl xl:text-3xl text-slate-300">
+            I'm a&nbsp;
+            <span class="gradient-text" id="typing-text" aria-live="polite">Python Full Stack Developer</span>
+            <span class="typing-cursor" aria-hidden="true"></span>
+          </p>
+        </div>
+
+        <!-- Short Bio -->
+        <div class="hero-animate mb-8">
+          <p class="font-inter text-slate-400 text-base md:text-lg leading-relaxed max-w-lg mx-auto lg:mx-0">
+            Passionate about building innovative digital experiences through clean code, scalable architecture, and
+            thoughtful design. With hands-on experience in real-world projects, I create reliable, high-performance
+            applications that solve meaningful problems and deliver exceptional user experiences.
+          </p>
+        </div>
+
+        <!-- CTA Buttons -->
+        <div class="hero-animate flex flex-wrap gap-4 justify-center lg:justify-start mb-8">
+          <a href="#projects" class="btn-primary ripple" aria-label="View my projects">
+            <i class="fas fa-code-branch"></i>
+            <span>View Projects</span>
+          </a>
+          <a href="#contact" class="btn-outline ripple" aria-label="Contact me">
+            <i class="fas fa-envelope"></i>
+            <span>Let's Talk</span>
+          </a>
+          
+          <a href="./media/resume/Nandini_Yamagar.pdf" target="_blank" rel="noopener noreferrer" class="btn-outline ripple"
+            aria-label="Download resume">
+            <i class="fas fa-download"></i>
+            <span>Resume</span>
+          </a>
+          
+        </div>
+
+        <!-- Social Icons -->
+        <div class="hero-animate flex items-center gap-3 justify-center lg:justify-start">
+          <a href="https://github.com/NandiniY018" target="_blank" rel="noopener noreferrer" class="social-icon"
+            aria-label="GitHub Profile">
+            <i class="fab fa-github"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/nandini-yamagar-1b8a26333" target="_blank" rel="noopener noreferrer"
+            class="social-icon" aria-label="LinkedIn Profile">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+          <a href="#contact" class="social-icon" aria-label="Contact Me">
+            <i class="fas fa-envelope"></i>
+          </a>
+
+
+          <!-- Divider -->
+          <span class="w-px h-6 bg-white/10 mx-1"></span>
+
+          <!-- Quick Stats inline -->
+          <div class="flex items-center gap-4 text-sm text-slate-400">
+            <span class="flex items-center gap-1.5">
+              <i class="fas fa-briefcase text-primary-400 text-xs"></i>
+              <span>2 Internships</span>
+            </span>
+            <span class="flex items-center gap-1.5">
+              <i class="fas fa-code text-cyan-400 text-xs"></i>
+              <span>3+ Projects</span>
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Profile Image -->
+      <div class="flex-shrink-0 flex justify-center lg:justify-end hero-animate">
+        <div class="relative">
+          <!-- Pulse rings -->
+          <div class="hero-pulse-ring" aria-hidden="true"></div>
+          <div class="hero-pulse-ring hero-pulse-ring-2" aria-hidden="true"></div>
+
+          <!-- Glow -->
+          <div class="hero-image-glow" aria-hidden="true"></div>
+
+          <!-- Spinning gradient ring -->
+          <div class="hero-image-ring" aria-hidden="true">
+            <div class="hero-image-ring-inner"></div>
+          </div>
+
+          <!-- Profile Picture -->
+          <div class="relative z-10">
+            
+            <img src="./media/profile/file_00000000aaf87207907689305e3193f1.png" alt="Nandini Yamagar — Python Full Stack Developer"
+              class="w-56 h-56 md:w-72 md:h-72 rounded-full object-cover object-top" loading="eager" width="288"
+              height="288">
+            
+          </div>
+
+          <!-- Floating tech badges -->
+          <div
+            class="absolute -top-4 -right-4 glass-card px-3 py-2 text-xs font-outfit font-semibold text-white flex items-center gap-2 shadow-lg rounded-xl animate-float-5s"
+            aria-hidden="true">
+            <i class="fab fa-python text-yellow-400"></i> Python 3.11
+          </div>
+          <div
+            class="absolute -bottom-2 -left-6 glass-card px-3 py-2 text-xs font-outfit font-semibold text-white flex items-center gap-2 shadow-lg rounded-xl animate-float-reverse-6s-delay"
+            aria-hidden="true">
+            <i class="fab fa-react text-cyan-400"></i> React.js
+          </div>
+          <div
+            class="absolute bottom-12 -right-8 glass-card px-3 py-2 text-xs font-outfit font-semibold text-white flex items-center gap-2 shadow-lg rounded-xl animate-float-7s-delay"
+            aria-hidden="true">
+            <i class="fas fa-database text-primary-400"></i> MySQL
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</section>
+
+  <div class="section-divider"></div>
+
+  
+<section id="about" class="py-14 sm:py-16 md:py-20 lg:py-24 bg-[#0b0c10]" aria-label="About me">
+  <div class="max-w-[1200px] mx-auto px-4 sm:px-5 md:px-6 lg:px-8">
+
+    <!-- Section Header -->
+    <div class="text-center mb-16 reveal flex flex-col items-center">
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 text-xs font-semibold tracking-wider mb-6">
+        <i class="fas fa-user-circle"></i> ABOUT ME
+      </div>
+      <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">
+        About <span class="text-indigo-500">Me</span>
+      </h2>
+      <p class="text-slate-400 max-w-3xl mx-auto text-lg">
+        A results-driven full stack developer who builds scalable, user-focused web applications
+        and turns ideas into real-world impact.
       </p>
-      <a href="#projects" class="inline-block bg-indigo-600 px-6 py-3 rounded-lg">View Projects</a>
-      <a href="#contact" class="inline-block border border-indigo-400 px-6 py-3 rounded-lg ml-2">Contact Me</a>
-    </section>
+      <div class="w-12 h-1 bg-gradient-to-r from-indigo-500 to-purple-500 mx-auto mt-6 rounded-full"></div>
+    </div>
 
-    <section id="about" class="py-12">
-      <h2 class="text-3xl font-bold mb-4">About Me</h2>
-      <p class="text-slate-300 leading-8">
-        I'm a Full Stack Developer interested in building scalable web applications,
-        solving problems and creating useful digital solutions.
-      </p>
-    </section>
+    <!-- Two-Column Layout -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-start mt-12">
+        
+      <!-- Left: Card with 4 list items -->
+      <div class="lg:col-span-5 reveal-left">
+        <div class="bg-[#11131f] border border-indigo-500/20 rounded-2xl p-8 md:p-10 h-full shadow-lg">
+            <ul class="space-y-8">
+                <!-- Item 1 -->
+                <li class="flex items-start gap-5">
+                    <div class="w-12 h-12 rounded-full bg-indigo-500/10 flex items-center justify-center flex-shrink-0 text-indigo-400 border border-indigo-500/20">
+                        <i class="fas fa-briefcase text-lg"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-white font-semibold text-lg mb-1">Experience</h4>
+                        <p class="text-slate-400 text-sm leading-relaxed">Hands-on in full stack development<br>and real-world projects</p>
+                    </div>
+                </li>
+                <!-- Item 2 -->
+                <li class="flex items-start gap-5">
+                    <div class="w-12 h-12 rounded-full bg-indigo-500/10 flex items-center justify-center flex-shrink-0 text-indigo-400 border border-indigo-500/20">
+                        <i class="fas fa-code text-lg"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-white font-semibold text-lg mb-1">Focus</h4>
+                        <p class="text-slate-400 text-sm leading-relaxed">Building clean, scalable, and<br>maintainable web solutions</p>
+                    </div>
+                </li>
+                <!-- Item 3 -->
+                <li class="flex items-start gap-5">
+                    <div class="w-12 h-12 rounded-full bg-indigo-500/10 flex items-center justify-center flex-shrink-0 text-indigo-400 border border-indigo-500/20">
+                        <i class="fas fa-rocket text-lg"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-white font-semibold text-lg mb-1">Strength</h4>
+                        <p class="text-slate-400 text-sm leading-relaxed">Problem solving, performance<br>optimization, and collaboration</p>
+                    </div>
+                </li>
+                <!-- Item 4 -->
+                <li class="flex items-start gap-5">
+                    <div class="w-12 h-12 rounded-full bg-indigo-500/10 flex items-center justify-center flex-shrink-0 text-indigo-400 border border-indigo-500/20">
+                        <i class="fas fa-graduation-cap text-lg"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-white font-semibold text-lg mb-1">Education</h4>
+                        <p class="text-slate-400 text-sm leading-relaxed">B.E. in Engineering<br>(2021 &ndash; 2025)</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+      </div>
 
-    <section id="skills" class="py-12">
-      <h2 class="text-3xl font-bold mb-4">Skills</h2>
-      <p class="text-slate-300 leading-8">
-        Python, Django, React, JavaScript, HTML, CSS, MySQL and REST APIs.
-      </p>
-    </section>
+      <!-- Right: About Text & badges -->
+      <div class="lg:col-span-7 reveal-right pt-2 lg:pt-4">
+        <h3 class="text-3xl md:text-4xl font-bold text-white mb-6 border-b border-slate-800 pb-6 inline-block w-full">
+          Full Stack <span class="text-indigo-500">Developer</span> & Problem Solver
+        </h3>
+        
+        <div class="space-y-6 text-slate-300 text-base md:text-lg leading-relaxed mb-12">
+            <p>
+              I'm a Full Stack Developer with strong expertise in Python, Django, React, and MySQL. 
+              I design and build robust, secure, and scalable web applications that deliver 
+              great user experiences.
+            </p>
+            <p>
+              I enjoy solving complex problems, writing clean code, and continuously learning 
+              new technologies. My goal is to contribute to innovative products and 
+              help teams create meaningful digital solutions.
+            </p>
+        </div>
 
-    <section id="projects" class="py-12">
-      <h2 class="text-3xl font-bold mb-4">Projects</h2>
-      <p class="text-slate-300">
-        Add your project descriptions and GitHub links here.
-      </p>
-    </section>
+        <!-- 3 Badges horizontally -->
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-2">
+            <!-- Badge 1 -->
+            <div class="flex items-center gap-4">
+                <div class="w-10 h-10 rounded-full bg-indigo-500/10 flex items-center justify-center text-indigo-400 flex-shrink-0">
+                    <i class="fas fa-check-circle"></i>
+                </div>
+                <div>
+                    <div class="text-white font-semibold text-sm">Projects</div>
+                    <div class="text-indigo-400 text-sm font-medium mt-0.5">5+</div>
+                </div>
+            </div>
+            <!-- Badge 2 -->
+            <div class="flex items-center gap-4 sm:border-l sm:border-slate-800 sm:pl-6">
+                <div class="w-10 h-10 rounded-full bg-indigo-500/10 flex items-center justify-center text-indigo-400 flex-shrink-0">
+                    <i class="fas fa-users"></i>
+                </div>
+                <div>
+                    <div class="text-white font-semibold text-sm">Collaboration</div>
+                    <div class="text-indigo-400 text-sm font-medium mt-0.5">Team Player</div>
+                </div>
+            </div>
+            <!-- Badge 3 -->
+            <div class="flex items-center gap-4 sm:border-l sm:border-slate-800 sm:pl-6">
+                <div class="w-10 h-10 rounded-full bg-indigo-500/10 flex items-center justify-center text-indigo-400 flex-shrink-0">
+                    <i class="fas fa-bullseye"></i>
+                </div>
+                <div>
+                    <div class="text-white font-semibold text-sm">Goal</div>
+                    <div class="text-indigo-400 text-sm font-medium mt-0.5">Impact Through Code</div>
+                </div>
+            </div>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</section>
 
-    <section id="contact" class="py-12">
-      <h2 class="text-3xl font-bold mb-4">Contact Me</h2>
-      <p class="text-slate-300">
-        Interested in working together? Contact me by email.
+
+  <div class="section-divider"></div>
+
+  
+<!-- ============================================================
+     SKILLS SECTION
+     ============================================================ -->
+<section id="skills" class="py-14 sm:py-16 md:py-20 lg:py-24 bg-section-dark" aria-label="Technical skills">
+  <div class="max-w-[1200px] mx-auto px-4 sm:px-5 md:px-6 lg:px-8">
+
+    <!-- Section Header -->
+    <div class="section-header reveal">
+      <span class="section-label"><i class="fas fa-cogs"></i> Skills</span>
+      <h2 class="section-title">My <span class="gradient-text">Tech Stack</span></h2>
+      <p class="section-subtitle">
+        A curated collection of languages, frameworks, and tools I work with to build modern applications.
       </p>
-      <a href="mailto:nandiniyamagar5@gmail.com" class="inline-block mt-4 bg-indigo-600 px-6 py-3 rounded-lg">
-  Send Email
-</a>
-    </section>
+      <div class="accent-line"></div>
+    </div>
+
+    <!-- Skills Grid by Category -->
+    <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+
+      
+      
+      <div class="glass-card p-6 reveal reveal-delay-1">
+        <h3 class="skill-category-title">
+          <i class="fas fa-layer-group mr-2"></i>
+          PROGRAMMING LANGUAGES
+        </h3>
+
+        
+        <div class="space-y-4">
+          
+          <div class="skill-card">
+            <div class="flex items-center justify-between mb-2">
+              <div class="flex items-center gap-2">
+                <i class="devicon-python-plain colored text-lg "></i>
+                <span class="font-outfit font-semibold text-slate-200 text-sm">Python</span>
+              </div>
+              <span class="text-xs text-primary-300 font-semibold">90%</span>
+            </div>
+            <div class="skill-bar-bg">
+              <div class="skill-bar-fill" data-skill-width="90%"></div>
+            </div>
+          </div>
+          
+          <div class="skill-card">
+            <div class="flex items-center justify-between mb-2">
+              <div class="flex items-center gap-2">
+                <i class="devicon-c-plain colored text-lg "></i>
+                <span class="font-outfit font-semibold text-slate-200 text-sm">C</span>
+              </div>
+              <span class="text-xs text-primary-300 font-semibold">80%</span>
+            </div>
+            <div class="skill-bar-bg">
+              <div class="skill-bar-fill" data-skill-width="80%"></div>
+            </div>
+          </div>
+          
+        </div>
+        
+      </div>
+      
+      <div class="glass-card p-6 reveal reveal-delay-2">
+        <h3 class="skill-category-title">
+          <i class="fas fa-layer-group mr-2"></i>
+          FRONTEND DEVELOPMENT
+        </h3>
+
+        
+        <div class="space-y-4">
+          
+          <div class="skill-card">
+            <div class="flex items-center justify-between mb-2">
+              <div class="flex items-center gap-2">
+                <i class="devicon-html5-plain colored text-lg "></i>
+                <span class="font-outfit font-semibold text-slate-200 text-sm">HTML5</span>
+              </div>
+              <span class="text-xs text-primary-300 font-semibold">100%</span>
+            </div>
+            <div class="skill-bar-bg">
+              <div class="skill-bar-fill" data-skill-width="100%"></div>
+            </div>
+          </div>
+          
+          <div class="skill-card">
+            <div class="flex items-center justify-between mb-2">
+              <div class="flex items-center gap-2">
+                <i class="devicon-css3-plain colored text-lg "></i>
+                <span class="font-outfit font-semibold text-slate-200 text-sm">CSS3 + Tailwind</span>
+              </div>
+              <span class="text-xs text-primary-300 font-semibold">100%</span>
+            </div>
+            <div class="skill-bar-bg">
+              <div class="skill-bar-fill" data-skill-width="100%"></div>
+            </div>
+          </div>
+          
+          <div class="skill-card">
+            <div class="flex items-center justify-between mb-2">
+              <div class="flex items-center gap-2">
+                <i class="devicon-javascript-plain colored text-lg "></i>
+                <span class="font-outfit font-semibold text-slate-200 text-sm">JavaScript</span>
+              </div>
+              <span class="text-xs text-primary-300 font-semibold">85%</span>
+            </div>
+            <div class="skill-bar-bg">
+              <div class="skill-bar-fill" data-skill-width="85%"></div>
+            </div>
+          </div>
+          
+          <div class="skill-card">
+            <div class="flex items-center justify-between mb-2">
+              <div class="flex items-center gap-2">
+                <i class="devicon-react-plain colored text-lg "></i>
+                <span class="font-outfit font-semibold text-slate-200 text-sm">React</span>
+              </div>
+              <span class="text-xs text-primary-300 font-semibold">95%</span>
+            </div>
+            <div class="skill-bar-bg">
+              <div class="skill-bar-fill" data-skill-width="95%"></div>
+            </div>
+          </div>
+          
+        </div>
+        
+      </div>
+      
+      <div class="glass-card p-6 reveal reveal-delay-3">
+        <h3 class="skill-category-title">
+          <i class="fas fa-layer-group mr-2"></i>
+          BACKEND &amp; APIS
+        </h3>
+
+        
+        <div class="space-y-4">
+          
+          <div class="skill-card">
+            <div class="flex items-center justify-between mb-2">
+              <div class="flex items-center gap-2">
+                <i class="devicon-django-plain colored text-lg "></i>
+                <span class="font-outfit font-semibold text-slate-200 text-sm">Django</span>
+              </div>
+              <span class="text-xs text-primary-300 font-semibold">85%</span>
+            </div>
+            <div class="skill-bar-bg">
+              <div class="skill-bar-fill" data-skill-width="85%"></div>
+            </div>
+          </div>
+          
+          <div class="skill-card">
+            <div class="flex items-center justify-between mb-2">
+              <div class="flex items-center gap-2">
+                <i class="devicon-fastapi-plain colored text-lg "></i>
+                <span class="font-outfit font-semibold text-slate-200 text-sm">Fast API</span>
+              </div>
+              <span class="text-xs text-primary-300 font-semibold">90%</span>
+            </div>
+            <div class="skill-bar-bg">
+              <div class="skill-bar-fill" data-skill-width="90%"></div>
+            </div>
+          </div>
+          
+          <div class="skill-card">
+            <div class="flex items-center justify-between mb-2">
+              <div class="flex items-center gap-2">
+                <i class="devicon-nextjs-plain colored text-lg "></i>
+                <span class="font-outfit font-semibold text-slate-200 text-sm">Next.js</span>
+              </div>
+              <span class="text-xs text-primary-300 font-semibold">80%</span>
+            </div>
+            <div class="skill-bar-bg">
+              <div class="skill-bar-fill" data-skill-width="80%"></div>
+            </div>
+          </div>
+          
+        </div>
+        
+      </div>
+      
+      <div class="glass-card p-6 reveal reveal-delay-4">
+        <h3 class="skill-category-title">
+          <i class="fas fa-layer-group mr-2"></i>
+          DATABASES
+        </h3>
+
+        
+        <div class="space-y-4">
+          
+          <div class="skill-card">
+            <div class="flex items-center justify-between mb-2">
+              <div class="flex items-center gap-2">
+                <i class="devicon-mysql-plain colored text-lg "></i>
+                <span class="font-outfit font-semibold text-slate-200 text-sm">MYSQL</span>
+              </div>
+              <span class="text-xs text-primary-300 font-semibold">95%</span>
+            </div>
+            <div class="skill-bar-bg">
+              <div class="skill-bar-fill" data-skill-width="95%"></div>
+            </div>
+          </div>
+          
+          <div class="skill-card">
+            <div class="flex items-center justify-between mb-2">
+              <div class="flex items-center gap-2">
+                <i class="devicon-mongodb-plain colored text-lg "></i>
+                <span class="font-outfit font-semibold text-slate-200 text-sm">MongoDB</span>
+              </div>
+              <span class="text-xs text-primary-300 font-semibold">92%</span>
+            </div>
+            <div class="skill-bar-bg">
+              <div class="skill-bar-fill" data-skill-width="92%"></div>
+            </div>
+          </div>
+          
+        </div>
+        
+      </div>
+      
+      <div class="glass-card p-6 reveal reveal-delay-5">
+        <h3 class="skill-category-title">
+          <i class="fas fa-layer-group mr-2"></i>
+          DEV TOOLS
+        </h3>
+
+        
+        <div class="grid grid-cols-2 gap-3">
+          
+          <div class="flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-300 hover:-translate-y-1 bg-[rgba(255,255,255,0.04)] border border-[rgba(255,255,255,0.08)]">
+            <i class="devicon-git-plain colored text-xl "></i>
+            <span class="font-outfit font-semibold text-slate-200 text-sm">Git</span>
+          </div>
+          
+          <div class="flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-300 hover:-translate-y-1 bg-[rgba(255,255,255,0.04)] border border-[rgba(255,255,255,0.08)]">
+            <i class="devicon-github-original colored text-xl "></i>
+            <span class="font-outfit font-semibold text-slate-200 text-sm">GitHub</span>
+          </div>
+          
+          <div class="flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-300 hover:-translate-y-1 bg-[rgba(255,255,255,0.04)] border border-[rgba(255,255,255,0.08)]">
+            <i class="devicon-vscode-plain colored text-xl "></i>
+            <span class="font-outfit font-semibold text-slate-200 text-sm">VS Code</span>
+          </div>
+          
+          <div class="flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-300 hover:-translate-y-1 bg-[rgba(255,255,255,0.04)] border border-[rgba(255,255,255,0.08)]">
+            <i class="devicon-pycharm-plain colored text-xl "></i>
+            <span class="font-outfit font-semibold text-slate-200 text-sm">PyCharm</span>
+          </div>
+          
+          <div class="flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-300 hover:-translate-y-1 bg-[rgba(255,255,255,0.04)] border border-[rgba(255,255,255,0.08)]">
+            <i class="fas fa-code text-xl text-[#06b6d4]"></i>
+            <span class="font-outfit font-semibold text-slate-200 text-sm">Stitch</span>
+          </div>
+          
+          <div class="flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-300 hover:-translate-y-1 bg-[rgba(255,255,255,0.04)] border border-[rgba(255,255,255,0.08)]">
+            <i class="fas fa-file-excel text-xl text-[#06b6d4]"></i>
+            <span class="font-outfit font-semibold text-slate-200 text-sm">Excel</span>
+          </div>
+          
+          <div class="flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-300 hover:-translate-y-1 bg-[rgba(255,255,255,0.04)] border border-[rgba(255,255,255,0.08)]">
+            <i class="devicon-tailwindcss-plain colored text-xl "></i>
+            <span class="font-outfit font-semibold text-slate-200 text-sm">Tailwind</span>
+          </div>
+          
+          <div class="flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-300 hover:-translate-y-1 bg-[rgba(255,255,255,0.04)] border border-[rgba(255,255,255,0.08)]">
+            <i class="fas fa-rocket text-xl text-[#06b6d4]"></i>
+            <span class="font-outfit font-semibold text-slate-200 text-sm">Antigravity</span>
+          </div>
+          
+          <div class="flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-300 hover:-translate-y-1 bg-[rgba(255,255,255,0.04)] border border-[rgba(255,255,255,0.08)]">
+            <i class="fas fa-mouse-pointer text-xl text-[#06b6d4]"></i>
+            <span class="font-outfit font-semibold text-slate-200 text-sm">Cursor</span>
+          </div>
+          
+          <div class="flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-300 hover:-translate-y-1 bg-[rgba(255,255,255,0.04)] border border-[rgba(255,255,255,0.08)]">
+            <i class="fas fa-chart-bar text-xl text-[#06b6d4]"></i>
+            <span class="font-outfit font-semibold text-slate-200 text-sm">Power BI</span>
+          </div>
+          
+        </div>
+        
+      </div>
+      
+      <div class="glass-card p-6 reveal reveal-delay-6">
+        <h3 class="skill-category-title">
+          <i class="fas fa-layer-group mr-2"></i>
+          PYTHON LIBRARIES
+        </h3>
+
+        
+        <div class="space-y-4">
+          
+          <div class="skill-card">
+            <div class="flex items-center justify-between mb-2">
+              <div class="flex items-center gap-2">
+                <i class="devicon-numpy-plain colored text-lg "></i>
+                <span class="font-outfit font-semibold text-slate-200 text-sm">Numpy</span>
+              </div>
+              <span class="text-xs text-primary-300 font-semibold">100%</span>
+            </div>
+            <div class="skill-bar-bg">
+              <div class="skill-bar-fill" data-skill-width="100%"></div>
+            </div>
+          </div>
+          
+          <div class="skill-card">
+            <div class="flex items-center justify-between mb-2">
+              <div class="flex items-center gap-2">
+                <i class="devicon-pandas-plain colored text-lg "></i>
+                <span class="font-outfit font-semibold text-slate-200 text-sm">Pandas</span>
+              </div>
+              <span class="text-xs text-primary-300 font-semibold">98%</span>
+            </div>
+            <div class="skill-bar-bg">
+              <div class="skill-bar-fill" data-skill-width="98%"></div>
+            </div>
+          </div>
+          
+          <div class="skill-card">
+            <div class="flex items-center justify-between mb-2">
+              <div class="flex items-center gap-2">
+                <i class="devicon-matplotlib-plain colored text-lg "></i>
+                <span class="font-outfit font-semibold text-slate-200 text-sm">MatPlotlib</span>
+              </div>
+              <span class="text-xs text-primary-300 font-semibold">96%</span>
+            </div>
+            <div class="skill-bar-bg">
+              <div class="skill-bar-fill" data-skill-width="96%"></div>
+            </div>
+          </div>
+          
+        </div>
+        
+      </div>
+      
+
+    </div>
+  </div>
+</section>
+
+  <div class="section-divider"></div>
+
+  
+<!-- ============================================================
+     EXPERIENCE SECTION
+     ============================================================ -->
+<section id="experience" class="py-14 sm:py-16 md:py-20 lg:py-24 bg-section-alt" aria-label="Work experience">
+  <div class="max-w-[1200px] mx-auto px-4 sm:px-5 md:px-6 lg:px-8">
+
+    <!-- Section Header -->
+    <div class="section-header reveal">
+      <span class="section-label"><i class="fas fa-briefcase"></i> Experience</span>
+      <h2 class="section-title">Work <span class="gradient-text">Experience</span></h2>
+      <p class="section-subtitle">
+        Professional experience gained through internships and real-world projects in agile environments.
+      </p>
+      <div class="accent-line"></div>
+    </div>
+
+    <div class="max-w-3xl mx-auto">
+      <div class="timeline-container">
+
+        
+        <div class="timeline-item glass-card p-6 md:p-8 reveal reveal-delay-1">
+          <div class="timeline-dot" aria-hidden="true"></div>
+
+          <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3 mb-4">
+            <div>
+              <div class="flex items-center gap-3 mb-2">
+                <div class="w-10 h-10 rounded-xl flex items-center justify-center border border-indigo-500/30 bg-gradient-to-br from-indigo-500/30 to-violet-500/20">
+                  <i class="fas fa-laptop-code text-primary-300 text-sm"></i>
+                </div>
+                <div>
+                  <h3 class="font-outfit font-bold text-lg text-white">Junior Software Developer Trainee</h3>
+                  <p class="text-primary-300 font-semibold text-sm">eDeal India</p>
+                </div>
+              </div>
+            </div>
+            <div class="flex-shrink-0">
+              <span class="duration-badge">
+                <i class="fas fa-calendar-alt"></i>
+                Mar 2026 – Jun 2026
+              </span>
+            </div>
+          </div>
+
+          <ul class="space-y-2 mb-5 text-slate-400 text-sm mt-4 break-words">
+            
+            <li class="flex items-start gap-2.5">
+              <i class="fas fa-circle-check text-emerald-400 text-xs mt-1 flex-shrink-0"></i>
+              Contributed to the development of a scalable multi-vendor e-commerce platform using React.js, Next.js, HTML, CSS, JavaScript, and MongoDB.
+            </li>
+            
+            <li class="flex items-start gap-2.5">
+              <i class="fas fa-circle-check text-emerald-400 text-xs mt-1 flex-shrink-0"></i>
+              Built responsive and user-friendly interfaces for customer, vendor, and admin panels, ensuring a seamless user experience.
+            </li>
+            
+            <li class="flex items-start gap-2.5">
+              <i class="fas fa-circle-check text-emerald-400 text-xs mt-1 flex-shrink-0"></i>
+              Implemented key business features including jewellery products, contest products, token-based lucky draw, and monthly/yearly savings schemes.
+            </li>
+            
+            <li class="flex items-start gap-2.5">
+              <i class="fas fa-circle-check text-emerald-400 text-xs mt-1 flex-shrink-0"></i>
+              Integrated backend APIs for product catalog, user management, order processing, transactions, and payment workflows.
+            </li>
+            
+            <li class="flex items-start gap-2.5">
+              <i class="fas fa-circle-check text-emerald-400 text-xs mt-1 flex-shrink-0"></i>
+              Collaborated with cross-functional teams to develop, test, debug, and optimize application features using Git-based version control.
+            </li>
+            
+            <li class="flex items-start gap-2.5">
+              <i class="fas fa-circle-check text-emerald-400 text-xs mt-1 flex-shrink-0"></i>
+              Enhanced application performance, responsiveness, and code quality by following modern web development best practices.
+            </li>
+            
+          </ul>
+        </div>
+        
+        <div class="timeline-item glass-card p-6 md:p-8 reveal reveal-delay-2">
+          <div class="timeline-dot" aria-hidden="true"></div>
+
+          <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3 mb-4">
+            <div>
+              <div class="flex items-center gap-3 mb-2">
+                <div class="w-10 h-10 rounded-xl flex items-center justify-center border border-indigo-500/30 bg-gradient-to-br from-indigo-500/30 to-violet-500/20">
+                  <i class="fas fa-paint-brush text-primary-300 text-sm"></i>
+                </div>
+                <div>
+                  <h3 class="font-outfit font-bold text-lg text-white">Frontend Developer</h3>
+                  <p class="text-primary-300 font-semibold text-sm">Travel With Pravah</p>
+                </div>
+              </div>
+            </div>
+            <div class="flex-shrink-0">
+              <span class="duration-badge">
+                <i class="fas fa-calendar-alt"></i>
+                Jan 2026 – Feb 2026
+              </span>
+            </div>
+          </div>
+
+          <ul class="space-y-2 mb-5 text-slate-400 text-sm mt-4 break-words">
+            
+            <li class="flex items-start gap-2.5">
+              <i class="fas fa-circle-check text-emerald-400 text-xs mt-1 flex-shrink-0"></i>
+              Designed and developed a responsive luxury travel website using HTML, CSS, JavaScript, Bootstrap, and React.js.
+            </li>
+            
+            <li class="flex items-start gap-2.5">
+              <i class="fas fa-circle-check text-emerald-400 text-xs mt-1 flex-shrink-0"></i>
+              Crafted modern and visually appealing web pages to deliver an engaging user experience.
+            </li>
+            
+            <li class="flex items-start gap-2.5">
+              <i class="fas fa-circle-check text-emerald-400 text-xs mt-1 flex-shrink-0"></i>
+              Implemented responsive layouts and interactive UI components for seamless performance across desktop, tablet, and mobile devices.
+            </li>
+            
+            <li class="flex items-start gap-2.5">
+              <i class="fas fa-circle-check text-emerald-400 text-xs mt-1 flex-shrink-0"></i>
+              Optimized website performance, accessibility, and cross-browser compatibility using modern frontend development practices.
+            </li>
+            
+            <li class="flex items-start gap-2.5">
+              <i class="fas fa-circle-check text-emerald-400 text-xs mt-1 flex-shrink-0"></i>
+              Collaborated with the development team to enhance UI design, resolve frontend issues, and improve overall website quality.
+            </li>
+            
+          </ul>
+        </div>
+        
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
+  <div class="section-divider"></div>
+
+  
+<!-- ============================================================
+     PROJECTS SECTION
+     ============================================================ -->
+<section id="projects" class="py-14 sm:py-16 md:py-20 lg:py-24 bg-section-dark" aria-label="My projects">
+  <div class="max-w-[1200px] mx-auto px-4 sm:px-5 md:px-6 lg:px-8">
+
+    <!-- Section Header -->
+    <div class="section-header reveal">
+      <span class="section-label"><i class="fas fa-folder-open"></i> Projects</span>
+      <h2 class="section-title">Featured <span class="gradient-text">Projects</span></h2>
+      <p class="section-subtitle">
+        A selection of my best work — real applications built with modern tech stacks and production-ready code.
+      </p>
+      <div class="accent-line"></div>
+    </div>
+
+    <!-- Projects Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 lg:gap-8">
+
+      
+      <!-- Project Card -->
+      <article class="project-card reveal reveal-delay-1">
+        <!-- Image Area -->
+        <div class="project-img-wrapper relative overflow-hidden">
+          
+          
+            <img src="./media/projects/gallery/ChatGPT_Image_Jul_9_2026_04_48_22_PM.png"
+                 alt="Grocery Management System screenshot"
+                 loading="lazy" width="600" height="300"
+                 class="w-full h-full object-cover"
+                 onerror="this.classList.add('hidden'); this.nextElementSibling.classList.remove('hidden'); this.nextElementSibling.classList.add('flex');" />
+          
+          
+
+          <!-- Fallback placeholder -->
+          <div class="hidden absolute inset-0 w-full h-full flex-col items-center justify-center gap-3 bg-gradient-to-br from-indigo-500/30 via-violet-500/20 to-cyan-500/25">
+            <i class="fas fa-code text-5xl text-indigo-300/60"></i>
+            <span class="font-outfit text-sm text-indigo-300/70">Grocery Management System</span>
+          </div>
+
+          <!-- Gallery "+" button — only if more than 1 gallery image -->
+          
+          <button class="absolute bottom-3 right-3 flex items-center gap-1.5 px-3 py-1.5 bg-black/60 backdrop-blur-md border border-white/15 rounded-full text-white text-xs font-semibold cursor-pointer transition-all duration-200 hover:bg-indigo-500/70 hover:scale-105 z-10"
+                  onclick="openGallery('gallery-5')"
+                  aria-label="View all 4 photos"
+                  title="View all photos">
+            <i class="fas fa-plus"></i>
+            <span>4</span>
+          </button>
+          
+        </div>
+
+        <div class="p-6">
+          <div class="flex items-start justify-between gap-3 mb-3">
+            <h3 class="font-outfit font-bold text-lg text-white leading-tight">
+              Grocery Management System
+            </h3>
+            <div class="w-12 h-12 rounded-xl flex items-center justify-center text-white text-xl shadow-lg bg-gradient-to-br from-[#6366f1] to-[#8b5cf6]">
+              <i class="fas fa-code text-white text-xs"></i>
+            </div>
+          </div>
+
+          <p class="text-slate-400 text-sm leading-relaxed mb-4 break-words">
+            A complete web-based grocery store management platform designed to simplify online shopping and store operations. It enables customers to browse products, manage their cart, and place orders, while providing administrators with efficient inventory, product, and order management.
+          </p>
+
+          <!-- Features -->
+          <ul class="space-y-2 mb-4 text-slate-400 text-xs break-words">
+            
+            <li class="flex items-start gap-2">
+              <i class="fas fa-check-circle text-emerald-400 flex-shrink-0 mt-[3px]"></i>
+              <span class="leading-relaxed">Real-time inventory &amp; stock management</span>
+            </li>
+            
+            <li class="flex items-start gap-2">
+              <i class="fas fa-check-circle text-emerald-400 flex-shrink-0 mt-[3px]"></i>
+              <span class="leading-relaxed">Category-based product browsing &amp; search</span>
+            </li>
+            
+            <li class="flex items-start gap-2">
+              <i class="fas fa-check-circle text-emerald-400 flex-shrink-0 mt-[3px]"></i>
+              <span class="leading-relaxed">Shopping cart &amp; order management</span>
+            </li>
+            
+            <li class="flex items-start gap-2">
+              <i class="fas fa-check-circle text-emerald-400 flex-shrink-0 mt-[3px]"></i>
+              <span class="leading-relaxed">Admin dashboard for products, categories &amp; customers</span>
+            </li>
+            
+            <li class="flex items-start gap-2">
+              <i class="fas fa-check-circle text-emerald-400 flex-shrink-0 mt-[3px]"></i>
+              <span class="leading-relaxed">Responsive and user-friendly interface</span>
+            </li>
+            
+            <li class="flex items-start gap-2">
+              <i class="fas fa-check-circle text-emerald-400 flex-shrink-0 mt-[3px]"></i>
+              <span class="leading-relaxed">Optimized database management for efficient performance</span>
+            </li>
+            
+          </ul>
+
+          <!-- Tech Tags -->
+          <div class="flex flex-wrap gap-1.5 mb-5">
+            
+            <span class="tech-tag">HTML5</span>
+            
+            <span class="tech-tag">CSS3</span>
+            
+            <span class="tech-tag">JavaScript</span>
+            
+            <span class="tech-tag">MYSQL</span>
+            
+            <span class="tech-tag">PHP</span>
+            
+            <span class="tech-tag">Bootstrap</span>
+            
+            <span class="tech-tag">Apache</span>
+            
+            <span class="tech-tag">XAMPPA</span>
+            
+            <span class="tech-tag">phpMyAdmin</span>
+            
+          </div>
+
+          <!-- Buttons -->
+          <div class="flex gap-3">
+            
+            <a href="https://github.com/NandiniY018" target="_blank" rel="noopener noreferrer"
+               class="btn-primary ripple flex-1 text-sm py-2.5" aria-label="View project on GitHub">
+              <i class="fab fa-github"></i> GitHub
+            </a>
+            
+            
+            <button onclick="openGallery('gallery-5')"
+                    class="btn-outline ripple flex-1 text-sm py-2.5" aria-label="View project photos">
+              <i class="fas fa-images"></i> Photos
+            </button>
+            
+          </div>
+        </div>
+      </article>
+
+      <!-- Lightbox Gallery for this project -->
+      
+      <div id="gallery-5" class="fixed inset-0 z-[9999] flex items-center justify-center p-4 hidden" role="dialog" aria-modal="true" aria-label="Grocery Management System gallery">
+        <div class="absolute inset-0 bg-black/85 backdrop-blur-sm" onclick="closeGallery('gallery-5')"></div>
+        <div class="relative z-10 bg-[#0f0f1a] border border-white/10 rounded-2xl w-full max-w-4xl max-h-[90vh] flex flex-col overflow-hidden shadow-[0_40px_100px_rgba(0,0,0,0.8)]">
+          <div class="flex items-center justify-between px-6 py-4 border-b border-white/10 shrink-0">
+            <h3 class="font-outfit font-bold text-white text-lg">Grocery Management System — Photos</h3>
+            <button class="w-8 h-8 rounded-full bg-white/10 text-slate-400 flex items-center justify-center transition-colors hover:bg-red-500/20 hover:text-red-400" onclick="closeGallery('gallery-5')" aria-label="Close gallery">
+              <i class="fas fa-times"></i>
+            </button>
+          </div>
+          <div class="flex flex-col flex-1 overflow-hidden">
+            <!-- Main viewer -->
+            <div class="relative flex-1 flex items-center justify-center bg-[#070710] min-h-[300px] overflow-hidden">
+              <img id="lightbox-img-5" src="./media/projects/gallery/ChatGPT_Image_Jul_9_2026_04_48_22_PM.png" alt="" class="max-w-full max-h-[55vh] object-contain rounded-lg transition-opacity duration-200" />
+              <p id="lightbox-caption-5" class="absolute bottom-3 left-1/2 -translate-x-1/2 bg-black/60 text-slate-300 text-xs px-3 py-1 rounded-full whitespace-nowrap"></p>
+              <!-- Prev / Next -->
+              
+              <button class="absolute left-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/50 border border-white/10 text-white flex items-center justify-center transition-colors hover:bg-indigo-500/60 z-10" onclick="navigateGallery('5', -1)" aria-label="Previous"><i class="fas fa-chevron-left"></i></button>
+              <button class="absolute right-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/50 border border-white/10 text-white flex items-center justify-center transition-colors hover:bg-indigo-500/60 z-10" onclick="navigateGallery('5', 1)" aria-label="Next"><i class="fas fa-chevron-right"></i></button>
+              
+            </div>
+            <!-- Thumbnail Strip -->
+            <div class="flex gap-2 py-3 px-4 overflow-x-auto shrink-0 border-t border-white/10 [scrollbar-width:thin] [scrollbar-color:rgba(99,102,241,0.4)_transparent]">
+              
+              <img src="./media/projects/gallery/ChatGPT_Image_Jul_9_2026_04_48_22_PM.png"
+                   alt="Grocery Management System"
+                   class="lightbox-thumb w-[72px] h-[52px] object-cover rounded-md cursor-pointer opacity-50 border-2 border-transparent transition-all hover:opacity-85 hover:scale-105 shrink-0 [&.active]:opacity-100 [&.active]:border-indigo-500 active"
+                   data-index="0"
+                   data-src="./media/projects/gallery/ChatGPT_Image_Jul_9_2026_04_48_22_PM.png"
+                   data-caption=""
+                   data-project="5"
+                   onclick="selectThumb(this)"
+                   loading="lazy" />
+              
+              <img src="./media/projects/gallery/Screenshot_2026-07-09_172847_zRhV72d.png"
+                   alt="Grocery Management System"
+                   class="lightbox-thumb w-[72px] h-[52px] object-cover rounded-md cursor-pointer opacity-50 border-2 border-transparent transition-all hover:opacity-85 hover:scale-105 shrink-0 [&.active]:opacity-100 [&.active]:border-indigo-500 "
+                   data-index="1"
+                   data-src="./media/projects/gallery/Screenshot_2026-07-09_172847_zRhV72d.png"
+                   data-caption=""
+                   data-project="5"
+                   onclick="selectThumb(this)"
+                   loading="lazy" />
+              
+              <img src="./media/projects/gallery/Screenshot_2026-07-09_172959_XJO8sM3.png"
+                   alt="Grocery Management System"
+                   class="lightbox-thumb w-[72px] h-[52px] object-cover rounded-md cursor-pointer opacity-50 border-2 border-transparent transition-all hover:opacity-85 hover:scale-105 shrink-0 [&.active]:opacity-100 [&.active]:border-indigo-500 "
+                   data-index="2"
+                   data-src="./media/projects/gallery/Screenshot_2026-07-09_172959_XJO8sM3.png"
+                   data-caption=""
+                   data-project="5"
+                   onclick="selectThumb(this)"
+                   loading="lazy" />
+              
+              <img src="./media/projects/gallery/Screenshot_2026-07-09_172934_MOUd0s0.png"
+                   alt="Grocery Management System"
+                   class="lightbox-thumb w-[72px] h-[52px] object-cover rounded-md cursor-pointer opacity-50 border-2 border-transparent transition-all hover:opacity-85 hover:scale-105 shrink-0 [&.active]:opacity-100 [&.active]:border-indigo-500 "
+                   data-index="3"
+                   data-src="./media/projects/gallery/Screenshot_2026-07-09_172934_MOUd0s0.png"
+                   data-caption=""
+                   data-project="5"
+                   onclick="selectThumb(this)"
+                   loading="lazy" />
+              
+            </div>
+          </div>
+        </div>
+      </div>
+      
+
+      
+      <!-- Project Card -->
+      <article class="project-card reveal reveal-delay-2">
+        <!-- Image Area -->
+        <div class="project-img-wrapper relative overflow-hidden">
+          
+          
+            <img src="./media/projects/gallery/ChatGPT_Image_Jul_9_2026_04_36_36_PM_JtXOWKo.png"
+                 alt="Crop Yield Prediction screenshot"
+                 loading="lazy" width="600" height="300"
+                 class="w-full h-full object-cover"
+                 onerror="this.classList.add('hidden'); this.nextElementSibling.classList.remove('hidden'); this.nextElementSibling.classList.add('flex');" />
+          
+          
+
+          <!-- Fallback placeholder -->
+          <div class="hidden absolute inset-0 w-full h-full flex-col items-center justify-center gap-3 bg-gradient-to-br from-indigo-500/30 via-violet-500/20 to-cyan-500/25">
+            <i class="fas fa-code text-5xl text-indigo-300/60"></i>
+            <span class="font-outfit text-sm text-indigo-300/70">Crop Yield Prediction</span>
+          </div>
+
+          <!-- Gallery "+" button — only if more than 1 gallery image -->
+          
+          <button class="absolute bottom-3 right-3 flex items-center gap-1.5 px-3 py-1.5 bg-black/60 backdrop-blur-md border border-white/15 rounded-full text-white text-xs font-semibold cursor-pointer transition-all duration-200 hover:bg-indigo-500/70 hover:scale-105 z-10"
+                  onclick="openGallery('gallery-2')"
+                  aria-label="View all 3 photos"
+                  title="View all photos">
+            <i class="fas fa-plus"></i>
+            <span>3</span>
+          </button>
+          
+        </div>
+
+        <div class="p-6">
+          <div class="flex items-start justify-between gap-3 mb-3">
+            <h3 class="font-outfit font-bold text-lg text-white leading-tight">
+              Crop Yield Prediction
+            </h3>
+            <div class="w-12 h-12 rounded-xl flex items-center justify-center text-white text-xl shadow-lg bg-gradient-to-br from-[#6366f1] to-[#8b5cf6]">
+              <i class="fas fa-code text-white text-xs"></i>
+            </div>
+          </div>
+
+          <p class="text-slate-400 text-sm leading-relaxed mb-4 break-words">
+            An intelligent predictive analytics application that leverages machine learning to estimate crop yield based on historical agricultural data and environmental conditions. The solution enables data-driven decision-making by analyzing key factors that influence agricultural productivity.
+          </p>
+
+          <!-- Features -->
+          <ul class="space-y-2 mb-4 text-slate-400 text-xs break-words">
+            
+            <li class="flex items-start gap-2">
+              <i class="fas fa-check-circle text-emerald-400 flex-shrink-0 mt-[3px]"></i>
+              <span class="leading-relaxed">Machine learning-powered crop yield forecasting.</span>
+            </li>
+            
+            <li class="flex items-start gap-2">
+              <i class="fas fa-check-circle text-emerald-400 flex-shrink-0 mt-[3px]"></i>
+              <span class="leading-relaxed">Historical agricultural data analysis and preprocessing.</span>
+            </li>
+            
+            <li class="flex items-start gap-2">
+              <i class="fas fa-check-circle text-emerald-400 flex-shrink-0 mt-[3px]"></i>
+              <span class="leading-relaxed">Predictive modeling with Random Forest, Decision Tree, Linear Regression &amp; XGBoost.</span>
+            </li>
+            
+            <li class="flex items-start gap-2">
+              <i class="fas fa-check-circle text-emerald-400 flex-shrink-0 mt-[3px]"></i>
+              <span class="leading-relaxed">Interactive visualization and model performance evaluation.</span>
+            </li>
+            
+          </ul>
+
+          <!-- Tech Tags -->
+          <div class="flex flex-wrap gap-1.5 mb-5">
+            
+            <span class="tech-tag">Python</span>
+            
+            <span class="tech-tag">HTML3</span>
+            
+            <span class="tech-tag">CSS3</span>
+            
+            <span class="tech-tag">JavaScript</span>
+            
+            <span class="tech-tag">Flask</span>
+            
+            <span class="tech-tag">Bootstrap</span>
+            
+            <span class="tech-tag">Scikit-learn</span>
+            
+            <span class="tech-tag">XGBoost</span>
+            
+            <span class="tech-tag">Pandas</span>
+            
+            <span class="tech-tag">NumPy</span>
+            
+            <span class="tech-tag">Matplotlib</span>
+            
+            <span class="tech-tag">Seaborn</span>
+            
+            <span class="tech-tag">SQLite</span>
+            
+            <span class="tech-tag">Git</span>
+            
+            <span class="tech-tag">GitLab</span>
+            
+          </div>
+
+          <!-- Buttons -->
+          <div class="flex gap-3">
+            
+            <a href="https://github.com/NandiniY018/Crop-Yield-Prediction" target="_blank" rel="noopener noreferrer"
+               class="btn-primary ripple flex-1 text-sm py-2.5" aria-label="View project on GitHub">
+              <i class="fab fa-github"></i> GitHub
+            </a>
+            
+            
+            <button onclick="openGallery('gallery-2')"
+                    class="btn-outline ripple flex-1 text-sm py-2.5" aria-label="View project photos">
+              <i class="fas fa-images"></i> Photos
+            </button>
+            
+          </div>
+        </div>
+      </article>
+
+      <!-- Lightbox Gallery for this project -->
+      
+      <div id="gallery-2" class="fixed inset-0 z-[9999] flex items-center justify-center p-4 hidden" role="dialog" aria-modal="true" aria-label="Crop Yield Prediction gallery">
+        <div class="absolute inset-0 bg-black/85 backdrop-blur-sm" onclick="closeGallery('gallery-2')"></div>
+        <div class="relative z-10 bg-[#0f0f1a] border border-white/10 rounded-2xl w-full max-w-4xl max-h-[90vh] flex flex-col overflow-hidden shadow-[0_40px_100px_rgba(0,0,0,0.8)]">
+          <div class="flex items-center justify-between px-6 py-4 border-b border-white/10 shrink-0">
+            <h3 class="font-outfit font-bold text-white text-lg">Crop Yield Prediction — Photos</h3>
+            <button class="w-8 h-8 rounded-full bg-white/10 text-slate-400 flex items-center justify-center transition-colors hover:bg-red-500/20 hover:text-red-400" onclick="closeGallery('gallery-2')" aria-label="Close gallery">
+              <i class="fas fa-times"></i>
+            </button>
+          </div>
+          <div class="flex flex-col flex-1 overflow-hidden">
+            <!-- Main viewer -->
+            <div class="relative flex-1 flex items-center justify-center bg-[#070710] min-h-[300px] overflow-hidden">
+              <img id="lightbox-img-2" src="./media/projects/gallery/ChatGPT_Image_Jul_9_2026_04_36_36_PM_JtXOWKo.png" alt="" class="max-w-full max-h-[55vh] object-contain rounded-lg transition-opacity duration-200" />
+              <p id="lightbox-caption-2" class="absolute bottom-3 left-1/2 -translate-x-1/2 bg-black/60 text-slate-300 text-xs px-3 py-1 rounded-full whitespace-nowrap"></p>
+              <!-- Prev / Next -->
+              
+              <button class="absolute left-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/50 border border-white/10 text-white flex items-center justify-center transition-colors hover:bg-indigo-500/60 z-10" onclick="navigateGallery('2', -1)" aria-label="Previous"><i class="fas fa-chevron-left"></i></button>
+              <button class="absolute right-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/50 border border-white/10 text-white flex items-center justify-center transition-colors hover:bg-indigo-500/60 z-10" onclick="navigateGallery('2', 1)" aria-label="Next"><i class="fas fa-chevron-right"></i></button>
+              
+            </div>
+            <!-- Thumbnail Strip -->
+            <div class="flex gap-2 py-3 px-4 overflow-x-auto shrink-0 border-t border-white/10 [scrollbar-width:thin] [scrollbar-color:rgba(99,102,241,0.4)_transparent]">
+              
+              <img src="./media/projects/gallery/ChatGPT_Image_Jul_9_2026_04_36_36_PM_JtXOWKo.png"
+                   alt="Crop Yield Prediction"
+                   class="lightbox-thumb w-[72px] h-[52px] object-cover rounded-md cursor-pointer opacity-50 border-2 border-transparent transition-all hover:opacity-85 hover:scale-105 shrink-0 [&.active]:opacity-100 [&.active]:border-indigo-500 active"
+                   data-index="0"
+                   data-src="./media/projects/gallery/ChatGPT_Image_Jul_9_2026_04_36_36_PM_JtXOWKo.png"
+                   data-caption=""
+                   data-project="2"
+                   onclick="selectThumb(this)"
+                   loading="lazy" />
+              
+              <img src="./media/projects/gallery/ggg.jpeg"
+                   alt="Crop Yield Prediction"
+                   class="lightbox-thumb w-[72px] h-[52px] object-cover rounded-md cursor-pointer opacity-50 border-2 border-transparent transition-all hover:opacity-85 hover:scale-105 shrink-0 [&.active]:opacity-100 [&.active]:border-indigo-500 "
+                   data-index="1"
+                   data-src="./media/projects/gallery/ggg.jpeg"
+                   data-caption=""
+                   data-project="2"
+                   onclick="selectThumb(this)"
+                   loading="lazy" />
+              
+              <img src="./media/projects/gallery/WhatsApp_Image_2026-07-09_at_5.45.27_PM.jpeg"
+                   alt="Crop Yield Prediction"
+                   class="lightbox-thumb w-[72px] h-[52px] object-cover rounded-md cursor-pointer opacity-50 border-2 border-transparent transition-all hover:opacity-85 hover:scale-105 shrink-0 [&.active]:opacity-100 [&.active]:border-indigo-500 "
+                   data-index="2"
+                   data-src="./media/projects/gallery/WhatsApp_Image_2026-07-09_at_5.45.27_PM.jpeg"
+                   data-caption=""
+                   data-project="2"
+                   onclick="selectThumb(this)"
+                   loading="lazy" />
+              
+            </div>
+          </div>
+        </div>
+      </div>
+      
+
+      
+      <!-- Project Card -->
+      <article class="project-card reveal reveal-delay-3">
+        <!-- Image Area -->
+        <div class="project-img-wrapper relative overflow-hidden">
+          
+          
+            <img src="./media/projects/gallery/Screenshot_2026-07-09_165310.png"
+                 alt="Multi-Vendor E-Commerce Platform screenshot"
+                 loading="lazy" width="600" height="300"
+                 class="w-full h-full object-cover"
+                 onerror="this.classList.add('hidden'); this.nextElementSibling.classList.remove('hidden'); this.nextElementSibling.classList.add('flex');" />
+          
+          
+
+          <!-- Fallback placeholder -->
+          <div class="hidden absolute inset-0 w-full h-full flex-col items-center justify-center gap-3 bg-gradient-to-br from-indigo-500/30 via-violet-500/20 to-cyan-500/25">
+            <i class="fas fa-code text-5xl text-indigo-300/60"></i>
+            <span class="font-outfit text-sm text-indigo-300/70">Multi-Vendor E-Commerce Platform</span>
+          </div>
+
+          <!-- Gallery "+" button — only if more than 1 gallery image -->
+          
+          <button class="absolute bottom-3 right-3 flex items-center gap-1.5 px-3 py-1.5 bg-black/60 backdrop-blur-md border border-white/15 rounded-full text-white text-xs font-semibold cursor-pointer transition-all duration-200 hover:bg-indigo-500/70 hover:scale-105 z-10"
+                  onclick="openGallery('gallery-4')"
+                  aria-label="View all 4 photos"
+                  title="View all photos">
+            <i class="fas fa-plus"></i>
+            <span>4</span>
+          </button>
+          
+        </div>
+
+        <div class="p-6">
+          <div class="flex items-start justify-between gap-3 mb-3">
+            <h3 class="font-outfit font-bold text-lg text-white leading-tight">
+              Multi-Vendor E-Commerce Platform
+            </h3>
+            <div class="w-12 h-12 rounded-xl flex items-center justify-center text-white text-xl shadow-lg bg-gradient-to-br from-[#6366f1] to-[#8b5cf6]">
+              <i class="fas fa-code text-white text-xs"></i>
+            </div>
+          </div>
+
+          <p class="text-slate-400 text-sm leading-relaxed mb-4 break-words">
+            A modern, feature-rich multi-vendor e-commerce platform designed to deliver an engaging shopping experience through premium jewellery collections, exclusive contest products, secure payments, and customer reward programs. The platform streamlines vendor operations with dedicated management dashboards while ensuring a fast, intuitive, and scalable user experience.
+          </p>
+
+          <!-- Features -->
+          <ul class="space-y-2 mb-4 text-slate-400 text-xs break-words">
+            
+            <li class="flex items-start gap-2">
+              <i class="fas fa-check-circle text-emerald-400 flex-shrink-0 mt-[3px]"></i>
+              <span class="leading-relaxed">Premium jewellery collections &amp; contest products</span>
+            </li>
+            
+            <li class="flex items-start gap-2">
+              <i class="fas fa-check-circle text-emerald-400 flex-shrink-0 mt-[3px]"></i>
+              <span class="leading-relaxed">Dedicated Admin &amp; Vendor dashboards</span>
+            </li>
+            
+            <li class="flex items-start gap-2">
+              <i class="fas fa-check-circle text-emerald-400 flex-shrink-0 mt-[3px]"></i>
+              <span class="leading-relaxed">Secure checkout, order processing &amp; payment gateway integration</span>
+            </li>
+            
+            <li class="flex items-start gap-2">
+              <i class="fas fa-check-circle text-emerald-400 flex-shrink-0 mt-[3px]"></i>
+              <span class="leading-relaxed">Token-based lucky draws &amp; membership savings plans</span>
+            </li>
+            
+            <li class="flex items-start gap-2">
+              <i class="fas fa-check-circle text-emerald-400 flex-shrink-0 mt-[3px]"></i>
+              <span class="leading-relaxed">Responsive design with intelligent product search &amp; category navigation</span>
+            </li>
+            
+          </ul>
+
+          <!-- Tech Tags -->
+          <div class="flex flex-wrap gap-1.5 mb-5">
+            
+            <span class="tech-tag">HTML5</span>
+            
+            <span class="tech-tag">CSS3</span>
+            
+            <span class="tech-tag">JavaScript</span>
+            
+            <span class="tech-tag">React.js</span>
+            
+            <span class="tech-tag">Next.js</span>
+            
+            <span class="tech-tag">MongoDB</span>
+            
+            <span class="tech-tag">REST APIs</span>
+            
+            <span class="tech-tag">GitHub</span>
+            
+          </div>
+
+          <!-- Buttons -->
+          <div class="flex gap-3">
+            
+            <a href="https://github.com/NandiniY018" target="_blank" rel="noopener noreferrer"
+               class="btn-primary ripple flex-1 text-sm py-2.5" aria-label="View project on GitHub">
+              <i class="fab fa-github"></i> GitHub
+            </a>
+            
+            
+            <button onclick="openGallery('gallery-4')"
+                    class="btn-outline ripple flex-1 text-sm py-2.5" aria-label="View project photos">
+              <i class="fas fa-images"></i> Photos
+            </button>
+            
+          </div>
+        </div>
+      </article>
+
+      <!-- Lightbox Gallery for this project -->
+      
+      <div id="gallery-4" class="fixed inset-0 z-[9999] flex items-center justify-center p-4 hidden" role="dialog" aria-modal="true" aria-label="Multi-Vendor E-Commerce Platform gallery">
+        <div class="absolute inset-0 bg-black/85 backdrop-blur-sm" onclick="closeGallery('gallery-4')"></div>
+        <div class="relative z-10 bg-[#0f0f1a] border border-white/10 rounded-2xl w-full max-w-4xl max-h-[90vh] flex flex-col overflow-hidden shadow-[0_40px_100px_rgba(0,0,0,0.8)]">
+          <div class="flex items-center justify-between px-6 py-4 border-b border-white/10 shrink-0">
+            <h3 class="font-outfit font-bold text-white text-lg">Multi-Vendor E-Commerce Platform — Photos</h3>
+            <button class="w-8 h-8 rounded-full bg-white/10 text-slate-400 flex items-center justify-center transition-colors hover:bg-red-500/20 hover:text-red-400" onclick="closeGallery('gallery-4')" aria-label="Close gallery">
+              <i class="fas fa-times"></i>
+            </button>
+          </div>
+          <div class="flex flex-col flex-1 overflow-hidden">
+            <!-- Main viewer -->
+            <div class="relative flex-1 flex items-center justify-center bg-[#070710] min-h-[300px] overflow-hidden">
+              <img id="lightbox-img-4" src="./media/projects/gallery/Screenshot_2026-07-09_165310.png" alt="" class="max-w-full max-h-[55vh] object-contain rounded-lg transition-opacity duration-200" />
+              <p id="lightbox-caption-4" class="absolute bottom-3 left-1/2 -translate-x-1/2 bg-black/60 text-slate-300 text-xs px-3 py-1 rounded-full whitespace-nowrap"></p>
+              <!-- Prev / Next -->
+              
+              <button class="absolute left-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/50 border border-white/10 text-white flex items-center justify-center transition-colors hover:bg-indigo-500/60 z-10" onclick="navigateGallery('4', -1)" aria-label="Previous"><i class="fas fa-chevron-left"></i></button>
+              <button class="absolute right-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/50 border border-white/10 text-white flex items-center justify-center transition-colors hover:bg-indigo-500/60 z-10" onclick="navigateGallery('4', 1)" aria-label="Next"><i class="fas fa-chevron-right"></i></button>
+              
+            </div>
+            <!-- Thumbnail Strip -->
+            <div class="flex gap-2 py-3 px-4 overflow-x-auto shrink-0 border-t border-white/10 [scrollbar-width:thin] [scrollbar-color:rgba(99,102,241,0.4)_transparent]">
+              
+              <img src="./media/projects/gallery/Screenshot_2026-07-09_165310.png"
+                   alt="Multi-Vendor E-Commerce Platform"
+                   class="lightbox-thumb w-[72px] h-[52px] object-cover rounded-md cursor-pointer opacity-50 border-2 border-transparent transition-all hover:opacity-85 hover:scale-105 shrink-0 [&.active]:opacity-100 [&.active]:border-indigo-500 active"
+                   data-index="0"
+                   data-src="./media/projects/gallery/Screenshot_2026-07-09_165310.png"
+                   data-caption=""
+                   data-project="4"
+                   onclick="selectThumb(this)"
+                   loading="lazy" />
+              
+              <img src="./media/projects/gallery/Screenshot_2026-07-09_170618.png"
+                   alt="Multi-Vendor E-Commerce Platform"
+                   class="lightbox-thumb w-[72px] h-[52px] object-cover rounded-md cursor-pointer opacity-50 border-2 border-transparent transition-all hover:opacity-85 hover:scale-105 shrink-0 [&.active]:opacity-100 [&.active]:border-indigo-500 "
+                   data-index="1"
+                   data-src="./media/projects/gallery/Screenshot_2026-07-09_170618.png"
+                   data-caption=""
+                   data-project="4"
+                   onclick="selectThumb(this)"
+                   loading="lazy" />
+              
+              <img src="./media/projects/gallery/Screenshot_2026-07-09_170745.png"
+                   alt="Multi-Vendor E-Commerce Platform"
+                   class="lightbox-thumb w-[72px] h-[52px] object-cover rounded-md cursor-pointer opacity-50 border-2 border-transparent transition-all hover:opacity-85 hover:scale-105 shrink-0 [&.active]:opacity-100 [&.active]:border-indigo-500 "
+                   data-index="2"
+                   data-src="./media/projects/gallery/Screenshot_2026-07-09_170745.png"
+                   data-caption=""
+                   data-project="4"
+                   onclick="selectThumb(this)"
+                   loading="lazy" />
+              
+              <img src="./media/projects/gallery/Screenshot_2026-07-09_170805.png"
+                   alt="Multi-Vendor E-Commerce Platform"
+                   class="lightbox-thumb w-[72px] h-[52px] object-cover rounded-md cursor-pointer opacity-50 border-2 border-transparent transition-all hover:opacity-85 hover:scale-105 shrink-0 [&.active]:opacity-100 [&.active]:border-indigo-500 "
+                   data-index="3"
+                   data-src="./media/projects/gallery/Screenshot_2026-07-09_170805.png"
+                   data-caption=""
+                   data-project="4"
+                   onclick="selectThumb(this)"
+                   loading="lazy" />
+              
+            </div>
+          </div>
+        </div>
+      </div>
+      
+
+      
+
+    </div>
+
+    <!-- View More on GitHub CTA -->
+    <div class="text-center mt-12 reveal">
+      <a href="https://github.com/NandiniY018" target="_blank" rel="noopener noreferrer"
+         class="btn-outline ripple inline-flex items-center gap-2" aria-label="View all projects on GitHub">
+        <i class="fab fa-github"></i> View All on GitHub
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<script>
+// Gallery data store for navigation
+const galleryData = {};
+
+function openGallery(id) {
+  const el = document.getElementById(id);
+  if (!el) return;
+  el.classList.remove('hidden');
+  document.body.classList.add('overflow-hidden');
+  // Build index from thumbnails
+  const projectId = id.replace('gallery-', '');
+  const thumbs = el.querySelectorAll('.lightbox-thumb, img[data-project]');
+  galleryData[projectId] = { thumbs: Array.from(thumbs), current: 0 };
+}
+
+function closeGallery(id) {
+  const el = document.getElementById(id);
+  if (!el) return;
+  el.classList.add('hidden');
+  document.body.classList.remove('overflow-hidden');
+}
+
+function selectThumb(thumb) {
+  if (!thumb) return;
+  const projectId = thumb.dataset.project;
+  const index = parseInt(thumb.dataset.index, 10);
+  const data = galleryData[projectId];
+  if (!data) return;
+  data.current = index;
+  data.thumbs.forEach(t => t.classList.remove('active'));
+  thumb.classList.add('active');
+  const imgEl = document.getElementById('lightbox-img-' + projectId);
+  if (imgEl) imgEl.src = thumb.dataset.src;
+  const capEl = document.getElementById('lightbox-caption-' + projectId);
+  if (capEl) capEl.textContent = thumb.dataset.caption || '';
+}
+
+function navigateGallery(projectId, direction) {
+  const data = galleryData[projectId];
+  if (!data || !data.thumbs || !data.thumbs.length) return;
+  data.current = (data.current + direction + data.thumbs.length) % data.thumbs.length;
+  selectThumb(data.thumbs[data.current]);
+}
+
+// Keyboard navigation
+document.addEventListener('keydown', function(e) {
+  const open = document.querySelector('div[id^="gallery-"]:not(.hidden)');
+  if (!open) return;
+  const projectId = open.id.replace('gallery-', '');
+  if (e.key === 'Escape') closeGallery(open.id);
+  if (e.key === 'ArrowRight') navigateGallery(projectId, 1);
+  if (e.key === 'ArrowLeft') navigateGallery(projectId, -1);
+});
+</script>
+
+
+  <div class="section-divider"></div>
+
+  
+<!-- ============================================================
+     EDUCATION SECTION
+     ============================================================ -->
+<section id="education" class="py-14 sm:py-16 md:py-20 lg:py-24 bg-section-alt" aria-label="Education">
+  <div class="max-w-[1200px] mx-auto px-4 sm:px-5 md:px-6 lg:px-8">
+
+    <!-- Section Header -->
+    <div class="section-header reveal">
+      <span class="section-label"><i class="fas fa-graduation-cap"></i> Education</span>
+      <h2 class="section-title">Academic <span class="gradient-text">Background</span></h2>
+      <p class="section-subtitle">
+        My academic journey, building a strong foundation in engineering and computer science.
+      </p>
+      <div class="accent-line"></div>
+    </div>
+
+    <div class="max-w-3xl mx-auto">
+      <div class="timeline-container">
+
+        
+        <div class="timeline-item glass-card p-6 md:p-8 reveal reveal-delay-1">
+          <div class="timeline-dot" aria-hidden="true"></div>
+
+          <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-4">
+            <div class="flex items-center gap-4">
+              <div class="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 bg-gradient-to-br from-indigo-500 to-violet-500">
+                <i class="fas fa-user-graduate text-white text-lg"></i>
+              </div>
+              <div>
+                <span class="role-badge mb-1 inline-block">Bachelor of Engineering(BE)</span>
+                <h3 class="font-outfit font-bold text-base text-white">Computer Science</h3>
+                <p class="text-slate-400 text-sm mt-0.5">Hirasugar Institute of Technology Nidasoshi</p>
+              </div>
+            </div>
+            <div class="flex-shrink-0 flex flex-col items-start sm:items-center mt-3 sm:mt-0">
+              <span class="duration-badge">
+                <i class="fas fa-calendar-alt"></i> 2021 – 2025
+              </span>
+              
+              <div class="grade-text">
+                CGPA: 8.4
+              </div>
+              
+            </div>
+          </div>
+
+          <p class="text-slate-400 text-sm leading-relaxed mb-3 break-words">
+            Developed a comprehensive understanding of computer science principles and modern technologies while applying engineering concepts to design and implement practical solutions. Enhanced technical expertise, analytical thinking, innovation, teamwork, and problem-solving skills through academic coursework, laboratory sessions, and project-based learning.
+          </p>
+        </div>
+        
+        <div class="timeline-item glass-card p-6 md:p-8 reveal reveal-delay-2">
+          <div class="timeline-dot" aria-hidden="true"></div>
+
+          <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-4">
+            <div class="flex items-center gap-4">
+              <div class="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 bg-gradient-to-br from-indigo-500 to-violet-500">
+                <i class="fas fa-university text-white text-lg"></i>
+              </div>
+              <div>
+                <span class="role-badge mb-1 inline-block">Department of Pre-University Education (DPUE), Karnataka</span>
+                <h3 class="font-outfit font-bold text-base text-white">Science (PCMB)</h3>
+                <p class="text-slate-400 text-sm mt-0.5">C.L.E PU College Chikodi</p>
+              </div>
+            </div>
+            <div class="flex-shrink-0 flex flex-col items-start sm:items-center mt-3 sm:mt-0">
+              <span class="duration-badge">
+                <i class="fas fa-calendar-alt"></i> 2019 – 2021
+              </span>
+              
+              <div class="grade-text">
+                Percentage: 77
+              </div>
+              
+            </div>
+          </div>
+
+          <p class="text-slate-400 text-sm leading-relaxed mb-3 break-words">
+            Specialized in the PCMB stream, gaining a strong foundation in Physics, Chemistry, Mathematics, and Biology through theoretical coursework and practical laboratory sessions. Developed analytical thinking, scientific reasoning, quantitative aptitude, problem-solving abilities, and attention to detail while applying scientific concepts in academic projects and experiments.
+          </p>
+        </div>
+        
+        <div class="timeline-item glass-card p-6 md:p-8 reveal reveal-delay-3">
+          <div class="timeline-dot" aria-hidden="true"></div>
+
+          <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-4">
+            <div class="flex items-center gap-4">
+              <div class="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 bg-gradient-to-br from-indigo-500 to-violet-500">
+                <i class="fas fa-building text-white text-lg"></i>
+              </div>
+              <div>
+                <span class="role-badge mb-1 inline-block">Karnataka Secondary Education Examination Board (KSEEB)</span>
+                <h3 class="font-outfit font-bold text-base text-white">SSLC</h3>
+                <p class="text-slate-400 text-sm mt-0.5">C.K High School Examba</p>
+              </div>
+            </div>
+            <div class="flex-shrink-0 flex flex-col items-start sm:items-center mt-3 sm:mt-0">
+              <span class="duration-badge">
+                <i class="fas fa-calendar-alt"></i> 2018 – 2019
+              </span>
+              
+              <div class="grade-text">
+                Percentage: 84
+              </div>
+              
+            </div>
+          </div>
+
+          <p class="text-slate-400 text-sm leading-relaxed mb-3 break-words">
+            Enhanced communication skills through language studies, developed logical and numerical reasoning through Mathematics, gained scientific knowledge and an understanding of the natural world through Science, and acquired knowledge of history, geography, civics, and economics through Social Science.
+          </p>
+        </div>
+        
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
+  <div class="section-divider"></div>
+
+  
+<!-- ============================================================
+     CERTIFICATES SECTION
+     ============================================================ -->
+<section id="certificates" class="py-14 sm:py-16 md:py-20 lg:py-24 bg-section-dark" aria-label="Certifications">
+  <div class="max-w-[1200px] mx-auto px-4 sm:px-5 md:px-6 lg:px-8">
+
+    <!-- Section Header -->
+    <div class="section-header reveal">
+      <span class="section-label"><i class="fas fa-certificate"></i> Certifications</span>
+      <h2 class="section-title">My <span class="gradient-text">Certifications</span></h2>
+      <p class="section-subtitle">
+        Professional certifications that validate my skills and commitment to continuous learning.
+      </p>
+      <div class="accent-line"></div>
+    </div>
+
+    <!-- Certificates Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+
+      
+      <!-- Certificate Card -->
+      <div class="cert-card reveal reveal-delay-1">
+        <!-- Icon -->
+        <div class="w-16 h-16 mx-auto mb-5 rounded-2xl flex items-center justify-center bg-gradient-to-br from-[#6366f1] to-[#8b5cf6] shadow-[0_8px_30px_#6366f166]">
+          <i class="fab fa-python text-white text-2xl"></i>
+        </div>
+
+        <div class="mb-2">
+          <span class="text-xs uppercase tracking-widest text-primary-400 font-semibold font-inter">Internship</span>
+        </div>
+        <h3 class="font-outfit font-bold text-lg text-white mb-2 leading-tight">
+          Python Full Stack Development
+        </h3>
+        <p class="text-slate-400 text-sm mb-1">
+          <i class="fas fa-building text-primary-400 mr-1.5"></i>
+          <span class="font-medium text-slate-300">Skyllx - Software Training Institute</span>
+        </p>
+        <p class="text-slate-500 text-xs mb-4">
+          <i class="fas fa-clock text-slate-500 mr-1.5"></i> 6 Months - 2025
+        </p>
+
+        <p class="text-slate-400 text-sm leading-relaxed mb-5">
+          Comprehensive certification covering Python, Django, REST APIs, MySQL, HTML/CSS, JavaScript, and React.js with real-world project development.
+        </p>
+
+        <div class="flex flex-wrap gap-1.5 justify-center mb-5">
+          
+          <span class="tech-tag">Python</span>
+          
+          <span class="tech-tag">Django</span>
+          
+          <span class="tech-tag">REST APIs</span>
+          
+          <span class="tech-tag">MySQL</span>
+          
+          <span class="tech-tag">HTML</span>
+          
+          <span class="tech-tag">CSS</span>
+          
+          <span class="tech-tag">JavaScript</span>
+          
+          <span class="tech-tag">React.js</span>
+          
+        </div>
+
+        
+        <a href="./media/certificates/Pyton_Full_stack.jpeg" target="_blank" rel="noopener noreferrer"
+           class="btn-primary ripple w-full justify-center text-sm py-2.5 !bg-[linear-gradient(135deg,#6366f1,#8b5cf6)]"
+           aria-label="View Python Full Stack Development Certificate">
+          <i class="fas fa-external-link-alt"></i> View Certificate
+        </a>
+        
+      </div>
+      
+      <!-- Certificate Card -->
+      <div class="cert-card reveal reveal-delay-2">
+        <!-- Icon -->
+        <div class="w-16 h-16 mx-auto mb-5 rounded-2xl flex items-center justify-center bg-gradient-to-br from-[#6366f1] to-[#8b5cf6] shadow-[0_8px_30px_#6366f166]">
+          <i class="fas fa-robot text-white text-2xl"></i>
+        </div>
+
+        <div class="mb-2">
+          <span class="text-xs uppercase tracking-widest text-primary-400 font-semibold font-inter">Internship</span>
+        </div>
+        <h3 class="font-outfit font-bold text-lg text-white mb-2 leading-tight">
+          AI &amp; Machine Learning
+        </h3>
+        <p class="text-slate-400 text-sm mb-1">
+          <i class="fas fa-building text-primary-400 mr-1.5"></i>
+          <span class="font-medium text-slate-300">Visvesvaraya Technological University</span>
+        </p>
+        <p class="text-slate-500 text-xs mb-4">
+          <i class="fas fa-clock text-slate-500 mr-1.5"></i> 6 Months - 2024
+        </p>
+
+        <p class="text-slate-400 text-sm leading-relaxed mb-5">
+          IBM-certified course covering Artificial Intelligence fundamentals, Machine Learning algorithms, data preprocessing, model evaluation, and Python-based implementation.
+        </p>
+
+        <div class="flex flex-wrap gap-1.5 justify-center mb-5">
+          
+          <span class="tech-tag">Python</span>
+          
+          <span class="tech-tag">Numpy</span>
+          
+          <span class="tech-tag">Panadas</span>
+          
+          <span class="tech-tag">Matplotlib</span>
+          
+          <span class="tech-tag">Machine Leaning</span>
+          
+        </div>
+
+        
+        <a href="./media/certificates/Screenshot_2026-07-09_184920.png" target="_blank" rel="noopener noreferrer"
+           class="btn-primary ripple w-full justify-center text-sm py-2.5 !bg-[linear-gradient(135deg,#6366f1,#8b5cf6)]"
+           aria-label="View AI &amp; Machine Learning Certificate">
+          <i class="fas fa-external-link-alt"></i> View Certificate
+        </a>
+        
+      </div>
+      
+      <!-- Certificate Card -->
+      <div class="cert-card reveal reveal-delay-3">
+        <!-- Icon -->
+        <div class="w-16 h-16 mx-auto mb-5 rounded-2xl flex items-center justify-center bg-gradient-to-br from-[#6366f1] to-[#8b5cf6] shadow-[0_8px_30px_#6366f166]">
+          <i class="fas fa-paint-brush text-white text-2xl"></i>
+        </div>
+
+        <div class="mb-2">
+          <span class="text-xs uppercase tracking-widest text-primary-400 font-semibold font-inter">Internship</span>
+        </div>
+        <h3 class="font-outfit font-bold text-lg text-white mb-2 leading-tight">
+          Frontend Developer Internship
+        </h3>
+        <p class="text-slate-400 text-sm mb-1">
+          <i class="fas fa-building text-primary-400 mr-1.5"></i>
+          <span class="font-medium text-slate-300">Travel With Pravah</span>
+        </p>
+        <p class="text-slate-500 text-xs mb-4">
+          <i class="fas fa-clock text-slate-500 mr-1.5"></i> 1 Month 2026
+        </p>
+
+        <p class="text-slate-400 text-sm leading-relaxed mb-5">
+          Successfully completed a frontend development internship, building responsive UIs, implementing animations, and improving the overall web experience for the travel platform.
+        </p>
+
+        <div class="flex flex-wrap gap-1.5 justify-center mb-5">
+          
+          <span class="tech-tag">HTML5</span>
+          
+          <span class="tech-tag">CSS3</span>
+          
+          <span class="tech-tag">JavaScript</span>
+          
+          <span class="tech-tag">Tailwind</span>
+          
+        </div>
+
+        
+      </div>
+      
+
+    </div>
+  </div>
+</section>
+
+
+  <div class="section-divider"></div>
+
+  
+<!-- ============================================================
+     CONTACT SECTION
+     ============================================================ -->
+<section id="contact" class="py-14 sm:py-16 md:py-20 lg:py-24 bg-section-alt" aria-label="Contact me">
+  <div class="max-w-[1200px] mx-auto px-4 sm:px-5 md:px-6 lg:px-8">
+
+    <!-- Section Header -->
+    <div class="section-header reveal">
+      <span class="section-label"><i class="fas fa-envelope-open-text"></i> Contact</span>
+      <h2 class="section-title">Let's <span class="gradient-text">Connect</span></h2>
+      <p class="section-subtitle">
+        Have a project in mind or want to discuss opportunities? I'd love to hear from you.
+      </p>
+      <div class="accent-line"></div>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-5 gap-10 lg:gap-14">
+
+      <!-- Left: Contact Info (2 columns wide on lg) -->
+      <div class="lg:col-span-2 reveal-left">
+        <h3 class="font-outfit font-bold text-xl text-white mb-2">Get In Touch</h3>
+        <p class="text-slate-400 text-sm leading-relaxed mb-7">
+          Whether you're looking for a dedicated developer, want to collaborate on an exciting project,
+          or just want to say hello — feel free to reach out!
+        </p>
+
+        <!-- Contact Info Items -->
+        <div class="space-y-3 mb-8">
+          <a href="mailto:nandiniyamagar5@gmail.com" class="contact-info-item no-underline" aria-label="Send email">
+            <div class="contact-icon-wrapper"><i class="fas fa-envelope"></i></div>
+            <div>
+              <div class="text-xs text-slate-500 uppercase tracking-wider mb-0.5">Email</div>
+              <span class="text-sm text-slate-200 break-all">nandiniyamagar5@gmail.com</span>
+            </div>
+          </a>
+
+          <div class="contact-info-item">
+            <div class="contact-icon-wrapper"><i class="fas fa-phone"></i></div>
+            <div>
+              <div class="text-xs text-slate-500 uppercase tracking-wider mb-0.5">Phone</div>
+              <a href="tel:+918073835526"
+                class="text-sm text-slate-200 hover:text-primary-300 transition-colors break-all">
+                +91 8073835526
+              </a>
+            </div>
+          </div>
+
+          <div class="contact-info-item">
+            <div class="contact-icon-wrapper"><i class="fas fa-map-marker-alt"></i></div>
+            <div>
+              <div class="text-xs text-slate-500 uppercase tracking-wider mb-0.5">Location</div>
+              <span class="text-sm text-slate-200 break-words">Karnataka, India 🇮🇳</span>
+            </div>
+          </div>
+
+          <div class="contact-info-item">
+            <div class="contact-icon-wrapper"><i class="fab fa-github"></i></div>
+            <div>
+              <div class="text-xs text-slate-500 uppercase tracking-wider mb-0.5">GitHub</div>
+              <a href="https://github.com/NandiniY018" target="_blank" rel="noopener noreferrer"
+                class="text-sm text-slate-200 hover:text-primary-300 transition-colors break-all">
+                github.com/NandiniY018
+              </a>
+            </div>
+          </div>
+
+          <div class="contact-info-item">
+            <div class="contact-icon-wrapper"><i class="fab fa-linkedin-in"></i></div>
+            <div>
+              <div class="text-xs text-slate-500 uppercase tracking-wider mb-0.5">LinkedIn</div>
+              <a href="https://www.linkedin.com/in/nandini-yamagar-1b8a26333" target="_blank" rel="noopener noreferrer"
+                class="text-sm text-slate-200 hover:text-primary-300 transition-colors break-all">
+                linkedin.com/in/nandini-yamagar-1b8a26333
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- Right: Contact Form (3 columns wide on lg) -->
+      <div class="lg:col-span-3 reveal-right">
+        <div class="glass-card p-6 md:p-8">
+          <h3 class="font-outfit font-bold text-lg text-white mb-1">Send a Message</h3>
+          <p class="text-slate-500 text-sm mb-6">I'll respond within 24 hours.</p>
+
+          <form id="contact-form" novalidate aria-label="Contact form">
+            <input type="hidden" name="csrfmiddlewaretoken" value="6pUTyje2Ry3MUDsAdbLAHRQxXibFWejYxfNCPj3JOLDfWOjyZGUJH5zfeDMUxwIk">
+
+            <!-- Name + Email row -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-0">
+              <div class="form-group">
+                <label for="field-name" class="block text-xs text-slate-400 uppercase tracking-wider mb-2 font-inter">
+                  Full Name <span class="text-red-400">*</span>
+                </label>
+                <input type="text" id="field-name" name="name" data-field="name" class="form-input"
+                  placeholder="Nandini Yamagar" autocomplete="name" maxlength="150" required />
+                <p class="form-error-msg" data-error="name">
+                  <i class="fas fa-exclamation-circle"></i>
+                  <span></span>
+                </p>
+              </div>
+
+              <div class="form-group">
+                <label for="field-email" class="block text-xs text-slate-400 uppercase tracking-wider mb-2 font-inter">
+                  Email Address <span class="text-red-400">*</span>
+                </label>
+                <input type="email" id="field-email" name="email" data-field="email" class="form-input"
+                  placeholder="you@example.com" autocomplete="email" required />
+                <p class="form-error-msg" data-error="email">
+                  <i class="fas fa-exclamation-circle"></i>
+                  <span></span>
+                </p>
+              </div>
+            </div>
+
+            <!-- Subject -->
+            <div class="form-group">
+              <label for="field-subject" class="block text-xs text-slate-400 uppercase tracking-wider mb-2 font-inter">
+                Subject <span class="text-red-400">*</span>
+              </label>
+              <input type="text" id="field-subject" name="subject" data-field="subject" class="form-input"
+                placeholder="Job Opportunity / Project Collaboration / ..." maxlength="250" required />
+              <p class="form-error-msg" data-error="subject">
+                <i class="fas fa-exclamation-circle"></i>
+                <span></span>
+              </p>
+            </div>
+
+            <!-- Message -->
+            <div class="form-group">
+              <label for="field-message" class="block text-xs text-slate-400 uppercase tracking-wider mb-2 font-inter">
+                Message <span class="text-red-400">*</span>
+              </label>
+              <textarea id="field-message" name="message" data-field="message" class="form-input"
+                placeholder="Tell me about your project, opportunity, or how I can help you..." rows="5"
+                required></textarea>
+              <p class="form-error-msg" data-error="message">
+                <i class="fas fa-exclamation-circle"></i>
+                <span></span>
+              </p>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" id="contact-submit" class="btn-primary ripple w-full justify-center py-3.5 text-base"
+              aria-label="Send message">
+              <i class="fas fa-paper-plane btn-icon"></i>
+              <span class="btn-text">Send Message</span>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
   </main>
 
-  <footer class="text-center text-slate-400 py-8">
-    Â© 2026 Nandini Yamagar
-  </footer>
+  <!-- Footer -->
+  
+<!-- ============================================================
+     FOOTER PARTIAL
+     ============================================================ -->
+<footer id="footer" aria-label="Site footer">
+  <div class="max-w-[1200px] mx-auto px-4 sm:px-5 md:px-6 lg:px-8 py-10 md:py-14">
 
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-10 mb-10">
+
+      <!-- Brand Column -->
+      <div>
+        <a href="#hero" class="flex items-center gap-2.5 mb-4 group" aria-label="Back to top">
+          <div class="w-10 h-10 rounded-xl flex items-center justify-center bg-gradient-to-br from-[#6366f1] to-[#8b5cf6]">
+            <span class="text-white font-outfit font-black text-base leading-none">NY</span>
+          </div>
+          <span class="font-outfit font-bold text-lg text-white">
+            Nandini <span class="gradient-text">Yamagar</span>
+          </span>
+        </a>
+        <p class="text-slate-500 text-sm leading-relaxed mb-5 max-w-xs">
+          Python Full Stack Developer · 2 Internships · 5+ Projects.<br>
+          Building real-world web apps with Django, React & MySQL.
+        </p>
+        <!-- Social Links -->
+        <div class="flex gap-3">
+          <a href="https://github.com/NandiniY018" target="_blank" rel="noopener noreferrer"
+             class="social-icon" aria-label="GitHub Profile">
+            <i class="fab fa-github"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/nandini-yamagar-1b8a26333" target="_blank" rel="noopener noreferrer"
+             class="social-icon" aria-label="LinkedIn Profile">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+          <a href="mailto:nandiniyamagar5@gmail.com"
+             class="social-icon" aria-label="Send Email">
+            <i class="fas fa-envelope"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Quick Links Column -->
+      <div>
+        <h4 class="font-outfit font-semibold text-white text-sm uppercase tracking-wider mb-5">
+          Navigate
+        </h4>
+        <ul class="space-y-2.5 text-sm" role="list">
+          <li>
+            <a href="#about"        class="text-slate-500 hover:text-primary-300 transition-colors flex items-center gap-2">
+              <i class="fas fa-chevron-right text-xs text-primary-500"></i> About
+            </a>
+          </li>
+          <li>
+            <a href="#experience"   class="text-slate-500 hover:text-primary-300 transition-colors flex items-center gap-2">
+              <i class="fas fa-chevron-right text-xs text-primary-500"></i> Experience
+            </a>
+          </li>
+          <li>
+            <a href="#projects"     class="text-slate-500 hover:text-primary-300 transition-colors flex items-center gap-2">
+              <i class="fas fa-chevron-right text-xs text-primary-500"></i> Projects
+            </a>
+          </li>
+          <li>
+            <a href="#certificates" class="text-slate-500 hover:text-primary-300 transition-colors flex items-center gap-2">
+              <i class="fas fa-chevron-right text-xs text-primary-500"></i> Certificates
+            </a>
+          </li>
+          <li>
+            <a href="#contact"      class="text-slate-500 hover:text-primary-300 transition-colors flex items-center gap-2">
+              <i class="fas fa-chevron-right text-xs text-primary-500"></i> Contact
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Status / Stack Column -->
+      <div>
+        <h4 class="font-outfit font-semibold text-white text-sm uppercase tracking-wider mb-5">
+          Current Status
+        </h4>
+
+        <!-- Open to Work -->
+        <div class="flex items-center gap-2.5 p-3 rounded-lg mb-4 bg-[rgba(34,197,94,0.07)] border border-[rgba(34,197,94,0.15)]">
+          <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse flex-shrink-0"></span>
+          <span class="text-xs text-slate-300">Open to full-time & freelance roles</span>
+        </div>
+
+        <!-- Location -->
+        <div class="flex items-center gap-2.5 p-3 rounded-lg mb-4 bg-[rgba(99,102,241,0.07)] border border-[rgba(99,102,241,0.15)]">
+          <i class="fas fa-map-marker-alt text-primary-400 text-xs flex-shrink-0"></i>
+          <span class="text-xs text-slate-300">India &nbsp;·&nbsp; Remote friendly</span>
+        </div>
+
+        <!-- Response Time -->
+        <div class="flex items-center gap-2.5 p-3 rounded-lg bg-[rgba(6,182,212,0.07)] border border-[rgba(6,182,212,0.15)]">
+          <i class="fas fa-clock text-cyan-400 text-xs flex-shrink-0"></i>
+          <span class="text-xs text-slate-300">Responds within 24 hours</span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Bottom Bar -->
+    <div class="border-t border-white/10 pt-7 flex flex-col md:flex-row items-center justify-between gap-4">
+      <div class="text-slate-500 text-sm font-inter text-center md:text-left">
+        &copy; 2026 <span class="text-slate-300 font-medium">Nandini Yamagar</span>. All rights reserved.
+      </div>
+      <div class="flex items-center gap-2 text-xs text-slate-600">
+        <i class="fas fa-code text-primary-500"></i>
+        <span>Built with <span class="text-slate-400">Python · Django</span> &nbsp;|&nbsp; Hosted on <span class="text-slate-400">PythonAnywhere</span></span>
+      </div>
+    </div>
+
+  </div>
+</footer>
+
+
+  <!-- Floating Resume Button -->
+  
+  <a href="./media/resume/Nandini_Yamagar.pdf" target="_blank" rel="noopener noreferrer" id="floating-resume"
+    class="btn-primary ripple flex items-center gap-2 shadow-xl fixed bottom-8 right-4 md:right-20 z-[999] rounded-full py-3 px-5"
+    aria-label="Download Resume" title="Download Resume">
+    <i class="fas fa-download"></i>
+    <span class="hidden md:inline">Resume</span>
+  </a>
+  
+
+  <!-- Back to Top Button -->
+  <button id="back-to-top" aria-label="Back to top" title="Back to top">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <!-- Main JavaScript -->
   <script src="./static/js/main.js"></script>
-</body>
-</html>
+  
 
+  <!-- React WebSockets Widget -->
+  <script type="text/babel">
+    const { useState, useEffect } = React;
+
+    function LiveVisitorWidget() {
+      const [visitors, setVisitors] = useState(1);
+
+      useEffect(() => {
+        let chatSocket = null;
+        try {
+          const protocol = window.location.protocol === 'https:' ? 'wss://' : 'ws://';
+          const wsUrl = protocol + window.location.host + '/ws/visitors/';
+          chatSocket = new WebSocket(wsUrl);
+
+          chatSocket.onmessage = function (e) {
+            try {
+              const data = JSON.parse(e.data);
+              if (data.action === 'join') {
+                setVisitors(prev => prev + 1);
+              } else if (data.action === 'leave') {
+                setVisitors(prev => Math.max(1, prev - 1));
+              }
+            } catch (_) {}
+          };
+
+          chatSocket.onerror = function () {};
+          chatSocket.onclose = function () {};
+        } catch (_) {}
+
+        return () => {
+          if (chatSocket && chatSocket.readyState === WebSocket.OPEN) {
+            try { chatSocket.close(); } catch (_) {}
+          }
+        };
+      }, []);
+
+      return (
+        <div className="flex items-center gap-2 bg-white/5 border border-white/10 rounded-full px-3 py-1.5 shadow-sm">
+          <span className="relative flex h-2.5 w-2.5">
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+            <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
+          </span>
+          <span className="text-xs font-medium text-emerald-400 font-inter tracking-wide">
+            {visitors} Live Visitor{visitors !== 1 ? 's' : ''}
+          </span>
+        </div>
+      );
+    }
+
+    const container = document.getElementById('react-visitor-widget');
+    if (container) {
+      const root = ReactDOM.createRoot(container);
+      root.render(<LiveVisitorWidget />);
+    }
+  </script>
+</body>
+
+</html>

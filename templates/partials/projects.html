@@ -133,7 +133,7 @@
               {% for img in project.gallery_images.all %}
               <img src="{{ img.image.url }}"
                    alt="{{ img.caption|default:project.title }}"
-                   class="w-[72px] h-[52px] object-cover rounded-md cursor-pointer opacity-50 border-2 border-transparent transition-all hover:opacity-85 hover:scale-105 shrink-0 [&.active]:opacity-100 [&.active]:border-indigo-500 {% if forloop.first %}active{% endif %}"
+                   class="lightbox-thumb w-[72px] h-[52px] object-cover rounded-md cursor-pointer opacity-50 border-2 border-transparent transition-all hover:opacity-85 hover:scale-105 shrink-0 [&.active]:opacity-100 [&.active]:border-indigo-500 {% if forloop.first %}active{% endif %}"
                    data-index="{{ forloop.counter0 }}"
                    data-src="{{ img.image.url }}"
                    data-caption="{{ img.caption }}"
@@ -175,7 +175,7 @@ function openGallery(id) {
   document.body.classList.add('overflow-hidden');
   // Build index from thumbnails
   const projectId = id.replace('gallery-', '');
-  const thumbs = el.querySelectorAll('.lightbox-thumb');
+  const thumbs = el.querySelectorAll('.lightbox-thumb, img[data-project]');
   galleryData[projectId] = { thumbs: Array.from(thumbs), current: 0 };
 }
 
@@ -187,20 +187,23 @@ function closeGallery(id) {
 }
 
 function selectThumb(thumb) {
+  if (!thumb) return;
   const projectId = thumb.dataset.project;
-  const index = parseInt(thumb.dataset.index);
+  const index = parseInt(thumb.dataset.index, 10);
   const data = galleryData[projectId];
   if (!data) return;
   data.current = index;
   data.thumbs.forEach(t => t.classList.remove('active'));
   thumb.classList.add('active');
-  document.getElementById('lightbox-img-' + projectId).src = thumb.dataset.src;
-  document.getElementById('lightbox-caption-' + projectId).textContent = thumb.dataset.caption || '';
+  const imgEl = document.getElementById('lightbox-img-' + projectId);
+  if (imgEl) imgEl.src = thumb.dataset.src;
+  const capEl = document.getElementById('lightbox-caption-' + projectId);
+  if (capEl) capEl.textContent = thumb.dataset.caption || '';
 }
 
 function navigateGallery(projectId, direction) {
   const data = galleryData[projectId];
-  if (!data) return;
+  if (!data || !data.thumbs || !data.thumbs.length) return;
   data.current = (data.current + direction + data.thumbs.length) % data.thumbs.length;
   selectThumb(data.thumbs[data.current]);
 }
