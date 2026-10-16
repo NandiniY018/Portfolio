@@ -20,32 +20,40 @@
   <canvas id="particles-canvas" aria-hidden="true"></canvas>
 
   <!-- Hero Content -->
-  <div class="max-w-[1440px] mx-auto px-4 sm:px-6 md:px-8 lg:px-10 relative z-10 w-full pt-24 pb-16 md:pt-32 md:pb-20">
-    <div class="flex flex-col-reverse lg:flex-row items-center justify-between gap-12 lg:gap-16">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full pt-24 pb-14 md:pt-32 md:pb-16">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 xl:gap-12 items-center">
 
-      <!-- Left: Text Content -->
-      <div class="flex-1 text-center lg:text-left max-w-2xl lg:max-w-none">
+      <!-- Left: Text Content & Quick Highlights (7 cols on lg) -->
+      <div class="lg:col-span-7 text-center lg:text-left flex flex-col items-center lg:items-start">
 
-        <!-- Greeting -->
-        <div class="hero-animate mb-4">
+        <!-- Greeting & Status Badge -->
+        <div class="hero-animate flex flex-wrap items-center gap-3 justify-center lg:justify-start mb-4">
           <span
-            class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-sm font-inter font-medium text-zinc-800 bg-zinc-100 border border-zinc-200 shadow-xs">
-            <span class="w-2 h-2 rounded-full bg-zinc-900 animate-pulse"></span>
+            class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-inter font-medium text-zinc-800 dark:text-zinc-200 bg-zinc-100 dark:bg-zinc-800/80 border border-zinc-200 dark:border-zinc-700/80 shadow-xs">
+            <span class="w-2 h-2 rounded-full bg-zinc-900 dark:bg-zinc-100 animate-pulse"></span>
             👋 Hello, I'm
+          </span>
+          <span
+            class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-inter font-semibold text-emerald-700 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-950/50 border border-emerald-200 dark:border-emerald-800/60 shadow-xs">
+            <span class="relative flex h-2 w-2">
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+              <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+            </span>
+            Available for Opportunities
           </span>
         </div>
 
         <!-- Name -->
         <div class="hero-animate">
           <h1 class="font-outfit font-black text-5xl md:text-6xl xl:text-7xl leading-none mb-3 tracking-[-0.03em]">
-            <span class="text-zinc-900">Nandini</span>
+            <span class="text-zinc-900 dark:text-white">Nandini</span>
             <span class="gradient-text"> Y.</span>
           </h1>
         </div>
 
         <!-- Animated Role Title -->
-        <div class="hero-animate mb-6">
-          <p class="font-outfit font-semibold text-xl md:text-2xl xl:text-3xl text-zinc-800">
+        <div class="hero-animate mb-5">
+          <p class="font-outfit font-semibold text-xl md:text-2xl xl:text-3xl text-zinc-800 dark:text-zinc-200">
             I'm a&nbsp;
             <span class="gradient-text" id="typing-text" aria-live="polite">Python Full Stack Developer</span>
             <span class="typing-cursor" aria-hidden="true"></span>
@@ -53,12 +61,36 @@
         </div>
 
         <!-- Short Bio -->
-        <div class="hero-animate mb-8">
-          <p class="font-inter text-zinc-600 text-base md:text-lg leading-relaxed max-w-xl mx-auto lg:mx-0">
+        <div class="hero-animate mb-6">
+          <p class="font-inter text-zinc-600 dark:text-zinc-400 text-base md:text-lg leading-relaxed max-w-2xl mx-auto lg:mx-0">
             Passionate about building innovative digital experiences through clean code, scalable architecture, and
             thoughtful design. With hands-on experience in real-world projects, I create reliable, high-performance
             applications that solve meaningful problems and deliver exceptional user experiences.
           </p>
+        </div>
+
+        <!-- Core Tech Stack Strip -->
+        <div class="hero-animate mb-8 w-full">
+          <div class="flex items-center gap-2 justify-center lg:justify-start mb-2.5">
+            <span class="text-[11px] font-semibold uppercase tracking-wider text-zinc-600 dark:text-zinc-300 font-outfit">Core Tech Stack:</span>
+          </div>
+          <div class="flex flex-wrap items-center gap-2 justify-center lg:justify-start">
+            <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold font-outfit bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 text-zinc-800 dark:text-zinc-200 shadow-xs hover:border-zinc-400 transition-all hover:-translate-y-0.5">
+              <i class="fab fa-python text-yellow-500"></i> Python 3.11
+            </span>
+            <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold font-outfit bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 text-zinc-800 dark:text-zinc-200 shadow-xs hover:border-zinc-400 transition-all hover:-translate-y-0.5">
+              <i class="fas fa-layer-group text-emerald-600"></i> Django
+            </span>
+            <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold font-outfit bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 text-zinc-800 dark:text-zinc-200 shadow-xs hover:border-zinc-400 transition-all hover:-translate-y-0.5">
+              <i class="fab fa-react text-cyan-500"></i> React.js
+            </span>
+            <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold font-outfit bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 text-zinc-800 dark:text-zinc-200 shadow-xs hover:border-zinc-400 transition-all hover:-translate-y-0.5">
+              <i class="fas fa-database text-blue-500"></i> MySQL
+            </span>
+            <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold font-outfit bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 text-zinc-800 dark:text-zinc-200 shadow-xs hover:border-zinc-400 transition-all hover:-translate-y-0.5">
+              <i class="fas fa-network-wired text-purple-500"></i> REST APIs
+            </span>
+          </div>
         </div>
 
         <!-- CTA Buttons -->
@@ -80,41 +112,46 @@
           {% endif %}
         </div>
 
-        <!-- Social Icons -->
-        <div class="hero-animate flex items-center gap-3 justify-center lg:justify-start">
-          <a href="https://github.com/NandiniY018" target="_blank" rel="noopener noreferrer" class="social-icon"
-            aria-label="GitHub Profile">
-            <i class="fab fa-github"></i>
-          </a>
-          <a href="https://www.linkedin.com/in/nandini-yamagar-1b8a26333" target="_blank" rel="noopener noreferrer"
-            class="social-icon" aria-label="LinkedIn Profile">
-            <i class="fab fa-linkedin-in"></i>
-          </a>
-          <a href="#contact" class="social-icon" aria-label="Contact Me">
-            <i class="fas fa-envelope"></i>
-          </a>
-
+        <!-- Social Icons & Quick Stats -->
+        <div class="hero-animate flex flex-wrap items-center gap-4 justify-center lg:justify-start">
+          <div class="flex items-center gap-3">
+            <a href="https://github.com/NandiniY018" target="_blank" rel="noopener noreferrer" class="social-icon"
+              aria-label="GitHub Profile">
+              <i class="fab fa-github"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/nandini-yamagar-1b8a26333" target="_blank" rel="noopener noreferrer"
+              class="social-icon" aria-label="LinkedIn Profile">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="#contact" class="social-icon" aria-label="Contact Me">
+              <i class="fas fa-envelope"></i>
+            </a>
+          </div>
 
           <!-- Divider -->
-          <span class="w-px h-6 bg-zinc-200 mx-1"></span>
+          <span class="hidden sm:inline-block w-px h-6 bg-zinc-200 dark:bg-zinc-700 mx-1"></span>
 
           <!-- Quick Stats inline -->
-          <div class="flex items-center gap-4 text-sm text-zinc-600">
-            <span class="flex items-center gap-1.5">
-              <i class="fas fa-briefcase text-zinc-900 text-xs"></i>
-              <span data-counter="2" data-suffix=" Internships">2 Internships</span>
+          <div class="flex flex-wrap items-center gap-3 sm:gap-4 text-xs sm:text-sm text-zinc-600 dark:text-zinc-400">
+            <span class="flex items-center gap-1.5 px-3 py-1 rounded-full bg-zinc-100 dark:bg-zinc-800/60 border border-zinc-200 dark:border-zinc-700/60">
+              <i class="fas fa-briefcase text-zinc-900 dark:text-zinc-100 text-xs"></i>
+              <span data-counter="2" data-suffix=" Internships" class="font-semibold text-zinc-800 dark:text-zinc-200">2 Internships</span>
             </span>
-            <span class="flex items-center gap-1.5">
-              <i class="fas fa-code text-zinc-900 text-xs"></i>
-              <span data-counter="5" data-suffix="+ Projects">5+ Projects</span>
+            <span class="flex items-center gap-1.5 px-3 py-1 rounded-full bg-zinc-100 dark:bg-zinc-800/60 border border-zinc-200 dark:border-zinc-700/60">
+              <i class="fas fa-code text-zinc-900 dark:text-zinc-100 text-xs"></i>
+              <span data-counter="5" data-suffix="+ Projects" class="font-semibold text-zinc-800 dark:text-zinc-200">5+ Projects</span>
+            </span>
+            <span class="flex items-center gap-1.5 px-3 py-1 rounded-full bg-zinc-100 dark:bg-zinc-800/60 border border-zinc-200 dark:border-zinc-700/60">
+              <i class="fas fa-graduation-cap text-zinc-900 dark:text-zinc-100 text-xs"></i>
+              <span class="font-semibold text-zinc-800 dark:text-zinc-200">8.3 CGPA</span>
             </span>
           </div>
         </div>
       </div>
 
-      <!-- Right: Profile Image -->
-      <div class="flex-shrink-0 flex justify-center lg:justify-end hero-animate">
-        <div class="relative">
+      <!-- Right: Profile Visual + Developer Code Window (5 cols on lg) -->
+      <div class="lg:col-span-5 flex flex-col items-center justify-center hero-animate w-full">
+        <div class="relative py-4">
           <!-- Pulse rings -->
           <div class="hero-pulse-ring" aria-hidden="true"></div>
           <div class="hero-pulse-ring hero-pulse-ring-2" aria-hidden="true"></div>
@@ -131,35 +168,66 @@
           <div class="relative z-10">
             {% if site_settings.profile_image %}
             <img src="{{ site_settings.profile_image.url }}" alt="Nandini Yamagar — Python Full Stack Developer"
-              class="w-56 h-56 md:w-72 md:h-72 rounded-full object-cover object-top" loading="eager" width="288"
+              class="w-56 h-56 sm:w-64 sm:h-64 md:w-72 md:h-72 rounded-full object-cover object-top shadow-xl" loading="eager" width="288"
               height="288">
             {% else %}
             <img src="{% static 'images/profile.png' %}" alt="Nandini Yamagar — Python Full Stack Developer"
-              class="w-56 h-56 md:w-72 md:h-72 rounded-full object-cover object-top" loading="eager" width="288"
+              class="w-56 h-56 sm:w-64 sm:h-64 md:w-72 md:h-72 rounded-full object-cover object-top shadow-xl" loading="eager" width="288"
               height="288">
             {% endif %}
           </div>
 
-          <!-- Floating tech badges -->
+          <!-- Floating tech badges around profile -->
           <div
-            class="absolute -top-4 -right-4 bg-white border border-zinc-200 px-3 py-2 text-xs font-outfit font-semibold text-zinc-800 flex items-center gap-2 shadow-md rounded-xl animate-float-5s"
+            class="absolute -top-3 -right-3 bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 px-3 py-1.5 text-xs font-outfit font-semibold text-zinc-800 dark:text-zinc-200 flex items-center gap-2 shadow-md rounded-xl animate-float-5s z-20"
             aria-hidden="true">
-            <i class="fab fa-python text-zinc-900"></i> Python 3.11
+            <i class="fab fa-python text-yellow-500"></i> Python 3.11
           </div>
           <div
-            class="absolute -bottom-2 -left-6 bg-white border border-zinc-200 px-3 py-2 text-xs font-outfit font-semibold text-zinc-800 flex items-center gap-2 shadow-md rounded-xl animate-float-reverse-6s-delay"
+            class="absolute -top-3 -left-4 bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 px-3 py-1.5 text-xs font-outfit font-semibold text-zinc-800 dark:text-zinc-200 flex items-center gap-2 shadow-md rounded-xl animate-float-d2 z-20"
             aria-hidden="true">
-            <i class="fab fa-react text-zinc-900"></i> React.js
+            <i class="fas fa-layer-group text-emerald-600"></i> Django
           </div>
           <div
-            class="absolute bottom-12 -right-8 bg-white border border-zinc-200 px-3 py-2 text-xs font-outfit font-semibold text-zinc-800 flex items-center gap-2 shadow-md rounded-xl animate-float-7s-delay"
+            class="absolute -bottom-2 -left-4 bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 px-3 py-1.5 text-xs font-outfit font-semibold text-zinc-800 dark:text-zinc-200 flex items-center gap-2 shadow-md rounded-xl animate-float-reverse-6s-delay z-20"
             aria-hidden="true">
-            <i class="fas fa-database text-zinc-900"></i> MySQL
+            <i class="fab fa-react text-cyan-400"></i> React.js
+          </div>
+          <div
+            class="absolute bottom-10 -right-6 bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 px-3 py-1.5 text-xs font-outfit font-semibold text-zinc-800 dark:text-zinc-200 flex items-center gap-2 shadow-md rounded-xl animate-float-7s-delay z-20"
+            aria-hidden="true">
+            <i class="fas fa-database text-blue-500"></i> MySQL
           </div>
         </div>
+
+        <!-- Sleek Developer Terminal / Code Card -->
+        <div class="mt-8 w-full max-w-sm bg-white/95 dark:bg-zinc-900/90 border border-zinc-200 dark:border-zinc-800 rounded-2xl p-4 shadow-lg backdrop-blur-md transition-all duration-300 hover:shadow-xl hover:border-zinc-300 dark:hover:border-zinc-700">
+          <!-- Terminal Header -->
+          <div class="flex items-center justify-between pb-2.5 mb-2.5 border-b border-zinc-100 dark:border-zinc-800">
+            <div class="flex items-center gap-1.5">
+              <span class="w-2.5 h-2.5 rounded-full bg-red-400 inline-block"></span>
+              <span class="w-2.5 h-2.5 rounded-full bg-amber-400 inline-block"></span>
+              <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 inline-block"></span>
+            </div>
+            <span class="text-[11px] font-mono text-zinc-500 dark:text-zinc-400 flex items-center gap-1.5 font-medium">
+              <i class="fab fa-python text-yellow-500"></i> developer.py
+            </span>
+            <span class="text-[10px] font-mono font-medium text-emerald-600 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-950/60 border border-emerald-200/80 dark:border-emerald-800/60 px-2 py-0.5 rounded-full">
+              live
+            </span>
+          </div>
+
+          <!-- Terminal Code Snippet -->
+          <div class="font-mono text-xs leading-relaxed space-y-0.5 text-zinc-700 dark:text-zinc-300">
+            <div><span class="text-purple-600 dark:text-purple-400 font-semibold">class</span> <span class="text-zinc-900 dark:text-yellow-300 font-bold">NandiniYamagar</span>:</div>
+            <div class="pl-4"><span class="text-blue-600 dark:text-blue-400">role</span> = <span class="text-emerald-600 dark:text-emerald-400">"Full Stack Developer"</span></div>
+            <div class="pl-4"><span class="text-blue-600 dark:text-blue-400">stack</span> = [<span class="text-amber-600 dark:text-amber-400">"Django"</span>, <span class="text-amber-600 dark:text-amber-400">"React"</span>, <span class="text-amber-600 dark:text-amber-400">"MySQL"</span>]</div>
+            <div class="pl-4"><span class="text-blue-600 dark:text-blue-400">focus</span> = <span class="text-emerald-600 dark:text-emerald-400">"Scalable & Clean Web Apps"</span></div>
+            <div class="pl-4"><span class="text-blue-600 dark:text-blue-400">status</span> = <span class="text-emerald-600 dark:text-emerald-400 font-semibold">"Ready to Build 🚀"</span></div>
+          </div>
+        </div>
+
       </div>
     </div>
   </div>
-
-
 </section>
