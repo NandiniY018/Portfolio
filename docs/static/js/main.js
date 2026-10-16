@@ -614,3 +614,91 @@ function showToast(type, title, message, duration = 5000) {
   });
 })();
 
+/* ============================================================
+   16. SKILL FILTER TABS
+   ============================================================ */
+(function initSkillFilters() {
+  const filterBtns = document.querySelectorAll('.skill-filter-btn');
+  const skillCards = document.querySelectorAll('.skill-group-card');
+  if (!filterBtns.length || !skillCards.length) return;
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(b => {
+        b.classList.remove('active');
+        b.setAttribute('aria-selected', 'false');
+      });
+      btn.classList.add('active');
+      btn.setAttribute('aria-selected', 'true');
+
+      const filter = btn.dataset.filter;
+
+      skillCards.forEach(card => {
+        const category = (card.dataset.category || '').toLowerCase();
+        let match = (filter === 'all' || category === filter);
+
+        if (match) {
+          card.style.display = 'block';
+          requestAnimationFrame(() => {
+            card.style.opacity = '1';
+            card.style.transform = 'translateY(0) scale(1)';
+          });
+        } else {
+          card.style.opacity = '0';
+          card.style.transform = 'scale(0.95)';
+          setTimeout(() => {
+            if (card.style.opacity === '0') {
+              card.style.display = 'none';
+            }
+          }, 300);
+        }
+      });
+    });
+  });
+})();
+
+/* ============================================================
+   17. QUICK COPY EMAIL
+   ============================================================ */
+(function initCopyEmail() {
+  const btn = document.getElementById('copy-email-btn');
+  const textSpan = document.getElementById('copy-email-text');
+  if (!btn) return;
+
+  const email = 'nandiniyamagar5@gmail.com';
+
+  btn.addEventListener('click', async (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+
+    try {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        await navigator.clipboard.writeText(email);
+      } else {
+        const textarea = document.createElement('textarea');
+        textarea.value = email;
+        textarea.style.position = 'fixed';
+        textarea.style.opacity = '0';
+        document.body.appendChild(textarea);
+        textarea.select();
+        document.execCommand('copy');
+        document.body.removeChild(textarea);
+      }
+
+      if (textSpan) textSpan.textContent = 'Copied!';
+      btn.classList.add('bg-emerald-100', 'text-emerald-800', 'border-emerald-300');
+      if (typeof showToast === 'function') {
+        showToast('success', 'Copied to Clipboard!', email);
+      }
+
+      setTimeout(() => {
+        if (textSpan) textSpan.textContent = 'Copy';
+        btn.classList.remove('bg-emerald-100', 'text-emerald-800', 'border-emerald-300');
+      }, 2500);
+    } catch (err) {
+      console.error('Failed to copy email:', err);
+    }
+  });
+})();
+
+

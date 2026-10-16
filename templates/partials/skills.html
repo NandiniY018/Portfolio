@@ -6,53 +6,83 @@
   <div class="max-w-[1440px] mx-auto px-4 sm:px-6 md:px-8 lg:px-10">
 
     <!-- Section Header -->
-    <div class="section-header reveal">
+    <div class="section-header reveal mb-8">
       <span class="section-label"><i class="fas fa-cogs"></i> Skills</span>
       <h2 class="section-title">My <span class="gradient-text">Tech Stack</span></h2>
       <p class="section-subtitle">
-        A curated collection of languages, frameworks, and tools I work with to build modern applications.
+        A curated collection of languages, frameworks, and tools I work with to build high-performance applications.
       </p>
       <div class="accent-line"></div>
     </div>
 
+    <!-- Interactive Skill Category Filter Tabs -->
+    <div class="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-10 reveal" id="skill-filters" role="tablist" aria-label="Skill categories">
+      <button class="skill-filter-btn active" data-filter="all" role="tab" aria-selected="true">
+        <i class="fas fa-layer-group text-xs"></i> All Skills
+      </button>
+      <button class="skill-filter-btn" data-filter="programming-languages" role="tab" aria-selected="false">
+        <i class="fas fa-code text-xs text-amber-500"></i> Languages
+      </button>
+      <button class="skill-filter-btn" data-filter="frontend-development" role="tab" aria-selected="false">
+        <i class="fab fa-react text-xs text-cyan-400"></i> Frontend
+      </button>
+      <button class="skill-filter-btn" data-filter="backend-apis" role="tab" aria-selected="false">
+        <i class="fas fa-server text-xs text-emerald-500"></i> Backend & APIs
+      </button>
+      <button class="skill-filter-btn" data-filter="databases" role="tab" aria-selected="false">
+        <i class="fas fa-database text-xs text-blue-500"></i> Databases
+      </button>
+      <button class="skill-filter-btn" data-filter="dev-tools" role="tab" aria-selected="false">
+        <i class="fas fa-tools text-xs text-purple-500"></i> Dev Tools
+      </button>
+      <button class="skill-filter-btn" data-filter="python-libraries" role="tab" aria-selected="false">
+        <i class="fab fa-python text-xs text-yellow-500"></i> Python Libs
+      </button>
+    </div>
+
     <!-- Skills Grid by Category -->
-    <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+    <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6" id="skills-grid">
 
       {% regroup skills by category as grouped_skills %}
       {% for group in grouped_skills %}
-      <div class="glass-card spotlight-card p-6 reveal reveal-delay-{{ forloop.counter }}">
-        <h3 class="skill-category-title">
-          <i class="{{ group.list.0.category_icon_class|default:'fas fa-layer-group' }} mr-2"></i>
-          {{ group.grouper|upper }}
-        </h3>
+      <div class="skill-group-card glass-card spotlight-card p-6 reveal transition-all duration-300" data-category="{{ group.grouper|slugify }}">
+        <!-- Category Card Header -->
+        <div class="flex items-center justify-between pb-4 mb-4 border-b border-zinc-200 dark:border-zinc-800">
+          <h3 class="font-outfit font-bold text-base text-zinc-900 dark:text-zinc-100 flex items-center gap-2.5">
+            <span class="w-8 h-8 rounded-lg bg-zinc-100 dark:bg-zinc-800 flex items-center justify-center text-zinc-800 dark:text-zinc-200 text-sm shadow-xs border border-zinc-200/60 dark:border-zinc-700/60">
+              <i class="{{ group.list.0.category_icon_class|default:'fas fa-layer-group' }}"></i>
+            </span>
+            <span>{{ group.grouper }}</span>
+          </h3>
+          <span class="text-xs font-semibold px-2.5 py-1 rounded-full bg-zinc-100 dark:bg-zinc-800/80 text-zinc-700 dark:text-zinc-300 border border-zinc-200/60 dark:border-zinc-700/60 font-inter">
+            {{ group.list|length }} Skills
+          </span>
+        </div>
 
-        {% if group.list|length > 4 %}
-        <div class="grid grid-cols-2 gap-3">
+        <!-- Skills List with Progress Bars & Authentic Brand Icons -->
+        <div class="space-y-3">
           {% for skill in group.list %}
-          <div class="flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-300 hover:-translate-y-1 bg-zinc-50 border border-zinc-200 hover:border-zinc-400 hover:bg-zinc-100 shadow-xs">
-            <i class="{{ skill.icon_class }} text-xl text-zinc-800"></i>
-            <span class="font-outfit font-semibold text-zinc-900 text-sm">{{ skill.name }}</span>
-          </div>
-          {% endfor %}
-        </div>
-        {% else %}
-        <div class="space-y-4">
-          {% for skill in group.list %}
-          <div class="skill-card">
-            <div class="flex items-center justify-between mb-2">
-              <div class="flex items-center gap-2">
-                <i class="{{ skill.icon_class }} text-lg text-zinc-800"></i>
-                <span class="font-outfit font-semibold text-zinc-900 text-sm">{{ skill.name }}</span>
+          <div class="group/skill flex flex-col p-3 rounded-xl bg-zinc-50 dark:bg-zinc-900/60 border border-zinc-200/80 dark:border-zinc-800/80 hover:border-zinc-300 dark:hover:border-zinc-700 hover:bg-zinc-100/80 dark:hover:bg-zinc-800/60 transition-all duration-200 hover:-translate-y-0.5 shadow-2xs">
+            <div class="flex items-center justify-between mb-1.5">
+              <div class="flex items-center gap-2.5">
+                <span class="w-7 h-7 rounded-lg flex items-center justify-center text-lg shrink-0">
+                  <i class="{{ skill.icon_class }}"></i>
+                </span>
+                <span class="font-outfit font-semibold text-zinc-900 dark:text-zinc-100 text-sm tracking-tight">{{ skill.name }}</span>
               </div>
-              <span class="text-xs text-zinc-600 font-semibold">{{ skill.percentage }}%</span>
+              <span class="text-xs font-mono font-semibold text-zinc-600 dark:text-zinc-400 group-hover/skill:text-zinc-900 dark:group-hover/skill:text-zinc-100 transition-colors">
+                {{ skill.percentage }}%
+              </span>
             </div>
-            <div class="skill-bar-bg">
-              <div class="skill-bar-fill" data-skill-width="{{ skill.percentage }}%"></div>
+            <!-- Progress bar -->
+            <div class="w-full h-1.5 rounded-full bg-zinc-200/70 dark:bg-zinc-800 overflow-hidden">
+              <div class="h-full rounded-full bg-zinc-900 dark:bg-zinc-200 transition-all duration-1000 ease-out skill-bar-fill"
+                   data-skill-width="{{ skill.percentage }}%"
+                   style="width: 0%;"></div>
             </div>
           </div>
           {% endfor %}
         </div>
-        {% endif %}
       </div>
       {% empty %}
       <p class="text-zinc-500 text-center col-span-full py-8">Add your skills from the Admin panel!</p>

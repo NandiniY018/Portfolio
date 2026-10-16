@@ -1007,9 +1007,10 @@ h6 {
 }
 
 /* ============================================================
-   PROJECT FILTER BUTTONS
+   PROJECT & SKILL FILTER BUTTONS
    ============================================================ */
-.project-filter-btn {
+.project-filter-btn,
+.skill-filter-btn {
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
@@ -1026,35 +1027,65 @@ h6 {
   letter-spacing: 0.01em;
 }
 
-.project-filter-btn:hover {
+.project-filter-btn:hover,
+.skill-filter-btn:hover {
   background: #e4e4e7;
   color: #09090b;
   transform: translateY(-2px);
 }
 
-.project-filter-btn.active {
+.project-filter-btn.active,
+.skill-filter-btn.active {
   background: #09090b;
   color: #ffffff;
   border-color: #09090b;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
 }
 
-html.dark .project-filter-btn {
+html.dark .project-filter-btn,
+html.dark .skill-filter-btn {
   background: rgba(255, 255, 255, 0.06);
   color: #a1a1aa;
   border-color: rgba(255, 255, 255, 0.12);
 }
 
-html.dark .project-filter-btn:hover {
+html.dark .project-filter-btn:hover,
+html.dark .skill-filter-btn:hover {
   background: rgba(255, 255, 255, 0.14);
   color: #ffffff;
 }
 
-html.dark .project-filter-btn.active {
+html.dark .project-filter-btn.active,
+html.dark .skill-filter-btn.active {
   background: #ffffff;
   color: #09090b;
   border-color: #ffffff;
   box-shadow: 0 4px 20px rgba(255, 255, 255, 0.25);
+}
+
+.skill-group-card {
+  background: #ffffff;
+  border: 1px solid #e4e4e7;
+  border-radius: var(--radius-xl);
+  transition: opacity 0.35s cubic-bezier(0.4, 0, 0.2, 1), transform 0.35s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.35s ease, border-color 0.35s ease;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+}
+
+.skill-group-card:hover {
+  transform: translateY(-4px);
+  border-color: #d4d4d8;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.07);
+}
+
+html.dark .skill-group-card {
+  background: #141418;
+  border-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+html.dark .skill-group-card:hover {
+  border-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6);
 }
 
 /* ============================================================
@@ -1171,6 +1202,12 @@ html.dark .spotlight-card::after {
   border-color: #d4d4d8;
   color: #09090b;
 }
+
+/* Custom Tech Brand Accents */
+.fa-file-excel { color: #107c41 !important; }
+.fa-chart-bar { color: #f59e0b !important; }
+.fa-mouse-pointer { color: #6366f1 !important; }
+.fa-rocket { color: #a855f7 !important; }
 
 /* ============================================================
    SKILL CARDS

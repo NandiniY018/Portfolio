@@ -136,13 +136,13 @@
   <!-- Footer -->
   {% include "partials/footer.html" %}
 
-  <!-- Floating Resume Button -->
+  <!-- Floating Action Buttons -->
   {% if active_resume %}
   <a href="{{ active_resume.file.url }}" target="_blank" rel="noopener noreferrer" id="floating-resume"
-    class="btn-primary ripple flex items-center gap-2 shadow-xl fixed bottom-8 right-4 md:right-20 z-[999] rounded-full py-3 px-5"
+    class="btn-primary ripple flex md:hidden items-center gap-2 shadow-xl fixed bottom-24 right-6 z-[998] rounded-full py-2.5 px-4 text-xs font-semibold"
     aria-label="Download Resume" title="Download Resume">
     <i class="fas fa-download"></i>
-    <span class="hidden md:inline">Resume</span>
+    <span>Resume</span>
   </a>
   {% endif %}
 

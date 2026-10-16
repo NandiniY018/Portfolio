@@ -38,60 +38,66 @@
       <!-- Project Card -->
       <article class="project-card spotlight-card reveal reveal-delay-{{ forloop.counter }}" data-tech="{{ project.tech_stack|lower }} {{ project.title|lower }} {{ project.description|lower }}">
         <!-- Image Area -->
-        <div class="project-img-wrapper relative overflow-hidden">
+        <div class="project-img-wrapper relative overflow-hidden group/img">
+          <!-- Status / Badge Indicator -->
+          <div class="absolute top-3 left-3 z-10 flex items-center gap-1.5 px-3 py-1 bg-black/75 dark:bg-zinc-900/90 backdrop-blur-md border border-white/20 dark:border-zinc-700/80 rounded-full text-white text-[11px] font-semibold tracking-wide shadow-md pointer-events-none">
+            <span class="w-2 h-2 rounded-full bg-emerald-400 inline-block animate-pulse"></span>
+            <span>Production Ready</span>
+          </div>
+
           {% with first_img=project.gallery_images.first %}
           {% if first_img %}
             <img src="{{ first_img.image.url }}"
                  alt="{{ project.title }} screenshot"
                  loading="lazy" width="600" height="300"
-                 class="w-full h-full object-cover"
+                 class="w-full h-full object-cover transition-transform duration-500 group-hover/img:scale-105"
                  onerror="this.classList.add('hidden'); this.nextElementSibling.classList.remove('hidden'); this.nextElementSibling.classList.add('flex');" />
           {% elif project.image %}
             <img src="{{ project.image.url }}"
                  alt="{{ project.title }} screenshot"
                  loading="lazy" width="600" height="300"
-                 class="w-full h-full object-cover"
+                 class="w-full h-full object-cover transition-transform duration-500 group-hover/img:scale-105"
                  onerror="this.classList.add('hidden'); this.nextElementSibling.classList.remove('hidden'); this.nextElementSibling.classList.add('flex');" />
           {% endif %}
           {% endwith %}
 
           <!-- Fallback placeholder -->
-          <div class="{% if project.gallery_images.first or project.image %}hidden{% else %}flex{% endif %} absolute inset-0 w-full h-full flex-col items-center justify-center gap-3 bg-gradient-to-br from-zinc-100 via-zinc-200 to-zinc-300">
-            <i class="{{ project.icon_class }} text-5xl text-zinc-500"></i>
-            <span class="font-outfit text-sm text-zinc-700">{{ project.title }}</span>
+          <div class="{% if project.gallery_images.first or project.image %}hidden{% else %}flex{% endif %} absolute inset-0 w-full h-full flex-col items-center justify-center gap-3 bg-gradient-to-br from-zinc-100 via-zinc-200 to-zinc-300 dark:from-zinc-900 dark:via-zinc-800 dark:to-zinc-950">
+            <i class="{{ project.icon_class }} text-5xl text-zinc-500 dark:text-zinc-400"></i>
+            <span class="font-outfit text-sm text-zinc-700 dark:text-zinc-300 font-semibold">{{ project.title }}</span>
           </div>
 
           <!-- Gallery "+" button — only if more than 1 gallery image -->
           {% if project.gallery_images.count > 1 %}
-          <button class="absolute bottom-3 right-3 flex items-center gap-1.5 px-3 py-1.5 bg-black/75 backdrop-blur-md border border-white/20 rounded-full text-white text-xs font-semibold cursor-pointer transition-all duration-200 hover:bg-white hover:text-black hover:scale-105 z-10"
+          <button class="absolute bottom-3 right-3 flex items-center gap-1.5 px-3 py-1.5 bg-black/80 dark:bg-zinc-900/90 backdrop-blur-md border border-white/20 dark:border-zinc-700 rounded-full text-white text-xs font-semibold cursor-pointer transition-all duration-200 hover:bg-white hover:text-black dark:hover:bg-white dark:hover:text-black hover:scale-105 z-10 shadow-md"
                   onclick="openGallery('gallery-{{ project.id }}')"
                   aria-label="View all {{ project.gallery_images.count }} photos"
                   title="View all photos">
-            <i class="fas fa-plus"></i>
-            <span>{{ project.gallery_images.count }}</span>
+            <i class="fas fa-images text-xs"></i>
+            <span>{{ project.gallery_images.count }} Photos</span>
           </button>
           {% endif %}
         </div>
 
         <div class="p-6">
           <div class="flex items-start justify-between gap-3 mb-3">
-            <h3 class="font-outfit font-bold text-lg text-zinc-900 leading-tight">
+            <h3 class="font-outfit font-bold text-lg text-zinc-900 dark:text-zinc-100 leading-tight">
               {{ project.title }}
             </h3>
-            <div class="w-10 h-10 rounded-xl flex items-center justify-center text-zinc-800 text-sm shadow-xs bg-zinc-100 border border-zinc-200 flex-shrink-0">
-              <i class="{{ project.icon_class }} text-zinc-800"></i>
+            <div class="w-10 h-10 rounded-xl flex items-center justify-center text-zinc-800 dark:text-zinc-200 text-sm shadow-xs bg-zinc-100 dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700/80 flex-shrink-0">
+              <i class="{{ project.icon_class }}"></i>
             </div>
           </div>
 
-          <p class="text-zinc-600 text-sm leading-relaxed mb-4 break-words">
+          <p class="text-zinc-600 dark:text-zinc-400 text-sm leading-relaxed mb-4 break-words">
             {{ project.description }}
           </p>
 
           <!-- Features -->
-          <ul class="space-y-2 mb-4 text-zinc-600 text-xs break-words">
+          <ul class="space-y-2 mb-4 text-zinc-600 dark:text-zinc-300 text-xs break-words">
             {% for feature in project.get_features_list %}
             <li class="flex items-start gap-2">
-              <i class="fas fa-check-circle text-zinc-700 flex-shrink-0 mt-[3px]"></i>
+              <i class="fas fa-check-circle text-emerald-600 dark:text-emerald-400 flex-shrink-0 mt-[3px]"></i>
               <span class="leading-relaxed">{{ feature }}</span>
             </li>
             {% endfor %}
@@ -100,7 +106,10 @@
           <!-- Tech Tags -->
           <div class="flex flex-wrap gap-1.5 mb-5">
             {% for tech in project.get_tech_stack_list %}
-            <span class="tech-tag">{{ tech }}</span>
+            <span class="tech-tag flex items-center gap-1.5">
+              <span class="w-1.5 h-1.5 rounded-full bg-zinc-400 dark:bg-zinc-500 inline-block"></span>
+              {{ tech }}
+            </span>
             {% endfor %}
           </div>
 
@@ -108,14 +117,14 @@
           <div class="flex gap-3">
             {% if project.github_link %}
             <a href="{{ project.github_link }}" target="_blank" rel="noopener noreferrer"
-               class="btn-primary ripple flex-1 text-sm py-2.5" aria-label="View project on GitHub">
-              <i class="fab fa-github"></i> GitHub
+               class="btn-primary ripple flex-1 text-sm py-2.5 flex items-center justify-center gap-2" aria-label="View project on GitHub">
+              <i class="fab fa-github"></i> View Code
             </a>
             {% endif %}
             {% if project.gallery_images.count > 0 %}
             <button onclick="openGallery('gallery-{{ project.id }}')"
-                    class="btn-outline ripple flex-1 text-sm py-2.5" aria-label="View project photos">
-              <i class="fas fa-images"></i> Photos
+                    class="btn-outline ripple flex-1 text-sm py-2.5 flex items-center justify-center gap-2" aria-label="View project photos">
+              <i class="fas fa-images"></i> Gallery ({{ project.gallery_images.count }})
             </button>
             {% endif %}
           </div>
