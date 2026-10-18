@@ -540,7 +540,7 @@ function showToast(type, title, message, duration = 5000) {
       updateThemeUI(newDark);
       try {
         localStorage.setItem('theme', newDark ? 'dark' : 'light');
-      } catch (e) {}
+      } catch (e) { }
     });
   });
 })();

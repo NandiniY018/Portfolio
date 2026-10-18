@@ -772,11 +772,11 @@ h6 {
 
 .skill-bar-fill {
   height: 100%;
-  background: #09090b;
   border-radius: var(--radius-full);
   width: 0%;
   transition: width 1.2s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12);
 }
 
 .skill-bar-fill::after {
@@ -1065,27 +1065,70 @@ html.dark .skill-filter-btn.active {
 
 .skill-group-card {
   background: #ffffff;
-  border: 1px solid #e4e4e7;
-  border-radius: var(--radius-xl);
+  border: 1px solid rgba(228, 228, 231, 0.9);
+  border-radius: 1.5rem;
   transition: opacity 0.35s cubic-bezier(0.4, 0, 0.2, 1), transform 0.35s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.35s ease, border-color 0.35s ease;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.04);
 }
 
 .skill-group-card:hover {
   transform: translateY(-4px);
   border-color: #d4d4d8;
-  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.07);
+  box-shadow: 0 16px 36px -4px rgba(0, 0, 0, 0.08);
 }
 
 html.dark .skill-group-card {
-  background: #141418;
-  border-color: rgba(255, 255, 255, 0.1);
+  background: #121215;
+  border-color: rgba(255, 255, 255, 0.09);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
 }
 
 html.dark .skill-group-card:hover {
-  border-color: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.18);
   box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6);
+}
+
+.skill-item-card {
+  background: #fbfbfb;
+  border: 1px solid #e4e4e7;
+  border-radius: 1rem;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.skill-item-card:hover {
+  background: #ffffff;
+  border-color: #d4d4d8;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
+}
+
+html.dark .skill-item-card {
+  background: rgba(24, 24, 27, 0.6);
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+html.dark .skill-item-card:hover {
+  background: rgba(39, 39, 42, 0.6);
+  border-color: rgba(255, 255, 255, 0.16);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+}
+
+.devicon-nextjs-plain,
+.devicon-nextjs-original {
+  color: #09090b;
+}
+
+html.dark .devicon-nextjs-plain,
+html.dark .devicon-nextjs-original {
+  color: #f4f4f5 !important;
+}
+
+.devicon-github-original {
+  color: #181717;
+}
+
+html.dark .devicon-github-original {
+  color: #f4f4f5 !important;
 }
 
 /* ============================================================
@@ -1120,7 +1163,7 @@ html.dark .spotlight-card::after {
   opacity: 1;
 }
 
-.spotlight-card > * {
+.spotlight-card>* {
   position: relative;
   z-index: 2;
 }
@@ -1204,10 +1247,21 @@ html.dark .spotlight-card::after {
 }
 
 /* Custom Tech Brand Accents */
-.fa-file-excel { color: #107c41 !important; }
-.fa-chart-bar { color: #f59e0b !important; }
-.fa-mouse-pointer { color: #6366f1 !important; }
-.fa-rocket { color: #a855f7 !important; }
+.fa-file-excel {
+  color: #107c41 !important;
+}
+
+.fa-chart-bar {
+  color: #f59e0b !important;
+}
+
+.fa-mouse-pointer {
+  color: #6366f1 !important;
+}
+
+.fa-rocket {
+  color: #a855f7 !important;
+}
 
 /* ============================================================
    SKILL CARDS
@@ -1957,7 +2011,7 @@ html.dark .skill-bar-bg {
 }
 
 html.dark .skill-bar-fill {
-  background: #ffffff;
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.12);
 }
 
 /* Certifications */

@@ -20,30 +20,33 @@
 
       {% for cert in certificates %}
       <!-- Certificate Card -->
-      <div class="cert-card spotlight-card reveal reveal-delay-{{ forloop.counter }} flex flex-col justify-between overflow-hidden">
+      <div
+        class="cert-card spotlight-card reveal reveal-delay-{{ forloop.counter }} flex flex-col justify-between overflow-hidden">
         <div>
           <!-- Certificate Image Preview (if uploaded) -->
           {% if cert.image %}
-          <div class="relative overflow-hidden rounded-xl mb-5 aspect-[16/10] bg-zinc-100 border border-zinc-200 group cursor-pointer">
-            <img src="{{ cert.image.url }}"
-                 alt="{{ cert.title }} Certificate"
-                 class="w-full h-full object-cover object-top transition-transform duration-300 group-hover:scale-105"
-                 loading="lazy" />
+          <div
+            class="relative overflow-hidden rounded-xl mb-5 aspect-[16/10] bg-zinc-100 border border-zinc-200 group cursor-pointer">
+            <img src="{{ cert.image.url }}" alt="{{ cert.title }} Certificate"
+              class="w-full h-full object-cover object-top transition-transform duration-300 group-hover:scale-105"
+              loading="lazy" />
             <a href="{{ cert.image.url }}" target="_blank" rel="noopener noreferrer"
-               class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-2 text-white text-xs font-semibold backdrop-blur-xs"
-               aria-label="View {{ cert.title }} Full Certificate">
+              class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-2 text-white text-xs font-semibold backdrop-blur-xs"
+              aria-label="View {{ cert.title }} Full Certificate">
               <i class="fas fa-search-plus"></i> View Full
             </a>
           </div>
           {% else %}
           <!-- Icon fallback when no certificate image is uploaded -->
-          <div class="w-16 h-16 mx-auto mb-5 rounded-2xl flex items-center justify-center bg-zinc-100 border border-zinc-200 shadow-sm">
+          <div
+            class="w-16 h-16 mx-auto mb-5 rounded-2xl flex items-center justify-center bg-zinc-100 border border-zinc-200 shadow-sm">
             <i class="{{ cert.icon_class|default:'fas fa-certificate' }} text-zinc-800 text-2xl"></i>
           </div>
           {% endif %}
 
           <div class="mb-2">
-            <span class="text-xs uppercase tracking-widest text-zinc-600 font-semibold font-inter">{{ cert.category }}</span>
+            <span class="text-xs uppercase tracking-widest text-zinc-600 font-semibold font-inter">{{ cert.category
+              }}</span>
           </div>
           <h3 class="font-outfit font-bold text-lg text-zinc-900 mb-2 leading-tight">
             {{ cert.title }}
@@ -70,12 +73,13 @@
         <div>
           {% if cert.image %}
           <a href="{{ cert.image.url }}" target="_blank" rel="noopener noreferrer"
-             class="btn-primary ripple w-full justify-center text-sm py-2.5"
-             aria-label="View {{ cert.title }} Certificate">
+            class="btn-primary ripple w-full justify-center text-sm py-2.5"
+            aria-label="View {{ cert.title }} Certificate">
             <i class="fas fa-external-link-alt"></i> View Certificate
           </a>
           {% else %}
-          <div class="w-full text-center py-2 px-3 rounded-lg bg-zinc-100 border border-zinc-200 text-xs text-zinc-700 font-medium flex items-center justify-center gap-1.5">
+          <div
+            class="w-full text-center py-2 px-3 rounded-lg bg-zinc-100 border border-zinc-200 text-xs text-zinc-700 font-medium flex items-center justify-center gap-1.5">
             <i class="fas fa-check-circle text-zinc-800"></i> Verified Credential
           </div>
           {% endif %}

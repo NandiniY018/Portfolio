@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Nandini Yamagar - Resume</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    @page {
+      size: A4;
+      margin: 6mm 9mm 6mm 9mm;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      color: #111827;
+      background: #ffffff;
+      line-height: 1.26;
+      font-size: 8.4pt;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: #1e3a8a; text-decoration: none; }
+    .header { text-align: center; border-bottom: 1.5px solid #0f172a; padding-bottom: 3px; margin-bottom: 5px; }
+    .name { font-size: 17pt; font-weight: 800; letter-spacing: -0.02em; color: #0f172a; text-transform: uppercase; margin-bottom: 1.5px; }
+    .headline { font-size: 9.3pt; font-weight: 600; color: #334155; margin-bottom: 2.5px; }
+    .contact-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 2px 9px; font-size: 8pt; color: #475569; }
+    .contact-item a { color: #2563eb; font-weight: 500; }
+    .bullet-sep { color: #94a3b8; }
+    .section { margin-bottom: 4.5px; }
+    .section-title { font-size: 8.8pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: #0f172a; border-bottom: 1px solid #cbd5e1; padding-bottom: 1px; margin-bottom: 2.5px; }
+    .summary-text { font-size: 8.2pt; color: #334155; text-align: justify; line-height: 1.24; }
+    .skills-table { width: 100%; border-collapse: collapse; font-size: 8.1pt; }
+    .skills-table td { padding: 0.8px 0; vertical-align: top; }
+    .skills-category { font-weight: 700; color: #0f172a; width: 26%; padding-right: 4px; white-space: nowrap; }
+    .skills-list { color: #334155; width: 74%; }
+    .item { margin-bottom: 3px; }
+    .item-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 0.5px; }
+    .item-title-group { font-size: 8.5pt; font-weight: 700; color: #0f172a; }
+    .item-title-group .role { color: #0f172a; }
+    .item-title-group .org { font-weight: 600; color: #334155; }
+    .item-date { font-size: 7.8pt; font-weight: 600; color: #475569; white-space: nowrap; }
+    .item-tech { font-size: 7.7pt; font-style: italic; color: #475569; margin-bottom: 0.5px; }
+    ul.bullet-list { list-style-type: disc; padding-left: 12px; margin-top: 0.5px; }
+    ul.bullet-list li { font-size: 8pt; color: #334155; margin-bottom: 0.8px; line-height: 1.22; text-align: justify; }
+    ul.bullet-list li:last-child { margin-bottom: 0; }
+    ul.bullet-list li strong { color: #0f172a; font-weight: 600; }
+    .cert-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5px 12px; font-size: 8pt; }
+    .cert-item { display: flex; justify-content: space-between; color: #334155; }
+    .cert-name { font-weight: 600; color: #0f172a; }
+    .cert-issuer { color: #475569; font-size: 7.5pt; }
+    .cert-date { font-size: 7.5pt; font-weight: 500; color: #64748b; white-space: nowrap; text-align: right; }
+    .edu-item { margin-bottom: 1.5px; }
+    .edu-header { display: flex; justify-content: space-between; align-items: baseline; }
+    .edu-degree { font-size: 8.3pt; font-weight: 700; color: #0f172a; }
+    .edu-grade { font-weight: 700; color: #0f172a; font-size: 8pt; }
+    .edu-inst { font-size: 7.9pt; color: #475569; }
+    .edu-date { font-size: 7.8pt; font-weight: 600; color: #475569; white-space: nowrap; }
+</style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <h1 class="name">Nandini Yamagar</h1>
+    <div class="headline">Python Full Stack Developer & AI / Data Specialist</div>
+    <div class="contact-row">
+      <span class="contact-item">Bengaluru, Karnataka, India</span>
+      <span class="bullet-sep">•</span>
+      <span class="contact-item">+91 8073835526</span>
+      <span class="bullet-sep">•</span>
+      <span class="contact-item"><a href="mailto:nandiniyamagar5@gmail.com">nandiniyamagar5@gmail.com</a></span>
+      <span class="bullet-sep">•</span>
+      <span class="contact-item"><a href="https://www.linkedin.com/in/nandini-yamagar-1b8a26333" target="_blank">linkedin.com/in/nandini-yamagar</a></span>
+      <span class="bullet-sep">•</span>
+      <span class="contact-item"><a href="https://github.com/NandiniY018" target="_blank">github.com/NandiniY018</a></span>
+      <span class="bullet-sep">•</span>
+      <span class="contact-item"><a href="https://nandiniy018.github.io/Portfolio/" target="_blank">nandiniy018.github.io/Portfolio</a></span>
+    </div>
+  </header>
+
+  <!-- Summary -->
+  <section class="section">
+    <h2 class="section-title">Professional Summary</h2>
+    <p class="summary-text">
+      Results-driven <strong>Full Stack Developer & AI/Data Specialist</strong> with a Bachelor of Engineering in Computer Science (8.3 CGPA). Proficient in developing scalable web applications and microservices using <strong>Python, Django, FastAPI, React.js, and MySQL</strong>, alongside engineering predictive machine learning pipelines with <strong>Scikit-learn, Pandas, and NumPy</strong>. Hands-on experience developing multi-tenant e-commerce platforms, agricultural yield forecasting models, and business intelligence dashboards (Power BI, Excel). Solid grounding in Data Structures, Algorithms, OOP, RESTful architectures, and Agile SDLC methodologies, with a passion for delivering high-impact, data-driven software solutions.
+    </p>
+  </section>
+
+  <!-- Technical Skills -->
+  <section class="section">
+    <h2 class="section-title">Technical Skills</h2>
+    <table class="skills-table">
+      <tr>
+        <td class="skills-category">Programming Languages:</td>
+        <td class="skills-list">Python (OOP, Concurrency), JavaScript (ES6+), SQL (Query Optimization), C</td>
+      </tr>
+      <tr>
+        <td class="skills-category">Frontend Development:</td>
+        <td class="skills-list">React.js, Next.js, HTML5, CSS3, Tailwind CSS, Bootstrap, Responsive Design, State Management</td>
+      </tr>
+      <tr>
+        <td class="skills-category">Backend & APIs:</td>
+        <td class="skills-list">Django, Django REST Framework, FastAPI, Node.js (Basics), RESTful APIs, JWT Authentication</td>
+      </tr>
+      <tr>
+        <td class="skills-category">Machine Learning & Analytics:</td>
+        <td class="skills-list">Scikit-learn, Pandas, NumPy, XGBoost, Regression & Ensemble Models, EDA, Feature Engineering</td>
+      </tr>
+      <tr>
+        <td class="skills-category">Business Intelligence:</td>
+        <td class="skills-list">Power BI (DAX, Power Query, KPIs, Dashboards), Advanced Excel (VLOOKUP, Pivot Tables), IBM SPSS</td>
+      </tr>
+      <tr>
+        <td class="skills-category">Databases & Storage:</td>
+        <td class="skills-list">MySQL, PostgreSQL, MongoDB, SQLite (Relational Modeling, Indexing, ACID Transactions)</td>
+      </tr>
+      <tr>
+        <td class="skills-category">Tools & Methodologies:</td>
+        <td class="skills-list">Git, GitHub, Docker, Postman, Linux/Bash, VS Code, Agile/Scrum, CI/CD Pipelines, SDLC</td>
+      </tr>
+    </table>
+  </section>
+
+  <!-- Experience -->
+  <section class="section">
+    <h2 class="section-title">Professional & Internship Experience</h2>
+
+    <div class="item">
+      <div class="item-header">
+        <div class="item-title-group">
+          <span class="role">Software Developer Intern</span> – <span class="org">eDeal India</span>, <span style="font-weight:400;color:#64748b;">Chikodi, India</span>
+        </div>
+        <div class="item-date">Mar 2026 – Jun 2026</div>
+      </div>
+      <div class="item-tech">Stack: React.js, Next.js, Tailwind CSS, REST APIs, Git, Agile</div>
+      <ul class="bullet-list">
+        <li>Architected and implemented responsive, accessible UI modules using <strong>React.js, Next.js, and Tailwind CSS</strong>, reducing initial page load latency and improving cross-device engagement.</li>
+        <li>Integrated secure <strong>RESTful API endpoints</strong> for core transactional workflows, including dynamic catalog search, filtering, shopping cart state persistence, checkout, and order lifecycle tracking.</li>
+        <li>Built dynamic user dashboards with client-side state management for real-time customer profiles, wishlist items, and inventory status updates.</li>
+        <li>Participated actively in agile sprint ceremonies, conducting rigorous code reviews, debugging UI/integration bottlenecks, and maintaining clean version control via Git & GitHub.</li>
+      </ul>
+    </div>
+
+    <div class="item" style="margin-top: 5px;">
+      <div class="item-header">
+        <div class="item-title-group">
+          <span class="role">Frontend Developer</span> – <span class="org">Travel With Pravah</span>, <span style="font-weight:400;color:#64748b;">Remote</span>
+        </div>
+        <div class="item-date">Jan 2026 – Feb 2026</div>
+      </div>
+      <div class="item-tech">Stack: JavaScript (ES6+), React.js, Bootstrap, HTML5/CSS3, Git</div>
+      <ul class="bullet-list">
+        <li>Engineered a responsive luxury travel portal using modern <strong>JavaScript (ES6+) and React.js</strong>, crafting fluid navigation flows, interactive destination galleries, and booking inquiry interfaces.</li>
+        <li>Accelerated asset delivery and page performance by <strong>25%</strong> through image compression, code splitting, lazy loading, and semantic HTML5 layout structures.</li>
+        <li>Ensured comprehensive cross-browser and cross-device consistency across mobile, tablet, and desktop viewports, enhancing core web vitals and overall user retention.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section class="section">
+    <h2 class="section-title">Key Projects</h2>
+
+    <div class="item">
+      <div class="item-header">
+        <div class="item-title-group">
+          <span class="role">Crop Yield Prediction Platform</span>
+        </div>
+        <div class="item-date">Nov 2024 – Apr 2025</div>
+      </div>
+      <div class="item-tech">Tech: Python, Scikit-learn, XGBoost, Pandas, NumPy, Flask, Matplotlib, SQLite</div>
+      <ul class="bullet-list">
+        <li>Developed an end-to-end Machine Learning pipeline predicting crop productivity from environmental, soil, rainfall, and temperature indicators across multiple crop classifications.</li>
+        <li>Conducted comprehensive <strong>exploratory data analysis (EDA), data imputation, and feature engineering</strong> on agricultural datasets exceeding 1,000+ observation points.</li>
+        <li>Trained, tuned, and evaluated regression and ensemble architectures (Random Forest, Decision Tree, Linear Regression, and XGBoost), identifying the highest accuracy predictive model with minimized RMSE.</li>
+        <li>Deployed an interactive <strong>Flask web dashboard</strong> enabling farmers and agronomists to input localized parameters and receive instant yield forecasts.</li>
+      </ul>
+    </div>
+
+    <div class="item" style="margin-top: 5px;">
+      <div class="item-header">
+        <div class="item-title-group">
+          <span class="role">Multi-Vendor E-Commerce Platform</span>
+        </div>
+        <div class="item-date">Completed 2026</div>
+      </div>
+      <div class="item-tech">Tech: React.js, Next.js, REST APIs, MongoDB, Tailwind CSS, JavaScript</div>
+      <ul class="bullet-list">
+        <li>Engineered a scalable multi-tenant marketplace platform with segregated administration and vendor management portals for catalog management, stock monitoring, and sales reporting.</li>
+        <li>Implemented secure tokenized checkout flows, persistent cart state management, and real-time order tracking via modular REST API integration.</li>
+        <li>Designed performant UI with sub-second route transitions, dynamic faceted search, and interactive customer rewards programs.</li>
+      </ul>
+    </div>
+
+    <div class="item" style="margin-top: 5px;">
+      <div class="item-header">
+        <div class="item-title-group">
+          <span class="role">Grocery Management System</span>
+        </div>
+        <div class="item-date">Nov 2023 – Feb 2024</div>
+      </div>
+      <div class="item-tech">Tech: PHP, MySQL, JavaScript, Bootstrap, Apache, HTML5, CSS3</div>
+      <ul class="bullet-list">
+        <li>Architected a retail inventory management application featuring a <strong>normalized relational schema (6 core tables)</strong> with ACID-compliant transaction handling for accurate inventory auditing.</li>
+        <li>Automated real-time low-stock alerts, point-of-sale billing, sales categorization, and instant PDF receipt generation for 100+ product SKUs.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Certifications -->
+  <section class="section">
+    <h2 class="section-title">Certifications</h2>
+    <div class="cert-grid">
+      <div class="cert-item">
+        <div>
+          <div class="cert-name">Python Full Stack Web Development</div>
+          <div class="cert-issuer">SkyllX Software Training Institute, Bangalore</div>
+        </div>
+        <div class="cert-date">Jun 2025 – Dec 2025</div>
+      </div>
+      <div class="cert-item">
+        <div>
+          <div class="cert-name">AI & ML Specialization</div>
+          <div class="cert-issuer">Rooman Technology & IBM</div>
+        </div>
+        <div class="cert-date">Jun 2024 – Nov 2024</div>
+      </div>
+      <div class="cert-item">
+        <div>
+          <div class="cert-name">IBM SPSS Statistics & Analytics</div>
+          <div class="cert-issuer">Imra Tech Academy</div>
+        </div>
+        <div class="cert-date">Aug 2026</div>
+      </div>
+      <div class="cert-item">
+        <div>
+          <div class="cert-name">Power BI for Data Analytics</div>
+          <div class="cert-issuer">Simplilearn</div>
+        </div>
+        <div class="cert-date">Sep 2026</div>
+      </div>
+    </div>
+  </section>
+
+    <!-- Education -->
+  <section class="section">
+    <h2 class="section-title">Education</h2>
+    <table class="skills-table" style="font-size: 8pt; width: 100%;">
+      <tr>
+        <td style="font-weight: 700; color: #0f172a; width: 50%;">Bachelor of Engineering (B.E.) – Computer Science & Engineering</td>
+        <td style="color: #475569; width: 33%;">Hira Sugar Institute of Technology, Belagavi</td>
+        <td style="font-weight: 700; color: #0f172a; width: 17%; text-align: right;">CGPA: 8.3 | 2021–25</td>
+      </tr>
+      <tr>
+        <td style="font-weight: 700; color: #0f172a;">Pre-University Course (PUC) – Science (PCMB)</td>
+        <td style="color: #475569;">C.L.E PU College, Chikodi</td>
+        <td style="font-weight: 700; color: #0f172a; text-align: right;">77% | 2019–21</td>
+      </tr>
+      <tr>
+        <td style="font-weight: 700; color: #0f172a;">Secondary School Leaving Certificate (SSLC – 10th)</td>
+        <td style="color: #475569;">C.K. High School, Examba</td>
+        <td style="font-weight: 700; color: #0f172a; text-align: right;">84% | 2018–19</td>
+      </tr>
+    </table>
+  </section>
+
+</body>
+</html>

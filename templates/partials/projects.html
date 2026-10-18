@@ -16,7 +16,8 @@
     </div>
 
     <!-- Interactive Project Filter Tabs -->
-    <div class="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-10 reveal" id="project-filters" role="tablist" aria-label="Project categories">
+    <div class="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-10 reveal" id="project-filters"
+      role="tablist" aria-label="Project categories">
       <button class="project-filter-btn active" data-filter="all" role="tab" aria-selected="true">
         <i class="fas fa-layer-group text-xs"></i> All Projects
       </button>
@@ -36,43 +37,42 @@
 
       {% for project in projects %}
       <!-- Project Card -->
-      <article class="project-card spotlight-card reveal reveal-delay-{{ forloop.counter }}" data-tech="{{ project.tech_stack|lower }} {{ project.title|lower }} {{ project.description|lower }}">
+      <article class="project-card spotlight-card reveal reveal-delay-{{ forloop.counter }}"
+        data-tech="{{ project.tech_stack|lower }} {{ project.title|lower }} {{ project.description|lower }}">
         <!-- Image Area -->
         <div class="project-img-wrapper relative overflow-hidden group/img">
           <!-- Status / Badge Indicator -->
-          <div class="absolute top-3 left-3 z-10 flex items-center gap-1.5 px-3 py-1 bg-black/75 dark:bg-zinc-900/90 backdrop-blur-md border border-white/20 dark:border-zinc-700/80 rounded-full text-white text-[11px] font-semibold tracking-wide shadow-md pointer-events-none">
+          <div
+            class="absolute top-3 left-3 z-10 flex items-center gap-1.5 px-3 py-1 bg-black/75 dark:bg-zinc-900/90 backdrop-blur-md border border-white/20 dark:border-zinc-700/80 rounded-full text-white text-[11px] font-semibold tracking-wide shadow-md pointer-events-none">
             <span class="w-2 h-2 rounded-full bg-emerald-400 inline-block animate-pulse"></span>
             <span>Production Ready</span>
           </div>
 
           {% with first_img=project.gallery_images.first %}
           {% if first_img %}
-            <img src="{{ first_img.image.url }}"
-                 alt="{{ project.title }} screenshot"
-                 loading="lazy" width="600" height="300"
-                 class="w-full h-full object-cover transition-transform duration-500 group-hover/img:scale-105"
-                 onerror="this.classList.add('hidden'); this.nextElementSibling.classList.remove('hidden'); this.nextElementSibling.classList.add('flex');" />
+          <img src="{{ first_img.image.url }}" alt="{{ project.title }} screenshot" loading="lazy" width="600"
+            height="300" class="w-full h-full object-cover transition-transform duration-500 group-hover/img:scale-105"
+            onerror="this.classList.add('hidden'); this.nextElementSibling.classList.remove('hidden'); this.nextElementSibling.classList.add('flex');" />
           {% elif project.image %}
-            <img src="{{ project.image.url }}"
-                 alt="{{ project.title }} screenshot"
-                 loading="lazy" width="600" height="300"
-                 class="w-full h-full object-cover transition-transform duration-500 group-hover/img:scale-105"
-                 onerror="this.classList.add('hidden'); this.nextElementSibling.classList.remove('hidden'); this.nextElementSibling.classList.add('flex');" />
+          <img src="{{ project.image.url }}" alt="{{ project.title }} screenshot" loading="lazy" width="600"
+            height="300" class="w-full h-full object-cover transition-transform duration-500 group-hover/img:scale-105"
+            onerror="this.classList.add('hidden'); this.nextElementSibling.classList.remove('hidden'); this.nextElementSibling.classList.add('flex');" />
           {% endif %}
           {% endwith %}
 
           <!-- Fallback placeholder -->
-          <div class="{% if project.gallery_images.first or project.image %}hidden{% else %}flex{% endif %} absolute inset-0 w-full h-full flex-col items-center justify-center gap-3 bg-gradient-to-br from-zinc-100 via-zinc-200 to-zinc-300 dark:from-zinc-900 dark:via-zinc-800 dark:to-zinc-950">
+          <div
+            class="{% if project.gallery_images.first or project.image %}hidden{% else %}flex{% endif %} absolute inset-0 w-full h-full flex-col items-center justify-center gap-3 bg-gradient-to-br from-zinc-100 via-zinc-200 to-zinc-300 dark:from-zinc-900 dark:via-zinc-800 dark:to-zinc-950">
             <i class="{{ project.icon_class }} text-5xl text-zinc-500 dark:text-zinc-400"></i>
             <span class="font-outfit text-sm text-zinc-700 dark:text-zinc-300 font-semibold">{{ project.title }}</span>
           </div>
 
           <!-- Gallery "+" button — only if more than 1 gallery image -->
           {% if project.gallery_images.count > 1 %}
-          <button class="absolute bottom-3 right-3 flex items-center gap-1.5 px-3 py-1.5 bg-black/80 dark:bg-zinc-900/90 backdrop-blur-md border border-white/20 dark:border-zinc-700 rounded-full text-white text-xs font-semibold cursor-pointer transition-all duration-200 hover:bg-white hover:text-black dark:hover:bg-white dark:hover:text-black hover:scale-105 z-10 shadow-md"
-                  onclick="openGallery('gallery-{{ project.id }}')"
-                  aria-label="View all {{ project.gallery_images.count }} photos"
-                  title="View all photos">
+          <button
+            class="absolute bottom-3 right-3 flex items-center gap-1.5 px-3 py-1.5 bg-black/80 dark:bg-zinc-900/90 backdrop-blur-md border border-white/20 dark:border-zinc-700 rounded-full text-white text-xs font-semibold cursor-pointer transition-all duration-200 hover:bg-white hover:text-black dark:hover:bg-white dark:hover:text-black hover:scale-105 z-10 shadow-md"
+            onclick="openGallery('gallery-{{ project.id }}')"
+            aria-label="View all {{ project.gallery_images.count }} photos" title="View all photos">
             <i class="fas fa-images text-xs"></i>
             <span>{{ project.gallery_images.count }} Photos</span>
           </button>
@@ -84,7 +84,8 @@
             <h3 class="font-outfit font-bold text-lg text-zinc-900 dark:text-zinc-100 leading-tight">
               {{ project.title }}
             </h3>
-            <div class="w-10 h-10 rounded-xl flex items-center justify-center text-zinc-800 dark:text-zinc-200 text-sm shadow-xs bg-zinc-100 dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700/80 flex-shrink-0">
+            <div
+              class="w-10 h-10 rounded-xl flex items-center justify-center text-zinc-800 dark:text-zinc-200 text-sm shadow-xs bg-zinc-100 dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700/80 flex-shrink-0">
               <i class="{{ project.icon_class }}"></i>
             </div>
           </div>
@@ -117,13 +118,15 @@
           <div class="flex gap-3">
             {% if project.github_link %}
             <a href="{{ project.github_link }}" target="_blank" rel="noopener noreferrer"
-               class="btn-primary ripple flex-1 text-sm py-2.5 flex items-center justify-center gap-2" aria-label="View project on GitHub">
+              class="btn-primary ripple flex-1 text-sm py-2.5 flex items-center justify-center gap-2"
+              aria-label="View project on GitHub">
               <i class="fab fa-github"></i> View Code
             </a>
             {% endif %}
             {% if project.gallery_images.count > 0 %}
             <button onclick="openGallery('gallery-{{ project.id }}')"
-                    class="btn-outline ripple flex-1 text-sm py-2.5 flex items-center justify-center gap-2" aria-label="View project photos">
+              class="btn-outline ripple flex-1 text-sm py-2.5 flex items-center justify-center gap-2"
+              aria-label="View project photos">
               <i class="fas fa-images"></i> Gallery ({{ project.gallery_images.count }})
             </button>
             {% endif %}
@@ -133,38 +136,48 @@
 
       <!-- Lightbox Gallery for this project -->
       {% if project.gallery_images.count > 0 %}
-      <div id="gallery-{{ project.id }}" class="fixed inset-0 z-[9999] flex items-center justify-center p-4 hidden" role="dialog" aria-modal="true" aria-label="{{ project.title }} gallery">
-        <div class="absolute inset-0 bg-black/80 backdrop-blur-md" onclick="closeGallery('gallery-{{ project.id }}')"></div>
-        <div class="relative z-10 bg-white border border-zinc-200 rounded-2xl w-full max-w-4xl max-h-[90vh] flex flex-col overflow-hidden shadow-[0_25px_70px_rgba(0,0,0,0.25)]">
+      <div id="gallery-{{ project.id }}" class="fixed inset-0 z-[9999] flex items-center justify-center p-4 hidden"
+        role="dialog" aria-modal="true" aria-label="{{ project.title }} gallery">
+        <div class="absolute inset-0 bg-black/80 backdrop-blur-md" onclick="closeGallery('gallery-{{ project.id }}')">
+        </div>
+        <div
+          class="relative z-10 bg-white border border-zinc-200 rounded-2xl w-full max-w-4xl max-h-[90vh] flex flex-col overflow-hidden shadow-[0_25px_70px_rgba(0,0,0,0.25)]">
           <div class="flex items-center justify-between px-6 py-4 border-b border-zinc-200 shrink-0 bg-white">
             <h3 class="font-outfit font-bold text-zinc-900 text-lg">{{ project.title }} — Photos</h3>
-            <button class="w-8 h-8 rounded-full bg-zinc-100 text-zinc-600 flex items-center justify-center transition-colors hover:bg-black hover:text-white" onclick="closeGallery('gallery-{{ project.id }}')" aria-label="Close gallery">
+            <button
+              class="w-8 h-8 rounded-full bg-zinc-100 text-zinc-600 flex items-center justify-center transition-colors hover:bg-black hover:text-white"
+              onclick="closeGallery('gallery-{{ project.id }}')" aria-label="Close gallery">
               <i class="fas fa-times"></i>
             </button>
           </div>
           <div class="flex flex-col flex-1 overflow-hidden">
             <!-- Main viewer -->
             <div class="relative flex-1 flex items-center justify-center bg-zinc-950 min-h-[300px] overflow-hidden">
-              <img id="lightbox-img-{{ project.id }}" src="{{ project.gallery_images.first.image.url }}" alt="" class="max-w-full max-h-[55vh] object-contain rounded-lg transition-opacity duration-200" />
-              <p id="lightbox-caption-{{ project.id }}" class="absolute bottom-3 left-1/2 -translate-x-1/2 bg-black/75 border border-white/10 text-white text-xs px-3 py-1 rounded-full whitespace-nowrap">{{ project.gallery_images.first.caption }}</p>
+              <img id="lightbox-img-{{ project.id }}" src="{{ project.gallery_images.first.image.url }}" alt=""
+                class="max-w-full max-h-[55vh] object-contain rounded-lg transition-opacity duration-200" />
+              <p id="lightbox-caption-{{ project.id }}"
+                class="absolute bottom-3 left-1/2 -translate-x-1/2 bg-black/75 border border-white/10 text-white text-xs px-3 py-1 rounded-full whitespace-nowrap">
+                {{ project.gallery_images.first.caption }}</p>
               <!-- Prev / Next -->
               {% if project.gallery_images.count > 1 %}
-              <button class="absolute left-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/70 border border-white/15 text-white flex items-center justify-center transition-colors hover:bg-white hover:text-black z-10" onclick="navigateGallery('{{ project.id }}', -1)" aria-label="Previous"><i class="fas fa-chevron-left"></i></button>
-              <button class="absolute right-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/70 border border-white/15 text-white flex items-center justify-center transition-colors hover:bg-white hover:text-black z-10" onclick="navigateGallery('{{ project.id }}', 1)" aria-label="Next"><i class="fas fa-chevron-right"></i></button>
+              <button
+                class="absolute left-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/70 border border-white/15 text-white flex items-center justify-center transition-colors hover:bg-white hover:text-black z-10"
+                onclick="navigateGallery('{{ project.id }}', -1)" aria-label="Previous"><i
+                  class="fas fa-chevron-left"></i></button>
+              <button
+                class="absolute right-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/70 border border-white/15 text-white flex items-center justify-center transition-colors hover:bg-white hover:text-black z-10"
+                onclick="navigateGallery('{{ project.id }}', 1)" aria-label="Next"><i
+                  class="fas fa-chevron-right"></i></button>
               {% endif %}
             </div>
             <!-- Thumbnail Strip -->
-            <div class="flex gap-2 py-3 px-4 overflow-x-auto shrink-0 bg-zinc-50 border-t border-zinc-200 [scrollbar-width:thin]">
+            <div
+              class="flex gap-2 py-3 px-4 overflow-x-auto shrink-0 bg-zinc-50 border-t border-zinc-200 [scrollbar-width:thin]">
               {% for img in project.gallery_images.all %}
-              <img src="{{ img.image.url }}"
-                   alt="{{ img.caption|default:project.title }}"
-                   class="lightbox-thumb w-[72px] h-[52px] object-cover rounded-md cursor-pointer opacity-50 border-2 border-transparent transition-all hover:opacity-90 hover:scale-105 shrink-0 [&.active]:opacity-100 [&.active]:border-black {% if forloop.first %}active{% endif %}"
-                   data-index="{{ forloop.counter0 }}"
-                   data-src="{{ img.image.url }}"
-                   data-caption="{{ img.caption }}"
-                   data-project="{{ project.id }}"
-                   onclick="selectThumb(this)"
-                   loading="lazy" />
+              <img src="{{ img.image.url }}" alt="{{ img.caption|default:project.title }}"
+                class="lightbox-thumb w-[72px] h-[52px] object-cover rounded-md cursor-pointer opacity-50 border-2 border-transparent transition-all hover:opacity-90 hover:scale-105 shrink-0 [&.active]:opacity-100 [&.active]:border-black {% if forloop.first %}active{% endif %}"
+                data-index="{{ forloop.counter0 }}" data-src="{{ img.image.url }}" data-caption="{{ img.caption }}"
+                data-project="{{ project.id }}" onclick="selectThumb(this)" loading="lazy" />
               {% endfor %}
             </div>
           </div>
@@ -181,7 +194,7 @@
     <!-- View More on GitHub CTA -->
     <div class="text-center mt-12 reveal">
       <a href="https://github.com/NandiniY018" target="_blank" rel="noopener noreferrer"
-         class="btn-outline ripple inline-flex items-center gap-2" aria-label="View all projects on GitHub">
+        class="btn-outline ripple inline-flex items-center gap-2" aria-label="View all projects on GitHub">
         <i class="fab fa-github"></i> View All on GitHub
       </a>
     </div>
@@ -190,56 +203,56 @@
 </section>
 
 <script>
-// Gallery data store for navigation
-const galleryData = {};
+  // Gallery data store for navigation
+  const galleryData = {};
 
-function openGallery(id) {
-  const el = document.getElementById(id);
-  if (!el) return;
-  el.classList.remove('hidden');
-  document.body.classList.add('overflow-hidden');
-  // Build index from thumbnails
-  const projectId = id.replace('gallery-', '');
-  const thumbs = el.querySelectorAll('.lightbox-thumb, img[data-project]');
-  galleryData[projectId] = { thumbs: Array.from(thumbs), current: 0 };
-}
+  function openGallery(id) {
+    const el = document.getElementById(id);
+    if (!el) return;
+    el.classList.remove('hidden');
+    document.body.classList.add('overflow-hidden');
+    // Build index from thumbnails
+    const projectId = id.replace('gallery-', '');
+    const thumbs = el.querySelectorAll('.lightbox-thumb, img[data-project]');
+    galleryData[projectId] = { thumbs: Array.from(thumbs), current: 0 };
+  }
 
-function closeGallery(id) {
-  const el = document.getElementById(id);
-  if (!el) return;
-  el.classList.add('hidden');
-  document.body.classList.remove('overflow-hidden');
-}
+  function closeGallery(id) {
+    const el = document.getElementById(id);
+    if (!el) return;
+    el.classList.add('hidden');
+    document.body.classList.remove('overflow-hidden');
+  }
 
-function selectThumb(thumb) {
-  if (!thumb) return;
-  const projectId = thumb.dataset.project;
-  const index = parseInt(thumb.dataset.index, 10);
-  const data = galleryData[projectId];
-  if (!data) return;
-  data.current = index;
-  data.thumbs.forEach(t => t.classList.remove('active'));
-  thumb.classList.add('active');
-  const imgEl = document.getElementById('lightbox-img-' + projectId);
-  if (imgEl) imgEl.src = thumb.dataset.src;
-  const capEl = document.getElementById('lightbox-caption-' + projectId);
-  if (capEl) capEl.textContent = thumb.dataset.caption || '';
-}
+  function selectThumb(thumb) {
+    if (!thumb) return;
+    const projectId = thumb.dataset.project;
+    const index = parseInt(thumb.dataset.index, 10);
+    const data = galleryData[projectId];
+    if (!data) return;
+    data.current = index;
+    data.thumbs.forEach(t => t.classList.remove('active'));
+    thumb.classList.add('active');
+    const imgEl = document.getElementById('lightbox-img-' + projectId);
+    if (imgEl) imgEl.src = thumb.dataset.src;
+    const capEl = document.getElementById('lightbox-caption-' + projectId);
+    if (capEl) capEl.textContent = thumb.dataset.caption || '';
+  }
 
-function navigateGallery(projectId, direction) {
-  const data = galleryData[projectId];
-  if (!data || !data.thumbs || !data.thumbs.length) return;
-  data.current = (data.current + direction + data.thumbs.length) % data.thumbs.length;
-  selectThumb(data.thumbs[data.current]);
-}
+  function navigateGallery(projectId, direction) {
+    const data = galleryData[projectId];
+    if (!data || !data.thumbs || !data.thumbs.length) return;
+    data.current = (data.current + direction + data.thumbs.length) % data.thumbs.length;
+    selectThumb(data.thumbs[data.current]);
+  }
 
-// Keyboard navigation
-document.addEventListener('keydown', function(e) {
-  const open = document.querySelector('div[id^="gallery-"]:not(.hidden)');
-  if (!open) return;
-  const projectId = open.id.replace('gallery-', '');
-  if (e.key === 'Escape') closeGallery(open.id);
-  if (e.key === 'ArrowRight') navigateGallery(projectId, 1);
-  if (e.key === 'ArrowLeft') navigateGallery(projectId, -1);
-});
+  // Keyboard navigation
+  document.addEventListener('keydown', function (e) {
+    const open = document.querySelector('div[id^="gallery-"]:not(.hidden)');
+    if (!open) return;
+    const projectId = open.id.replace('gallery-', '');
+    if (e.key === 'Escape') closeGallery(open.id);
+    if (e.key === 'ArrowRight') navigateGallery(projectId, 1);
+    if (e.key === 'ArrowLeft') navigateGallery(projectId, -1);
+  });
 </script>
