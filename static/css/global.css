@@ -1316,10 +1316,26 @@ html.dark .spotlight-card::after {
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
 }
 
+.cert-card::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #09090b, #71717a);
+  transform: scaleX(0);
+  transition: transform 0.35s ease;
+}
+
 .cert-card:hover {
   transform: translateY(-6px);
   border-color: #d4d4d8;
   box-shadow: 0 16px 40px rgba(0, 0, 0, 0.08);
+}
+
+.cert-card:hover::after {
+  transform: scaleX(1);
 }
 
 /* ============================================================
